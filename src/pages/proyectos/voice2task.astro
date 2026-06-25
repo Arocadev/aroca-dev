@@ -1,0 +1,99 @@
+---
+import '../../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice2Task · ArocaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi">sobre mí</a>
+        <a href="/#proyectos">proyectos</a>
+        <a href="/#experiencia">experiencia</a>
+        <a href="/#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="proj-hero">
+  <div class="proj-category">Proyecto personal</div>
+  <div class="proj-title">Voice2Task</div>
+  <div class="proj-subtitle">Bot de Telegram que transcribe mensajes de voz con Whisper, los interpreta con IA y crea tarjetas en Trello automáticamente.</div>
+  <div class="proj-links">
+    <a href="https://github.com/ArocaDev/voice2task" target="_blank" class="proj-link proj-link-primary"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+  </div>
+</div>
+
+<div class="proj-body">
+  <div class="proj-section">
+    <div class="proj-section-title">El problema</div>
+    <div class="proj-text">
+      <p>Cuando tienes una idea o tarea en mente mientras estás ocupado, el flujo habitual es: parar lo que haces, abrir Trello, crear la tarjeta, escribir el título y la descripción. Es suficiente fricción como para que muchas ideas se pierdan.</p>
+      <p>Lo ideal sería poder <b>mandar un audio por Telegram</b> con lo que tienes en mente y que la tarjeta aparezca sola en el tablero.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">La solución</div>
+    <div class="proj-text">
+      <p>Bot de Telegram en <b>Python</b> que recibe mensajes de voz, los transcribe con <b>Whisper</b> de OpenAI y pasa el texto a <b>Groq AI</b> (modelo qwen3) para que interprete la intención y extraiga título, descripción y lista de destino.</p>
+      <p>Con esa información, crea automáticamente la tarjeta en <b>Trello</b> a través de su API. Todo el flujo tarda menos de 5 segundos desde que mandas el audio hasta que aparece la tarjeta.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Stack y detalles</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Python</span>
+          <span class="about-tech-tag">Whisper</span>
+          <span class="about-tech-tag">Groq AI</span>
+          <span class="about-tech-tag">Telegram API</span>
+          <span class="about-tech-tag">Trello API</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">Funcional</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Deploy</span><span class="sidebar-row-val">Pendiente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Chat Telegram</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Tarjeta creada en Trello</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+</body>
+</html>

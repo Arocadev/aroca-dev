@@ -1,0 +1,102 @@
+---
+import '../../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krausen · ArocaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi">sobre mí</a>
+        <a href="/#proyectos">proyectos</a>
+        <a href="/#experiencia">experiencia</a>
+        <a href="/#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="proj-hero">
+  <div class="proj-category">Proyecto personal</div>
+  <div class="proj-title">Krausen</div>
+  <div class="proj-subtitle">Plataforma para gestionar y compartir recetas de cerveza artesanal. Soporta forks de recetas, versioning y seguimiento de temperaturas de fermentación en tiempo real.</div>
+  <div class="proj-links">
+    <a href="https://github.com/ArocaDev/krausen-backend" target="_blank" class="proj-link proj-link-primary"><i class="ti ti-brand-github"></i>Backend</a>
+    <a href="https://github.com/ArocaDev/krausen-frontend" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-github"></i>Frontend</a>
+  </div>
+</div>
+
+<div class="proj-body">
+  <div class="proj-section">
+    <div class="proj-section-title">El problema</div>
+    <div class="proj-text">
+      <p>Los cerveceros caseros no tienen una herramienta pensada para gestionar sus recetas de forma seria: poder versionar cambios, hacer forks de recetas de otros, o llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo.</p>
+      <p>Las soluciones existentes son o demasiado simples (hojas de cálculo) o demasiado cerradas. No hay nada que combine la <b>gestión de recetas con trazabilidad y colaboración</b>.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">La solución</div>
+    <div class="proj-text">
+      <p>Plataforma web con <b>backend en FastAPI</b> y <b>frontend en Next.js</b>. Las recetas tienen versioning completo: cada modificación genera una nueva versión y se puede hacer fork de cualquier receta pública, igual que en GitHub.</p>
+      <p>El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en gráficas, facilitando el análisis y la reproducción de resultados.</p>
+      <p>Proyecto personal nacido del interés propio y de un amigo por la cerveza artesanal, con ganas de construir algo con versioning real en lugar de una simple lista de recetas.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Stack y detalles</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">FastAPI</span>
+          <span class="about-tech-tag">Python</span>
+          <span class="about-tech-tag">Next.js</span>
+          <span class="about-tech-tag">PostgreSQL</span>
+          <span class="about-tech-tag">Docker</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – hoy</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Lista de recetas</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de receta</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gráfica fermentación</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Fork de receta</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+</body>
+</html>

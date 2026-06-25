@@ -1,0 +1,111 @@
+---
+import '../../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APR Xàtiva · ArocaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi">sobre mí</a>
+        <a href="/#proyectos">proyectos</a>
+        <a href="/#experiencia">experiencia</a>
+        <a href="/#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="proj-hero">
+  <div class="proj-category">Proyecto académico · TFG</div>
+  <div class="proj-title">APR Xàtiva</div>
+  <div class="proj-subtitle">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
+  <div class="proj-links">
+    <a href="https://github.com/ArocaDev/apr-xativa-backend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Backend</a>
+    <a href="https://github.com/ArocaDev/apr-xativa-web" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Web</a>
+    <a href="https://github.com/ArocaDev/apr-xativa-android" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Android</a>
+  </div>
+</div>
+
+<div class="proj-body">
+  <div class="proj-section">
+    <div class="proj-section-title">El problema</div>
+    <div class="proj-text">
+      <p>El casco histórico de Xàtiva tiene acceso restringido a vehículos no autorizados, pero el control se gestionaba de forma completamente manual: sin registro digital, sin trazabilidad y sin forma de gestionar autorizaciones de manera centralizada.</p>
+      <p>Los agentes no tenían herramientas para consultar en tiempo real si un vehículo estaba autorizado. La administración no podía generar informes ni auditar accesos. Cualquier cambio en las autorizaciones requería coordinación manual entre departamentos.</p>
+      <p>El ayuntamiento necesitaba una solución que <b>digitalizara todo el flujo</b>: desde la solicitud de autorización hasta el registro del acceso, pasando por la gestión administrativa y la consulta en campo.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">La solución</div>
+    <div class="proj-text">
+      <p>Sistema completo con tres capas independientes pero integradas. El <b>backend en Spring Boot</b> expone una API REST con autenticación JWT, gestiona la lógica de autorizaciones y registra todos los accesos con trazabilidad completa.</p>
+      <p>El <b>panel web en React 19</b> permite a los gestores municipales administrar vehículos, emitir y revocar autorizaciones y consultar el historial de accesos. La interfaz está disponible en castellano y valenciano.</p>
+      <p>La <b>app Android en Kotlin con Jetpack Compose</b> está diseñada para los agentes en campo: consulta de matrículas en tiempo real y registro de incidencias, con interfaz en valenciano e inglés.</p>
+      <p>El proyecto incluye <b>32+ tests unitarios</b> con JUnit y Mockito, despliegue con Docker y documentación técnica completa.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Stack y detalles</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Java 21</span>
+          <span class="about-tech-tag">Spring Boot</span>
+          <span class="about-tech-tag">React 19</span>
+          <span class="about-tech-tag">Kotlin</span>
+          <span class="about-tech-tag">Jetpack Compose</span>
+          <span class="about-tech-tag">PostgreSQL</span>
+          <span class="about-tech-tag">Docker</span>
+          <span class="about-tech-tag">JWT</span>
+          <span class="about-tech-tag">JUnit</span>
+          <span class="about-tech-tag">Mockito</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">TFG · Nota 9/10</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">32+ unitarios</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">Cedido al ayuntamiento</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Panel web</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>App Android</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gestión de accesos</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>API docs</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+---
+import '../../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calidad Triple A · ArocaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi">sobre mí</a>
+        <a href="/#proyectos">proyectos</a>
+        <a href="/#experiencia">experiencia</a>
+        <a href="/#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="proj-hero">
+  <div class="proj-category">Proyecto freelance · En producción</div>
+  <div class="proj-title">Calidad Triple A</div>
+  <div class="proj-subtitle">E-commerce en producción para cliente real. Gestión de pedidos con generación automática de PDF, etiqueta de envío y código QR por pedido.</div>
+  <div class="proj-links">
+    <a href="https://www.calidad3a.com" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Ver web</a>
+    <a href="https://github.com/ArocaDev/calidad-triple-a" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+  </div>
+</div>
+
+<div class="proj-body">
+  <div class="proj-section">
+    <div class="proj-section-title">El problema</div>
+    <div class="proj-text">
+      <p>El cliente necesitaba una tienda online para vender sus productos, pero las soluciones estándar como Shopify o WooCommerce no cubrían sus necesidades operativas: cada pedido requería generar documentación personalizada para el envío.</p>
+      <p>Además, la tienda tenía que estar integrada con su dominio, tener email transaccional propio y ser gestionable de forma autónoma por el cliente sin conocimientos técnicos.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">La solución</div>
+    <div class="proj-text">
+      <p>E-commerce completo con <b>Next.js 15</b> en el frontend y <b>Sanity CMS</b> como backend de contenido, lo que permite al cliente gestionar productos, precios e imágenes de forma autónoma desde un panel visual.</p>
+      <p>El estado del carrito se gestiona con <b>Zustand</b>. Los emails transaccionales (confirmación de pedido, notificaciones) van a través de <b>Resend</b>. La tienda está desplegada en <b>Vercel</b>.</p>
+      <p>El flujo de pedido genera automáticamente un <b>PDF con los detalles del pedido, etiqueta de envío y código QR</b>, listo para imprimir y adjuntar al paquete.</p>
+      <p>También se gestionó la configuración del dominio, migración de emails y el sitemap dinámico para SEO.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Stack y detalles</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Next.js 15</span>
+          <span class="about-tech-tag">Sanity CMS</span>
+          <span class="about-tech-tag">Zustand</span>
+          <span class="about-tech-tag">Resend</span>
+          <span class="about-tech-tag">Vercel</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – hoy</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En producción</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">calidad3a.com</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Tienda</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de producto</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Carrito</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>PDF de pedido</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+</body>
+</html>

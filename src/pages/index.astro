@@ -1,17 +1,203 @@
 ---
-
+import '../styles/global.css';
 ---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro Rodríguez · Desarrollador Backend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="#sobre-mi">sobre mí</a>
+        <a href="#proyectos">proyectos</a>
+        <a href="#experiencia">experiencia</a>
+        <a href="#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="avail">Disponible para incorporación inmediata</div>
+      <h1 class="h1">Desarrollador<br><em>Backend</em></h1>
+      <div class="sub1">Graduado en Desarrollo de Aplicaciones Multiplataforma</div>
+      <div class="sub2"><i class="ti ti-map-pin" aria-hidden="true"></i>Xàtiva, Valencia</div>
+      <div class="hero-stack">
+        <span class="hero-tag">Java</span>
+        <span class="hero-tag">Spring Boot</span>
+        <span class="hero-tag">Python</span>
+        <span class="hero-tag">FastAPI</span>
+        <span class="hero-tag">PostgreSQL</span>
+      </div>
+      <div class="hero-actions">
+        <div class="social">
+          <a href="https://github.com/ArocaDev" target="_blank"><i class="ti ti-brand-github" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/in/alejandro-rodriguez-calabuig" target="_blank"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <button class="btn-cv"><i class="ti ti-download" aria-hidden="true"></i> Descargar CV</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="photo"><i class="ti ti-user" aria-hidden="true"></i><span>foto</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sobre-mi">
+  <div class="sec-inner">
+    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Sobre mí</span><div class="sec-h-line"></div></div>
+    <div class="about">
+      <div>
+        <div class="about-name">Alejandro Rodríguez Calabuig</div>
+        <div class="about-loc"><i class="ti ti-map-pin" aria-hidden="true"></i>Xàtiva, Valencia</div>
+        <p class="about-p">Descubrí la programación después de haber trabajado en sectores muy distintos. Cuando empecé a trastear con código me enganché, terminé DAM y no he parado desde entonces.</p>
+        <p class="about-p">Me especialicé en <b>backend</b> porque es donde más disfruto: sistemas que funcionan, APIs bien construidas, problemas reales resueltos de forma limpia.</p>
+        <p class="about-p">Me gustan los retos y aprender cada día algo nuevo. Esa curiosidad viene reforzada por años trabajando en entornos muy distintos, donde aprendí a trabajar en equipo, a ser autónomo, a cuidar el detalle y a mantener la calma bajo presión.</p>
+        <p class="about-p">El siguiente paso es realizar el curso de especialización en <b>Recursos y Servicios en la Nube</b>. A futuro, mi objetivo es llegar a ser <b>DevSecOps</b>.</p>
+      </div>
+      <div class="about-right">
+        <div class="about-item"><i class="ti ti-school" aria-hidden="true"></i><div class="about-item-text"><b>Técnico Superior DAM</b>IES Dr. Lluís Simarro · Xàtiva · 2023–2026</div></div>
+        <div class="about-item"><i class="ti ti-briefcase" aria-hidden="true"></i><div class="about-item-text"><b>Prácticas backend</b>Geinfor · ERP empresarial · Feb–Jun 2026</div></div>
+        <div class="about-item"><i class="ti ti-cloud" aria-hidden="true"></i><div class="about-item-text"><b>Próximo: Recursos y Servicios en la Nube</b>IES Dr. Lluís Simarro · Oct 2026</div></div>
+        <div class="about-obj">
+          <div class="obj-labels">
+            <span class="obj-label">Próximo objetivo</span>
+            <div class="obj-sep"></div>
+            <span class="obj-label">Objetivo a futuro</span>
+          </div>
+          <div class="obj-vals">
+            <span class="obj-val">DevOps</span>
+            <span class="obj-val">DevSecOps</span>
+          </div>
+        </div>
+        <div class="about-tech">
+          <div class="about-tech-label"><i class="ti ti-code" aria-hidden="true"></i>Tecnologías</div>
+          <div class="about-tech-tags">
+            <span class="about-tech-tag">Java</span><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">Python</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">React</span><span class="about-tech-tag">Kotlin</span><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MongoDB</span><span class="about-tech-tag">DB2</span><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Linux</span><span class="about-tech-tag">JUnit</span><span class="about-tech-tag">Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="proyectos">
+  <div class="sec-inner">
+    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Proyectos</span><div class="sec-h-line"></div></div>
+    <div class="grid">
+      <a href="/proyectos/apr-xativa" class="card card-feat">
+        <span class="feat-tag">Destacado</span>
+        <div class="preview"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+        <div>
+          <div class="ct">APR Xàtiva</div>
+          <div class="cd">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
+          <div class="tags"><span class="tag t-ac">Académico</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">React 19</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Docker</span><span class="tag t-tech">JWT</span></div>
+        </div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+      <a href="/proyectos/krausen" class="card">
+        <div class="ct">Krausen</div>
+        <div class="cd">Plataforma de recetas de cerveza artesanal con forks, versioning y seguimiento de temperaturas de fermentación.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Next.js</span><span class="tag t-tech">PostgreSQL</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+      <a href="/proyectos/cvmatch-ai" class="card">
+        <div class="ct">CVMatch AI</div>
+        <div class="cd">Herramienta de búsqueda de empleo que analiza ofertas con IA y genera texto adaptado a tu CV.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">PostgreSQL</span><span class="tag t-tech">Groq</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+      <a href="/proyectos/calidad-triple-a" class="card">
+        <div class="ct">Calidad Triple A</div>
+        <div class="cd">E-commerce en producción para cliente real. PDF, etiqueta de envío y QR por pedido.</div>
+        <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+      <a href="/proyectos/voice2task" class="card">
+        <div class="ct">Voice2Task</div>
+        <div class="cd">Bot Telegram que transcribe voz con Whisper y crea tarjetas en Trello automáticamente.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Python</span><span class="tag t-tech">Whisper</span><span class="tag t-tech">Groq</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+      <a href="/proyectos/vulldecor" class="card">
+        <div class="ct">Vulldecor</div>
+        <div class="cd">Web para empresa de reformas local en producción. Formulario WhatsApp/email, SEO local y RGPD.</div>
+        <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">JS</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+      <a href="/proyectos/aroca-dev" class="card">
+        <div class="ct">aroca.dev</div>
+        <div class="cd">Portfolio personal diseñado e implementado desde cero. Desplegado en aroca.dev.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Astro</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Vercel</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experiencia">
+  <div class="sec-inner">
+    <div class="exp-contact">
+      <div>
+        <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Experiencia</span><div class="sec-h-line"></div></div>
+        <div class="exp-col-content">
+          <div class="exp-item">
+            <div class="exp-top">
+              <span class="er">Desarrollador Backend · Prácticas DAM</span>
+              <div class="exp-meta"><span class="eco">Geinfor</span><span class="ed">· Feb – Jun 2026</span></div>
+            </div>
+            <div class="edesc">Desarrollo en ERP empresarial Bushido. Proyecto principal: refuerzo del módulo importador CSV/Excel, análisis funcional, refactorización y mejora de errores. Resolución de incidencias reales en producción, tests unitarios y CI/CD en entorno Scrum.</div>
+            <div class="etags"><span class="tag t-tech">Java 21</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">DB2</span><span class="tag t-tech">MongoDB</span><span class="tag t-tech">JUnit</span><span class="tag t-tech">Mockito</span><span class="tag t-tech">Scrum</span></div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-top">
+              <span class="er">Desarrollo de soluciones web para clientes</span>
+              <div class="exp-meta"><span class="eco">Proyectos profesionales</span><span class="ed">· 2024 – hoy</span></div>
+            </div>
+            <div class="edesc">Vulldecor (web corporativa para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: backend, integraciones, DNS, emails transaccionales y despliegue.</div>
+            <div class="etags"><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span><span class="tag t-tech">Resend</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">JS</span></div>
+          </div>
+        </div>
+      </div>
+      <div id="contacto">
+        <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Contacto</span><div class="sec-h-line"></div></div>
+        <div class="contact-content">
+          <div class="ch">¿Buscas un desarrollador <em>backend</em>?</div>
+          <div class="ch-mid">Tienes un reto técnico, cuéntamelo.</div>
+          <div class="ch-small">Te respondo en menos de 24h.</div>
+          <div class="clinks">
+            <a class="clink" href="mailto:aleexrc.xtv@gmail.com"><i class="ti ti-mail" aria-hidden="true"></i>aleexrc.xtv@gmail.com</a>
+            <a class="clink" href="tel:+34691166308"><i class="ti ti-phone" aria-hidden="true"></i>+34 691 166 308</a>
+            <a class="clink" href="https://github.com/ArocaDev" target="_blank"><i class="ti ti-brand-github" aria-hidden="true"></i>github.com/ArocaDev</a>
+            <a class="clink" href="https://linkedin.com/in/alejandro-rodriguez-calabuig" target="_blank"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>linkedin.com/in/alejandro-rodriguez-calabuig</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+
+</body>
 </html>

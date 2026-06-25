@@ -1,0 +1,102 @@
+---
+import '../../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVMatch AI · ArocaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi">sobre mí</a>
+        <a href="/#proyectos">proyectos</a>
+        <a href="/#experiencia">experiencia</a>
+        <a href="/#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="proj-hero">
+  <div class="proj-category">Proyecto personal</div>
+  <div class="proj-title">CVMatch AI</div>
+  <div class="proj-subtitle">Herramienta personal de búsqueda de empleo que agrega ofertas, las analiza con IA y genera texto adaptado a tu CV para cada candidatura.</div>
+  <div class="proj-links">
+    <a href="https://github.com/ArocaDev/cvmatch-ai" target="_blank" class="proj-link proj-link-primary"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+  </div>
+</div>
+
+<div class="proj-body">
+  <div class="proj-section">
+    <div class="proj-section-title">El problema</div>
+    <div class="proj-text">
+      <p>Buscar trabajo implica revisar múltiples plataformas, analizar cada oferta manualmente y adaptar el CV o la carta de presentación para cada candidatura. Es un proceso repetitivo, lento y fácil de desorganizar.</p>
+      <p>No existe una herramienta que centralice todo el proceso: <b>agregar ofertas, analizar el encaje con tu perfil y generar texto adaptado</b>, manteniendo además el estado de cada candidatura.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">La solución</div>
+    <div class="proj-text">
+      <p>Aplicación web construida con <b>Django y PostgreSQL</b> que integra la API de Adzuna para agregar ofertas de empleo relevantes. Cada oferta se puede analizar con <b>Groq AI</b>, que compara los requisitos con tu CV y genera texto adaptado para la candidatura.</p>
+      <p>Incluye un sistema de seguimiento de estado por oferta (pendiente, aplicado, descartado) y una interfaz con gradiente azul pensada para uso diario durante la búsqueda de empleo.</p>
+      <p>Construida directamente para mi propia búsqueda de trabajo, con la motivación adicional de aprender Django en un proyecto real.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Stack y detalles</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Django</span>
+          <span class="about-tech-tag">Python</span>
+          <span class="about-tech-tag">PostgreSQL</span>
+          <span class="about-tech-tag">Groq AI</span>
+          <span class="about-tech-tag">Adzuna API</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Deploy</span><span class="sidebar-row-val">Railway (próximo)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Lista de ofertas</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Análisis con IA</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Texto generado</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Seguimiento</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+</body>
+</html>
