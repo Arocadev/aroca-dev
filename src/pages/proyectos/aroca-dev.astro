@@ -1,0 +1,101 @@
+---
+import '../../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aroca.dev · ArocaDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi">sobre mí</a>
+        <a href="/#proyectos">proyectos</a>
+        <a href="/#experiencia">experiencia</a>
+        <a href="/#contacto">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-active">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-inactive">EN</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="proj-hero">
+  <div class="proj-category">Proyecto personal · En producción</div>
+  <div class="proj-title">aroca.dev</div>
+  <div class="proj-subtitle">Portfolio personal diseñado e implementado desde cero. Construido con Astro y desplegado en aroca.dev.</div>
+  <div class="proj-links">
+    <a href="https://aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Ver web</a>
+    <a href="https://github.com/Arocadev/aroca-dev" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+  </div>
+</div>
+
+<div class="proj-body">
+  <div class="proj-section">
+    <div class="proj-section-title">El problema</div>
+    <div class="proj-text">
+      <p>Necesitaba un sitio donde reunir todo lo que he ido construyendo. CVs y PDFs se quedan cortos: no puedes ver el código, no puedes entender el contexto de cada proyecto ni qué problema resolvía.</p>
+      <p>Hoy en día tener un portfolio web es casi obligatorio si quieres que tu trabajo hable por ti. Y si vas a hacerlo, <b>mejor hacerlo tú mismo</b> que usar una plantilla.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">La solución</div>
+    <div class="proj-text">
+      <p>Diseñado desde cero en HTML y CSS puro primero, para tener control total sobre cada decisión visual antes de implementarlo. Construido con <b>Astro</b> por su rendimiento y su modelo de cero JavaScript por defecto.</p>
+      <p>Sistema de color propio con fondo marino <b>#0d1117</b> e índigo <b>#818cf8</b> como acento. Tipografía Space Grotesk para títulos e Inter para texto. One-page scroll con nav sticky y páginas individuales por proyecto.</p>
+      <p>Desplegado en <b>Vercel</b> con dominio propio aroca.dev.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Stack y detalles</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Astro</span>
+          <span class="about-tech-tag">CSS</span>
+          <span class="about-tech-tag">Vercel</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En producción</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">aroca.dev</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Hero</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Proyectos</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Sobre mí</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Contacto</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+</footer>
+</body>
+</html>
