@@ -33,33 +33,89 @@ import '../../styles/global.css';
 </nav>
 
 <div class="proj-hero">
-  <div class="proj-category">Proyecto académico · TFG</div>
+  <div class="proj-category">Proyecto académico · TFG · Backend + Web + Android</div>
   <div class="proj-title">APR Xàtiva</div>
-  <div class="proj-subtitle">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
+  <div class="proj-subtitle">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Cedido al Ayuntamiento de Xàtiva como base técnica para la futura implantación municipal.</div>
   <div class="proj-links">
     <a href="https://github.com/ArocaDev/apr-xativa-backend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Backend</a>
     <a href="https://github.com/ArocaDev/apr-xativa-web" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Web</a>
     <a href="https://github.com/ArocaDev/apr-xativa-android" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Android</a>
+    <a href="https://apr.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo</a>
   </div>
 </div>
 
 <div class="proj-body">
+
+  <div style="background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.2);border-radius:8px;padding:16px 20px;margin-bottom:48px">
+    <div class="proj-text">
+      <p>El proyecto fue presentado ante el Ayuntamiento de Xàtiva y <b>seleccionado como base técnica para la futura implantación real del sistema APR</b> en el nucli antic de la ciudad. TFG del CFGS DAM · Nota 10/10.</p>
+    </div>
+  </div>
+
   <div class="proj-section">
     <div class="proj-section-title">El problema</div>
     <div class="proj-text">
-      <p>El casco histórico de Xàtiva tiene acceso restringido a vehículos no autorizados, pero el control se gestionaba de forma completamente manual: sin registro digital, sin trazabilidad y sin forma de gestionar autorizaciones de manera centralizada.</p>
-      <p>Los agentes no tenían herramientas para consultar en tiempo real si un vehículo estaba autorizado. La administración no podía generar informes ni auditar accesos. Cualquier cambio en las autorizaciones requería coordinación manual entre departamentos.</p>
-      <p>El ayuntamiento necesitaba una solución que <b>digitalizara todo el flujo</b>: desde la solicitud de autorización hasta el registro del acceso, pasando por la gestión administrativa y la consulta en campo.</p>
+      <p>El casco histórico de Xàtiva tiene acceso restringido a vehículos no autorizados, pero el control se gestionaba de forma completamente manual: sin registro digital, sin trazabilidad y sin herramientas para los agentes en campo.</p>
+      <p>Los agentes no podían consultar en tiempo real si un vehículo estaba autorizado. La administración no podía auditar accesos ni generar informes. Cualquier cambio en las autorizaciones requería coordinación manual entre departamentos.</p>
+      <p>El ayuntamiento necesitaba digitalizar todo el flujo: <b>desde la solicitud de autorización hasta el registro del acceso</b>, con gestión centralizada y trazabilidad completa.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title">La solución</div>
     <div class="proj-text">
-      <p>Sistema completo con tres capas independientes pero integradas. El <b>backend en Spring Boot</b> expone una API REST con autenticación JWT, gestiona la lógica de autorizaciones y registra todos los accesos con trazabilidad completa.</p>
-      <p>El <b>panel web en React 19</b> permite a los gestores municipales administrar vehículos, emitir y revocar autorizaciones y consultar el historial de accesos. La interfaz está disponible en castellano y valenciano.</p>
-      <p>La <b>app Android en Kotlin con Jetpack Compose</b> está diseñada para los agentes en campo: consulta de matrículas en tiempo real y registro de incidencias, con interfaz en valenciano e inglés.</p>
-      <p>El proyecto incluye <b>32+ tests unitarios</b> con JUnit y Mockito, despliegue con Docker y documentación técnica completa.</p>
+      <p>Sistema completo con tres capas independientes. El <b>backend en Java 21 + Spring Boot</b> expone una API REST con autenticación JWT stateless (HMAC-SHA384, tokens de 15 minutos), refresh tokens persistentes con revocación en logout, rate limiting con Bucket4j y auditoría asíncrona de todas las acciones con <code>@Async</code>.</p>
+      <p>El <b>panel web en React 19 + Vite + Tailwind CSS</b> permite a los gestores municipales administrar usuarios, aprobar solicitudes, consultar vehículos, derechos y el log de auditoría paginado. Incluye un <b>simulador de cámaras APR</b> — una terminal estilo consola con logs en tiempo real que simula el paso de vehículos por los puntos de control. La landing pública tiene un mapa interactivo con las zonas APR usando Leaflet y OpenStreetMap.</p>
+      <p>La <b>app Android en Kotlin + Jetpack Compose</b> está diseñada para los residentes: gestión de vehículos, solicitud de autorización con subida de documentación, derechos de acceso permanentes y puntuales para invitados, y polling automático del estado de solicitud cada 10 segundos. Incluye refresh token automático sin re-login y soporte trilingüe Valencià / Castellano / English.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Detalles técnicos destacados</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="about-item">
+        <i class="ti ti-shield-lock" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Refresh token con revocación</b>
+          JWT de 15 minutos + refresh token de 30 días persistente en base de datos. Al hacer logout, el refresh token se revoca en el servidor. El panel web gestiona colas de peticiones paralelas durante la renovación automática para no perder llamadas.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-speedboat" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Rate limiting con Bucket4j</b>
+          10 intentos por minuto en todos los endpoints de autenticación. Protección contra fuerza bruta sin depender de infraestructura externa.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-clipboard-list" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Auditoría asíncrona con @Async</b>
+          Todas las acciones relevantes (login, aprobación de solicitudes, alta de vehículos, creación de derechos...) se registran de forma asíncrona para no añadir latencia a las respuestas. Log paginado y filtrable desde el panel web.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-camera" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Simulador de cámaras APR</b>
+          Endpoint que simula el paso de vehículos por los puntos de control: 60% de probabilidad de matrícula con derecho activo, 40% aleatoria sin acceso. Visualizado en el panel como una terminal con logs en tiempo real.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-calendar-event" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Tareas programadas</b>
+          Desactivación automática nocturna de derechos expirados y eliminación de usuarios sin documentación tras 14 días, sin intervención manual.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-map-pin" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Mapa interactivo con Leaflet</b>
+          La landing pública muestra las zonas APR del nucli antic marcadas en colores sobre OpenStreetMap, sin depender de la API de Google Maps.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -67,26 +123,46 @@ import '../../styles/global.css';
     <div class="proj-section-title">Stack y detalles</div>
     <div class="meta-grid">
       <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-label">Backend</div>
         <div class="sidebar-stack">
           <span class="about-tech-tag">Java 21</span>
-          <span class="about-tech-tag">Spring Boot</span>
-          <span class="about-tech-tag">React 19</span>
-          <span class="about-tech-tag">Kotlin</span>
-          <span class="about-tech-tag">Jetpack Compose</span>
-          <span class="about-tech-tag">PostgreSQL</span>
-          <span class="about-tech-tag">Docker</span>
+          <span class="about-tech-tag">Spring Boot 4</span>
+          <span class="about-tech-tag">Spring Security 7</span>
+          <span class="about-tech-tag">MySQL 8</span>
+          <span class="about-tech-tag">JPA + Hibernate</span>
+          <span class="about-tech-tag">Bucket4j</span>
           <span class="about-tech-tag">JWT</span>
-          <span class="about-tech-tag">JUnit</span>
-          <span class="about-tech-tag">Mockito</span>
+          <span class="about-tech-tag">Docker</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Web</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">React 19</span>
+          <span class="about-tech-tag">Vite</span>
+          <span class="about-tech-tag">Tailwind CSS 4</span>
+          <span class="about-tech-tag">Leaflet</span>
+          <span class="about-tech-tag">Axios</span>
+          <span class="about-tech-tag">React Router v6</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Android</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Kotlin 2.0</span>
+          <span class="about-tech-tag">Jetpack Compose</span>
+          <span class="about-tech-tag">MVVM + StateFlow</span>
+          <span class="about-tech-tag">Retrofit</span>
+          <span class="about-tech-tag">DataStore</span>
         </div>
       </div>
       <div class="sidebar-card">
         <div class="sidebar-label">Detalles</div>
         <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">TFG · Nota 9/10</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">TFG · Nota 10/10</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2026</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">32+ unitarios</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">32 unitarios</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Idiomas</span><span class="sidebar-row-val">ES · VA · EN</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">Cedido al ayuntamiento</span></div>
         </div>
       </div>
@@ -94,14 +170,43 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Panel web</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>App Android</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gestión de accesos</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>API docs</span></div>
+    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-text">
+      <p>APR Xàtiva fue el primer proyecto donde tuve que pensar en seguridad de verdad: no solo autenticación básica, sino rate limiting, revocación de tokens, auditoría de acciones y validación de formatos de matrícula y DNI. Aprendí que la seguridad no es una capa que se añade al final — hay que diseñarla desde el principio.</p>
+      <p>También fue el proyecto más grande que he coordinado solo: tres repositorios, tres tecnologías distintas y un contrato de API que tenían que entender todos. Aprendí a valorar la documentación de endpoints y a definir los DTOs antes de empezar a implementar.</p>
+      <p>El simulador de cámaras fue una decisión que surgió durante el desarrollo para poder demostrar el sistema sin infraestructura real. Me enseñó que a veces la forma de presentar un proyecto es tan importante como el proyecto en sí.</p>
     </div>
   </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul class="proj-list"><li>Usaría PostgreSQL en lugar de MySQL — mejor soporte para JSON, CTEs y funcionalidades avanzadas que MySQL no tiene o implementa peor.</li><li>Añadiría WebSockets para las notificaciones de cambio de estado en la app Android, en lugar del polling cada 10 segundos.</li><li>Separaría la landing pública del panel de administración en dos proyectos distintos — tienen audiencias, ciclos de despliegue y requisitos de seguridad completamente diferentes.</li><li>Implementaría CI/CD con GitHub Actions desde el principio para automatizar los tests y el despliegue.</li></ul>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas — Panel web</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Dashboard</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gestión de solicitudes</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Simulador de cámaras</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Log de auditoría</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas — App Android</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Login</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Mis vehículos</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Solicitud de autorización</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Derechos de acceso</span></div>
+    </div>
+  </div>
+
 </div>
 
 <footer>

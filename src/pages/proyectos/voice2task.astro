@@ -33,28 +33,72 @@ import '../../styles/global.css';
 </nav>
 
 <div class="proj-hero">
-  <div class="proj-category">Proyecto personal</div>
+  <div class="proj-category">Proyecto personal · Android + Backend + Web</div>
   <div class="proj-title">Voice2Task</div>
-  <div class="proj-subtitle">Bot de Telegram que transcribe mensajes de voz con Whisper, los interpreta con IA y crea tarjetas en Trello automáticamente.</div>
+  <div class="proj-subtitle">App Android que convierte notas de voz en tareas estructuradas con IA. Hablas, la IA entiende, y la tarea aparece en Voice2Task, Trello o Notion — donde quieras.</div>
   <div class="proj-links">
-    <a href="https://github.com/ArocaDev/voice2task" target="_blank" class="proj-link proj-link-primary"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://github.com/ArocaDev/voice2task-android" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Android</a>
+    <a href="https://github.com/ArocaDev/voice2task" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Backend</a>
+    <a href="https://github.com/ArocaDev/voice2task-web" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Landing</a>
+    <a href="https://github.com/ArocaDev/voice2task-android/releases" target="_blank" class="proj-link proj-link-web"><i class="ti ti-device-mobile-down"></i>Descargar APK</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo</a>
   </div>
 </div>
 
 <div class="proj-body">
+
+  <div class="proj-section">
+    <div class="proj-section-title">El origen</div>
+    <div class="proj-text">
+      <p>Todo empezó con <b>bot2trello</b>, un bot de Telegram personal: mandabas un audio y aparecía una tarjeta en Trello. Funcionaba, pero dependía de Telegram como interfaz y no tenía gestión propia de tareas.</p>
+      <p>La idea era buena. El problema era que podía ser mucho más: una app propia, con interfaz diseñada para esto, integraciones múltiples y gestión de tareas integrada. Así nació Voice2Task.</p>
+    </div>
+  </div>
+
   <div class="proj-section">
     <div class="proj-section-title">El problema</div>
     <div class="proj-text">
-      <p>Cuando tienes una idea o tarea en mente mientras estás ocupado, el flujo habitual es: parar lo que haces, abrir Trello, crear la tarjeta, escribir el título y la descripción. Es suficiente fricción como para que muchas ideas se pierdan.</p>
-      <p>Lo ideal sería poder <b>mandar un audio por Telegram</b> con lo que tienes en mente y que la tarjeta aparezca sola en el tablero.</p>
+      <p>Capturar una idea o tarea mientras estás ocupado tiene demasiada fricción: parar, desbloquear el móvil, abrir la app, escribir. Suficiente para que muchas ideas se pierdan antes de llegar a ningún lado.</p>
+      <p>Lo ideal es poder <b>decirlo en voz alta</b> y que aparezca solo, estructurado y en el sitio correcto, sin tener que tocarlo más.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title">La solución</div>
     <div class="proj-text">
-      <p>Bot de Telegram en <b>Python</b> que recibe mensajes de voz, los transcribe con <b>Whisper</b> de OpenAI y pasa el texto a <b>Groq AI</b> (modelo qwen3) para que interprete la intención y extraiga título, descripción y lista de destino.</p>
-      <p>Con esa información, crea automáticamente la tarjeta en <b>Trello</b> a través de su API. Todo el flujo tarda menos de 5 segundos desde que mandas el audio hasta que aparece la tarjeta.</p>
+      <p>Grabas una nota de voz en la app Android. El audio sube al backend, donde <b>Groq Whisper Large V3 Turbo</b> lo transcribe y un segundo modelo extrae título, descripción, fecha límite y prioridad de forma estructurada. La tarea te aparece para revisar antes de guardar — nunca se guarda nada sin confirmación.</p>
+      <p>Desde ahí eliges dónde guardarla: en la propia app, en <b>Trello</b>, en <b>Notion</b>, o en los tres a la vez. Las integraciones se configuran desde los ajustes en un flujo de tres pasos.</p>
+      <p>La app tiene gestión completa de tareas y listas, filtros por estado y prioridad, búsqueda por texto, <b>calendario mensual</b> con tareas por fecha, tab de importantes y soporte bilingüe español/inglés.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Arquitectura</div>
+    <div class="proj-text" style="margin-bottom:16px">
+      <p>Tres componentes independientes que trabajan juntos:</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="about-item">
+        <i class="ti ti-device-mobile" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>App Android — Kotlin + Jetpack Compose</b>
+          MVVM con StateFlow, Retrofit para comunicación con el backend, DataStore para persistencia local de tokens e integraciones, MediaRecorder para captura de audio en OGG/Opus.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-server" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Backend — FastAPI + PostgreSQL</b>
+          API REST con autenticación JWT, BCrypt, SQLAlchemy 2.0, Alembic para migraciones, rate limiting con SlowAPI y 93 tests (28 unitarios de LLM service, 22 de schemas, 43 de integración). Documentación automática en /docs.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-world" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Landing web — Astro</b>
+          Página pública con hero animado, descripción de funcionalidades, integraciones, FAQ y enlace de descarga del APK. Bilingüe ES/EN con cambio dinámico sin recarga.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -62,34 +106,90 @@ import '../../styles/global.css';
     <div class="proj-section-title">Stack y detalles</div>
     <div class="meta-grid">
       <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-label">Android</div>
         <div class="sidebar-stack">
-          <span class="about-tech-tag">Python</span>
-          <span class="about-tech-tag">Whisper</span>
-          <span class="about-tech-tag">Groq AI</span>
-          <span class="about-tech-tag">Telegram API</span>
-          <span class="about-tech-tag">Trello API</span>
+          <span class="about-tech-tag">Kotlin 2.0</span>
+          <span class="about-tech-tag">Jetpack Compose</span>
+          <span class="about-tech-tag">MVVM</span>
+          <span class="about-tech-tag">Retrofit</span>
+          <span class="about-tech-tag">DataStore</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Backend</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">FastAPI</span>
+          <span class="about-tech-tag">Python 3.11</span>
+          <span class="about-tech-tag">PostgreSQL 16</span>
+          <span class="about-tech-tag">SQLAlchemy</span>
+          <span class="about-tech-tag">Groq Whisper</span>
+          <span class="about-tech-tag">Docker</span>
         </div>
       </div>
       <div class="sidebar-card">
         <div class="sidebar-label">Detalles</div>
         <div class="sidebar-detail">
           <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">Funcional</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Deploy</span><span class="sidebar-row-val">Pendiente</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">93 (unitarios + integración)</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Deploy</span><span class="sidebar-row-val">Railway (próximo)</span></div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Integraciones</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Trello API</span>
+          <span class="about-tech-tag">Notion API</span>
+          <span class="about-tech-tag">Groq Whisper</span>
         </div>
       </div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Chat Telegram</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Tarjeta creada en Trello</span></div>
+    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-text">
+      <p>Primer proyecto donde coordiné tres repositorios independientes con contratos de API entre ellos. Aprendí a diseñar endpoints pensando en el cliente Android, no solo en lo que era fácil de implementar en el backend.</p>
+      <p>También fue el primer proyecto serio con Kotlin y Jetpack Compose. El modelo mental de Compose — UI como función del estado — es diferente al desarrollo web y requiere pensar de otra forma cómo fluye la información.</p>
+      <p>El flujo de confirmación de tarea antes de guardar fue una decisión de producto que aprendí a defender: la IA no es perfecta y el usuario tiene que poder corregir antes de que algo se guarde en sus herramientas.</p>
     </div>
   </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría procesamiento asíncrono con Celery + Redis para el audio, en lugar de procesarlo síncronamente en el endpoint.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>En Android usaría Hilt para inyección de dependencias desde el principio en lugar de la gestión manual actual.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Definiría el contrato de API con OpenAPI antes de empezar a desarrollar los dos lados, no en paralelo.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Implementaría WebSockets para sincronización en tiempo real en lugar de polling.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas — App Android</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Home — listas</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Grabación de voz</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Confirmación de tarea</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Calendario</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas — Landing web</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Hero</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Funcionalidades</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Integraciones</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>FAQ</span></div>
+    </div>
+  </div>
+
 </div>
 
 <footer>

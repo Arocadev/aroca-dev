@@ -33,31 +33,68 @@ import '../../styles/global.css';
 </nav>
 
 <div class="proj-hero">
-  <div class="proj-category">Proyecto personal</div>
+  <div class="proj-category">Proyecto personal · Backend + Frontend</div>
   <div class="proj-title">Krausen</div>
-  <div class="proj-subtitle">Plataforma comunitaria para gestionar y compartir recetas de cerveza artesanal. Soporta forks de recetas, versioning, comentarios, notificaciones, ranking mensual/anual/global, seguimiento de temperaturas de fermentación y multiidioma (ES / EN / DE).</div>
+  <div class="proj-subtitle">Plataforma comunitaria para compartir y versionar recetas de cerveza artesanal. Forks de recetas con árbol de versiones, seguimiento de fermentación, ranking, notificaciones y multiidioma ES / EN / DE.</div>
   <div class="proj-links">
     <a href="https://github.com/ArocaDev/krausen-backend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Backend</a>
     <a href="https://github.com/ArocaDev/krausen-frontend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Frontend</a>
+    <a href="https://krausen.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo</a>
   </div>
 </div>
 
 <div class="proj-body">
+
   <div class="proj-section">
     <div class="proj-section-title">El problema</div>
     <div class="proj-text">
-      <p>Los cerveceros caseros no tienen una herramienta pensada para gestionar sus recetas de forma seria: poder versionar cambios, hacer forks de recetas de otros, o llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo.</p>
-      <p>Las soluciones existentes son o demasiado simples (hojas de cálculo) o demasiado cerradas. No hay nada que combine la <b>gestión de recetas con trazabilidad y colaboración</b>.</p>
+      <p>Los cerveceros caseros no tienen una herramienta pensada para gestionar recetas de forma seria. Anotar ingredientes en una hoja de cálculo funciona, pero no permite versionar cambios, hacer forks de recetas de otros, ni llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo.</p>
+      <p>Tampoco hay comunidad: no puedes descubrir recetas de otros, comentarlas, mejorarlas o construir sobre ellas. Krausen nació de las ganas de construir algo con <b>versioning real</b> para un dominio donde no existía.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title">La solución</div>
     <div class="proj-text">
-      <p>Plataforma web con <b>backend en FastAPI</b> y <b>frontend en Next.js</b>. Las recetas tienen versioning completo: cada modificación genera una nueva versión y se puede hacer fork de cualquier receta pública, igual que en GitHub.</p>
-      <p>El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en gráficas, facilitando el análisis y la reproducción de resultados.</p>
-      <p>Incluye sistema de comentarios, notificaciones en tiempo real, ranking con tres períodos (mensual, anual y global), perfiles públicos de usuario y soporte multiidioma en español, inglés y alemán.</p>
-      <p>Proyecto personal nacido del interés propio y de un amigo por la cerveza artesanal, con ganas de construir algo con versioning real en lugar de una simple lista de recetas.</p>
+      <p>Plataforma fullstack con <b>backend en FastAPI + PostgreSQL</b> y <b>frontend en Next.js 15 con TypeScript y Tailwind CSS 4</b>. Las recetas tienen versioning completo: puedes hacer fork de cualquier receta pública y el árbol de versiones se genera con una <b>CTE recursiva en PostgreSQL</b>, igual que un árbol de commits en Git.</p>
+      <p>El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en una gráfica de líneas con <b>Recharts</b>. La edición de una receta está bloqueada si ya tiene forks derivados — para no romper la trazabilidad.</p>
+      <p>Incluye sistema de <b>me gustas</b> con bloqueo de autovaloración y notificación automática al autor, <b>comentarios</b> por receta, <b>ranking</b> mensual/anual/global por me gustas, <b>notificaciones</b> con badge en navbar y <b>perfiles públicos</b> de usuario con avatares Dicebear generados por username.</p>
+      <p>El frontend tiene skeleton loading animado, toasts de error centralizados, protección de rutas privadas y soporte completo en español, inglés y alemán con <b>next-intl</b> y cookie persistente.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Detalles técnicos destacados</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="about-item">
+        <i class="ti ti-git-branch" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>CTE recursiva para el árbol de forks</b>
+          El árbol de versiones de una receta se construye con una Common Table Expression recursiva en PostgreSQL, evitando múltiples queries y resolviendo el problema N+1 de raíz.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-shield" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Edición controlada</b>
+          Una receta solo es editable si no tiene forks derivados. Si alguien ha hecho fork de tu receta, no puedes modificar el original — la trazabilidad del árbol queda garantizada.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-seedling" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>47 ingredientes precargados</b>
+          El catálogo inicial incluye 12 maltas, 12 lúpulos, 7 levaduras y 16 adjuntos (café, cacao, miel, vainilla, frambuesa...) cargados con un seed script al arrancar.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="ti ti-mail" aria-hidden="true"></i>
+        <div class="about-item-text">
+          <b>Recuperación de contraseña por email</b>
+          Flujo completo con tokens de reset con expiración, emails transaccionales vía Resend y página de restablecimiento de contraseña.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -65,15 +102,27 @@ import '../../styles/global.css';
     <div class="proj-section-title">Stack y detalles</div>
     <div class="meta-grid">
       <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
+        <div class="sidebar-label">Backend</div>
         <div class="sidebar-stack">
           <span class="about-tech-tag">FastAPI</span>
-          <span class="about-tech-tag">Python</span>
-          <span class="about-tech-tag">Next.js</span>
-          <span class="about-tech-tag">PostgreSQL</span>
-          <span class="about-tech-tag">next-intl</span>
+          <span class="about-tech-tag">Python 3.14</span>
+          <span class="about-tech-tag">PostgreSQL 16</span>
+          <span class="about-tech-tag">SQLAlchemy 2.0</span>
+          <span class="about-tech-tag">Alembic</span>
+          <span class="about-tech-tag">Pydantic v2</span>
           <span class="about-tech-tag">Resend</span>
           <span class="about-tech-tag">Docker</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Frontend</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Next.js 15</span>
+          <span class="about-tech-tag">TypeScript</span>
+          <span class="about-tech-tag">Tailwind CSS 4</span>
+          <span class="about-tech-tag">next-intl</span>
+          <span class="about-tech-tag">Recharts</span>
+          <span class="about-tech-tag">Axios</span>
         </div>
       </div>
       <div class="sidebar-card">
@@ -81,21 +130,51 @@ import '../../styles/global.css';
         <div class="sidebar-detail">
           <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Idiomas</span><span class="sidebar-row-val">ES · EN · DE</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Demo</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label">Usuario</span><span class="sidebar-row-val">admin@krausen.beer</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Contraseña</span><span class="sidebar-row-val">admin1234</span></div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Lista de recetas</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de receta</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gráfica fermentación</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Fork de receta</span></div>
+    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-text">
+      <p>Krausen fue el proyecto donde más profundicé en diseño de base de datos: modelar relaciones recursivas (un fork es una receta que referencia a otra receta), garantizar integridad con constraints y optimizar queries complejas con CTEs.</p>
+      <p>En el frontend, fue mi primera experiencia seria con TypeScript en un proyecto de tamaño real. Aprendí a valorar el tipado estricto cuando el proyecto crece — los errores que aparecen en compilación son errores que no aparecen en producción.</p>
+      <p>También fue donde más pensé en UX: el flujo de forks, la edición bloqueada, el árbol visual de versiones — todas decisiones que afectan directamente a cómo el usuario entiende el producto.</p>
     </div>
   </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Movería los tokens JWT a cookies httpOnly desde el principio para eliminar el flash de autenticación en el frontend.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests en el backend — en un proyecto con lógica de forks y rankings es donde más falta hacen.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Usaría React Query en el frontend para gestión de caché y estados de carga en lugar de manejar todo con useEffect.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Definiría el contrato de API con OpenAPI antes de empezar a construir el frontend, no en paralelo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Capturas</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Explorar recetas</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de receta</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Árbol de versiones</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gráfica de fermentación</span></div>
+    </div>
+  </div>
+
 </div>
 
 <footer>

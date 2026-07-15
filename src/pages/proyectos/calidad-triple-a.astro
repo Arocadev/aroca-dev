@@ -35,29 +35,32 @@ import '../../styles/global.css';
 <div class="proj-hero">
   <div class="proj-category">Proyecto freelance · En producción</div>
   <div class="proj-title">Calidad Triple A</div>
-  <div class="proj-subtitle">E-commerce en producción para cliente real. Gestión de pedidos con generación automática de PDF, etiqueta de envío y código QR por pedido.</div>
+  <div class="proj-subtitle">E-commerce completo para tienda de moda urbana y streetwear. Catálogo gestionado por CMS, checkout con cálculo de envíos, confirmación por WhatsApp y automatización de emails con PDF y QR adjuntos.</div>
   <div class="proj-links">
     <a href="https://www.calidad3a.com" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Ver web</a>
-    <a href="https://github.com/ArocaDev/calidad-triple-a" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://github.com/ArocaDev/calidad-triple-a" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo en vídeo</a>
   </div>
 </div>
 
 <div class="proj-body">
+
   <div class="proj-section">
     <div class="proj-section-title">El problema</div>
     <div class="proj-text">
-      <p>El cliente necesitaba una tienda online para vender sus productos, pero las soluciones estándar como Shopify o WooCommerce no cubrían sus necesidades operativas: cada pedido requería generar documentación personalizada para el envío.</p>
-      <p>Además, la tienda tenía que estar integrada con su dominio, tener email transaccional propio y ser gestionable de forma autónoma por el cliente sin conocimientos técnicos.</p>
+      <p>El cliente necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con <b>pago por Bizum o PayPal gestionado manualmente</b>, y cada pedido requería generar documentación personalizada para el envío.</p>
+      <p>Además, el cliente tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title">La solución</div>
     <div class="proj-text">
-      <p>E-commerce completo con <b>Next.js 15</b> en el frontend y <b>Sanity CMS</b> como backend de contenido, lo que permite al cliente gestionar productos, precios e imágenes de forma autónoma desde un panel visual.</p>
-      <p>El estado del carrito se gestiona con <b>Zustand</b>. Los emails transaccionales (confirmación de pedido, notificaciones) van a través de <b>Resend</b>. La tienda está desplegada en <b>Vercel</b>.</p>
-      <p>El flujo de pedido genera automáticamente un <b>PDF con los detalles del pedido, etiqueta de envío y código QR</b>, listo para imprimir y adjuntar al paquete.</p>
-      <p>También se gestionó la configuración del dominio, migración de emails y el sitemap dinámico para SEO.</p>
+      <p>E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. El cliente gestiona el catálogo desde Sanity Studio sin tocar código.</p>
+      <p>El catálogo tiene tres categorías (Ropa, Complementos, Electrónica) con filtros avanzados por subcategoría, marca, talla, género y precio. El carrito persiste con <b>Zustand</b> y el checkout calcula automáticamente los gastos de envío por país, con envío gratis en España a partir de 60€.</p>
+      <p>El flujo de pedido confirma por <b>WhatsApp</b> con mensaje preformateado y dispara un email automático al vendedor vía <b>Resend</b> con tres adjuntos generados en servidor: PDF del pedido, PDF de datos de envío y código QR. El cliente también recibe un PDF descargable generado con <b>jsPDF</b>.</p>
+      <p>Se gestionó además la configuración completa de DNS, dominio en Namecheap, verificación de dominio en Resend, Google Search Console y Vercel Analytics.</p>
+      <p>El diseño visual — logotipo, paleta e identidad de marca — fue definido por el cliente. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto.</p>
     </div>
   </div>
 
@@ -68,9 +71,11 @@ import '../../styles/global.css';
         <div class="sidebar-label">Stack técnico</div>
         <div class="sidebar-stack">
           <span class="about-tech-tag">Next.js 15</span>
+          <span class="about-tech-tag">TypeScript</span>
           <span class="about-tech-tag">Sanity CMS</span>
           <span class="about-tech-tag">Zustand</span>
           <span class="about-tech-tag">Resend</span>
+          <span class="about-tech-tag">jsPDF</span>
           <span class="about-tech-tag">Vercel</span>
         </div>
       </div>
@@ -87,14 +92,34 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
+    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-text">
+      <p>Este fue el proyecto donde más trabajé la comunicación con un cliente real: traducir necesidades de negocio a decisiones técnicas, justificar por qué JAMstack con CMS headless era mejor opción que WordPress para este caso, y gestionar entregas y ajustes en producción.</p>
+      <p>También aprendí a trabajar con generación de documentos en servidor (PDFs con datos dinámicos y QR) y a configurar todo el stack de emails transaccionales desde cero — DNS, SPF, DKIM, verificación de dominio — para que los emails lleguen a bandeja de entrada.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría una pasarela de pago real (Stripe) desde el principio en lugar del flujo manual con Bizum/PayPal.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Implementaría un panel de gestión de pedidos para el cliente en lugar de depender del email como único registro.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests de integración para el flujo de checkout y generación de documentos, que son las partes más críticas del negocio.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="proj-section">
     <div class="proj-section-title">Capturas</div>
     <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Tienda</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de producto</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Carrito</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Catálogo</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Ficha de producto</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Carrito y checkout</span></div>
       <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>PDF de pedido</span></div>
     </div>
   </div>
+
 </div>
 
 <footer>

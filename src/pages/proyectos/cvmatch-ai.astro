@@ -33,29 +33,58 @@ import '../../styles/global.css';
 </nav>
 
 <div class="proj-hero">
-  <div class="proj-category">Proyecto personal</div>
+  <div class="proj-category">Proyecto personal · En desarrollo</div>
   <div class="proj-title">CVMatch AI</div>
-  <div class="proj-subtitle">Herramienta personal de búsqueda de empleo que agrega ofertas, las analiza con IA y genera texto adaptado a tu CV para cada candidatura.</div>
+  <div class="proj-subtitle">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza la compatibilidad con tu CV y genera un CV adaptado en PDF profesional para cada candidatura.</div>
   <div class="proj-links">
-    <a href="https://github.com/ArocaDev/cvmatch-ai" target="_blank" class="proj-link proj-link-primary"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://github.com/ArocaDev/cvmatch-ai" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://cvmatch.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo en vídeo</a>
   </div>
 </div>
 
 <div class="proj-body">
+
   <div class="proj-section">
     <div class="proj-section-title">El problema</div>
     <div class="proj-text">
-      <p>Buscar trabajo implica revisar múltiples plataformas, analizar cada oferta manualmente y adaptar el CV o la carta de presentación para cada candidatura. Es un proceso repetitivo, lento y fácil de desorganizar.</p>
-      <p>No existe una herramienta que centralice todo el proceso: <b>agregar ofertas, analizar el encaje con tu perfil y generar texto adaptado</b>, manteniendo además el estado de cada candidatura.</p>
+      <p>Buscar trabajo implica revisar varias plataformas a la vez, analizar cada oferta manualmente y adaptar el CV para cada candidatura desde cero. Es un proceso repetitivo, lento y fácil de desorganizar cuando llevas varias ofertas en paralelo.</p>
+      <p>No existe una herramienta que centralice todo el flujo: <b>agregar ofertas de distintas fuentes, analizar el encaje real con tu perfil y generar un CV adaptado listo para enviar</b>, manteniendo el estado de cada candidatura.</p>
+      <p>Lo construí directamente para mi propia búsqueda de trabajo. Con la motivación adicional de aprender Django en un proyecto real.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title">La solución</div>
     <div class="proj-text">
-      <p>Aplicación web construida con <b>Django y PostgreSQL</b> que integra la API de Adzuna para agregar ofertas de empleo relevantes. Cada oferta se puede analizar con <b>Groq AI</b>, que compara los requisitos con tu CV y genera texto adaptado para la candidatura.</p>
-      <p>Incluye un sistema de seguimiento de estado por oferta (pendiente, aplicado, descartado) y una interfaz con gradiente azul pensada para uso diario durante la búsqueda de empleo.</p>
-      <p>Construida directamente para mi propia búsqueda de trabajo, con la motivación adicional de aprender Django en un proyecto real.</p>
+      <p>Aplicación web con <b>Django 6 + PostgreSQL 16</b> que busca simultáneamente en <b>Adzuna, Jooble y Arbeitnow</b>. Desde una sola pantalla puedes filtrar por modalidad, experiencia y salario, y gestionar el estado de cada oferta (nueva, vista, guardada, descartada).</p>
+      <p>Cada oferta se puede analizar con <b>Groq AI</b>, que extrae automáticamente el stack requerido, la modalidad, los años de experiencia y el rango salarial. Si subes tu CV, genera un <b>porcentaje de compatibilidad</b>, las palabras clave que faltan y sugerencias de mejora concretas.</p>
+      <p>El generador de CV reescribe tu perfil completo en formato JSON estructurado, adaptando el lenguaje y el orden de secciones a cada oferta. Ese JSON se convierte en un <b>PDF profesional con WeasyPrint</b>, en cinco plantillas distintas.</p>
+      <p>Las tareas pesadas (análisis, generación de CV, renderizado PDF) se procesan de forma asíncrona con <b>Celery + Redis</b> para no bloquear la interfaz.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Plantillas PDF</div>
+    <div class="proj-text" style="margin-bottom:14px">
+      <p>Cinco plantillas con identidades visuales distintas, cada una pensada para un contexto diferente:</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="about-item">
+        <div class="about-item-text"><b>ATS Classic</b>Blanco y negro, sin decoración. Diseñada para pasar filtros ATS sin perder información por el camino.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-text"><b>Executive</b>Azul marino con detalles dorados y foto circular. Para perfiles senior o consultoras.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-text"><b>Sidebar Tech</b>Sidebar oscuro con acento azul eléctrico. La más adecuada para perfiles de desarrollo y tecnología.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-text"><b>Minimal Editorial</b>Tipografía serif, mucho espacio, sin ornamento. Para perfiles senior o de arquitectura.</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-text"><b>One Page</b>Verde oscuro, dos columnas compactas. Todo lo relevante en una sola página.</div>
+      </div>
     </div>
   </div>
 
@@ -65,11 +94,15 @@ import '../../styles/global.css';
       <div class="sidebar-card">
         <div class="sidebar-label">Stack técnico</div>
         <div class="sidebar-stack">
-          <span class="about-tech-tag">Django</span>
-          <span class="about-tech-tag">Python</span>
-          <span class="about-tech-tag">PostgreSQL</span>
+          <span class="about-tech-tag">Django 6</span>
+          <span class="about-tech-tag">Python 3.12</span>
+          <span class="about-tech-tag">PostgreSQL 16</span>
+          <span class="about-tech-tag">Redis 7</span>
+          <span class="about-tech-tag">Celery</span>
           <span class="about-tech-tag">Groq AI</span>
-          <span class="about-tech-tag">Adzuna API</span>
+          <span class="about-tech-tag">WeasyPrint</span>
+          <span class="about-tech-tag">Docker</span>
+          <span class="about-tech-tag">Gunicorn</span>
         </div>
       </div>
       <div class="sidebar-card">
@@ -77,6 +110,8 @@ import '../../styles/global.css';
         <div class="sidebar-detail">
           <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">48 unitarios</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">APIs</span><span class="sidebar-row-val">Adzuna · Jooble · Arbeitnow</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Deploy</span><span class="sidebar-row-val">Railway (próximo)</span></div>
         </div>
@@ -85,14 +120,42 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
+    <div class="proj-section-title">Seguridad</div>
+    <div class="proj-text">
+      <p>Los tokens de API de Groq se almacenan cifrados por usuario con <b>Fernet AES-256</b>. Todas las rutas sensibles tienen rate limiting. Inputs sanitizados y headers de seguridad activados.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-text">
+      <p>Este proyecto fue mi primera aplicación seria con Django. Aprendí a estructurar un proyecto real con múltiples módulos, a manejar tareas asíncronas con Celery y a trabajar con la generación de PDFs desde HTML/CSS con WeasyPrint, que tiene sus propias peculiaridades respecto al renderizado en navegador.</p>
+      <p>También fue la primera vez que implementé cifrado simétrico para datos sensibles de usuario, lo que me obligó a pensar en el modelo de seguridad desde el principio en lugar de añadirlo al final.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Separaría el generador de PDF en un microservicio independiente, ya que WeasyPrint es pesado y ralentiza el contenedor principal.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Usaría una cola de mensajes más robusta como RabbitMQ en lugar de Redis para Celery en producción.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests de integración además de los unitarios, especialmente para el flujo completo de generación de CV.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Implementaría un sistema de caché más fino para las búsquedas de ofertas y no sobrecargar las APIs externas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="proj-section">
     <div class="proj-section-title">Capturas</div>
     <div class="screenshots">
       <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Lista de ofertas</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Análisis con IA</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Texto generado</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Seguimiento</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Análisis de compatibilidad</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Generador de CV</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Plantillas PDF</span></div>
     </div>
   </div>
+
 </div>
 
 <footer>

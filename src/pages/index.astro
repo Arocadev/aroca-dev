@@ -34,29 +34,17 @@ import '../styles/global.css';
 </nav>
 
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="avail">Disponible para incorporación inmediata</div>
-      <h1 class="h1">Desarrollador<br><em>Backend</em></h1>
-      <div class="sub1">Graduado en Desarrollo de Aplicaciones Multiplataforma</div>
-      <div class="sub2"><i class="ti ti-map-pin" aria-hidden="true"></i>Xàtiva, Valencia</div>
-      <div class="hero-stack">
-        <span class="hero-tag">Java</span>
-        <span class="hero-tag">Spring Boot</span>
-        <span class="hero-tag">Python</span>
-        <span class="hero-tag">FastAPI</span>
-        <span class="hero-tag">PostgreSQL</span>
-      </div>
-      <div class="hero-actions">
-        <div class="social">
-          <a href="https://github.com/ArocaDev" target="_blank"><i class="ti ti-brand-github" aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/in/alejandro-rodriguez-calabuig-a871a1230" target="_blank"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
-        </div>
-        <button class="btn-cv"><i class="ti ti-download" aria-hidden="true"></i> Descargar CV</button>
-      </div>
+  <div class="hero-inner hero-centered">
+    <div class="hero-eyebrow">Software Developer</div>
+    <h1 class="h1">Backend<br><em>Developer</em></h1>
+    <div class="hero-desc">
+      Construyo APIs, diseño sistemas y resuelvo problemas reales<br>
+      <span class="hero-desc-sub">Especializándome en Cloud y DevOps</span>
     </div>
-    <div class="hero-right">
-      <div class="photo"><i class="ti ti-user" aria-hidden="true"></i><span>foto</span></div>
+    <div class="hero-actions">
+      <a href="https://github.com/ArocaDev" target="_blank" class="btn-social"><i class="ti ti-brand-github" aria-hidden="true"></i>GitHub</a>
+      <a href="https://www.linkedin.com/in/alejandro-rodriguez-calabuig-a871a1230" target="_blank" class="btn-social"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+      <button class="btn-cv-outline"><i class="ti ti-download" aria-hidden="true"></i>Descargar CV</button>
     </div>
   </div>
 </section>
@@ -91,7 +79,7 @@ import '../styles/global.css';
         <div class="about-tech">
           <div class="about-tech-label"><i class="ti ti-code" aria-hidden="true"></i>Tecnologías</div>
           <div class="about-tech-tags">
-            <span class="about-tech-tag">Java</span><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">Python</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">React</span><span class="about-tech-tag">Kotlin</span><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MongoDB</span><span class="about-tech-tag">DB2</span><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Linux</span><span class="about-tech-tag">JUnit</span><span class="about-tech-tag">Scrum</span>
+            <span class="about-tech-tag">Java</span><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">Python</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span><span class="about-tech-tag">Kotlin</span><span class="about-tech-tag">Flutter</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">React</span><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MySQL</span><span class="about-tech-tag">MongoDB</span><span class="about-tech-tag">DB2</span><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Linux</span><span class="about-tech-tag">JUnit</span><span class="about-tech-tag">Scrum</span>
           </div>
         </div>
       </div>
@@ -103,52 +91,67 @@ import '../styles/global.css';
   <div class="sec-inner">
     <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Proyectos</span><div class="sec-h-line"></div></div>
     <div class="grid">
+
       <a href="/proyectos/apr-xativa" class="card card-feat">
         <span class="feat-tag">Destacado</span>
         <div class="preview"><i class="ti ti-building-community" aria-hidden="true"></i></div>
         <div>
           <div class="ct">APR Xàtiva</div>
-          <div class="cd">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
+          <div class="cd">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
           <div class="tags"><span class="tag t-ac">Académico</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">React 19</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Docker</span><span class="tag t-tech">JWT</span></div>
         </div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
+      <a href="/proyectos/voice2task" class="card">
+        <div class="ct">Voice2Task</div>
+        <div class="cd">App Android que convierte notas de voz en tareas estructuradas con IA. Integraciones con Trello y Notion. Backend FastAPI + app Kotlin + landing web.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Whisper</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="/proyectos/cvmatch-ai" class="card">
+        <div class="ct">CVMatch AI</div>
+        <div class="cd">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">Celery</span><span class="tag t-tech">Groq</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+
       <a href="/proyectos/krausen" class="card">
         <div class="ct">Krausen</div>
-        <div class="cd">Plataforma de recetas de cerveza artesanal con forks, versioning y seguimiento de temperaturas de fermentación.</div>
+        <div class="cd">Plataforma de recetas de cerveza artesanal con forks, árbol de versiones por CTE recursiva, fermentación y multiidioma ES/EN/DE.</div>
         <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Next.js</span><span class="tag t-tech">PostgreSQL</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-      <a href="/proyectos/cvmatch-ai" class="card">
-        <div class="ct">CVMatch AI</div>
-        <div class="cd">Herramienta de búsqueda de empleo que analiza ofertas con IA y genera texto adaptado a tu CV.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">PostgreSQL</span><span class="tag t-tech">Groq</span></div>
+
+      <a href="/proyectos/gestpro" class="card">
+        <div class="ct">GestPro</div>
+        <div class="cd">App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales, finanzas, calendario y PDF por proyecto. Offline first.</div>
+        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Dart</span><span class="tag t-tech">Hive</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
       <a href="/proyectos/calidad-triple-a" class="card">
         <div class="ct">Calidad Triple A</div>
-        <div class="cd">E-commerce en producción para cliente real. PDF, etiqueta de envío y QR por pedido.</div>
+        <div class="cd">E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos.</div>
         <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-      <a href="/proyectos/voice2task" class="card">
-        <div class="ct">Voice2Task</div>
-        <div class="cd">Bot Telegram que transcribe voz con Whisper y crea tarjetas en Trello automáticamente.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Python</span><span class="tag t-tech">Whisper</span><span class="tag t-tech">Groq</span></div>
-        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
-      </a>
+
       <a href="/proyectos/vulldecor" class="card">
         <div class="ct">Vulldecor</div>
-        <div class="cd">Web para empresa de reformas local en producción. Formulario WhatsApp/email, SEO local y RGPD.</div>
-        <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">JS</span></div>
+        <div class="cd">Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
+        <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Flutter</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
       <a href="/proyectos/aroca-dev" class="card">
         <div class="ct">aroca.dev</div>
-        <div class="cd">Portfolio personal diseñado e implementado desde cero. Desplegado en aroca.dev.</div>
+        <div class="cd">El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro.</div>
         <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Astro</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Vercel</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
     </div>
   </div>
 </section>
@@ -169,11 +172,11 @@ import '../styles/global.css';
           </div>
           <div class="exp-item">
             <div class="exp-top">
-              <span class="er">Desarrollo de soluciones web para clientes</span>
+              <span class="er">Desarrollo de soluciones para clientes reales</span>
               <div class="exp-meta"><span class="eco">Proyectos profesionales</span><span class="ed">· 2024 – hoy</span></div>
             </div>
-            <div class="edesc">Vulldecor (web corporativa para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: backend, integraciones, DNS, emails transaccionales y despliegue.</div>
-            <div class="etags"><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span><span class="tag t-tech">Resend</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">JS</span></div>
+            <div class="edesc">Vulldecor (web corporativa + app Android para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: desarrollo, integraciones, DNS, emails transaccionales y despliegue.</div>
+            <div class="etags"><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Vercel</span><span class="tag t-tech">Resend</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span></div>
           </div>
         </div>
       </div>

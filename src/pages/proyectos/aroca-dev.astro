@@ -35,28 +35,30 @@ import '../../styles/global.css';
 <div class="proj-hero">
   <div class="proj-category">Proyecto personal · En producción</div>
   <div class="proj-title">aroca.dev</div>
-  <div class="proj-subtitle">Portfolio personal diseñado e implementado desde cero. Construido con Astro y desplegado en aroca.dev.</div>
+  <div class="proj-subtitle">El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y desplegado en aroca.dev.</div>
   <div class="proj-links">
     <a href="https://aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Ver web</a>
-    <a href="https://github.com/Arocadev/aroca-dev" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://github.com/ArocaDev/aroca-dev" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
   </div>
 </div>
 
 <div class="proj-body">
+
   <div class="proj-section">
-    <div class="proj-section-title">El problema</div>
+    <div class="proj-section-title">Por qué construirlo desde cero</div>
     <div class="proj-text">
-      <p>Necesitaba un sitio donde reunir todo lo que he ido construyendo. CVs y PDFs se quedan cortos: no puedes ver el código, no puedes entender el contexto de cada proyecto ni qué problema resolvía.</p>
-      <p>Hoy en día tener un portfolio web es casi obligatorio si quieres que tu trabajo hable por ti. Y si vas a hacerlo, <b>mejor hacerlo tú mismo</b> que usar una plantilla.</p>
+      <p>Un CV en PDF no puede mostrar el contexto de un proyecto: qué problema resolvía, qué decisiones se tomaron, qué salió bien y qué haría diferente. Para eso hace falta una página propia.</p>
+      <p>Y si vas a hacer un portfolio, tiene más sentido construirlo tú mismo que usar una plantilla. El proceso en sí ya dice algo sobre cómo trabajas.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">La solución</div>
+    <div class="proj-section-title">Decisiones técnicas</div>
     <div class="proj-text">
-      <p>Diseñado desde cero en HTML y CSS puro primero, para tener control total sobre cada decisión visual antes de implementarlo. Construido con <b>Astro</b> por su rendimiento y su modelo de cero JavaScript por defecto.</p>
-      <p>Sistema de color propio con fondo marino <b>#0d1117</b> e índigo <b>#818cf8</b> como acento. Tipografía Space Grotesk para títulos e Inter para texto. One-page scroll con nav sticky y páginas individuales por proyecto.</p>
-      <p>Desplegado en <b>Vercel</b> con dominio propio aroca.dev.</p>
+      <p><b>Astro</b> por su rendimiento y su modelo de cero JavaScript por defecto — un portfolio no necesita hidratación del cliente.</p>
+      <p><b>CSS puro</b> con variables para el sistema de color. Sin frameworks, sin clases de utilidad, sin dependencias innecesarias. Control total sobre cada decisión visual.</p>
+      <p>Sistema de color propio: fondo marino <b>#0d1117</b>, acento índigo <b>#818cf8</b> y jerarquía de cuatro niveles de texto. Tipografía Space Grotesk para títulos e Inter para texto corrido.</p>
+      <p>One-page scroll con nav sticky, páginas individuales por proyecto y estructura de rutas limpia en <code>src/pages/proyectos/</code>.</p>
     </div>
   </div>
 
@@ -68,6 +70,7 @@ import '../../styles/global.css';
         <div class="sidebar-stack">
           <span class="about-tech-tag">Astro</span>
           <span class="about-tech-tag">CSS</span>
+          <span class="about-tech-tag">Tabler Icons</span>
           <span class="about-tech-tag">Vercel</span>
         </div>
       </div>
@@ -89,9 +92,10 @@ import '../../styles/global.css';
       <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Hero</span></div>
       <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Proyectos</span></div>
       <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Sobre mí</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Contacto</span></div>
+      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Página de proyecto</span></div>
     </div>
   </div>
+
 </div>
 
 <footer>
