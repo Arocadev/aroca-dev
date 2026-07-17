@@ -2,164 +2,123 @@
 import '../../styles/global.css';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CVMatch AI · ArocaDev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">aroca<span>.dev</span></a>
-    <div class="nav-r">
-      <div class="nav-links">
-        <a href="/#sobre-mi">sobre mí</a>
-        <a href="/#proyectos">proyectos</a>
-        <a href="/#experiencia">experiencia</a>
-        <a href="/#contacto">contacto</a>
-      </div>
-      <div class="i18n">
-        <span class="i18n-active">ES</span>
-        <span class="i18n-sep">|</span>
-        <span class="i18n-inactive">EN</span>
-      </div>
+<nav><div class="nav-inner">
+  <a href="/" class="logo">aroca<span>.dev</span></a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
     </div>
+    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</nav>
+</div></nav>
 
 <div class="proj-hero">
-  <div class="proj-category">Proyecto personal · En desarrollo</div>
+  <div class="proj-category" data-es="Proyecto personal · En desarrollo" data-en="Personal project · In development">Proyecto personal · En desarrollo</div>
   <div class="proj-title">CVMatch AI</div>
-  <div class="proj-subtitle">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza la compatibilidad con tu CV y genera un CV adaptado en PDF profesional para cada candidatura.</div>
+  <div class="proj-subtitle" data-es="Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza la compatibilidad con tu CV y genera un CV adaptado en PDF profesional para cada candidatura." data-en="Job search tool that aggregates listings from multiple sources, analyses compatibility with your CV and generates a tailored CV as a professional PDF for each application.">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza la compatibilidad con tu CV y genera un CV adaptado en PDF profesional para cada candidatura.</div>
   <div class="proj-links">
-    <a href="https://github.com/ArocaDev/cvmatch-ai" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
+    <a href="https://github.com/ArocaDev/cvmatch-ai" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
     <a href="https://cvmatch.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo en vídeo</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
   </div>
 </div>
 
 <div class="proj-body">
 
   <div class="proj-section">
-    <div class="proj-section-title">El problema</div>
+    <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p>Buscar trabajo implica revisar varias plataformas a la vez, analizar cada oferta manualmente y adaptar el CV para cada candidatura desde cero. Es un proceso repetitivo, lento y fácil de desorganizar cuando llevas varias ofertas en paralelo.</p>
-      <p>No existe una herramienta que centralice todo el flujo: <b>agregar ofertas de distintas fuentes, analizar el encaje real con tu perfil y generar un CV adaptado listo para enviar</b>, manteniendo el estado de cada candidatura.</p>
-      <p>Lo construí directamente para mi propia búsqueda de trabajo. Con la motivación adicional de aprender Django en un proyecto real.</p>
+      <p data-es="Buscar trabajo implica revisar varias plataformas a la vez, analizar cada oferta manualmente y adaptar el CV para cada candidatura desde cero. Es un proceso repetitivo, lento y fácil de desorganizar cuando llevas varias ofertas en paralelo." data-en="Job hunting means checking several platforms at once, manually analysing each listing and tailoring your CV from scratch for each application. It's a repetitive, slow process that's easy to lose track of when you're managing several applications in parallel.">Buscar trabajo implica revisar varias plataformas a la vez, analizar cada oferta manualmente y adaptar el CV para cada candidatura desde cero. Es un proceso repetitivo, lento y fácil de desorganizar cuando llevas varias ofertas en paralelo.</p>
+      <p data-es="Lo construí directamente para mi propia búsqueda de trabajo. Con la motivación adicional de aprender Django en un proyecto real." data-en="I built it directly for my own job search. With the added motivation of learning Django in a real project.">Lo construí directamente para mi propia búsqueda de trabajo. Con la motivación adicional de aprender Django en un proyecto real.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">La solución</div>
+    <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p>Aplicación web con <b>Django 6 + PostgreSQL 16</b> que busca simultáneamente en <b>Adzuna, Jooble y Arbeitnow</b>. Desde una sola pantalla puedes filtrar por modalidad, experiencia y salario, y gestionar el estado de cada oferta (nueva, vista, guardada, descartada).</p>
-      <p>Cada oferta se puede analizar con <b>Groq AI</b>, que extrae automáticamente el stack requerido, la modalidad, los años de experiencia y el rango salarial. Si subes tu CV, genera un <b>porcentaje de compatibilidad</b>, las palabras clave que faltan y sugerencias de mejora concretas.</p>
-      <p>El generador de CV reescribe tu perfil completo en formato JSON estructurado, adaptando el lenguaje y el orden de secciones a cada oferta. Ese JSON se convierte en un <b>PDF profesional con WeasyPrint</b>, en cinco plantillas distintas.</p>
-      <p>Las tareas pesadas (análisis, generación de CV, renderizado PDF) se procesan de forma asíncrona con <b>Celery + Redis</b> para no bloquear la interfaz.</p>
+      <p data-es="Aplicación web con <b>Django 6 + PostgreSQL 16</b> que busca simultáneamente en <b>Adzuna, Jooble y Arbeitnow</b>. Desde una sola pantalla puedes filtrar por modalidad, experiencia y salario, y gestionar el estado de cada oferta." data-en="Web application with <b>Django 6 + PostgreSQL 16</b> that searches simultaneously on <b>Adzuna, Jooble and Arbeitnow</b>. From a single screen you can filter by work mode, experience and salary, and manage the status of each listing.">Aplicación web con <b>Django 6 + PostgreSQL 16</b> que busca simultáneamente en <b>Adzuna, Jooble y Arbeitnow</b>. Desde una sola pantalla puedes filtrar por modalidad, experiencia y salario, y gestionar el estado de cada oferta.</p>
+      <p data-es="Cada oferta se puede analizar con <b>Groq AI</b>, que extrae automáticamente el stack requerido, la modalidad, los años de experiencia y el rango salarial. Si subes tu CV, genera un <b>porcentaje de compatibilidad</b>, las palabras clave que faltan y sugerencias de mejora concretas." data-en="Each listing can be analysed with <b>Groq AI</b>, which automatically extracts the required stack, work mode, years of experience and salary range. Upload your CV and it generates a <b>compatibility score</b>, missing keywords and specific improvement suggestions.">Cada oferta se puede analizar con <b>Groq AI</b>, que extrae automáticamente el stack requerido, la modalidad, los años de experiencia y el rango salarial. Si subes tu CV, genera un <b>porcentaje de compatibilidad</b>, las palabras clave que faltan y sugerencias de mejora concretas.</p>
+      <p data-es="El generador de CV reescribe tu perfil completo en formato JSON estructurado, adaptando el lenguaje y el orden de secciones a cada oferta. Ese JSON se convierte en un <b>PDF profesional con WeasyPrint</b>, en cinco plantillas distintas." data-en="The CV generator rewrites your complete profile in structured JSON format, adapting the language and section order to each listing. That JSON is converted into a <b>professional PDF with WeasyPrint</b>, in five different templates.">El generador de CV reescribe tu perfil completo en formato JSON estructurado, adaptando el lenguaje y el orden de secciones a cada oferta. Ese JSON se convierte en un <b>PDF profesional con WeasyPrint</b>, en cinco plantillas distintas.</p>
+      <p data-es="Las tareas pesadas se procesan de forma asíncrona con <b>Celery + Redis</b> para no bloquear la interfaz." data-en="Heavy tasks are processed asynchronously with <b>Celery + Redis</b> so the interface is never blocked.">Las tareas pesadas se procesan de forma asíncrona con <b>Celery + Redis</b> para no bloquear la interfaz.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Plantillas PDF</div>
-    <div class="proj-text" style="margin-bottom:14px">
-      <p>Cinco plantillas con identidades visuales distintas, cada una pensada para un contexto diferente:</p>
-    </div>
+    <div class="proj-section-title" data-es="Plantillas PDF" data-en="PDF templates">Plantillas PDF</div>
+    <div class="proj-text" style="margin-bottom:14px"><p data-es="Cinco plantillas con identidades visuales distintas, cada una pensada para un contexto diferente:" data-en="Five templates with distinct visual identities, each designed for a different context:">Cinco plantillas con identidades visuales distintas, cada una pensada para un contexto diferente:</p></div>
     <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="about-item">
-        <div class="about-item-text"><b>ATS Classic</b>Blanco y negro, sin decoración. Diseñada para pasar filtros ATS sin perder información por el camino.</div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-text"><b>Executive</b>Azul marino con detalles dorados y foto circular. Para perfiles senior o consultoras.</div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-text"><b>Sidebar Tech</b>Sidebar oscuro con acento azul eléctrico. La más adecuada para perfiles de desarrollo y tecnología.</div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-text"><b>Minimal Editorial</b>Tipografía serif, mucho espacio, sin ornamento. Para perfiles senior o de arquitectura.</div>
-      </div>
-      <div class="about-item">
-        <div class="about-item-text"><b>One Page</b>Verde oscuro, dos columnas compactas. Todo lo relevante en una sola página.</div>
-      </div>
+      <div class="about-item"><div class="about-item-text"><b>ATS Classic</b><span data-es="Blanco y negro, sin decoración. Diseñada para pasar filtros ATS sin perder información por el camino." data-en="Black and white, no decoration. Designed to pass ATS filters without losing information along the way.">Blanco y negro, sin decoración. Diseñada para pasar filtros ATS sin perder información por el camino.</span></div></div>
+      <div class="about-item"><div class="about-item-text"><b>Executive</b><span data-es="Azul marino con detalles dorados y foto circular. Para perfiles senior o consultoras." data-en="Navy blue with gold details and circular photo. For senior profiles or consulting roles.">Azul marino con detalles dorados y foto circular. Para perfiles senior o consultoras.</span></div></div>
+      <div class="about-item"><div class="about-item-text"><b>Sidebar Tech</b><span data-es="Sidebar oscuro con acento azul eléctrico. La más adecuada para perfiles de desarrollo y tecnología." data-en="Dark sidebar with electric blue accent. Best suited for development and tech profiles.">Sidebar oscuro con acento azul eléctrico. La más adecuada para perfiles de desarrollo y tecnología.</span></div></div>
+      <div class="about-item"><div class="about-item-text"><b>Minimal Editorial</b><span data-es="Tipografía serif, mucho espacio, sin ornamento. Para perfiles senior o de arquitectura." data-en="Serif typography, lots of space, no ornament. For senior or architecture profiles.">Tipografía serif, mucho espacio, sin ornamento. Para perfiles senior o de arquitectura.</span></div></div>
+      <div class="about-item"><div class="about-item-text"><b>One Page</b><span data-es="Verde oscuro, dos columnas compactas. Todo lo relevante en una sola página." data-en="Dark green, two compact columns. Everything relevant on a single page.">Verde oscuro, dos columnas compactas. Todo lo relevante en una sola página.</span></div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Stack y detalles</div>
+    <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">Django 6</span>
-          <span class="about-tech-tag">Python 3.12</span>
-          <span class="about-tech-tag">PostgreSQL 16</span>
-          <span class="about-tech-tag">Redis 7</span>
-          <span class="about-tech-tag">Celery</span>
-          <span class="about-tech-tag">Groq AI</span>
-          <span class="about-tech-tag">WeasyPrint</span>
-          <span class="about-tech-tag">Docker</span>
-          <span class="about-tech-tag">Gunicorn</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Detalles</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2026</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">48 unitarios</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">APIs</span><span class="sidebar-row-val">Adzuna · Jooble · Arbeitnow</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Deploy</span><span class="sidebar-row-val">Railway (próximo)</span></div>
-        </div>
-      </div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Django 6</span><span class="about-tech-tag">Python 3.12</span><span class="about-tech-tag">PostgreSQL 16</span><span class="about-tech-tag">Redis 7</span><span class="about-tech-tag">Celery</span><span class="about-tech-tag">Groq AI</span><span class="about-tech-tag">WeasyPrint</span><span class="about-tech-tag">Docker</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2026</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">48</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label">APIs</span><span class="sidebar-row-val">Adzuna · Jooble · Arbeitnow</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En desarrollo" data-en="In development">En desarrollo</span></div>
+      </div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Seguridad</div>
+    <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p>Los tokens de API de Groq se almacenan cifrados por usuario con <b>Fernet AES-256</b>. Todas las rutas sensibles tienen rate limiting. Inputs sanitizados y headers de seguridad activados.</p>
+      <p data-es="Este proyecto fue mi primera aplicación seria con Django. Aprendí a estructurar un proyecto real con múltiples módulos, a manejar tareas asíncronas con Celery y a trabajar con la generación de PDFs desde HTML/CSS con WeasyPrint." data-en="This project was my first serious application with Django. I learned to structure a real project with multiple modules, handle async tasks with Celery and work with PDF generation from HTML/CSS with WeasyPrint.">Este proyecto fue mi primera aplicación seria con Django. Aprendí a estructurar un proyecto real con múltiples módulos, a manejar tareas asíncronas con Celery y a trabajar con la generación de PDFs desde HTML/CSS con WeasyPrint.</p>
+      <p data-es="También fue la primera vez que implementé cifrado simétrico para datos sensibles de usuario, lo que me obligó a pensar en el modelo de seguridad desde el principio en lugar de añadirlo al final." data-en="It was also the first time I implemented symmetric encryption for sensitive user data, which forced me to think about the security model from the start rather than adding it at the end.">También fue la primera vez que implementé cifrado simétrico para datos sensibles de usuario, lo que me obligó a pensar en el modelo de seguridad desde el principio en lugar de añadirlo al final.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
     <div class="proj-text">
-      <p>Este proyecto fue mi primera aplicación seria con Django. Aprendí a estructurar un proyecto real con múltiples módulos, a manejar tareas asíncronas con Celery y a trabajar con la generación de PDFs desde HTML/CSS con WeasyPrint, que tiene sus propias peculiaridades respecto al renderizado en navegador.</p>
-      <p>También fue la primera vez que implementé cifrado simétrico para datos sensibles de usuario, lo que me obligó a pensar en el modelo de seguridad desde el principio en lugar de añadirlo al final.</p>
-    </div>
-  </div>
-
-  <div class="proj-section">
-    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
-    <div class="proj-text">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Separaría el generador de PDF en un microservicio independiente, ya que WeasyPrint es pesado y ralentiza el contenedor principal.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Usaría una cola de mensajes más robusta como RabbitMQ en lugar de Redis para Celery en producción.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests de integración además de los unitarios, especialmente para el flujo completo de generación de CV.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Implementaría un sistema de caché más fino para las búsquedas de ofertas y no sobrecargar las APIs externas.</li>
+      <ul class="proj-list">
+        <li data-es="Separaría el generador de PDF en un microservicio independiente, ya que WeasyPrint es pesado y ralentiza el contenedor principal." data-en="I'd separate the PDF generator into an independent microservice, since WeasyPrint is heavy and slows down the main container.">Separaría el generador de PDF en un microservicio independiente, ya que WeasyPrint es pesado y ralentiza el contenedor principal.</li>
+        <li data-es="Usaría una cola de mensajes más robusta como RabbitMQ en lugar de Redis para Celery en producción." data-en="I'd use a more robust message queue like RabbitMQ instead of Redis for Celery in production.">Usaría una cola de mensajes más robusta como RabbitMQ en lugar de Redis para Celery en producción.</li>
+        <li data-es="Añadiría tests de integración además de los unitarios, especialmente para el flujo completo de generación de CV." data-en="I'd add integration tests in addition to unit tests, especially for the full CV generation flow.">Añadiría tests de integración además de los unitarios, especialmente para el flujo completo de generación de CV.</li>
+        <li data-es="Implementaría un sistema de caché más fino para las búsquedas de ofertas y no sobrecargar las APIs externas." data-en="I'd implement a more fine-grained cache system for job searches to avoid overloading external APIs.">Implementaría un sistema de caché más fino para las búsquedas de ofertas y no sobrecargar las APIs externas.</li>
       </ul>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
+    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
     <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Lista de ofertas</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Análisis de compatibilidad</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Generador de CV</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Plantillas PDF</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Lista de ofertas" data-en="Job listings">Lista de ofertas</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Análisis de compatibilidad" data-en="Compatibility analysis">Análisis de compatibilidad</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Generador de CV" data-en="CV generator">Generador de CV</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Plantillas PDF" data-en="PDF templates">Plantillas PDF</span></div>
     </div>
   </div>
 
 </div>
-
-<footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
-</footer>
-</body>
-</html>
+<footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer>
+<script>
+  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+</script>
+</body></html>

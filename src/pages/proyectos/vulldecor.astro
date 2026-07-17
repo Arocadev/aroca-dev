@@ -2,175 +2,134 @@
 import '../../styles/global.css';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vulldecor · ArocaDev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">aroca<span>.dev</span></a>
-    <div class="nav-r">
-      <div class="nav-links">
-        <a href="/#sobre-mi">sobre mí</a>
-        <a href="/#proyectos">proyectos</a>
-        <a href="/#experiencia">experiencia</a>
-        <a href="/#contacto">contacto</a>
-      </div>
-      <div class="i18n">
-        <span class="i18n-active">ES</span>
-        <span class="i18n-sep">|</span>
-        <span class="i18n-inactive">EN</span>
-      </div>
+<body><nav><div class="nav-inner">
+  <a href="/" class="logo">aroca<span>.dev</span></a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
     </div>
+    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</nav>
-
+</div></nav>
 <div class="proj-hero">
-  <div class="proj-category">Proyecto freelance · En producción</div>
+  <div class="proj-category" data-es="Proyecto freelance · En producción" data-en="Freelance project · Live">Proyecto freelance · En producción</div>
   <div class="proj-title">Vulldecor</div>
-  <div class="proj-subtitle">Web corporativa y app Android para empresa local de reformas. Dos productos desarrollados para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
+  <div class="proj-subtitle" data-es="Web corporativa y app Android para empresa local de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil." data-en="Corporate website and Android app for a local renovation company. Two products for the same client: online presence and internal management from mobile.">Web corporativa y app Android para empresa local de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
   <div class="proj-links">
-    <a href="https://vulldecor.es" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Ver web</a>
-    <a href="https://github.com/ArocaDev/vulldecor" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub — Web</a>
-    <a href="https://github.com/ArocaDev/vulldecor-gestiones" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-github"></i>GitHub — App</a>
+    <a href="https://vulldecor.es" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i><span data-es="Ver web" data-en="Visit site">Ver web</span></a>
+    <a href="https://github.com/ArocaDev/vulldecor" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i><span data-es="GitHub — Web" data-en="GitHub — Web">GitHub — Web</span></a>
+    <a href="https://github.com/ArocaDev/vulldecor-gestiones" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-github"></i><span data-es="GitHub — App" data-en="GitHub — App">GitHub — App</span></a>
   </div>
 </div>
-
 <div class="proj-body">
 
-  <!-- WEB -->
   <div class="proj-section">
-    <div class="proj-section-title">El problema</div>
+    <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p>Una empresa local de reformas sin presencia online dependía completamente del boca a boca. No aparecían en búsquedas locales y no había forma de que un cliente potencial contactara sin conocer el número de teléfono.</p>
-      <p>Necesitaban una web <b>rápida y bien posicionada localmente</b>, con un formulario que funcionara tanto por email como por WhatsApp — que es como gestionan su negocio habitualmente.</p>
+      <p data-es="Una empresa local de reformas sin presencia online dependía completamente del boca a boca. No aparecían en búsquedas locales y no había forma de que un cliente potencial contactara sin conocer el número de teléfono." data-en="A local renovation company with no online presence relied entirely on word of mouth. They didn't appear in local searches and there was no way for potential clients to get in touch without already knowing their phone number.">Una empresa local de reformas sin presencia online dependía completamente del boca a boca. No aparecían en búsquedas locales y no había forma de que un cliente potencial contactara sin conocer el número de teléfono.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">La web — Vulldecor.es</div>
+    <div class="proj-section-title" data-es="La web — Vulldecor.es" data-en="The website — Vulldecor.es">La web — Vulldecor.es</div>
     <div class="proj-text">
-      <p>Sitio estático en <b>HTML, CSS y JavaScript</b> puro, sin frameworks, para máxima velocidad de carga. El formulario de presupuesto permite seleccionar servicio e inmueble por botones y enviar directamente por <b>WhatsApp con mensaje preformateado</b> o por email vía FormSubmit.</p>
-      <p>SEO local optimizado con Schema.org <code>LocalBusiness</code>, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies persistente.</p>
-      <p>Gestión completa del proyecto: diseño, desarrollo, configuración del dominio en Hostinger y entrega al cliente.</p>
+      <p data-es="Sitio estático en <b>HTML, CSS y JavaScript</b> puro, sin frameworks, para máxima velocidad de carga. El formulario de presupuesto permite seleccionar servicio e inmueble por botones y enviar directamente por <b>WhatsApp con mensaje preformateado</b> o por email vía FormSubmit." data-en="Static site in pure <b>HTML, CSS and JavaScript</b>, no frameworks, for maximum load speed. The quote form lets users select service and property type by button and send directly via <b>WhatsApp with a pre-formatted message</b> or by email via FormSubmit.">Sitio estático en <b>HTML, CSS y JavaScript</b> puro, sin frameworks, para máxima velocidad de carga. El formulario de presupuesto permite seleccionar servicio e inmueble por botones y enviar directamente por <b>WhatsApp con mensaje preformateado</b> o por email vía FormSubmit.</p>
+      <p data-es="SEO local optimizado con Schema.org LocalBusiness, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies persistente." data-en="Local SEO optimised with Schema.org LocalBusiness, Open Graph, sitemap and robots.txt. Embedded Google Maps, floating WhatsApp button and GDPR compliance with a persistent cookie banner.">SEO local optimizado con Schema.org LocalBusiness, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies persistente.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Stack y detalles — Web</div>
+    <div class="proj-section-title" data-es="Stack y detalles — Web" data-en="Stack and details — Web">Stack y detalles — Web</div>
     <div class="meta-grid">
-      <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">HTML5</span>
-          <span class="about-tech-tag">CSS3</span>
-          <span class="about-tech-tag">JavaScript</span>
-          <span class="about-tech-tag">FormSubmit</span>
-          <span class="about-tech-tag">Hostinger</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Detalles</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2024</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En producción</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">vulldecor.es</span></div>
-        </div>
-      </div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">HTML5</span><span class="about-tech-tag">CSS3</span><span class="about-tech-tag">JavaScript</span><span class="about-tech-tag">FormSubmit</span><span class="about-tech-tag">Hostinger</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2024</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">vulldecor.es</span></div>
+      </div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas — Web</div>
+    <div class="proj-section-title" data-es="Capturas — Web" data-en="Screenshots — Web">Capturas — Web</div>
     <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Hero</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Servicios</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Formulario</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Móvil</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span>Hero</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Servicios" data-en="Services">Servicios</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Formulario" data-en="Form">Formulario</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Móvil" data-en="Mobile">Móvil</span></div>
     </div>
   </div>
 
-  <!-- DIVISOR -->
-  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
-
-  <!-- APP -->
-  <div class="proj-section">
-    <div class="proj-section-title">También para este cliente — Vulldecor Gestiones</div>
-    <div class="proj-text">
-      <p>Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones del día a día desde el móvil. Tenía claro que no quería complicaciones: sin gráficas, sin módulos de economía avanzada, sin nada que no fuera a usar.</p>
-      <p>Tomé la base de <b>GestPro</b> — mi app de gestión de proyectos — y la adapté a lo que el cliente realmente pedía: una app simple, directa y funcional. El resultado es <b>Vulldecor Gestiones</b>, una app Android a medida con gestión de obras, pagos, anotaciones y calendario integrado.</p>
-      <p>Es el mismo principio que guía cualquier buen desarrollo para cliente: <b>construir lo que se necesita, no lo que se podría necesitar</b>.</p>
-    </div>
-  </div>
-
-  <div class="proj-section">
-    <div class="proj-section-title">Stack y detalles — App</div>
-    <div class="meta-grid">
-      <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">Flutter 3</span>
-          <span class="about-tech-tag">Dart</span>
-          <span class="about-tech-tag">Hive</span>
-          <span class="about-tech-tag">table_calendar</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Detalles</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2024 – 2025</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En uso</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="proj-section">
-    <div class="proj-section-title">Capturas — App</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Obras</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Pagos</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Calendario</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Anotaciones</span></div>
-    </div>
-  </div>
-
-  <!-- LO QUE APRENDÍ -->
   <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-section-title" data-es="También para este cliente — Vulldecor Gestiones" data-en="Also for this client — Vulldecor Gestiones">También para este cliente — Vulldecor Gestiones</div>
     <div class="proj-text">
-      <p>Este fue mi primer cliente real de principio a fin — presupuesto, diseño, desarrollo, despliegue y soporte. Aprendí que gestionar expectativas y comunicar bien es tan importante como el código en sí.</p>
-      <p>La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Eso me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido.</p>
+      <p data-es="Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones del día a día desde el móvil. Tenía claro que no quería complicaciones: sin gráficas, sin módulos de economía avanzada, sin nada que no fuera a usar." data-en="Once the website was delivered, the client also needed to manage projects, payments and daily notes from their phone. They were clear they didn't want complications: no charts, no advanced financial modules, nothing they weren't going to use.">Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones del día a día desde el móvil. Tenía claro que no quería complicaciones: sin gráficas, sin módulos de economía avanzada, sin nada que no fuera a usar.</p>
+      <p data-es="Tomé la base de <b>GestPro</b> y la adapté a lo que el cliente realmente pedía. Es el mismo principio que guía cualquier buen desarrollo para cliente: <b>construir lo que se necesita, no lo que se podría necesitar</b>." data-en="I took <b>GestPro</b> as a base and adapted it to what the client actually asked for. It's the same principle that guides any good client development: <b>build what's needed, not what might be needed</b>.">Tomé la base de <b>GestPro</b> y la adapté a lo que el cliente realmente pedía. Es el mismo principio que guía cualquier buen desarrollo para cliente: <b>construir lo que se necesita, no lo que se podría necesitar</b>.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-section-title" data-es="Stack y detalles — App" data-en="Stack and details — App">Stack y detalles — App</div>
+    <div class="meta-grid">
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Flutter 3</span><span class="about-tech-tag">Dart</span><span class="about-tech-tag">Hive</span><span class="about-tech-tag">table_calendar</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En uso" data-en="In use">En uso</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="Capturas — App" data-en="Screenshots — App">Capturas — App</div>
+    <div class="screenshots">
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Obras" data-en="Projects">Obras</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Pagos" data-en="Payments">Pagos</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Calendario" data-en="Calendar">Calendario</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Anotaciones" data-en="Notes">Anotaciones</span></div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>En la web, usaría Astro en lugar de HTML puro para facilitar el mantenimiento a largo plazo.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Formalizaría mejor el alcance del proyecto por escrito desde el principio para evitar cambios de última hora.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>En la app, añadiría sincronización en la nube para no depender del dispositivo como único almacén de datos.</li>
+      <p data-es="Este fue mi primer cliente real de principio a fin. Aprendí que gestionar expectativas y comunicar bien es tan importante como el código en sí." data-en="This was my first real client from start to finish. I learned that managing expectations and communicating well is just as important as the code itself.">Este fue mi primer cliente real de principio a fin. Aprendí que gestionar expectativas y comunicar bien es tan importante como el código en sí.</p>
+      <p data-es="La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Eso me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido." data-en="The app was the first time I adapted a personal project to a client's specific needs. That taught me to listen before proposing solutions and to resist the temptation to add features nobody asked for.">La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Eso me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul class="proj-list">
+        <li data-es="En la web, usaría Astro en lugar de HTML puro para facilitar el mantenimiento a largo plazo." data-en="For the website, I'd use Astro instead of plain HTML to make long-term maintenance easier.">En la web, usaría Astro en lugar de HTML puro para facilitar el mantenimiento a largo plazo.</li>
+        <li data-es="Formalizaría mejor el alcance del proyecto por escrito desde el principio para evitar cambios de última hora." data-en="I'd formalise the project scope in writing from the start to avoid last-minute changes.">Formalizaría mejor el alcance del proyecto por escrito desde el principio para evitar cambios de última hora.</li>
+        <li data-es="En la app, añadiría sincronización en la nube para no depender del dispositivo como único almacén de datos." data-en="In the app, I'd add cloud sync to avoid depending on the device as the only data store.">En la app, añadiría sincronización en la nube para no depender del dispositivo como único almacén de datos.</li>
       </ul>
     </div>
   </div>
 
-</div>
-
-<footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
-</footer>
-</body>
-</html>
+</div><footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer><script>
+  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+</script></body></html>

@@ -2,128 +2,103 @@
 import '../../styles/global.css';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calidad Triple A · ArocaDev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">aroca<span>.dev</span></a>
-    <div class="nav-r">
-      <div class="nav-links">
-        <a href="/#sobre-mi">sobre mí</a>
-        <a href="/#proyectos">proyectos</a>
-        <a href="/#experiencia">experiencia</a>
-        <a href="/#contacto">contacto</a>
-      </div>
-      <div class="i18n">
-        <span class="i18n-active">ES</span>
-        <span class="i18n-sep">|</span>
-        <span class="i18n-inactive">EN</span>
-      </div>
+<body><nav><div class="nav-inner">
+  <a href="/" class="logo">aroca<span>.dev</span></a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
     </div>
+    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</nav>
-
+</div></nav>
 <div class="proj-hero">
-  <div class="proj-category">Proyecto freelance · En producción</div>
+  <div class="proj-category" data-es="Proyecto freelance · En producción" data-en="Freelance project · Live">Proyecto freelance · En producción</div>
   <div class="proj-title">Calidad Triple A</div>
-  <div class="proj-subtitle">E-commerce completo para tienda de moda urbana y streetwear. Catálogo gestionado por CMS, checkout con cálculo de envíos, confirmación por WhatsApp y automatización de emails con PDF y QR adjuntos.</div>
+  <div class="proj-subtitle" data-es="E-commerce completo para tienda de moda urbana y streetwear. Catálogo gestionado por CMS, checkout con cálculo de envíos, confirmación por WhatsApp y automatización de emails con PDF y QR adjuntos." data-en="Full e-commerce for an urban fashion and streetwear shop. CMS-managed catalogue, checkout with shipping calculation, WhatsApp order confirmation and automated emails with PDF and QR attachments.">E-commerce completo para tienda de moda urbana y streetwear. Catálogo gestionado por CMS, checkout con cálculo de envíos, confirmación por WhatsApp y automatización de emails con PDF y QR adjuntos.</div>
   <div class="proj-links">
-    <a href="https://www.calidad3a.com" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Ver web</a>
-    <a href="https://github.com/ArocaDev/calidad-triple-a" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo en vídeo</a>
+    <a href="https://www.calidad3a.com" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i><span data-es="Ver web" data-en="Visit site">Ver web</span></a>
+    <a href="https://github.com/ArocaDev/calidad-triple-a" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
   </div>
 </div>
-
 <div class="proj-body">
 
   <div class="proj-section">
-    <div class="proj-section-title">El problema</div>
+    <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p>El cliente necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con <b>pago por Bizum o PayPal gestionado manualmente</b>, y cada pedido requería generar documentación personalizada para el envío.</p>
-      <p>Además, el cliente tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día.</p>
+      <p data-es="El cliente necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con pago por Bizum o PayPal gestionado manualmente, y cada pedido requería generar documentación personalizada para el envío." data-en="The client needed an online store to sell urban and streetwear fashion, but standard solutions like Shopify or WooCommerce didn't fit: the business model works with Bizum or PayPal payments managed manually, and each order required generating custom shipping documentation.">El cliente necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con pago por Bizum o PayPal gestionado manualmente, y cada pedido requería generar documentación personalizada para el envío.</p>
+      <p data-es="El cliente tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día." data-en="The client needed to manage the catalogue completely autonomously — add products, change prices, upload images — without touching code or depending on a developer for day-to-day tasks.">El cliente tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">La solución</div>
+    <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p>E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. El cliente gestiona el catálogo desde Sanity Studio sin tocar código.</p>
-      <p>El catálogo tiene tres categorías (Ropa, Complementos, Electrónica) con filtros avanzados por subcategoría, marca, talla, género y precio. El carrito persiste con <b>Zustand</b> y el checkout calcula automáticamente los gastos de envío por país, con envío gratis en España a partir de 60€.</p>
-      <p>El flujo de pedido confirma por <b>WhatsApp</b> con mensaje preformateado y dispara un email automático al vendedor vía <b>Resend</b> con tres adjuntos generados en servidor: PDF del pedido, PDF de datos de envío y código QR. El cliente también recibe un PDF descargable generado con <b>jsPDF</b>.</p>
-      <p>Se gestionó además la configuración completa de DNS, dominio en Namecheap, verificación de dominio en Resend, Google Search Console y Vercel Analytics.</p>
-      <p>El diseño visual — logotipo, paleta e identidad de marca — fue definido por el cliente. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto.</p>
+      <p data-es="E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. El cliente gestiona el catálogo desde Sanity Studio sin tocar código." data-en="Full e-commerce with <b>JAMstack</b> architecture: <b>Next.js 15</b> with App Router on the frontend and <b>Sanity CMS</b> as a headless content backend. The client manages the catalogue from Sanity Studio without touching code.">E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. El cliente gestiona el catálogo desde Sanity Studio sin tocar código.</p>
+      <p data-es="El catálogo tiene tres categorías con filtros avanzados por subcategoría, marca, talla, género y precio. El carrito persiste con <b>Zustand</b> y el checkout calcula automáticamente los gastos de envío por país, con envío gratis en España a partir de 60€." data-en="The catalogue has three categories with advanced filters by subcategory, brand, size, gender and price. The cart persists with <b>Zustand</b> and checkout automatically calculates shipping costs by country, with free shipping in Spain from €60.">El catálogo tiene tres categorías con filtros avanzados por subcategoría, marca, talla, género y precio. El carrito persiste con <b>Zustand</b> y el checkout calcula automáticamente los gastos de envío por país, con envío gratis en España a partir de 60€.</p>
+      <p data-es="El flujo de pedido confirma por <b>WhatsApp</b> con mensaje preformateado y dispara un email automático al vendedor vía <b>Resend</b> con tres adjuntos generados en servidor: PDF del pedido, PDF de datos de envío y código QR." data-en="The order flow confirms via <b>WhatsApp</b> with a pre-formatted message and triggers an automatic email to the seller via <b>Resend</b> with three server-generated attachments: order PDF, shipping data PDF and QR code.">El flujo de pedido confirma por <b>WhatsApp</b> con mensaje preformateado y dispara un email automático al vendedor vía <b>Resend</b> con tres adjuntos generados en servidor: PDF del pedido, PDF de datos de envío y código QR.</p>
+      <p data-es="El diseño visual — logotipo, paleta e identidad de marca — fue definido por el cliente. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto." data-en="The visual design — logo, palette and brand identity — was defined by the client. My work was the complete technical implementation and project architecture.">El diseño visual — logotipo, paleta e identidad de marca — fue definido por el cliente. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Stack y detalles</div>
+    <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">Next.js 15</span>
-          <span class="about-tech-tag">TypeScript</span>
-          <span class="about-tech-tag">Sanity CMS</span>
-          <span class="about-tech-tag">Zustand</span>
-          <span class="about-tech-tag">Resend</span>
-          <span class="about-tech-tag">jsPDF</span>
-          <span class="about-tech-tag">Vercel</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Detalles</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – hoy</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En producción</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">calidad3a.com</span></div>
-        </div>
-      </div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Next.js 15</span><span class="about-tech-tag">TypeScript</span><span class="about-tech-tag">Sanity CMS</span><span class="about-tech-tag">Zustand</span><span class="about-tech-tag">Resend</span><span class="about-tech-tag">jsPDF</span><span class="about-tech-tag">Vercel</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val" data-es="2025 – hoy" data-en="2025 – present">2025 – hoy</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">calidad3a.com</span></div>
+      </div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p>Este fue el proyecto donde más trabajé la comunicación con un cliente real: traducir necesidades de negocio a decisiones técnicas, justificar por qué JAMstack con CMS headless era mejor opción que WordPress para este caso, y gestionar entregas y ajustes en producción.</p>
-      <p>También aprendí a trabajar con generación de documentos en servidor (PDFs con datos dinámicos y QR) y a configurar todo el stack de emails transaccionales desde cero — DNS, SPF, DKIM, verificación de dominio — para que los emails lleguen a bandeja de entrada.</p>
+      <p data-es="Este fue el proyecto donde más trabajé la comunicación con un cliente real: traducir necesidades de negocio a decisiones técnicas y gestionar entregas y ajustes en producción." data-en="This was the project where I worked most on communication with a real client: translating business needs into technical decisions and managing deliveries and adjustments in production.">Este fue el proyecto donde más trabajé la comunicación con un cliente real: traducir necesidades de negocio a decisiones técnicas y gestionar entregas y ajustes en producción.</p>
+      <p data-es="También aprendí a configurar todo el stack de emails transaccionales desde cero — DNS, SPF, DKIM, verificación de dominio — para que los emails lleguen a bandeja de entrada." data-en="I also learned to configure the full transactional email stack from scratch — DNS, SPF, DKIM, domain verification — so emails actually reach the inbox.">También aprendí a configurar todo el stack de emails transaccionales desde cero — DNS, SPF, DKIM, verificación de dominio — para que los emails lleguen a bandeja de entrada.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
     <div class="proj-text">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría una pasarela de pago real (Stripe) desde el principio en lugar del flujo manual con Bizum/PayPal.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Implementaría un panel de gestión de pedidos para el cliente en lugar de depender del email como único registro.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests de integración para el flujo de checkout y generación de documentos, que son las partes más críticas del negocio.</li>
+      <ul class="proj-list">
+        <li data-es="Añadiría una pasarela de pago real (Stripe) desde el principio en lugar del flujo manual con Bizum/PayPal." data-en="I'd add a real payment gateway (Stripe) from the start instead of the manual Bizum/PayPal flow.">Añadiría una pasarela de pago real (Stripe) desde el principio en lugar del flujo manual con Bizum/PayPal.</li>
+        <li data-es="Implementaría un panel de gestión de pedidos para el cliente en lugar de depender del email como único registro." data-en="I'd implement an order management panel for the client instead of relying on email as the only record.">Implementaría un panel de gestión de pedidos para el cliente en lugar de depender del email como único registro.</li>
+        <li data-es="Añadiría tests de integración para el flujo de checkout y generación de documentos, que son las partes más críticas del negocio." data-en="I'd add integration tests for the checkout flow and document generation, which are the most business-critical parts.">Añadiría tests de integración para el flujo de checkout y generación de documentos, que son las partes más críticas del negocio.</li>
       </ul>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
+    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
     <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Catálogo</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Ficha de producto</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Carrito y checkout</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>PDF de pedido</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Catálogo" data-en="Catalogue">Catálogo</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Ficha de producto" data-en="Product page">Ficha de producto</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Carrito y checkout" data-en="Cart and checkout">Carrito y checkout</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="PDF de pedido" data-en="Order PDF">PDF de pedido</span></div>
     </div>
   </div>
 
-</div>
-
-<footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
-</footer>
-</body>
-</html>
+</div><footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer><script>
+  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+</script></body></html>

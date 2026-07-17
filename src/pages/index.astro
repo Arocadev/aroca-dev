@@ -2,11 +2,13 @@
 import '../styles/global.css';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alejandro Rodríguez · Desarrollador Backend</title>
+  <title>Alejandro Rodríguez · Backend Developer</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -19,15 +21,15 @@ import '../styles/global.css';
     <a href="/" class="logo">aroca<span>.dev</span></a>
     <div class="nav-r">
       <div class="nav-links">
-        <a href="#sobre-mi">sobre mí</a>
-        <a href="#proyectos">proyectos</a>
-        <a href="#experiencia">experiencia</a>
-        <a href="#contacto">contacto</a>
+        <a href="#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+        <a href="#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+        <a href="#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+        <a href="#contacto" data-es="contacto" data-en="contact">contacto</a>
       </div>
       <div class="i18n">
-        <span class="i18n-active">ES</span>
+        <span class="i18n-btn" id="btn-es">ES</span>
         <span class="i18n-sep">|</span>
-        <span class="i18n-inactive">EN</span>
+        <span class="i18n-btn" id="btn-en">EN</span>
       </div>
     </div>
   </div>
@@ -38,49 +40,109 @@ import '../styles/global.css';
     <div class="hero-eyebrow">Software Developer</div>
     <h1 class="h1">Backend<br><em>Developer</em></h1>
     <div class="hero-desc">
-      Construyo APIs, diseño sistemas y resuelvo problemas reales<br>
-      <span class="hero-desc-sub">Especializándome en Cloud y DevOps</span>
+      <span data-es="Construyo APIs, diseño sistemas y resuelvo problemas reales" data-en="I build APIs, design systems and solve real problems">Construyo APIs, diseño sistemas y resuelvo problemas reales</span><br>
+      <span class="hero-desc-sub" data-es="Especializándome en Cloud y DevOps" data-en="Specialising in Cloud and DevOps">Especializándome en Cloud y DevOps</span>
     </div>
     <div class="hero-actions">
       <a href="https://github.com/ArocaDev" target="_blank" class="btn-social"><i class="ti ti-brand-github" aria-hidden="true"></i>GitHub</a>
       <a href="https://www.linkedin.com/in/alejandro-rodriguez-calabuig-a871a1230" target="_blank" class="btn-social"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
-      <button class="btn-cv-outline"><i class="ti ti-download" aria-hidden="true"></i>Descargar CV</button>
+      <button class="btn-cv-outline"><i class="ti ti-download" aria-hidden="true"></i><span data-es="Descargar CV" data-en="Download CV">Descargar CV</span></button>
     </div>
   </div>
 </section>
 
 <section class="sec" id="sobre-mi">
   <div class="sec-inner">
-    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Sobre mí</span><div class="sec-h-line"></div></div>
+    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text" data-es="Sobre mí" data-en="About me">Sobre mí</span><div class="sec-h-line"></div></div>
     <div class="about">
       <div>
         <div class="about-name">Alejandro Rodríguez Calabuig</div>
         <div class="about-loc"><i class="ti ti-map-pin" aria-hidden="true"></i>Xàtiva, Valencia</div>
-        <p class="about-p">Descubrí la programación después de haber trabajado en sectores muy distintos. Cuando empecé a trastear con código me enganché, terminé DAM y no he parado desde entonces.</p>
-        <p class="about-p">Me especialicé en <b>backend</b> porque es donde más disfruto: sistemas que funcionan, APIs bien construidas, problemas reales resueltos de forma limpia.</p>
-        <p class="about-p">Me gustan los retos y aprender cada día algo nuevo. Esa curiosidad viene reforzada por años trabajando en entornos muy distintos, donde aprendí a trabajar en equipo, a ser autónomo, a cuidar el detalle y a mantener la calma bajo presión.</p>
-        <p class="about-p">El siguiente paso es realizar el curso de especialización en <b>Recursos y Servicios en la Nube</b>. A futuro, mi objetivo es llegar a ser <b>DevSecOps</b>.</p>
+        <p class="about-p" data-es="Descubrí la programación después de haber trabajado en sectores muy distintos. Cuando empecé a trastear con código me enganché, terminé DAM y no he parado desde entonces." data-en="I discovered programming after working in very different fields. Once I started tinkering with code I was hooked, finished my Higher Degree and haven't stopped since.">Descubrí la programación después de haber trabajado en sectores muy distintos. Cuando empecé a trastear con código me enganché, terminé DAM y no he parado desde entonces.</p>
+        <p class="about-p" data-es="Me especialicé en <b>backend</b> porque es donde más disfruto: sistemas que funcionan, APIs bien construidas, problemas reales resueltos de forma limpia." data-en="I specialised in <b>backend</b> because that's where I enjoy myself most: systems that work, well-built APIs, real problems solved cleanly.">Me especialicé en <b>backend</b> porque es donde más disfruto: sistemas que funcionan, APIs bien construidas, problemas reales resueltos de forma limpia.</p>
+        <p class="about-p" data-es="Me gustan los retos y aprender cada día algo nuevo. Esa curiosidad viene reforzada por años trabajando en entornos muy distintos, donde aprendí a trabajar en equipo, a ser autónomo, a cuidar el detalle y a mantener la calma bajo presión." data-en="I enjoy challenges and learning something new every day. That curiosity is backed by years working in very different environments, where I learned to work in a team, be autonomous, pay attention to detail and stay calm under pressure.">Me gustan los retos y aprender cada día algo nuevo. Esa curiosidad viene reforzada por años trabajando en entornos muy distintos, donde aprendí a trabajar en equipo, a ser autónomo, a cuidar el detalle y a mantener la calma bajo presión.</p>
+        <p class="about-p" data-es="El siguiente paso es realizar el curso de especialización en <b>Recursos y Servicios en la Nube</b>. A futuro, mi objetivo es orientarme hacia <b>Cloud Engineering y DevOps</b>." data-en="My next step is a specialisation course in <b>Cloud Resources and Services</b>. Long-term, my goal is to move into <b>Cloud Engineering and DevOps</b>.">El siguiente paso es realizar el curso de especialización en <b>Recursos y Servicios en la Nube</b>. A futuro, mi objetivo es orientarme hacia <b>Cloud Engineering y DevOps</b>.</p>
       </div>
       <div class="about-right">
-        <div class="about-item"><i class="ti ti-school" aria-hidden="true"></i><div class="about-item-text"><b>Técnico Superior DAM</b>IES Dr. Lluís Simarro · Xàtiva · 2023–2026</div></div>
-        <div class="about-item"><i class="ti ti-briefcase" aria-hidden="true"></i><div class="about-item-text"><b>Prácticas backend</b>Geinfor · ERP empresarial · Feb–Jun 2026</div></div>
-        <div class="about-item"><i class="ti ti-cloud" aria-hidden="true"></i><div class="about-item-text"><b>Próximo: Recursos y Servicios en la Nube</b>IES Dr. Lluís Simarro · Oct 2026</div></div>
+        <div class="about-item"><i class="ti ti-school" aria-hidden="true"></i><div class="about-item-text"><b data-es="Técnico Superior DAM" data-en="Higher Degree in Multiplatform App Development">Técnico Superior DAM</b><span data-es="IES Dr. Lluís Simarro · Xàtiva · 2023–2026" data-en="IES Dr. Lluís Simarro · Xàtiva · 2023–2026">IES Dr. Lluís Simarro · Xàtiva · 2023–2026</span></div></div>
+        <div class="about-item"><i class="ti ti-briefcase" aria-hidden="true"></i><div class="about-item-text"><b data-es="Prácticas backend" data-en="Backend internship">Prácticas backend</b><span data-es="Geinfor · ERP empresarial · Feb–Jun 2026" data-en="Geinfor · Enterprise ERP · Feb–Jun 2026">Geinfor · ERP empresarial · Feb–Jun 2026</span></div></div>
+        <div class="about-item"><i class="ti ti-cloud" aria-hidden="true"></i><div class="about-item-text"><b data-es="Próximo: Recursos y Servicios en la Nube" data-en="Next: Cloud Resources and Services">Próximo: Recursos y Servicios en la Nube</b><span data-es="IES Dr. Lluís Simarro · Oct 2026" data-en="IES Dr. Lluís Simarro · Oct 2026">IES Dr. Lluís Simarro · Oct 2026</span></div></div>
         <div class="about-obj">
           <div class="obj-labels">
-            <span class="obj-label">Próximo objetivo</span>
+            <span class="obj-label" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</span>
             <div class="obj-sep"></div>
-            <span class="obj-label">Objetivo a futuro</span>
+            <span class="obj-label" data-es="Objetivo a futuro" data-en="Long-term goal">Objetivo a futuro</span>
           </div>
           <div class="obj-vals">
+            <span class="obj-val">Cloud</span>
             <span class="obj-val">DevOps</span>
-            <span class="obj-val">DevSecOps</span>
           </div>
         </div>
-        <div class="about-tech">
-          <div class="about-tech-label"><i class="ti ti-code" aria-hidden="true"></i>Tecnologías</div>
-          <div class="about-tech-tags">
-            <span class="about-tech-tag">Java</span><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">Python</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span><span class="about-tech-tag">Kotlin</span><span class="about-tech-tag">Flutter</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">React</span><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MySQL</span><span class="about-tech-tag">MongoDB</span><span class="about-tech-tag">DB2</span><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Linux</span><span class="about-tech-tag">JUnit</span><span class="about-tech-tag">Scrum</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tecnologias">
+  <div class="sec-inner">
+    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text" data-es="Tecnologías" data-en="Technologies">Tecnologías</span><div class="sec-h-line"></div></div>
+    <div class="tech-grid">
+      <div class="tech-col">
+        <div class="tech-block">
+          <div class="tech-block-title" data-es="Lenguajes" data-en="Languages">Lenguajes</div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel">Backend</span>
+            <div class="tech-tags"><span class="about-tech-tag">Java</span><span class="about-tech-tag">Python</span></div>
           </div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel">Frontend</span>
+            <div class="tech-tags"><span class="about-tech-tag">JavaScript</span><span class="about-tech-tag">TypeScript</span></div>
+          </div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel" data-es="Móvil" data-en="Mobile">Móvil</span>
+            <div class="tech-tags"><span class="about-tech-tag">Kotlin</span><span class="about-tech-tag">Dart</span></div>
+          </div>
+        </div>
+        <div class="tech-block">
+          <div class="tech-block-title" data-es="Bases de datos" data-en="Databases">Bases de datos</div>
+          <div class="tech-tags"><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MySQL</span><span class="about-tech-tag">MongoDB</span><span class="about-tech-tag">DB2</span></div>
+        </div>
+        <div class="tech-block">
+          <div class="tech-block-title" data-es="Sistemas operativos" data-en="Operating systems">Sistemas operativos</div>
+          <div class="tech-tags"><span class="about-tech-tag">Linux</span><span class="about-tech-tag">Windows</span></div>
+        </div>
+        <div class="tech-block">
+          <div class="tech-block-title" data-es="Herramientas" data-en="Tools">Herramientas</div>
+          <div class="tech-tags"><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Postman</span><span class="about-tech-tag">Figma</span><span class="about-tech-tag">Draw.io</span></div>
+        </div>
+      </div>
+      <div class="tech-col">
+        <div class="tech-block">
+          <div class="tech-block-title">Frameworks</div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel">Backend</span>
+            <div class="tech-tags"><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span></div>
+          </div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel">Frontend</span>
+            <div class="tech-tags"><span class="about-tech-tag">React</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">Astro</span></div>
+          </div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel" data-es="Multiplataforma" data-en="Cross-platform">Multiplataforma</span>
+            <div class="tech-tags"><span class="about-tech-tag">Flutter</span></div>
+          </div>
+        </div>
+        <div class="tech-block">
+          <div class="tech-block-title">Testing</div>
+          <div class="tech-tags"><span class="about-tech-tag">JUnit</span><span class="about-tech-tag">Mockito</span></div>
+        </div>
+        <div class="tech-block">
+          <div class="tech-block-title">Web</div>
+          <div class="tech-tags"><span class="about-tech-tag">HTML</span><span class="about-tech-tag">CSS</span></div>
+        </div>
+        <div class="tech-block">
+          <div class="tech-block-title" data-es="Metodologías" data-en="Methodologies">Metodologías</div>
+          <div class="tech-tags"><span class="about-tech-tag">Scrum</span><span class="about-tech-tag">Kanban</span><span class="about-tech-tag">Git Flow</span></div>
         </div>
       </div>
     </div>
@@ -89,69 +151,64 @@ import '../styles/global.css';
 
 <section class="sec" id="proyectos">
   <div class="sec-inner">
-    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Proyectos</span><div class="sec-h-line"></div></div>
+    <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text" data-es="Proyectos" data-en="Projects">Proyectos</span><div class="sec-h-line"></div></div>
     <div class="grid">
-
       <a href="/proyectos/apr-xativa" class="card card-feat">
-        <span class="feat-tag">Destacado</span>
+        <span class="feat-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
         <div class="preview"><i class="ti ti-building-community" aria-hidden="true"></i></div>
         <div>
           <div class="ct">APR Xàtiva</div>
-          <div class="cd">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
-          <div class="tags"><span class="tag t-ac">Académico</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">React 19</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Docker</span><span class="tag t-tech">JWT</span></div>
+          <div class="cd" data-es="Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Propuesta seleccionada como base técnica para la futura implantación municipal." data-en="Vehicle access control system for Xàtiva's historic quarter. Grade 10/10. Selected as the technical foundation for the future municipal rollout.">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
+          <div class="tags"><span class="tag t-ac" data-es="Académico" data-en="Academic">Académico</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">React 19</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Docker</span><span class="tag t-tech">JWT</span></div>
         </div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
-      <a href="/proyectos/voice2task" class="card">
-        <div class="ct">Voice2Task</div>
-        <div class="cd">App Android que convierte notas de voz en tareas estructuradas con IA. Integraciones con Trello y Notion. Backend FastAPI + app Kotlin + landing web.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Whisper</span></div>
+      <a href="/proyectos/voice2task" class="card card-feat">
+        <span class="feat-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <div class="preview"><i class="ti ti-microphone" aria-hidden="true"></i></div>
+        <div>
+          <div class="ct">Voice2Task</div>
+          <div class="cd" data-es="App Android que convierte notas de voz en tareas estructuradas con IA. Integraciones con Trello y Notion. Backend FastAPI + app Kotlin + landing web." data-en="Android app that converts voice notes into structured tasks using AI. Integrations with Trello and Notion. FastAPI backend + Kotlin app + web landing.">App Android que convierte notas de voz en tareas estructuradas con IA. Integraciones con Trello y Notion. Backend FastAPI + app Kotlin + landing web.</div>
+          <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Kotlin</span><span class="tag t-tech">Whisper</span></div>
+        </div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
       <a href="/proyectos/cvmatch-ai" class="card">
         <div class="ct">CVMatch AI</div>
-        <div class="cd">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">Celery</span><span class="tag t-tech">Groq</span></div>
+        <div class="cd" data-es="Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional." data-en="Job search tool that aggregates listings from multiple sources, analyses compatibility with your CV and generates a tailored CV as a professional PDF.">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional.</div>
+        <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">Celery</span><span class="tag t-tech">Groq</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
       <a href="/proyectos/krausen" class="card">
         <div class="ct">Krausen</div>
-        <div class="cd">Plataforma de recetas de cerveza artesanal con forks, árbol de versiones por CTE recursiva, fermentación y multiidioma ES/EN/DE.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Next.js</span><span class="tag t-tech">PostgreSQL</span></div>
+        <div class="cd" data-es="Plataforma de recetas de cerveza artesanal con forks, árbol de versiones por CTE recursiva, fermentación y multiidioma ES/EN/DE." data-en="Craft beer recipe platform with forks, recursive CTE version tree, fermentation tracking and multilanguage ES/EN/DE.">Plataforma de recetas de cerveza artesanal con forks, árbol de versiones por CTE recursiva, fermentación y multiidioma ES/EN/DE.</div>
+        <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Next.js</span><span class="tag t-tech">PostgreSQL</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
       <a href="/proyectos/gestpro" class="card">
         <div class="ct">GestPro</div>
-        <div class="cd">App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales, finanzas, calendario y PDF por proyecto. Offline first.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Dart</span><span class="tag t-tech">Hive</span></div>
+        <div class="cd" data-es="App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales, finanzas, calendario y PDF por proyecto. Offline first." data-en="Android app for freelancers and small businesses. Project management, tasks, materials, finances, calendar and PDF per project. Offline first.">App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales, finanzas, calendario y PDF por proyecto. Offline first.</div>
+        <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Dart</span><span class="tag t-tech">Hive</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
       <a href="/proyectos/calidad-triple-a" class="card">
         <div class="ct">Calidad Triple A</div>
-        <div class="cd">E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos.</div>
-        <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span></div>
+        <div class="cd" data-es="E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos." data-en="Live e-commerce for a real client. CMS-driven catalogue, checkout, automatic emails with PDF and QR attachments.">E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos.</div>
+        <div class="tags"><span class="tag t-fr" data-es="Freelance" data-en="Freelance">Freelance</span><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
       <a href="/proyectos/vulldecor" class="card">
         <div class="ct">Vulldecor</div>
-        <div class="cd">Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
-        <div class="tags"><span class="tag t-fr">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Flutter</span></div>
+        <div class="cd" data-es="Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil." data-en="Corporate website and Android app for a renovation company. Two products for the same client: online presence and internal management from mobile.">Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
+        <div class="tags"><span class="tag t-fr" data-es="Freelance" data-en="Freelance">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Flutter</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
       <a href="/proyectos/aroca-dev" class="card">
         <div class="ct">aroca.dev</div>
-        <div class="cd">El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro.</div>
-        <div class="tags"><span class="tag t-pe">Personal</span><span class="tag t-tech">Astro</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Vercel</span></div>
+        <div class="cd" data-es="El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro." data-en="The portfolio you're looking at. Designed and built from scratch with Astro and plain CSS.">El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro.</div>
+        <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Astro</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Vercel</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-
     </div>
   </div>
 </section>
@@ -160,32 +217,32 @@ import '../styles/global.css';
   <div class="sec-inner">
     <div class="exp-contact">
       <div>
-        <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Experiencia</span><div class="sec-h-line"></div></div>
+        <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text" data-es="Experiencia" data-en="Experience">Experiencia</span><div class="sec-h-line"></div></div>
         <div class="exp-col-content">
           <div class="exp-item">
             <div class="exp-top">
-              <span class="er">Desarrollador Backend · Prácticas DAM</span>
+              <span class="er" data-es="Desarrollador Backend · Prácticas DAM" data-en="Backend Developer · Internship">Desarrollador Backend · Prácticas DAM</span>
               <div class="exp-meta"><span class="eco">Geinfor</span><span class="ed">· Feb – Jun 2026</span></div>
             </div>
-            <div class="edesc">Desarrollo en ERP empresarial Bushido. Proyecto principal: refuerzo del módulo importador CSV/Excel, análisis funcional, refactorización y mejora de errores. Resolución de incidencias reales en producción, tests unitarios y CI/CD en entorno Scrum.</div>
+            <div class="edesc" data-es="Desarrollo en ERP empresarial Bushido. Proyecto principal: refuerzo del módulo importador CSV/Excel, análisis funcional, refactorización y mejora de errores. Resolución de incidencias reales en producción, tests unitarios y CI/CD en entorno Scrum." data-en="Development on the Bushido enterprise ERP. Main project: strengthening the CSV/Excel importer module, functional analysis, refactoring and bug fixing. Resolution of real production incidents, unit tests and CI/CD in a Scrum environment.">Desarrollo en ERP empresarial Bushido. Proyecto principal: refuerzo del módulo importador CSV/Excel, análisis funcional, refactorización y mejora de errores. Resolución de incidencias reales en producción, tests unitarios y CI/CD en entorno Scrum.</div>
             <div class="etags"><span class="tag t-tech">Java 21</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">DB2</span><span class="tag t-tech">MongoDB</span><span class="tag t-tech">JUnit</span><span class="tag t-tech">Mockito</span><span class="tag t-tech">Scrum</span></div>
           </div>
           <div class="exp-item">
             <div class="exp-top">
-              <span class="er">Desarrollo de soluciones para clientes reales</span>
-              <div class="exp-meta"><span class="eco">Proyectos profesionales</span><span class="ed">· 2024 – hoy</span></div>
+              <span class="er" data-es="Desarrollo de soluciones para clientes reales" data-en="Development of solutions for real clients">Desarrollo de soluciones para clientes reales</span>
+              <div class="exp-meta"><span class="eco" data-es="Proyectos profesionales" data-en="Professional projects">Proyectos profesionales</span><span class="ed" data-es="· 2024 – hoy" data-en="· 2024 – present">· 2024 – hoy</span></div>
             </div>
-            <div class="edesc">Vulldecor (web corporativa + app Android para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: desarrollo, integraciones, DNS, emails transaccionales y despliegue.</div>
+            <div class="edesc" data-es="Vulldecor (web corporativa + app Android para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: desarrollo, integraciones, DNS, emails transaccionales y despliegue." data-en="Vulldecor (corporate website + Android app for a renovation company) and Calidad Triple A (live e-commerce at calidad3a.com). Full implementation: development, integrations, DNS, transactional emails and deployment.">Vulldecor (web corporativa + app Android para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: desarrollo, integraciones, DNS, emails transaccionales y despliegue.</div>
             <div class="etags"><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Vercel</span><span class="tag t-tech">Resend</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span></div>
           </div>
         </div>
       </div>
       <div id="contacto">
-        <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text">Contacto</span><div class="sec-h-line"></div></div>
+        <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text" data-es="Contacto" data-en="Contact">Contacto</span><div class="sec-h-line"></div></div>
         <div class="contact-content">
-          <div class="ch">¿Buscas un desarrollador <em>backend</em>?</div>
-          <div class="ch-mid">Tienes un reto técnico, cuéntamelo.</div>
-          <div class="ch-small">Te respondo en menos de 24h.</div>
+          <div class="ch" data-es="¿Buscas un desarrollador <em>backend</em>?" data-en="Looking for a <em>backend</em> developer?">¿Buscas un desarrollador <em>backend</em>?</div>
+          <div class="ch-mid" data-es="Tienes un reto técnico, cuéntamelo." data-en="Got a technical challenge? Let's talk.">Tienes un reto técnico, cuéntamelo.</div>
+          <div class="ch-small" data-es="Te respondo en menos de 24h." data-en="I'll get back to you within 24h.">Te respondo en menos de 24h.</div>
           <div class="clinks">
             <a class="clink" href="mailto:aleexrc.xtv@gmail.com"><i class="ti ti-mail" aria-hidden="true"></i>aleexrc.xtv@gmail.com</a>
             <a class="clink" href="tel:+34691166308"><i class="ti ti-phone" aria-hidden="true"></i>+34 691 166 308</a>
@@ -201,6 +258,28 @@ import '../styles/global.css';
 <footer>
   <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
 </footer>
+
+<script>
+  const ES = 'es';
+  const EN = 'en';
+  let current = localStorage.getItem('lang') || ES;
+  const btnEs = document.getElementById('btn-es');
+  const btnEn = document.getElementById('btn-en');
+  function applyLang(lang) {
+    current = lang;
+    localStorage.setItem('lang', lang);
+    btnEs.className = lang === ES ? 'i18n-active' : 'i18n-inactive';
+    btnEn.className = lang === EN ? 'i18n-active' : 'i18n-inactive';
+    document.getElementById('html-root').lang = lang === ES ? 'es' : 'en';
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.innerHTML = text;
+    });
+  }
+  btnEs.addEventListener('click', () => applyLang(ES));
+  btnEn.addEventListener('click', () => applyLang(EN));
+  applyLang(current);
+</script>
 
 </body>
 </html>

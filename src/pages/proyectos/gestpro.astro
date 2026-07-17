@@ -2,127 +2,102 @@
 import '../../styles/global.css';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GestPro · ArocaDev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">aroca<span>.dev</span></a>
-    <div class="nav-r">
-      <div class="nav-links">
-        <a href="/#sobre-mi">sobre mí</a>
-        <a href="/#proyectos">proyectos</a>
-        <a href="/#experiencia">experiencia</a>
-        <a href="/#contacto">contacto</a>
-      </div>
-      <div class="i18n">
-        <span class="i18n-active">ES</span>
-        <span class="i18n-sep">|</span>
-        <span class="i18n-inactive">EN</span>
-      </div>
+<body><nav><div class="nav-inner">
+  <a href="/" class="logo">aroca<span>.dev</span></a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
     </div>
+    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</nav>
-
+</div></nav>
 <div class="proj-hero">
-  <div class="proj-category">Proyecto personal · Android</div>
+  <div class="proj-category" data-es="Proyecto personal · Android" data-en="Personal project · Android">Proyecto personal · Android</div>
   <div class="proj-title">GestPro</div>
-  <div class="proj-subtitle">App Android para autónomos y pequeñas empresas. Gestiona proyectos, tareas, materiales, pagos, cobros y finanzas — todo desde el móvil, sin conexión.</div>
+  <div class="proj-subtitle" data-es="App Android para autónomos y pequeñas empresas. Gestiona proyectos, tareas, materiales, pagos, cobros y finanzas — todo desde el móvil, sin conexión." data-en="Android app for freelancers and small businesses. Manage projects, tasks, materials, payments, invoices and finances — all from your phone, offline.">App Android para autónomos y pequeñas empresas. Gestiona proyectos, tareas, materiales, pagos, cobros y finanzas — todo desde el móvil, sin conexión.</div>
   <div class="proj-links">
-    <a href="https://github.com/ArocaDev/gest-pro" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Ver en GitHub</a>
-    <a href="https://github.com/ArocaDev/gest-pro/releases" target="_blank" class="proj-link proj-link-web"><i class="ti ti-device-mobile-down"></i>Descargar APK</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo en vídeo</a>
+    <a href="https://github.com/ArocaDev/gest-pro" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
+    <a href="https://github.com/ArocaDev/gest-pro/releases" target="_blank" class="proj-link proj-link-web"><i class="ti ti-device-mobile-down"></i><span data-es="Descargar APK" data-en="Download APK">Descargar APK</span></a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
   </div>
 </div>
-
 <div class="proj-body">
 
   <div class="proj-section">
-    <div class="proj-section-title">El origen</div>
+    <div class="proj-section-title" data-es="El origen" data-en="The origin">El origen</div>
     <div class="proj-text">
-      <p>Todo empezó con <b>ObrasControl</b>, una app personal para gestionar obras de construcción. Al desarrollar una versión para un cliente real del sector (<b>Vulldecor Gestiones</b>), quedó claro que la lógica era lo suficientemente genérica como para servir a cualquier tipo de negocio.</p>
-      <p>GestPro es esa evolución: la versión generalizada y definitiva, pensada para autónomos y pequeñas empresas de cualquier sector que necesiten gestionar proyectos y finanzas desde el móvil sin depender de conexión a internet.</p>
+      <p data-es="Todo empezó con <b>ObrasControl</b>, una app personal para gestionar obras de construcción. Al desarrollar una versión para un cliente real del sector (<b>Vulldecor Gestiones</b>), quedó claro que la lógica era lo suficientemente genérica como para servir a cualquier tipo de negocio." data-en="It all started with <b>ObrasControl</b>, a personal app for managing construction projects. When developing a version for a real client in the sector (<b>Vulldecor Gestiones</b>), it became clear that the logic was generic enough to serve any type of business.">Todo empezó con <b>ObrasControl</b>, una app personal para gestionar obras de construcción. Al desarrollar una versión para un cliente real del sector (<b>Vulldecor Gestiones</b>), quedó claro que la lógica era lo suficientemente genérica como para servir a cualquier tipo de negocio.</p>
+      <p data-es="GestPro es esa evolución: la versión generalizada y definitiva, pensada para autónomos y pequeñas empresas de cualquier sector que necesiten gestionar proyectos y finanzas desde el móvil sin depender de conexión a internet." data-en="GestPro is that evolution: the generalised, definitive version, designed for freelancers and small businesses in any sector who need to manage projects and finances from their phone without depending on an internet connection.">GestPro es esa evolución: la versión generalizada y definitiva, pensada para autónomos y pequeñas empresas de cualquier sector que necesiten gestionar proyectos y finanzas desde el móvil sin depender de conexión a internet.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">La solución</div>
+    <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p>Aplicación Android nativa con <b>Flutter y Dart</b>, almacenamiento local con <b>Hive</b> y funcionamiento completamente offline. El flujo central es simple: creas un proyecto, le añades tareas con fechas límite, registras materiales con IVA y llevas el control económico desde un panel que muestra presupuesto, cobrado, pendiente y beneficio estimado en tiempo real.</p>
-      <p>El <b>dashboard de estadísticas</b> tiene cinco gráficas interactivas — distribución financiera, comparativa económica, estado de proyectos, top proyectos por presupuesto y progreso de tareas — cada una con un botón de información que explica qué muestra.</p>
-      <p>El <b>calendario</b> marca con colores los eventos de todos los tipos: inicio y fin de proyectos, fechas límite de tareas, pagos pendientes, cobros y eventos libres. Desde cualquier día puedes ver el resumen semanal y mensual.</p>
-      <p>Incluye generación de <b>PDF profesional</b> por proyecto con cabecera, resumen económico y tablas de tareas y materiales, y un sistema de <b>backup en JSON</b> para exportar e importar todos los datos entre dispositivos.</p>
+      <p data-es="Aplicación Android nativa con <b>Flutter y Dart</b>, almacenamiento local con <b>Hive</b> y funcionamiento completamente offline. El flujo central es simple: creas un proyecto, le añades tareas con fechas límite, registras materiales con IVA y llevas el control económico desde un panel que muestra presupuesto, cobrado, pendiente y beneficio estimado en tiempo real." data-en="Native Android application with <b>Flutter and Dart</b>, local storage with <b>Hive</b> and fully offline operation. The core flow is simple: create a project, add tasks with deadlines, log materials with VAT and track finances from a panel showing budget, invoiced, pending and estimated profit in real time.">Aplicación Android nativa con <b>Flutter y Dart</b>, almacenamiento local con <b>Hive</b> y funcionamiento completamente offline. El flujo central es simple: creas un proyecto, le añades tareas con fechas límite, registras materiales con IVA y llevas el control económico desde un panel que muestra presupuesto, cobrado, pendiente y beneficio estimado en tiempo real.</p>
+      <p data-es="El <b>dashboard de estadísticas</b> tiene cinco gráficas interactivas — distribución financiera, comparativa económica, estado de proyectos, top proyectos por presupuesto y progreso de tareas — cada una con un botón de información que explica qué muestra." data-en="The <b>statistics dashboard</b> has five interactive charts — financial distribution, economic comparison, project status, top projects by budget and task progress — each with an info button explaining what it shows.">El <b>dashboard de estadísticas</b> tiene cinco gráficas interactivas — distribución financiera, comparativa económica, estado de proyectos, top proyectos por presupuesto y progreso de tareas — cada una con un botón de información que explica qué muestra.</p>
+      <p data-es="Incluye generación de <b>PDF profesional</b> por proyecto con cabecera, resumen económico y tablas de tareas y materiales, y un sistema de <b>backup en JSON</b> para exportar e importar todos los datos entre dispositivos." data-en="Includes <b>professional PDF generation</b> per project with header, financial summary and task and material tables, and a <b>JSON backup system</b> to export and import all data between devices.">Incluye generación de <b>PDF profesional</b> por proyecto con cabecera, resumen económico y tablas de tareas y materiales, y un sistema de <b>backup en JSON</b> para exportar e importar todos los datos entre dispositivos.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Stack y detalles</div>
+    <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card">
-        <div class="sidebar-label">Stack técnico</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">Flutter 3</span>
-          <span class="about-tech-tag">Dart</span>
-          <span class="about-tech-tag">Hive</span>
-          <span class="about-tech-tag">fl_chart</span>
-          <span class="about-tech-tag">table_calendar</span>
-          <span class="about-tech-tag">pdf + printing</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Detalles</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">Funcional</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">APK</span><span class="sidebar-row-val">GitHub Releases</span></div>
-        </div>
-      </div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Flutter 3</span><span class="about-tech-tag">Dart</span><span class="about-tech-tag">Hive</span><span class="about-tech-tag">fl_chart</span><span class="about-tech-tag">table_calendar</span><span class="about-tech-tag">pdf + printing</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="Funcional" data-en="Functional">Funcional</span></div>
+      </div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p>GestPro fue mi primer proyecto serio con Flutter. Aprendí a gestionar estado local con Hive, a trabajar con gráficas interactivas y a generar PDFs desde código en un entorno móvil, que tiene sus propias restricciones respecto al desarrollo web.</p>
-      <p>El proceso de generalizar la app desde un caso concreto (obras de construcción) a uno genérico me obligó a pensar en abstracciones y en cómo diseñar modelos de datos flexibles sin romper lo que ya funcionaba.</p>
+      <p data-es="GestPro fue mi primer proyecto serio con Flutter. Aprendí a gestionar estado local con Hive, a trabajar con gráficas interactivas y a generar PDFs desde código en un entorno móvil." data-en="GestPro was my first serious project with Flutter. I learned to manage local state with Hive, work with interactive charts and generate PDFs from code in a mobile environment.">GestPro fue mi primer proyecto serio con Flutter. Aprendí a gestionar estado local con Hive, a trabajar con gráficas interactivas y a generar PDFs desde código en un entorno móvil.</p>
+      <p data-es="El proceso de generalizar la app desde un caso concreto a uno genérico me obligó a pensar en abstracciones y en cómo diseñar modelos de datos flexibles sin romper lo que ya funcionaba." data-en="The process of generalising the app from a specific case to a generic one forced me to think about abstractions and how to design flexible data models without breaking what already worked.">El proceso de generalizar la app desde un caso concreto a uno genérico me obligó a pensar en abstracciones y en cómo diseñar modelos de datos flexibles sin romper lo que ya funcionaba.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
     <div class="proj-text">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría sincronización con backend para no depender exclusivamente del backup manual entre dispositivos.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Separaría la lógica de negocio de la UI desde el principio con un patrón más claro (BLoC o Riverpod) en lugar de gestionar estado directamente en los screens.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests unitarios para los servicios de cálculo financiero y generación de PDF.</li>
+      <ul class="proj-list">
+        <li data-es="Añadiría sincronización con backend para no depender exclusivamente del backup manual entre dispositivos." data-en="I'd add backend sync to avoid relying solely on manual backup between devices.">Añadiría sincronización con backend para no depender exclusivamente del backup manual entre dispositivos.</li>
+        <li data-es="Separaría la lógica de negocio de la UI desde el principio con un patrón más claro (BLoC o Riverpod)." data-en="I'd separate business logic from UI from the start with a clearer pattern (BLoC or Riverpod).">Separaría la lógica de negocio de la UI desde el principio con un patrón más claro (BLoC o Riverpod).</li>
+        <li data-es="Añadiría tests unitarios para los servicios de cálculo financiero y generación de PDF." data-en="I'd add unit tests for the financial calculation and PDF generation services.">Añadiría tests unitarios para los servicios de cálculo financiero y generación de PDF.</li>
       </ul>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
+    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
     <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Dashboard</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de proyecto</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Estadísticas</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Calendario</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span>Dashboard</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Detalle de proyecto" data-en="Project detail">Detalle de proyecto</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Estadísticas" data-en="Statistics">Estadísticas</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Calendario" data-en="Calendar">Calendario</span></div>
     </div>
   </div>
 
-</div>
-
-<footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
-</footer>
-</body>
-</html>
+</div><footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer><script>
+  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+</script></body></html>

@@ -2,183 +2,126 @@
 import '../../styles/global.css';
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krausen · ArocaDev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">aroca<span>.dev</span></a>
-    <div class="nav-r">
-      <div class="nav-links">
-        <a href="/#sobre-mi">sobre mí</a>
-        <a href="/#proyectos">proyectos</a>
-        <a href="/#experiencia">experiencia</a>
-        <a href="/#contacto">contacto</a>
-      </div>
-      <div class="i18n">
-        <span class="i18n-active">ES</span>
-        <span class="i18n-sep">|</span>
-        <span class="i18n-inactive">EN</span>
-      </div>
+<nav><div class="nav-inner">
+  <a href="/" class="logo">aroca<span>.dev</span></a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
     </div>
+    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</nav>
+</div></nav>
 
 <div class="proj-hero">
-  <div class="proj-category">Proyecto personal · Backend + Frontend</div>
+  <div class="proj-category" data-es="Proyecto personal · Backend + Frontend" data-en="Personal project · Backend + Frontend">Proyecto personal · Backend + Frontend</div>
   <div class="proj-title">Krausen</div>
-  <div class="proj-subtitle">Plataforma comunitaria para compartir y versionar recetas de cerveza artesanal. Forks de recetas con árbol de versiones, seguimiento de fermentación, ranking, notificaciones y multiidioma ES / EN / DE.</div>
+  <div class="proj-subtitle" data-es="Plataforma comunitaria para compartir y versionar recetas de cerveza artesanal. Forks de recetas con árbol de versiones, seguimiento de fermentación, ranking, notificaciones y multiidioma ES / EN / DE." data-en="Community platform for sharing and versioning craft beer recipes. Recipe forks with version tree, fermentation tracking, ranking, notifications and multilanguage ES / EN / DE.">Plataforma comunitaria para compartir y versionar recetas de cerveza artesanal. Forks de recetas con árbol de versiones, seguimiento de fermentación, ranking, notificaciones y multiidioma ES / EN / DE.</div>
   <div class="proj-links">
     <a href="https://github.com/ArocaDev/krausen-backend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Backend</a>
     <a href="https://github.com/ArocaDev/krausen-frontend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Frontend</a>
     <a href="https://krausen.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i>Ver demo</a>
+    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
   </div>
 </div>
 
 <div class="proj-body">
 
   <div class="proj-section">
-    <div class="proj-section-title">El problema</div>
+    <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p>Los cerveceros caseros no tienen una herramienta pensada para gestionar recetas de forma seria. Anotar ingredientes en una hoja de cálculo funciona, pero no permite versionar cambios, hacer forks de recetas de otros, ni llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo.</p>
-      <p>Tampoco hay comunidad: no puedes descubrir recetas de otros, comentarlas, mejorarlas o construir sobre ellas. Krausen nació de las ganas de construir algo con <b>versioning real</b> para un dominio donde no existía.</p>
+      <p data-es="Los cerveceros caseros no tienen una herramienta pensada para gestionar recetas de forma seria. Anotar ingredientes en una hoja de cálculo funciona, pero no permite versionar cambios, hacer forks de recetas de otros, ni llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo." data-en="Home brewers don't have a tool designed for serious recipe management. Noting ingredients in a spreadsheet works, but it doesn't allow versioning changes, forking others' recipes, or keeping a precise record of fermentation temperatures over time.">Los cerveceros caseros no tienen una herramienta pensada para gestionar recetas de forma seria. Anotar ingredientes en una hoja de cálculo funciona, pero no permite versionar cambios, hacer forks de recetas de otros, ni llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo.</p>
+      <p data-es="Tampoco hay comunidad: no puedes descubrir recetas de otros, comentarlas, mejorarlas o construir sobre ellas. Krausen nació de las ganas de construir algo con <b>versioning real</b> para un dominio donde no existía." data-en="There's no community either: you can't discover others' recipes, comment on them, improve them or build on them. Krausen was born from the desire to build something with <b>real versioning</b> for a domain where it didn't exist.">Tampoco hay comunidad: no puedes descubrir recetas de otros, comentarlas, mejorarlas o construir sobre ellas. Krausen nació de las ganas de construir algo con <b>versioning real</b> para un dominio donde no existía.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">La solución</div>
+    <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p>Plataforma fullstack con <b>backend en FastAPI + PostgreSQL</b> y <b>frontend en Next.js 15 con TypeScript y Tailwind CSS 4</b>. Las recetas tienen versioning completo: puedes hacer fork de cualquier receta pública y el árbol de versiones se genera con una <b>CTE recursiva en PostgreSQL</b>, igual que un árbol de commits en Git.</p>
-      <p>El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en una gráfica de líneas con <b>Recharts</b>. La edición de una receta está bloqueada si ya tiene forks derivados — para no romper la trazabilidad.</p>
-      <p>Incluye sistema de <b>me gustas</b> con bloqueo de autovaloración y notificación automática al autor, <b>comentarios</b> por receta, <b>ranking</b> mensual/anual/global por me gustas, <b>notificaciones</b> con badge en navbar y <b>perfiles públicos</b> de usuario con avatares Dicebear generados por username.</p>
-      <p>El frontend tiene skeleton loading animado, toasts de error centralizados, protección de rutas privadas y soporte completo en español, inglés y alemán con <b>next-intl</b> y cookie persistente.</p>
+      <p data-es="Plataforma fullstack con <b>backend en FastAPI + PostgreSQL</b> y <b>frontend en Next.js 15 con TypeScript y Tailwind CSS 4</b>. Las recetas tienen versioning completo: puedes hacer fork de cualquier receta pública y el árbol de versiones se genera con una <b>CTE recursiva en PostgreSQL</b>, igual que un árbol de commits en Git." data-en="Fullstack platform with <b>FastAPI + PostgreSQL backend</b> and <b>Next.js 15 frontend with TypeScript and Tailwind CSS 4</b>. Recipes have full versioning: you can fork any public recipe and the version tree is generated with a <b>recursive CTE in PostgreSQL</b>, just like a Git commit tree.">Plataforma fullstack con <b>backend en FastAPI + PostgreSQL</b> y <b>frontend en Next.js 15 con TypeScript y Tailwind CSS 4</b>. Las recetas tienen versioning completo: puedes hacer fork de cualquier receta pública y el árbol de versiones se genera con una <b>CTE recursiva en PostgreSQL</b>, igual que un árbol de commits en Git.</p>
+      <p data-es="El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en una gráfica de líneas con <b>Recharts</b>. La edición de una receta está bloqueada si ya tiene forks derivados — para no romper la trazabilidad." data-en="The fermentation module allows recording temperature readings throughout the process and visualising them in a line chart with <b>Recharts</b>. Editing a recipe is locked if it already has derived forks — to preserve traceability.">El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en una gráfica de líneas con <b>Recharts</b>. La edición de una receta está bloqueada si ya tiene forks derivados — para no romper la trazabilidad.</p>
+      <p data-es="Incluye sistema de <b>me gustas</b> con bloqueo de autovaloración y notificación automática al autor, <b>comentarios</b> por receta, <b>ranking</b> mensual/anual/global por me gustas, <b>notificaciones</b> con badge en navbar y <b>perfiles públicos</b> de usuario con avatares Dicebear generados por username." data-en="Includes a <b>likes</b> system with self-rating lock and automatic author notification, per-recipe <b>comments</b>, monthly/annual/global <b>ranking</b> by likes, <b>notifications</b> with navbar badge and <b>public user profiles</b> with Dicebear avatars generated by username.">Incluye sistema de <b>me gustas</b> con bloqueo de autovaloración y notificación automática al autor, <b>comentarios</b> por receta, <b>ranking</b> mensual/anual/global por me gustas, <b>notificaciones</b> con badge en navbar y <b>perfiles públicos</b> de usuario con avatares Dicebear generados por username.</p>
+      <p data-es="El frontend tiene skeleton loading animado, toasts de error centralizados, protección de rutas privadas y soporte completo en español, inglés y alemán con <b>next-intl</b> y cookie persistente." data-en="The frontend has animated skeleton loading, centralised error toasts, private route protection and full support in Spanish, English and German with <b>next-intl</b> and a persistent cookie.">El frontend tiene skeleton loading animado, toasts de error centralizados, protección de rutas privadas y soporte completo en español, inglés y alemán con <b>next-intl</b> y cookie persistente.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Detalles técnicos destacados</div>
+    <div class="proj-section-title" data-es="Detalles técnicos destacados" data-en="Technical highlights">Detalles técnicos destacados</div>
     <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="about-item">
-        <i class="ti ti-git-branch" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b>CTE recursiva para el árbol de forks</b>
-          El árbol de versiones de una receta se construye con una Common Table Expression recursiva en PostgreSQL, evitando múltiples queries y resolviendo el problema N+1 de raíz.
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-shield" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b>Edición controlada</b>
-          Una receta solo es editable si no tiene forks derivados. Si alguien ha hecho fork de tu receta, no puedes modificar el original — la trazabilidad del árbol queda garantizada.
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-seedling" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b>47 ingredientes precargados</b>
-          El catálogo inicial incluye 12 maltas, 12 lúpulos, 7 levaduras y 16 adjuntos (café, cacao, miel, vainilla, frambuesa...) cargados con un seed script al arrancar.
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-mail" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b>Recuperación de contraseña por email</b>
-          Flujo completo con tokens de reset con expiración, emails transaccionales vía Resend y página de restablecimiento de contraseña.
-        </div>
-      </div>
+      <div class="about-item"><i class="ti ti-git-branch"></i><div class="about-item-text"><b data-es="CTE recursiva para el árbol de forks" data-en="Recursive CTE for the fork tree">CTE recursiva para el árbol de forks</b><span data-es="El árbol de versiones de una receta se construye con una Common Table Expression recursiva en PostgreSQL, evitando múltiples queries y resolviendo el problema N+1 de raíz." data-en="The version tree of a recipe is built with a recursive Common Table Expression in PostgreSQL, avoiding multiple queries and solving the N+1 problem at its root.">El árbol de versiones de una receta se construye con una Common Table Expression recursiva en PostgreSQL, evitando múltiples queries y resolviendo el problema N+1 de raíz.</span></div></div>
+      <div class="about-item"><i class="ti ti-shield"></i><div class="about-item-text"><b data-es="Edición controlada" data-en="Controlled editing">Edición controlada</b><span data-es="Una receta solo es editable si no tiene forks derivados. Si alguien ha hecho fork de tu receta, no puedes modificar el original — la trazabilidad del árbol queda garantizada." data-en="A recipe is only editable if it has no derived forks. If someone has forked your recipe, you can't modify the original — the tree's traceability is preserved.">Una receta solo es editable si no tiene forks derivados. Si alguien ha hecho fork de tu receta, no puedes modificar el original — la trazabilidad del árbol queda garantizada.</span></div></div>
+      <div class="about-item"><i class="ti ti-seedling"></i><div class="about-item-text"><b data-es="47 ingredientes precargados" data-en="47 preloaded ingredients">47 ingredientes precargados</b><span data-es="El catálogo inicial incluye 12 maltas, 12 lúpulos, 7 levaduras y 16 adjuntos cargados con un seed script al arrancar." data-en="The initial catalogue includes 12 malts, 12 hops, 7 yeasts and 16 adjuncts loaded via a seed script on startup.">El catálogo inicial incluye 12 maltas, 12 lúpulos, 7 levaduras y 16 adjuntos cargados con un seed script al arrancar.</span></div></div>
+      <div class="about-item"><i class="ti ti-mail"></i><div class="about-item-text"><b data-es="Recuperación de contraseña por email" data-en="Email-based password recovery">Recuperación de contraseña por email</b><span data-es="Flujo completo con tokens de reset con expiración, emails transaccionales vía Resend y página de restablecimiento de contraseña." data-en="Full flow with expiring reset tokens, transactional emails via Resend and a password reset page.">Flujo completo con tokens de reset con expiración, emails transaccionales vía Resend y página de restablecimiento de contraseña.</span></div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Stack y detalles</div>
+    <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card">
-        <div class="sidebar-label">Backend</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">FastAPI</span>
-          <span class="about-tech-tag">Python 3.14</span>
-          <span class="about-tech-tag">PostgreSQL 16</span>
-          <span class="about-tech-tag">SQLAlchemy 2.0</span>
-          <span class="about-tech-tag">Alembic</span>
-          <span class="about-tech-tag">Pydantic v2</span>
-          <span class="about-tech-tag">Resend</span>
-          <span class="about-tech-tag">Docker</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Frontend</div>
-        <div class="sidebar-stack">
-          <span class="about-tech-tag">Next.js 15</span>
-          <span class="about-tech-tag">TypeScript</span>
-          <span class="about-tech-tag">Tailwind CSS 4</span>
-          <span class="about-tech-tag">next-intl</span>
-          <span class="about-tech-tag">Recharts</span>
-          <span class="about-tech-tag">Axios</span>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Detalles</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Tipo</span><span class="sidebar-row-val">Personal</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Idiomas</span><span class="sidebar-row-val">ES · EN · DE</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Estado</span><span class="sidebar-row-val">En desarrollo</span></div>
-        </div>
-      </div>
-      <div class="sidebar-card">
-        <div class="sidebar-label">Demo</div>
-        <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label">Usuario</span><span class="sidebar-row-val">admin@krausen.beer</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Contraseña</span><span class="sidebar-row-val">admin1234</span></div>
-        </div>
-      </div>
+      <div class="sidebar-card"><div class="sidebar-label">Backend</div><div class="sidebar-stack"><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Python 3.14</span><span class="about-tech-tag">PostgreSQL 16</span><span class="about-tech-tag">SQLAlchemy 2.0</span><span class="about-tech-tag">Alembic</span><span class="about-tech-tag">Pydantic v2</span><span class="about-tech-tag">Resend</span><span class="about-tech-tag">Docker</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label">Frontend</div><div class="sidebar-stack"><span class="about-tech-tag">Next.js 15</span><span class="about-tech-tag">TypeScript</span><span class="about-tech-tag">Tailwind CSS 4</span><span class="about-tech-tag">next-intl</span><span class="about-tech-tag">Recharts</span><span class="about-tech-tag">Axios</span></div></div>
+      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Idiomas" data-en="Languages">Idiomas</span><span class="sidebar-row-val">ES · EN · DE</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En desarrollo" data-en="In development">En desarrollo</span></div>
+      </div></div>
+      <div class="sidebar-card"><div class="sidebar-label">Demo</div><div class="sidebar-detail">
+        <div class="sidebar-row"><span class="sidebar-row-label">Email</span><span class="sidebar-row-val">admin@krausen.beer</span></div>
+        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Contraseña" data-en="Password">Contraseña</span><span class="sidebar-row-val">admin1234</span></div>
+      </div></div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Lo que aprendí</div>
+    <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p>Krausen fue el proyecto donde más profundicé en diseño de base de datos: modelar relaciones recursivas (un fork es una receta que referencia a otra receta), garantizar integridad con constraints y optimizar queries complejas con CTEs.</p>
-      <p>En el frontend, fue mi primera experiencia seria con TypeScript en un proyecto de tamaño real. Aprendí a valorar el tipado estricto cuando el proyecto crece — los errores que aparecen en compilación son errores que no aparecen en producción.</p>
-      <p>También fue donde más pensé en UX: el flujo de forks, la edición bloqueada, el árbol visual de versiones — todas decisiones que afectan directamente a cómo el usuario entiende el producto.</p>
+      <p data-es="Krausen fue el proyecto donde más profundicé en diseño de base de datos: modelar relaciones recursivas, garantizar integridad con constraints y optimizar queries complejas con CTEs." data-en="Krausen was the project where I went deepest into database design: modelling recursive relationships, ensuring integrity with constraints and optimising complex queries with CTEs.">Krausen fue el proyecto donde más profundicé en diseño de base de datos: modelar relaciones recursivas, garantizar integridad con constraints y optimizar queries complejas con CTEs.</p>
+      <p data-es="En el frontend, fue mi primera experiencia seria con TypeScript en un proyecto de tamaño real. Aprendí a valorar el tipado estricto cuando el proyecto crece — los errores que aparecen en compilación son errores que no aparecen en producción." data-en="On the frontend, it was my first serious experience with TypeScript in a real-sized project. I learned to value strict typing as the project grows — errors that appear at compile time are errors that don't appear in production.">En el frontend, fue mi primera experiencia seria con TypeScript en un proyecto de tamaño real. Aprendí a valorar el tipado estricto cuando el proyecto crece — los errores que aparecen en compilación son errores que no aparecen en producción.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">¿Qué haría diferente hoy?</div>
+    <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
     <div class="proj-text">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Movería los tokens JWT a cookies httpOnly desde el principio para eliminar el flash de autenticación en el frontend.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Añadiría tests en el backend — en un proyecto con lógica de forks y rankings es donde más falta hacen.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Usaría React Query en el frontend para gestión de caché y estados de carga en lugar de manejar todo con useEffect.</li>
-        <li style="display:flex;gap:8px"><span style="color:var(--ac);flex-shrink:0">—</span>Definiría el contrato de API con OpenAPI antes de empezar a construir el frontend, no en paralelo.</li>
+      <ul class="proj-list">
+        <li data-es="Movería los tokens JWT a cookies httpOnly desde el principio para eliminar el flash de autenticación en el frontend." data-en="I'd move JWT tokens to httpOnly cookies from the start to eliminate the auth flash on the frontend.">Movería los tokens JWT a cookies httpOnly desde el principio para eliminar el flash de autenticación en el frontend.</li>
+        <li data-es="Añadiría tests en el backend — en un proyecto con lógica de forks y rankings es donde más falta hacen." data-en="I'd add tests on the backend — in a project with fork logic and rankings, that's where they're needed most.">Añadiría tests en el backend — en un proyecto con lógica de forks y rankings es donde más falta hacen.</li>
+        <li data-es="Usaría React Query en el frontend para gestión de caché y estados de carga en lugar de manejar todo con useEffect." data-en="I'd use React Query on the frontend for cache management and loading states instead of handling everything with useEffect.">Usaría React Query en el frontend para gestión de caché y estados de carga en lugar de manejar todo con useEffect.</li>
+        <li data-es="Definiría el contrato de API con OpenAPI antes de empezar a construir el frontend, no en paralelo." data-en="I'd define the API contract with OpenAPI before starting to build the frontend, not in parallel.">Definiría el contrato de API con OpenAPI antes de empezar a construir el frontend, no en paralelo.</li>
       </ul>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title">Capturas</div>
+    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
     <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Explorar recetas</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Detalle de receta</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Árbol de versiones</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Gráfica de fermentación</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Explorar recetas" data-en="Browse recipes">Explorar recetas</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Detalle de receta" data-en="Recipe detail">Detalle de receta</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Árbol de versiones" data-en="Version tree">Árbol de versiones</span></div>
+      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Gráfica de fermentación" data-en="Fermentation chart">Gráfica de fermentación</span></div>
     </div>
   </div>
 
 </div>
-
-<footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
-</footer>
-</body>
-</html>
+<footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer>
+<script>
+  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+</script>
+</body></html>
