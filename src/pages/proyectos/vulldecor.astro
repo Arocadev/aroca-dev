@@ -4,38 +4,99 @@ import '../../styles/global.css';
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vulldecor · ArocaDev</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    /* LIGHTBOX */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;object-fit:contain;margin:auto}
+    .lightbox-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;z-index:1001}
+    /* LAYOUT */
+    .section-divider{border-top:1px solid rgba(255,255,255,0.07);margin:80px 0}
+    .proj-section{margin-bottom:72px}
+    .proj-section-title{margin-bottom:24px}
+    /* DIAGRAMAS */
+    .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
+    .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
+    .diagram-item span{display:block;font-size:11px;color:#888;padding:6px 2px 0}
+    /* GIF WEB */
+    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
+    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
+    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
+    .gif-overlay.hidden{opacity:0;pointer-events:none}
+    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
+    .gif-play-btn i{font-size:28px;color:#fff;margin-left:4px}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;margin-top:8px;text-align:center}
+    /* CAROUSEL WEB */
+    .carousel{position:relative;display:flex;align-items:center;gap:10px}
+    .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .carousel-slide{display:none;flex-direction:column}
+    .carousel-slide.active{display:flex}
+    .carousel-slide img{width:100%;display:block;cursor:pointer;max-height:760px;object-fit:cover;object-position:top}
+    .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
+    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--t2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
+    .carousel-btn:hover{background:rgba(255,255,255,0.12)}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
+    .dot.active{background:var(--ac)}
+    .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:24px;margin-top:8px;text-align:center}
+    /* MÓVIL — GIF y carousel app */
+    .gif-container.mobile-gif{width:300px;margin:0 auto}
+    .gif-container.mobile-gif img{width:100%;max-height:500px;object-fit:contain;object-position:top;display:block;border-radius:8px}
+    .mobile-carousel{justify-content:center}
+    .carousel-track.mobile-track{flex:unset;width:300px;background:var(--bg2);border:1px solid rgba(255,255,255,0.07);border-radius:8px;overflow:hidden}
+    .carousel-slide.mobile img{width:100%;max-height:500px;object-fit:contain;object-position:top;display:block;cursor:pointer}
+  </style>
 </head>
-<body><nav><div class="nav-inner">
-  <a href="/" class="logo">aroca<span>.dev</span></a>
-  <div class="nav-r">
-    <div class="nav-links">
-      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
-      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
-      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
-      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+        <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+        <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+        <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+      </div>
+      <div class="i18n">
+        <span class="i18n-btn" id="btn-es">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-btn" id="btn-en">EN</span>
+      </div>
     </div>
-    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</div></nav>
+</nav>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto freelance · En producción" data-en="Freelance project · Live">Proyecto freelance · En producción</div>
   <div class="proj-title">Vulldecor</div>
   <div class="proj-subtitle" data-es="Web corporativa y app Android para empresa local de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil." data-en="Corporate website and Android app for a local renovation company. Two products for the same client: online presence and internal management from mobile.">Web corporativa y app Android para empresa local de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
   <div class="proj-links">
     <a href="https://vulldecor.es" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i><span data-es="Ver web" data-en="Visit site">Ver web</span></a>
-    <a href="https://github.com/ArocaDev/vulldecor" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i><span data-es="GitHub — Web" data-en="GitHub — Web">GitHub — Web</span></a>
-    <a href="https://github.com/ArocaDev/vulldecor-gestiones" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-github"></i><span data-es="GitHub — App" data-en="GitHub — App">GitHub — App</span></a>
   </div>
 </div>
+
 <div class="proj-body">
 
+  <div style="font-size:11px;color:var(--t4);margin-bottom:24px;display:flex;align-items:center;gap:6px"><i class="ti ti-lock" style="font-size:12px"></i><span data-es="Los repositorios de la web y la app son privados porque el código pertenece al cliente. Si quieres verlos, puedes contactarme directamente." data-en="Both repositories are private as the code belongs to the client. If you'd like to see them, feel free to contact me directly.">Los repositorios de la web y la app son privados porque el código pertenece al cliente. Si quieres verlos, puedes contactarme directamente.</span></div>
+
+  <!-- WEB -->
   <div class="proj-section">
     <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
@@ -44,75 +105,97 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="La web — Vulldecor.es" data-en="The website — Vulldecor.es">La web — Vulldecor.es</div>
+    <div class="proj-section-title" data-es="La web" data-en="The website — vulldecor.es">La web</div>
     <div class="proj-text">
       <p data-es="Sitio estático en <b>HTML, CSS y JavaScript</b> puro, sin frameworks, para máxima velocidad de carga. El formulario de presupuesto permite seleccionar servicio e inmueble por botones y enviar directamente por <b>WhatsApp con mensaje preformateado</b> o por email vía FormSubmit." data-en="Static site in pure <b>HTML, CSS and JavaScript</b>, no frameworks, for maximum load speed. The quote form lets users select service and property type by button and send directly via <b>WhatsApp with a pre-formatted message</b> or by email via FormSubmit.">Sitio estático en <b>HTML, CSS y JavaScript</b> puro, sin frameworks, para máxima velocidad de carga. El formulario de presupuesto permite seleccionar servicio e inmueble por botones y enviar directamente por <b>WhatsApp con mensaje preformateado</b> o por email vía FormSubmit.</p>
-      <p data-es="SEO local optimizado con Schema.org LocalBusiness, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies persistente." data-en="Local SEO optimised with Schema.org LocalBusiness, Open Graph, sitemap and robots.txt. Embedded Google Maps, floating WhatsApp button and GDPR compliance with a persistent cookie banner.">SEO local optimizado con Schema.org LocalBusiness, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies persistente.</p>
+      <p data-es="SEO local optimizado con Schema.org LocalBusiness, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies." data-en="Local SEO optimised with Schema.org LocalBusiness, Open Graph, sitemap and robots.txt. Embedded Google Maps, floating WhatsApp button and GDPR compliance with a cookie banner.">SEO local optimizado con Schema.org LocalBusiness, Open Graph, sitemap y robots.txt. Mapa de Google Maps embebido, botón flotante de WhatsApp y cumplimiento RGPD con banner de cookies.</p>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Stack y detalles — Web" data-en="Stack and details — Web">Stack y detalles — Web</div>
+    <div class="proj-section-title" data-es="Detalles de la web" data-en="Stack and details — Web">Detalles de la web</div>
     <div class="meta-grid">
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">HTML5</span><span class="about-tech-tag">CSS3</span><span class="about-tech-tag">JavaScript</span><span class="about-tech-tag">FormSubmit</span><span class="about-tech-tag">Hostinger</span></div></div>
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2024</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">vulldecor.es</span></div>
-      </div></div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">HTML5</span><span class="about-tech-tag">CSS3</span><span class="about-tech-tag">JavaScript</span><span class="about-tech-tag">FormSubmit</span><span class="about-tech-tag">Hostinger</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2024</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">vulldecor.es</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Capturas — Web" data-en="Screenshots — Web">Capturas — Web</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo"></i><span>Hero</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Servicios" data-en="Services">Servicios</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Formulario" data-en="Form">Formulario</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Móvil" data-en="Mobile">Móvil</span></div>
-    </div>
-  </div>
-
-  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
-
-  <div class="proj-section">
-    <div class="proj-section-title" data-es="También para este cliente — Vulldecor Gestiones" data-en="Also for this client — Vulldecor Gestiones">También para este cliente — Vulldecor Gestiones</div>
-    <div class="proj-text">
-      <p data-es="Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones del día a día desde el móvil. Tenía claro que no quería complicaciones: sin gráficas, sin módulos de economía avanzada, sin nada que no fuera a usar." data-en="Once the website was delivered, the client also needed to manage projects, payments and daily notes from their phone. They were clear they didn't want complications: no charts, no advanced financial modules, nothing they weren't going to use.">Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones del día a día desde el móvil. Tenía claro que no quería complicaciones: sin gráficas, sin módulos de economía avanzada, sin nada que no fuera a usar.</p>
-      <p data-es="Tomé la base de <b>GestPro</b> y la adapté a lo que el cliente realmente pedía. Es el mismo principio que guía cualquier buen desarrollo para cliente: <b>construir lo que se necesita, no lo que se podría necesitar</b>." data-en="I took <b>GestPro</b> as a base and adapted it to what the client actually asked for. It's the same principle that guides any good client development: <b>build what's needed, not what might be needed</b>.">Tomé la base de <b>GestPro</b> y la adapté a lo que el cliente realmente pedía. Es el mismo principio que guía cualquier buen desarrollo para cliente: <b>construir lo que se necesita, no lo que se podría necesitar</b>.</p>
+    <div class="proj-section-title" data-es="Diagramas de la web" data-en="Diagrams — Web">Diagramas de la web</div>
+    <div class="diagram-grid">
+      <div class="diagram-item" onclick="window.open('/proyectos/vulldecor/arquitectura-web.svg','_blank')">
+        <object data="/proyectos/vulldecor/arquitectura-web.svg" type="image/svg+xml"></object>
+        <span data-es="Arquitectura · clic para ampliar" data-en="Architecture · click to enlarge">Arquitectura · clic para ampliar</span>
+      </div>
+      <div class="diagram-item" onclick="window.open('/proyectos/vulldecor/flujo-web.svg','_blank')">
+        <object data="/proyectos/vulldecor/flujo-web.svg" type="image/svg+xml"></object>
+        <span data-es="Flujo de contacto · clic para ampliar" data-en="Contact flow · click to enlarge">Flujo de contacto · clic para ampliar</span>
+      </div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Stack y detalles — App" data-en="Stack and details — App">Stack y detalles — App</div>
-    <div class="meta-grid">
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Flutter 3</span><span class="about-tech-tag">Dart</span><span class="about-tech-tag">Hive</span><span class="about-tech-tag">table_calendar</span></div></div>
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En uso" data-en="In use">En uso</span></div>
-      </div></div>
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Flujo de presupuesto" data-en="Quote flow — Web">Flujo de presupuesto</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-web">
+      <img id="gif-web-img" src="/proyectos/vulldecor/demo-web-still.png" data-gif="/proyectos/vulldecor/demo-web.gif" data-still="/proyectos/vulldecor/demo-web-still.png" alt="Flujo web" />
+      <div class="gif-overlay" id="gif-web-overlay">
+        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+      </div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Capturas — App" data-en="Screenshots — App">Capturas — App</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Obras" data-en="Projects">Obras</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Pagos" data-en="Payments">Pagos</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Calendario" data-en="Calendar">Calendario</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Anotaciones" data-en="Notes">Anotaciones</span></div>
+    <div class="proj-section-title" data-es="Capturas de la web" data-en="Screenshots — Web">Capturas de la web</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel">
+      <button class="carousel-btn" id="web-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track">
+        <div class="carousel-slide active">
+          <img src="/proyectos/vulldecor/web-hero.png" alt="Hero" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Hero — página principal" data-en="Hero — main page">Hero — página principal</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/vulldecor/web-servicios.png" alt="Servicios" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Servicios" data-en="Services">Servicios</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/vulldecor/web-formulario.png" alt="Formulario" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Formulario de presupuesto" data-en="Quote form">Formulario de presupuesto</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/vulldecor/web-movil.png" alt="Móvil" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Vista móvil — diseño responsive" data-en="Mobile view — responsive design">Vista móvil — diseño responsive</span>
+        </div>
+      </div>
+      <button class="carousel-btn" id="web-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="web-dots">
+      <span class="dot active" onclick="goToWebSlide(0)"></span>
+      <span class="dot" onclick="goToWebSlide(1)"></span>
+      <span class="dot" onclick="goToWebSlide(2)"></span>
+      <span class="dot" onclick="goToWebSlide(3)"></span>
     </div>
   </div>
-
-  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
       <p data-es="Este fue mi primer cliente real de principio a fin. Aprendí que gestionar expectativas y comunicar bien es tan importante como el código en sí." data-en="This was my first real client from start to finish. I learned that managing expectations and communicating well is just as important as the code itself.">Este fue mi primer cliente real de principio a fin. Aprendí que gestionar expectativas y comunicar bien es tan importante como el código en sí.</p>
-      <p data-es="La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Eso me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido." data-en="The app was the first time I adapted a personal project to a client's specific needs. That taught me to listen before proposing solutions and to resist the temptation to add features nobody asked for.">La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Eso me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido.</p>
+      <p data-es="La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido." data-en="The app was the first time I adapted a personal project to a client's specific needs. It taught me to listen before proposing solutions and to resist adding features nobody asked for.">La app fue la primera vez que adapté un proyecto propio a las necesidades específicas de un cliente. Me enseñó a escuchar antes de proponer soluciones y a resistir la tentación de añadir funcionalidades que nadie ha pedido.</p>
     </div>
   </div>
 
@@ -127,9 +210,168 @@ import '../../styles/global.css';
     </div>
   </div>
 
-</div><footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer><script>
-  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  <div class="section-divider"></div>
+
+  <!-- APP -->
+  <div class="proj-section" style="margin-top:56px">
+    <div class="proj-section-title" data-es="También para este cliente: Vulldecor Gestiones" data-en="Also for this client: Vulldecor Gestiones">También para este cliente: Vulldecor Gestiones</div>
+    <div class="proj-text">
+      <p data-es="Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones desde el móvil. Sin complicaciones: sin gráficas, sin módulos avanzados, sin nada que no fuera a usar." data-en="Once the website was delivered, the client also needed to manage projects, payments and notes from their phone. No complications: no charts, no advanced modules, nothing they weren't going to use.">Una vez entregada la web, el cliente necesitaba también gestionar obras, pagos y anotaciones desde el móvil. Sin complicaciones: sin gráficas, sin módulos avanzados, sin nada que no fuera a usar.</p>
+      <p data-es="Tomé la base de <b>GestPro</b> y la adapté exactamente a lo que el cliente pedía. Es el mismo principio que guía cualquier buen desarrollo para cliente: construir lo que se necesita, no lo que se podría necesitar." data-en="I took <b>GestPro</b> as a base and adapted it to exactly what the client asked for. It's the same principle behind any good client development: build what's needed, not what might be needed.">Tomé la base de <b>GestPro</b> y la adapté exactamente a lo que el cliente pedía. Es el mismo principio que guía cualquier buen desarrollo para cliente: construir lo que se necesita, no lo que se podría necesitar.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="Detalles de la app Android" data-en="Stack and details — Android app">Detalles de la app Android</div>
+    <div class="meta-grid">
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Flutter 3</span><span class="about-tech-tag">Dart</span><span class="about-tech-tag">Hive</span><span class="about-tech-tag">table_calendar</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En uso" data-en="In use">En uso</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label"><i class="ti ti-lock" style="font-size:11px"></i></span><span class="sidebar-row-val" style="color:var(--t4);font-size:11px" data-es="Repo privado — código del cliente" data-en="Private repo — client code">Repo privado — código del cliente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" data-es="Diagramas de la app" data-en="Diagrams — App">Diagramas de la app</div>
+    <div class="diagram-grid">
+      <div class="diagram-item" onclick="window.open('/proyectos/vulldecor/arquitectura-app.svg','_blank')">
+        <object data="/proyectos/vulldecor/arquitectura-app.svg" type="image/svg+xml"></object>
+        <span data-es="Arquitectura · clic para ampliar" data-en="Architecture · click to enlarge">Arquitectura · clic para ampliar</span>
+      </div>
+      <div class="diagram-item" onclick="window.open('/proyectos/vulldecor/flujo-app.svg','_blank')">
+        <object data="/proyectos/vulldecor/flujo-app.svg" type="image/svg+xml"></object>
+        <span data-es="Flujo de gestión · clic para ampliar" data-en="Management flow · click to enlarge">Flujo de gestión · clic para ampliar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Demo de la app" data-en="Demo — Android app">Demo de la app</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container mobile-gif" id="gif-app">
+      <img id="gif-app-img" src="/proyectos/vulldecor/demo-app-still.png" data-gif="/proyectos/vulldecor/demo-app.gif" data-still="/proyectos/vulldecor/demo-app-still.png" alt="Demo app" />
+      <div class="gif-overlay" id="gif-app-overlay">
+        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" data-es="Capturas de la app" data-en="Screenshots — Android app">Capturas de la app</div>
+    <div style="margin-top:24px">
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel mobile-carousel">
+      <button class="carousel-btn" id="app-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track mobile-track" id="app-track">
+        <div class="carousel-slide mobile active">
+          <img src="/proyectos/vulldecor/app-obras.png" alt="Lista de obras" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Lista de obras" data-en="Projects list">Lista de obras</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/vulldecor/app-detalle-obra.png" alt="Detalle obra" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Detalle de obra con tareas" data-en="Project detail with tasks">Detalle de obra con tareas</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/vulldecor/app-pagos.png" alt="Pagos" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Lista de pagos" data-en="Payments list">Lista de pagos</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/vulldecor/app-detalle-pago.png" alt="Detalle pago" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Detalle de pagos" data-en="Payment detail">Detalle de pagos</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/vulldecor/app-calendario.png" alt="Calendario" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Calendario mensual" data-en="Monthly calendar">Calendario mensual</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/vulldecor/app-calendario-mensual.png" alt="Calendario mensual" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Vista mensual con tareas" data-en="Monthly view with tasks">Vista mensual con tareas</span>
+        </div>
+      </div>
+      <button class="carousel-btn" id="app-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="app-dots">
+      <span class="dot active" onclick="goToAppSlide(0)"></span>
+      <span class="dot" onclick="goToAppSlide(1)"></span>
+      <span class="dot" onclick="goToAppSlide(2)"></span>
+      <span class="dot" onclick="goToAppSlide(3)"></span>
+      <span class="dot" onclick="goToAppSlide(4)"></span>
+      <span class="dot" onclick="goToAppSlide(5)"></span>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+<footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer>
+
+<script>
+  // LIGHTBOX
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.getElementById('lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
+
+  // GIF WEB
+  let gifWebPlaying = false;
+  document.getElementById('gif-web').addEventListener('click', function() {
+    const img = document.getElementById('gif-web-img');
+    const overlay = document.getElementById('gif-web-overlay');
+    if (!gifWebPlaying) { img.src = img.getAttribute('data-gif') + '?t=' + Date.now(); overlay.classList.add('hidden'); gifWebPlaying = true; }
+    else { img.src = img.getAttribute('data-still'); overlay.classList.remove('hidden'); gifWebPlaying = false; }
+  });
+
+  // GIF APP
+  let gifAppPlaying = false;
+  document.getElementById('gif-app').addEventListener('click', function() {
+    const img = document.getElementById('gif-app-img');
+    const overlay = document.getElementById('gif-app-overlay');
+    if (!gifAppPlaying) { img.src = img.getAttribute('data-gif') + '?t=' + Date.now(); overlay.classList.add('hidden'); gifAppPlaying = true; }
+    else { img.src = img.getAttribute('data-still'); overlay.classList.remove('hidden'); gifAppPlaying = false; }
+  });
+
+  // CAROUSEL WEB
+  let webSlide = 0;
+  const webSlides = document.querySelectorAll('#web-prev')[0].closest('.proj-section').querySelectorAll('.carousel-slide');
+  const webDots = document.querySelectorAll('#web-dots .dot');
+  function goToWebSlide(n) {
+    webSlides[webSlide].classList.remove('active'); webDots[webSlide].classList.remove('active');
+    webSlide = (n + webSlides.length) % webSlides.length;
+    webSlides[webSlide].classList.add('active'); webDots[webSlide].classList.add('active');
+  }
+  document.getElementById('web-prev').addEventListener('click', () => goToWebSlide(webSlide - 1));
+  document.getElementById('web-next').addEventListener('click', () => goToWebSlide(webSlide + 1));
+
+  // CAROUSEL APP
+  let appSlide = 0;
+  const appSlides = document.querySelectorAll('#app-prev')[0].closest('.proj-section').querySelectorAll('.carousel-slide');
+  const appDots = document.querySelectorAll('#app-dots .dot');
+  function goToAppSlide(n) {
+    appSlides[appSlide].classList.remove('active'); appDots[appSlide].classList.remove('active');
+    appSlide = (n + appSlides.length) % appSlides.length;
+    appSlides[appSlide].classList.add('active'); appDots[appSlide].classList.add('active');
+  }
+  document.getElementById('app-prev').addEventListener('click', () => goToAppSlide(appSlide - 1));
+  document.getElementById('app-next').addEventListener('click', () => goToAppSlide(appSlide + 1));
+
+  // I18N
+  const ES='es',EN='en';
+  let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
   function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
-</script></body></html>
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
+  applyLang(current);
+</script>
+</body>
+</html>

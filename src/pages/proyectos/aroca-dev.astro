@@ -6,8 +6,6 @@ import '../../styles/global.css';
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>aroca.dev · ArocaDev</title>
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
@@ -29,7 +27,6 @@ import '../../styles/global.css';
   <div class="proj-title">aroca.dev</div>
   <div class="proj-subtitle" data-es="El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro." data-en="The portfolio you're looking at. Designed and built from scratch with Astro and plain CSS.">El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro.</div>
   <div class="proj-links">
-    <a href="https://aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i><span data-es="Ver web" data-en="Visit site">Ver web</span></a>
     <a href="https://github.com/ArocaDev/aroca-dev" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
   </div>
 </div>
@@ -66,12 +63,29 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo"></i><span>Hero</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Proyectos" data-en="Projects">Proyectos</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Sobre mí" data-en="About me">Sobre mí</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Página de proyecto" data-en="Project page">Página de proyecto</span></div>
+    <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
+    <div class="proj-text">
+      <p data-es="Construir el portfolio desde cero me obligó a tomar decisiones de diseño real: sistema de color, jerarquía tipográfica, espaciados, estructura de navegación. No hay plantilla que te salve de pensar." data-en="Building the portfolio from scratch forced me to make real design decisions: colour system, typographic hierarchy, spacing, navigation structure. No template saves you from thinking.">Construir el portfolio desde cero me obligó a tomar decisiones de diseño real: sistema de color, jerarquía tipográfica, espaciados, estructura de navegación. No hay plantilla que te salve de pensar.</p>
+      <p data-es="También aprendí a gestionar un proyecto propio con criterio de producto: qué incluir, qué quitar, cómo contar cada proyecto para que tenga sentido para alguien que no lo ha vivido." data-en="I also learned to manage a personal project with a product mindset: what to include, what to cut, how to tell each project's story in a way that makes sense to someone who wasn't there.">También aprendí a gestionar un proyecto propio con criterio de producto: qué incluir, qué quitar, cómo contar cada proyecto para que tenga sentido para alguien que no lo ha vivido.</p>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
+    <div class="proj-text">
+      <ul class="proj-list">
+        <li data-es="Usaría componentes Astro para el nav y el footer en vez de repetirlos en cada página." data-en="I'd use Astro components for the nav and footer instead of repeating them on every page.">Usaría componentes Astro para el nav y el footer en vez de repetirlos en cada página.</li>
+        <li data-es="Añadiría animaciones de entrada sutiles desde el principio — ahora añadirlas requiere tocar muchos archivos." data-en="I'd add subtle entry animations from the start — adding them now means touching a lot of files.">Añadiría animaciones de entrada sutiles desde el principio — ahora añadirlas requiere tocar muchos archivos.</li>
+        <li data-es="Definiría el sistema de color y tipografía antes de maquetar, no mientras." data-en="I'd define the colour and typography system before laying out, not during.">Definiría el sistema de color y tipografía antes de maquetar, no mientras.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="Diagrama de arquitectura" data-en="Architecture diagram">Diagrama de arquitectura</div>
+    <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px;cursor:pointer" onclick="window.open('/proyectos/aroca-dev/arquitectura.svg','_blank')">
+      <object data="/proyectos/aroca-dev/arquitectura.svg" type="image/svg+xml" style="width:100%;display:block;pointer-events:none"></object>
+      <span style="display:block;font-size:11px;color:#888;padding:6px 2px 0" data-es="Clic para ampliar" data-en="Click to enlarge">Clic para ampliar</span>
     </div>
   </div>
 

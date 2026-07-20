@@ -37,16 +37,24 @@ import '../styles/global.css';
 
 <section class="hero">
   <div class="hero-inner hero-centered">
-    <div class="hero-eyebrow">Software Developer</div>
+    <div class="hero-avail" style="margin-top:8px">
+      <span class="avail-dot"></span>
+      <span data-es="Disponible para oportunidades Backend Junior y Cloud" data-en="Available for Backend Junior opportunities">Disponible para oportunidades Backend Junior</span>
+    </div>
     <h1 class="h1">Backend<br><em>Developer</em></h1>
+    <div class="hero-stack-tags">
+      <span>Java</span><span>Spring Boot</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span>
+    </div>
     <div class="hero-desc">
-      <span data-es="Construyo APIs, diseño sistemas y resuelvo problemas reales" data-en="I build APIs, design systems and solve real problems">Construyo APIs, diseño sistemas y resuelvo problemas reales</span><br>
-      <span class="hero-desc-sub" data-es="Especializándome en Cloud y DevOps" data-en="Specialising in Cloud and DevOps">Especializándome en Cloud y DevOps</span>
+      <span data-es="Desarrollo soluciones backend centradas en APIs, bases de datos y arquitectura limpia." data-en="I build backend solutions focused on APIs, databases and clean architecture.">Desarrollo soluciones backend centradas en APIs, bases de datos y arquitectura limpia.</span>
+      <span class="hero-desc-sub" data-es="Actualmente ampliando conocimientos en Cloud y DevOps." data-en="Currently expanding my knowledge in Cloud and DevOps.">Actualmente ampliando conocimientos en Cloud y DevOps.</span>
     </div>
     <div class="hero-actions">
-      <a href="https://github.com/ArocaDev" target="_blank" class="btn-social"><i class="ti ti-brand-github" aria-hidden="true"></i>GitHub</a>
-      <a href="https://www.linkedin.com/in/alejandro-rodriguez-calabuig-a871a1230" target="_blank" class="btn-social"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
-      <button class="btn-cv-outline"><i class="ti ti-download" aria-hidden="true"></i><span data-es="Descargar CV" data-en="Download CV">Descargar CV</span></button>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <a href="https://github.com/ArocaDev" target="_blank" class="btn-social"><i class="ti ti-brand-github" aria-hidden="true"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/alejandro-rodriguez-calabuig-a871a1230" target="_blank" class="btn-social"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+      </div>
+      <a href="/cv.pdf" download="CV_Alejandro_Rodriguez_Calabuig.pdf" class="btn-cv-outline" style="margin-top:10px"><i class="ti ti-download" aria-hidden="true"></i><span data-es="Descargar CV" data-en="Download CV">Descargar CV</span></a>
     </div>
   </div>
 </section>
@@ -58,10 +66,9 @@ import '../styles/global.css';
       <div>
         <div class="about-name">Alejandro Rodríguez Calabuig</div>
         <div class="about-loc"><i class="ti ti-map-pin" aria-hidden="true"></i>Xàtiva, Valencia</div>
-        <p class="about-p" data-es="Descubrí la programación después de haber trabajado en sectores muy distintos. Cuando empecé a trastear con código me enganché, terminé DAM y no he parado desde entonces." data-en="I discovered programming after working in very different fields. Once I started tinkering with code I was hooked, finished my Higher Degree and haven't stopped since.">Descubrí la programación después de haber trabajado en sectores muy distintos. Cuando empecé a trastear con código me enganché, terminé DAM y no he parado desde entonces.</p>
-        <p class="about-p" data-es="Me especialicé en <b>backend</b> porque es donde más disfruto: sistemas que funcionan, APIs bien construidas, problemas reales resueltos de forma limpia." data-en="I specialised in <b>backend</b> because that's where I enjoy myself most: systems that work, well-built APIs, real problems solved cleanly.">Me especialicé en <b>backend</b> porque es donde más disfruto: sistemas que funcionan, APIs bien construidas, problemas reales resueltos de forma limpia.</p>
-        <p class="about-p" data-es="Me gustan los retos y aprender cada día algo nuevo. Esa curiosidad viene reforzada por años trabajando en entornos muy distintos, donde aprendí a trabajar en equipo, a ser autónomo, a cuidar el detalle y a mantener la calma bajo presión." data-en="I enjoy challenges and learning something new every day. That curiosity is backed by years working in very different environments, where I learned to work in a team, be autonomous, pay attention to detail and stay calm under pressure.">Me gustan los retos y aprender cada día algo nuevo. Esa curiosidad viene reforzada por años trabajando en entornos muy distintos, donde aprendí a trabajar en equipo, a ser autónomo, a cuidar el detalle y a mantener la calma bajo presión.</p>
-        <p class="about-p" data-es="El siguiente paso es realizar el curso de especialización en <b>Recursos y Servicios en la Nube</b>. A futuro, mi objetivo es orientarme hacia <b>Cloud Engineering y DevOps</b>." data-en="My next step is a specialisation course in <b>Cloud Resources and Services</b>. Long-term, my goal is to move into <b>Cloud Engineering and DevOps</b>.">El siguiente paso es realizar el curso de especialización en <b>Recursos y Servicios en la Nube</b>. A futuro, mi objetivo es orientarme hacia <b>Cloud Engineering y DevOps</b>.</p>
+        <p class="about-p" data-es="Soy desarrollador backend y descubrí la programación después de trabajar en sectores completamente distintos. Cuando empecé a programar encontré una profesión en la que disfruto resolviendo problemas y aprendiendo continuamente." data-en="I'm a backend developer who discovered programming after working in completely different fields. When I started coding I found a profession where I genuinely enjoy solving problems and learning every day.">Soy desarrollador backend y descubrí la programación después de trabajar en sectores completamente distintos. Cuando empecé a programar encontré una profesión en la que disfruto resolviendo problemas y aprendiendo continuamente.</p>
+        <p class="about-p" data-es="Me especializo en Java, Spring Boot y FastAPI, desarrollando APIs, sistemas backend y aplicaciones conectadas a bases de datos. Me interesa escribir código limpio, mantenible y fácil de escalar." data-en="I specialise in Java, Spring Boot and FastAPI, building APIs, backend systems and database-driven applications. I care about writing clean, maintainable and scalable code.">Me especializo en Java, Spring Boot y FastAPI, desarrollando APIs, sistemas backend y aplicaciones conectadas a bases de datos. Me interesa escribir código limpio, mantenible y fácil de escalar.</p>
+        <p class="about-p" data-es="He completado mis prácticas en desarrollo backend en un entorno empresarial real y sigo formándome en Cloud y DevOps para ampliar mis conocimientos en arquitectura y despliegue de aplicaciones." data-en="I've completed my backend development internship in a real business environment and continue training in Cloud and DevOps to broaden my knowledge in application architecture and deployment.">He completado mis prácticas en desarrollo backend en un entorno empresarial real y sigo formándome en Cloud y DevOps para ampliar mis conocimientos en arquitectura y despliegue de aplicaciones.</p>
       </div>
       <div class="about-right">
         <div class="about-item"><i class="ti ti-school" aria-hidden="true"></i><div class="about-item-text"><b data-es="Técnico Superior DAM" data-en="Higher Degree in Multiplatform App Development">Técnico Superior DAM</b><span data-es="IES Dr. Lluís Simarro · Xàtiva · 2023–2026" data-en="IES Dr. Lluís Simarro · Xàtiva · 2023–2026">IES Dr. Lluís Simarro · Xàtiva · 2023–2026</span></div></div>
@@ -69,13 +76,13 @@ import '../styles/global.css';
         <div class="about-item"><i class="ti ti-cloud" aria-hidden="true"></i><div class="about-item-text"><b data-es="Próximo: Recursos y Servicios en la Nube" data-en="Next: Cloud Resources and Services">Próximo: Recursos y Servicios en la Nube</b><span data-es="IES Dr. Lluís Simarro · Oct 2026" data-en="IES Dr. Lluís Simarro · Oct 2026">IES Dr. Lluís Simarro · Oct 2026</span></div></div>
         <div class="about-obj">
           <div class="obj-labels">
-            <span class="obj-label" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</span>
+            <span class="obj-label" data-es="Ahora" data-en="Now">Ahora</span>
             <div class="obj-sep"></div>
-            <span class="obj-label" data-es="Objetivo a futuro" data-en="Long-term goal">Objetivo a futuro</span>
+            <span class="obj-label" data-es="Próximo paso" data-en="Next step">Próximo paso</span>
           </div>
           <div class="obj-vals">
+            <span class="obj-val">Backend</span>
             <span class="obj-val">Cloud</span>
-            <span class="obj-val">DevOps</span>
           </div>
         </div>
       </div>
@@ -89,47 +96,39 @@ import '../styles/global.css';
     <div class="tech-grid">
       <div class="tech-col">
         <div class="tech-block">
-          <div class="tech-block-title" data-es="Lenguajes" data-en="Languages">Lenguajes</div>
+          <div class="tech-block-title">Backend</div>
           <div class="tech-subrow">
-            <span class="tech-sublabel">Backend</span>
+            <span class="tech-sublabel" data-es="Frameworks" data-en="Frameworks">Frameworks</span>
+            <div class="tech-tags"><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span></div>
+          </div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel" data-es="Lenguajes" data-en="Languages">Lenguajes</span>
             <div class="tech-tags"><span class="about-tech-tag">Java</span><span class="about-tech-tag">Python</span></div>
-          </div>
-          <div class="tech-subrow">
-            <span class="tech-sublabel">Frontend</span>
-            <div class="tech-tags"><span class="about-tech-tag">JavaScript</span><span class="about-tech-tag">TypeScript</span></div>
-          </div>
-          <div class="tech-subrow">
-            <span class="tech-sublabel" data-es="Móvil" data-en="Mobile">Móvil</span>
-            <div class="tech-tags"><span class="about-tech-tag">Kotlin</span><span class="about-tech-tag">Dart</span></div>
           </div>
         </div>
         <div class="tech-block">
           <div class="tech-block-title" data-es="Bases de datos" data-en="Databases">Bases de datos</div>
-          <div class="tech-tags"><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MySQL</span><span class="about-tech-tag">MongoDB</span><span class="about-tech-tag">DB2</span></div>
-        </div>
-        <div class="tech-block">
-          <div class="tech-block-title" data-es="Sistemas operativos" data-en="Operating systems">Sistemas operativos</div>
-          <div class="tech-tags"><span class="about-tech-tag">Linux</span><span class="about-tech-tag">Windows</span></div>
+          <div class="tech-tags"><span class="about-tech-tag">PostgreSQL</span><span class="about-tech-tag">MySQL</span></div>
         </div>
         <div class="tech-block">
           <div class="tech-block-title" data-es="Herramientas" data-en="Tools">Herramientas</div>
-          <div class="tech-tags"><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Postman</span><span class="about-tech-tag">Figma</span><span class="about-tech-tag">Draw.io</span></div>
+          <div class="tech-tags"><span class="about-tech-tag">Docker</span><span class="about-tech-tag">Git</span><span class="about-tech-tag">Linux</span><span class="about-tech-tag">Postman</span></div>
         </div>
       </div>
       <div class="tech-col">
         <div class="tech-block">
-          <div class="tech-block-title">Frameworks</div>
-          <div class="tech-subrow">
-            <span class="tech-sublabel">Backend</span>
-            <div class="tech-tags"><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span></div>
-          </div>
+          <div class="tech-block-title" data-es="También he trabajado con" data-en="Also worked with">También he trabajado con</div>
           <div class="tech-subrow">
             <span class="tech-sublabel">Frontend</span>
             <div class="tech-tags"><span class="about-tech-tag">React</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">Astro</span></div>
           </div>
           <div class="tech-subrow">
-            <span class="tech-sublabel" data-es="Multiplataforma" data-en="Cross-platform">Multiplataforma</span>
-            <div class="tech-tags"><span class="about-tech-tag">Flutter</span></div>
+            <span class="tech-sublabel" data-es="Móvil" data-en="Mobile">Móvil</span>
+            <div class="tech-tags"><span class="about-tech-tag">Flutter</span><span class="about-tech-tag">Kotlin</span></div>
+          </div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel">Web</span>
+            <div class="tech-tags"><span class="about-tech-tag">HTML</span><span class="about-tech-tag">CSS</span><span class="about-tech-tag">JavaScript</span><span class="about-tech-tag">TypeScript</span></div>
           </div>
         </div>
         <div class="tech-block">
@@ -137,12 +136,8 @@ import '../styles/global.css';
           <div class="tech-tags"><span class="about-tech-tag">JUnit</span><span class="about-tech-tag">Mockito</span></div>
         </div>
         <div class="tech-block">
-          <div class="tech-block-title">Web</div>
-          <div class="tech-tags"><span class="about-tech-tag">HTML</span><span class="about-tech-tag">CSS</span></div>
-        </div>
-        <div class="tech-block">
           <div class="tech-block-title" data-es="Metodologías" data-en="Methodologies">Metodologías</div>
-          <div class="tech-tags"><span class="about-tech-tag">Scrum</span><span class="about-tech-tag">Kanban</span><span class="about-tech-tag">Git Flow</span></div>
+          <div class="tech-tags"><span class="about-tech-tag">Scrum</span><span class="about-tech-tag">Kanban</span></div>
         </div>
       </div>
     </div>
@@ -224,7 +219,13 @@ import '../styles/global.css';
               <span class="er" data-es="Desarrollador Backend · Prácticas DAM" data-en="Backend Developer · Internship">Desarrollador Backend · Prácticas DAM</span>
               <div class="exp-meta"><span class="eco">Geinfor</span><span class="ed">· Feb – Jun 2026</span></div>
             </div>
-            <div class="edesc" data-es="Desarrollo en ERP empresarial Bushido. Proyecto principal: refuerzo del módulo importador CSV/Excel, análisis funcional, refactorización y mejora de errores. Resolución de incidencias reales en producción, tests unitarios y CI/CD en entorno Scrum." data-en="Development on the Bushido enterprise ERP. Main project: strengthening the CSV/Excel importer module, functional analysis, refactoring and bug fixing. Resolution of real production incidents, unit tests and CI/CD in a Scrum environment.">Desarrollo en ERP empresarial Bushido. Proyecto principal: refuerzo del módulo importador CSV/Excel, análisis funcional, refactorización y mejora de errores. Resolución de incidencias reales en producción, tests unitarios y CI/CD en entorno Scrum.</div>
+            <ul class="exp-list">
+              <li data-es="Desarrollo sobre ERP empresarial Bushido con Java 21, Spring Boot, DB2 y MongoDB" data-en="Development on the Bushido enterprise ERP with Java 21, Spring Boot, DB2 and MongoDB">Desarrollo sobre ERP empresarial Bushido con Java 21, Spring Boot, DB2 y MongoDB</li>
+              <li data-es="Refuerzo del módulo importador CSV/Excel: análisis funcional, refactorización y mejora de errores" data-en="Strengthened the CSV/Excel importer module: functional analysis, refactoring and bug fixing">Refuerzo del módulo importador CSV/Excel: análisis funcional, refactorización y mejora de errores</li>
+              <li data-es="Resolución de incidencias reales en producción y validación de endpoints entre versiones del ERP" data-en="Resolution of real production incidents and endpoint validation across ERP versions">Resolución de incidencias reales en producción y validación de endpoints entre versiones del ERP</li>
+              <li data-es="Tests unitarios con JUnit y Mockito, revisión y corrección de pipelines CI/CD" data-en="Unit tests with JUnit and Mockito, review and correction of CI/CD pipelines">Tests unitarios con JUnit y Mockito, revisión y corrección de pipelines CI/CD</li>
+              <li data-es="Scrum: daily, tickets, pull requests y code reviews con equipo backend y frontend" data-en="Scrum: daily stand-ups, tickets, pull requests and code reviews with backend and frontend team">Scrum: daily, tickets, pull requests y code reviews con equipo backend y frontend</li>
+            </ul>
             <div class="etags"><span class="tag t-tech">Java 21</span><span class="tag t-tech">Spring Boot</span><span class="tag t-tech">DB2</span><span class="tag t-tech">MongoDB</span><span class="tag t-tech">JUnit</span><span class="tag t-tech">Mockito</span><span class="tag t-tech">Scrum</span></div>
           </div>
           <div class="exp-item">
@@ -232,7 +233,10 @@ import '../styles/global.css';
               <span class="er" data-es="Desarrollo de soluciones para clientes reales" data-en="Development of solutions for real clients">Desarrollo de soluciones para clientes reales</span>
               <div class="exp-meta"><span class="eco" data-es="Proyectos profesionales" data-en="Professional projects">Proyectos profesionales</span><span class="ed" data-es="· 2024 – hoy" data-en="· 2024 – present">· 2024 – hoy</span></div>
             </div>
-            <div class="edesc" data-es="Vulldecor (web corporativa + app Android para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: desarrollo, integraciones, DNS, emails transaccionales y despliegue." data-en="Vulldecor (corporate website + Android app for a renovation company) and Calidad Triple A (live e-commerce at calidad3a.com). Full implementation: development, integrations, DNS, transactional emails and deployment.">Vulldecor (web corporativa + app Android para empresa de reformas) y Calidad Triple A (e-commerce en producción en calidad3a.com). Implementación completa: desarrollo, integraciones, DNS, emails transaccionales y despliegue.</div>
+            <ul class="exp-list">
+              <li data-es="Calidad Triple A: e-commerce en producción con Next.js 15, Sanity, Vercel y emails automáticos con PDF y QR" data-en="Calidad Triple A: live e-commerce with Next.js 15, Sanity, Vercel and automated emails with PDF and QR">Calidad Triple A: e-commerce en producción con Next.js 15, Sanity, Vercel y emails automáticos con PDF y QR</li>
+              <li data-es="Vulldecor: web corporativa con HTML/CSS/JS, formulario WhatsApp, SEO local y cumplimiento RGPD" data-en="Vulldecor: corporate website with HTML/CSS/JS, WhatsApp form, local SEO and GDPR compliance">Vulldecor: web corporativa con HTML/CSS/JS, formulario WhatsApp, SEO local y cumplimiento RGPD</li>
+            </ul>
             <div class="etags"><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Vercel</span><span class="tag t-tech">Resend</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span></div>
           </div>
         </div>
@@ -256,7 +260,10 @@ import '../styles/global.css';
 </section>
 
 <footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
 </footer>
 
 <script>

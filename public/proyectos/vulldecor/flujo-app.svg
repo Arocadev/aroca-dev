@@ -1,0 +1,73 @@
+<svg viewBox="0 0 900 360" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px;margin:0 auto;display:block;">
+<title>Flujo de gestión — Vulldecor Gestiones</title>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<text x="450" y="24" text-anchor="middle" style="font-size:15px;font-weight:500;fill:rgb(11,11,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Flujo de gestión — Vulldecor Gestiones</text>
+
+<!-- Paso 1 -->
+<g>
+  <rect x="30" y="60" width="140" height="70" rx="8" stroke-width="0.5" style="fill:rgb(238,237,254);stroke:rgb(83,74,183);"/>
+  <text x="100" y="87" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(60,52,137);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Crea obra</text>
+  <text x="100" y="105" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Nombre · fecha inicio</text>
+  <text x="100" y="121" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">y fecha fin</text>
+</g>
+<line x1="170" y1="95" x2="218" y2="95" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Paso 2 -->
+<g>
+  <rect x="220" y="60" width="140" height="70" rx="8" stroke-width="0.5" style="fill:rgb(225,245,238);stroke:rgb(15,110,86);"/>
+  <text x="290" y="87" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(8,80,65);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Registra pagos</text>
+  <text x="290" y="105" text-anchor="middle" style="font-size:11px;fill:rgb(15,110,86);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Importe · persona</text>
+  <text x="290" y="121" text-anchor="middle" style="font-size:11px;fill:rgb(15,110,86);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">pagado / pendiente</text>
+</g>
+<line x1="360" y1="95" x2="408" y2="95" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Paso 3 -->
+<g>
+  <rect x="410" y="60" width="140" height="70" rx="8" stroke-width="0.5" style="fill:rgb(250,238,218);stroke:rgb(133,79,11);"/>
+  <text x="480" y="87" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(99,56,6);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Añade notas</text>
+  <text x="480" y="105" text-anchor="middle" style="font-size:11px;fill:rgb(133,79,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Anotaciones · eventos</text>
+  <text x="480" y="121" text-anchor="middle" style="font-size:11px;fill:rgb(133,79,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">swipe para eliminar</text>
+</g>
+<line x1="550" y1="95" x2="598" y2="95" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Paso 4 -->
+<g>
+  <rect x="600" y="60" width="140" height="70" rx="8" stroke-width="0.5" style="fill:rgb(230,241,251);stroke:rgb(24,95,165);"/>
+  <text x="670" y="87" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(12,68,124);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Calendario</text>
+  <text x="670" y="105" text-anchor="middle" style="font-size:11px;fill:rgb(24,95,165);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Vista mensual</text>
+  <text x="670" y="121" text-anchor="middle" style="font-size:11px;fill:rgb(24,95,165);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">obras · eventos · notas</text>
+</g>
+
+<!-- Hive guarda todo -->
+<line x1="100" y1="130" x2="100" y2="198" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="290" y1="130" x2="290" y2="198" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="480" y1="130" x2="480" y2="198" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="670" y1="130" x2="670" y2="198" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+
+<g>
+  <rect x="30" y="200" width="780" height="60" rx="8" stroke-width="0.5" style="fill:rgb(225,245,238);stroke:rgb(15,110,86);"/>
+  <text x="420" y="225" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(8,80,65);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Hive — Persistencia local offline</text>
+  <text x="420" y="245" text-anchor="middle" style="font-size:11px;fill:rgb(15,110,86);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Todos los datos se guardan en el dispositivo · sin conexión necesaria</text>
+</g>
+
+<!-- Salidas -->
+<line x1="250" y1="260" x2="200" y2="298" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="590" y1="260" x2="640" y2="298" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+
+<g>
+  <rect x="60" y="300" width="240" height="45" rx="8" stroke-width="0.5" style="fill:rgb(250,238,218);stroke:rgb(133,79,11);"/>
+  <text x="180" y="320" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(99,56,6);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Generar PDF</text>
+  <text x="180" y="338" text-anchor="middle" style="font-size:11px;fill:rgb(133,79,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Resumen de obra · compartir</text>
+</g>
+
+<g>
+  <rect x="530" y="300" width="240" height="45" rx="8" stroke-width="0.5" style="fill:rgb(230,241,251);stroke:rgb(24,95,165);"/>
+  <text x="650" y="320" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(12,68,124);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Exportar backup</text>
+  <text x="650" y="338" text-anchor="middle" style="font-size:11px;fill:rgb(24,95,165);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">JSON · importar en otro dispositivo</text>
+</g>
+</svg>

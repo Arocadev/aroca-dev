@@ -1,0 +1,76 @@
+<svg viewBox="0 0 900 380" role="img" xmlns="http://www.w3.org/2000/svg" style="max-width:900px;margin:0 auto;display:block;">
+<title>Arquitectura — Vulldecor Gestiones</title>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<text x="450" y="24" text-anchor="middle" style="font-size:15px;font-weight:500;fill:rgb(11,11,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Arquitectura — Vulldecor Gestiones (Android)</text>
+
+<!-- Contenedor App Android -->
+<rect x="10" y="36" width="880" height="330" rx="14" fill="none" stroke="#1D9E75" stroke-width="1.2" stroke-dasharray="6 3"/>
+<text x="24" y="54" style="font-size:12px;font-weight:500;fill:#1D9E75;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">App Android — Offline First</text>
+
+<!-- UI Flutter -->
+<g>
+  <rect x="30" y="65" width="180" height="150" rx="8" stroke-width="0.5" style="fill:rgb(238,237,254);stroke:rgb(83,74,183);"/>
+  <text x="120" y="90" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(60,52,137);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">UI — Flutter</text>
+  <text x="120" y="110" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Pantalla Obras</text>
+  <text x="120" y="128" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Pantalla Pagos</text>
+  <text x="120" y="146" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Pantalla Anotaciones</text>
+  <text x="120" y="164" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Calendario (table_calendar)</text>
+  <text x="120" y="182" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Eventos personalizados</text>
+  <text x="120" y="200" text-anchor="middle" style="font-size:11px;fill:rgb(83,74,183);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Material 3 · Inter</text>
+</g>
+
+<!-- Flecha UI → Hive -->
+<line x1="210" y1="140" x2="288" y2="140" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+<text x="249" y="133" text-anchor="middle" style="font-size:10px;fill:rgb(100,100,100);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">CRUD</text>
+
+<!-- Hive -->
+<g>
+  <rect x="290" y="90" width="180" height="100" rx="8" stroke-width="0.5" style="fill:rgb(225,245,238);stroke:rgb(15,110,86);"/>
+  <text x="380" y="115" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(8,80,65);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Hive (local)</text>
+  <text x="380" y="135" text-anchor="middle" style="font-size:11px;fill:rgb(15,110,86);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Box: obras</text>
+  <text x="380" y="153" text-anchor="middle" style="font-size:11px;fill:rgb(15,110,86);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Box: pagos</text>
+  <text x="380" y="171" text-anchor="middle" style="font-size:11px;fill:rgb(15,110,86);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Box: notas · eventos</text>
+</g>
+
+<!-- Flecha Hive → Servicios -->
+<line x1="470" y1="140" x2="548" y2="110" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="470" y1="140" x2="548" y2="175" stroke="#888" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- PDF Service -->
+<g>
+  <rect x="550" y="75" width="180" height="60" rx="8" stroke-width="0.5" style="fill:rgb(250,238,218);stroke:rgb(133,79,11);"/>
+  <text x="640" y="98" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(99,56,6);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">PDF Service</text>
+  <text x="640" y="116" text-anchor="middle" style="font-size:11px;fill:rgb(133,79,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">pdf + printing · compartir</text>
+  <text x="640" y="130" text-anchor="middle" style="font-size:11px;fill:rgb(133,79,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">resumen por obra</text>
+</g>
+
+<!-- Backup Service -->
+<g>
+  <rect x="550" y="150" width="180" height="60" rx="8" stroke-width="0.5" style="fill:rgb(230,241,251);stroke:rgb(24,95,165);"/>
+  <text x="640" y="173" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(12,68,124);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Backup Service</text>
+  <text x="640" y="191" text-anchor="middle" style="font-size:11px;fill:rgb(24,95,165);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Exportar / Importar JSON</text>
+  <text x="640" y="205" text-anchor="middle" style="font-size:11px;fill:rgb(24,95,165);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">share_plus · file_selector</text>
+</g>
+
+<!-- Modelos -->
+<g>
+  <rect x="30" y="240" width="620" height="60" rx="8" stroke-width="0.5" style="fill:rgb(250,238,218);stroke:rgb(133,79,11);"/>
+  <text x="340" y="263" text-anchor="middle" style="font-size:13px;font-weight:500;fill:rgb(99,56,6);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Modelos Dart (Hive TypeAdapters)</text>
+  <text x="340" y="283" text-anchor="middle" style="font-size:11px;fill:rgb(133,79,11);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Obra · Pago · Nota · Evento — generados con build_runner</text>
+</g>
+
+<!-- Leyenda -->
+<rect x="30" y="318" width="8" height="8" fill="rgb(83,74,183)" rx="1"/>
+<text x="44" y="326" style="font-size:11px;fill:rgb(82,81,78);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">UI Flutter</text>
+<rect x="120" y="318" width="8" height="8" fill="rgb(15,110,86)" rx="1"/>
+<text x="134" y="326" style="font-size:11px;fill:rgb(82,81,78);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Persistencia local</text>
+<rect x="240" y="318" width="8" height="8" fill="rgb(133,79,11)" rx="1"/>
+<text x="254" y="326" style="font-size:11px;fill:rgb(82,81,78);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Servicios / Modelos</text>
+<rect x="380" y="318" width="8" height="8" fill="rgb(24,95,165)" rx="1"/>
+<text x="394" y="326" style="font-size:11px;fill:rgb(82,81,78);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Backup</text>
+</svg>
