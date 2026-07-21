@@ -11,8 +11,48 @@ import '../../styles/global.css';
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    .section-divider{border-top:1px solid rgba(0,0,0,0.07);margin:64px 0}
+    .proj-section{margin-bottom:72px}
+    .proj-section-title{margin-bottom:24px}
+    /* CAROUSEL WEB */
+    .carousel{position:relative;display:flex;align-items:center;gap:10px}
+    .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(0,0,0,0.07);background:#f8f9fa}
+    .carousel-slide{display:none;flex-direction:column}
+    .carousel-slide.active{display:flex}
+    .carousel-slide img{width:100%;display:block;cursor:pointer;max-height:760px;object-fit:cover;object-position:top}
+    .carousel-slide span{font-size:11px;color:#888;padding:10px 14px;text-align:center;display:block}
+    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
+    .carousel-btn:hover{background:rgba(129,140,248,0.3)}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,0.15);cursor:pointer;transition:background 0.2s}
+    .dot.active{background:var(--ac)}
+    .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
+    /* GIF */
+    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.07);background:#f8f9fa;cursor:pointer}
+    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
+    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
+    .gif-overlay.hidden{opacity:0;pointer-events:none}
+    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
+    .gif-play-btn i{font-size:28px;color:#fff;margin-left:4px}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
+    /* MÓVIL */
+    .mobile-carousel{justify-content:center}
+    .carousel-track.mobile-track{flex:unset;width:320px;background:#f8f9fa;border:1px solid rgba(0,0,0,0.07);border-radius:8px;overflow:hidden}
+    .carousel-slide.mobile img{width:100%;max-height:520px;object-fit:contain;object-position:top;display:block;cursor:pointer}
+    .gif-container.mobile-gif{width:320px;margin:0 auto}
+    .gif-container.mobile-gif img{width:100%;max-height:520px;object-fit:contain;object-position:top;display:block;border-radius:8px}
+    /* DIAGRAMAS */
+    .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(0,0,0,0.07);background:#fff;padding:8px}
+    .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
+    .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .diagram-label{font-size:11px;color:var(--t4);text-align:center}
+  </style>
 </head>
-<body><nav><div class="nav-inner">
+<body>
+
+<nav><div class="nav-inner">
   <a href="/" class="logo">aroca<span>.dev</span></a>
   <div class="nav-r">
     <div class="nav-links">
@@ -20,20 +60,22 @@ import '../../styles/global.css';
       <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
       <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
       <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
     </div>
     <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
 </div></nav>
+
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto personal · Android" data-en="Personal project · Android">Proyecto personal · Android</div>
   <div class="proj-title">GestPro</div>
   <div class="proj-subtitle" data-es="App Android para autónomos y pequeñas empresas. Gestiona proyectos, tareas, materiales, pagos, cobros y finanzas — todo desde el móvil, sin conexión." data-en="Android app for freelancers and small businesses. Manage projects, tasks, materials, payments, invoices and finances — all from your phone, offline.">App Android para autónomos y pequeñas empresas. Gestiona proyectos, tareas, materiales, pagos, cobros y finanzas — todo desde el móvil, sin conexión.</div>
   <div class="proj-links">
-    <a href="https://github.com/ArocaDev/gest-pro" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
-    <a href="https://github.com/ArocaDev/gest-pro/releases" target="_blank" class="proj-link proj-link-web"><i class="ti ti-device-mobile-down"></i><span data-es="Descargar APK" data-en="Download APK">Descargar APK</span></a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
+    <a href="https://github.com/Arocadev/gest_pro" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
+    <a href="https://github.com/Arocadev/gest_pro/releases/tag/v1.0.0" target="_blank" class="proj-link proj-link-web"><i class="ti ti-device-mobile-down"></i><span data-es="Descargar APK" data-en="Download APK">Descargar APK</span></a>
   </div>
 </div>
+
 <div class="proj-body">
 
   <div class="proj-section">
@@ -56,13 +98,21 @@ import '../../styles/global.css';
   <div class="proj-section">
     <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Flutter 3</span><span class="about-tech-tag">Dart</span><span class="about-tech-tag">Hive</span><span class="about-tech-tag">fl_chart</span><span class="about-tech-tag">table_calendar</span><span class="about-tech-tag">pdf + printing</span></div></div>
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="Funcional" data-en="Functional">Funcional</span></div>
-      </div></div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Flutter 3</span><span class="about-tech-tag">Dart</span><span class="about-tech-tag">Hive</span><span class="about-tech-tag">fl_chart</span><span class="about-tech-tag">table_calendar</span><span class="about-tech-tag">pdf + printing</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="Funcional" data-en="Functional">Funcional</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -86,18 +136,163 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo"></i><span>Dashboard</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Detalle de proyecto" data-en="Project detail">Detalle de proyecto</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Estadísticas" data-en="Statistics">Estadísticas</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Calendario" data-en="Calendar">Calendario</span></div>
+    <div class="proj-section-title" data-es="Diagramas" data-en="Diagrams">Diagramas</div>
+    <div class="diagram-grid">
+      <div class="diagram-wrap" onclick="window.open('/proyectos/gestpro/gestpro_arquitectura.svg','_blank')">
+        <div class="diagram-item" style="width:100%;cursor:pointer">
+          <object data="/proyectos/gestpro/gestpro_arquitectura.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Arquitectura · clic para ampliar" data-en="Architecture · click to enlarge">Arquitectura · clic para ampliar</span>
+      </div>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/gestpro/gestpro_flujo_proyecto.svg','_blank')">
+        <div class="diagram-item" style="width:100%;cursor:pointer">
+          <object data="/proyectos/gestpro/gestpro_flujo_proyecto.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Flujo de proyecto · clic para ampliar" data-en="Project flow · click to enlarge">Flujo de proyecto · clic para ampliar</span>
+      </div>
     </div>
   </div>
 
-</div><footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer><script>
-  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Crear proyecto" data-en="Create project">Crear proyecto</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container mobile-gif" id="gif-proyecto">
+      <img id="gif-proyecto-img" src="/proyectos/gestpro/lista-proyecto.png" data-gif="/proyectos/gestpro/crear-proyecto.gif" data-still="/proyectos/gestpro/lista-proyecto.png" alt="Crear proyecto" />
+      <div class="gif-overlay" id="gif-proyecto-overlay">
+        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Finanzas" data-en="Finances">Finanzas</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container mobile-gif" id="gif-finanza">
+      <img id="gif-finanza-img" src="/proyectos/gestpro/lista-pago.png" data-gif="/proyectos/gestpro/crear-finanza.gif" data-still="/proyectos/gestpro/lista-pago.png" alt="Finanzas" />
+      <div class="gif-overlay" id="gif-finanza-overlay">
+        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Calendario" data-en="Calendar">Calendario</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container mobile-gif" id="gif-calendario">
+      <img id="gif-calendario-img" src="/proyectos/gestpro/calendario.png" data-gif="/proyectos/gestpro/calendario.gif" data-still="/proyectos/gestpro/calendario.png" alt="Calendario" />
+      <div class="gif-overlay" id="gif-calendario-overlay">
+        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Estadísticas" data-en="Statistics">Estadísticas</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container mobile-gif" id="gif-resumen">
+      <img id="gif-resumen-img" src="/proyectos/gestpro/resumen.png" data-gif="/proyectos/gestpro/resumen.gif" data-still="/proyectos/gestpro/resumen.png" alt="Estadísticas" />
+      <div class="gif-overlay" id="gif-resumen-overlay">
+        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel mobile-carousel">
+      <button class="carousel-btn" id="gp-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track mobile-track" id="gp-track">
+        <div class="carousel-slide mobile active">
+          <img src="/proyectos/gestpro/lista-proyecto.png" alt="Lista de proyectos" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Lista de proyectos" data-en="Projects list">Lista de proyectos</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/gestpro/detalles-proyecto.png" alt="Detalle de proyecto" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Detalle de proyecto" data-en="Project detail">Detalle de proyecto</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/gestpro/lista-pago.png" alt="Pagos" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Pagos" data-en="Payments">Pagos</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/gestpro/lista-cobro.png" alt="Cobros" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Cobros" data-en="Invoices">Cobros</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/gestpro/resumen.png" alt="Resumen" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Panel de resumen" data-en="Summary panel">Panel de resumen</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/gestpro/grafica.png" alt="Gráficas" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Distribución financiera" data-en="Financial distribution">Distribución financiera</span>
+        </div>
+        <div class="carousel-slide mobile">
+          <img src="/proyectos/gestpro/calendario.png" alt="Calendario" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Calendario mensual" data-en="Monthly calendar">Calendario mensual</span>
+        </div>
+      </div>
+      <button class="carousel-btn" id="gp-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="gp-dots">
+      <span class="dot active" onclick="goToGpSlide(0)"></span>
+      <span class="dot" onclick="goToGpSlide(1)"></span>
+      <span class="dot" onclick="goToGpSlide(2)"></span>
+      <span class="dot" onclick="goToGpSlide(3)"></span>
+      <span class="dot" onclick="goToGpSlide(4)"></span>
+      <span class="dot" onclick="goToGpSlide(5)"></span>
+      <span class="dot" onclick="goToGpSlide(6)"></span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
+</footer>
+
+<script>
+  // GIFs
+  function makeGif(containerId, imgId, overlayId) {
+    document.getElementById(containerId).addEventListener('click', function() {
+      const img = document.getElementById(imgId);
+      const overlay = document.getElementById(overlayId);
+      if (overlay.classList.contains('hidden')) {
+        img.src = img.getAttribute('data-still');
+        overlay.classList.remove('hidden');
+      } else {
+        img.src = img.getAttribute('data-gif') + '?t=' + Date.now();
+        overlay.classList.add('hidden');
+      }
+    });
+  }
+  makeGif('gif-proyecto','gif-proyecto-img','gif-proyecto-overlay');
+  makeGif('gif-finanza','gif-finanza-img','gif-finanza-overlay');
+  makeGif('gif-calendario','gif-calendario-img','gif-calendario-overlay');
+  makeGif('gif-resumen','gif-resumen-img','gif-resumen-overlay');
+
+  // CAROUSEL
+  let gpSlide = 0;
+  const gpSlides = document.querySelectorAll('#gp-track .carousel-slide');
+  const gpDots = document.querySelectorAll('#gp-dots .dot');
+  function goToGpSlide(n) {
+    gpSlides[gpSlide].classList.remove('active'); gpDots[gpSlide].classList.remove('active');
+    gpSlide = (n + gpSlides.length) % gpSlides.length;
+    gpSlides[gpSlide].classList.add('active'); gpDots[gpSlide].classList.add('active');
+  }
+  document.getElementById('gp-prev').addEventListener('click', () => goToGpSlide(gpSlide - 1));
+  document.getElementById('gp-next').addEventListener('click', () => goToGpSlide(gpSlide + 1));
+
+  // I18N
+  const ES='es',EN='en';
+  let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
   function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
-</script></body></html>
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
+  applyLang(current);
+</script>
+</body>
+</html>

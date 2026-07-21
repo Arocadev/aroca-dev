@@ -19,13 +19,12 @@ import '../../styles/global.css';
     .lightbox.open{display:flex}
     .lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;object-fit:contain;margin:auto}
     .lightbox-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;z-index:1001}
-
     /* DIAGRAMAS */
     .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
-    .diagram-item object{width:100%;display:block;pointer-events:none;border-radius:4px}
-    .diagram-item span{display:block;font-size:11px;color:#888;padding:6px 2px 0}
-
+    .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
+    .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .diagram-label{font-size:11px;color:var(--t4);text-align:center}
     /* GIF */
     .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
     .gif-container img{width:100%;display:block;border-radius:8px}
@@ -33,22 +32,22 @@ import '../../styles/global.css';
     .gif-overlay.hidden{opacity:0;pointer-events:none}
     .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
     .gif-play-btn i{font-size:28px;color:#fff;margin-left:4px}
-    .gif-label{font-size:11px;color:var(--t4);margin-top:8px}
+    .gif-label{font-size:11px;color:var(--t4);margin-top:8px;text-align:center}
     .pdf-note{background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.15);border-radius:8px;padding:14px 18px;font-size:12px;color:var(--t3);line-height:1.7;margin-top:10px}
     .pdf-note b{color:var(--t2)}
-
-    /* CAPTURAS - CAROUSEL */
+    /* CAROUSEL */
     .carousel{position:relative;display:flex;align-items:center;gap:10px}
     .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
     .carousel-slide{display:none;flex-direction:column}
     .carousel-slide.active{display:flex}
-    .carousel-slide img{width:100%;display:block;cursor:pointer}
-    .carousel-slide span{font-size:11px;color:var(--t4);padding:8px 12px}
-    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--t2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
-    .carousel-btn:hover{background:rgba(255,255,255,0.12)}
-    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+    .carousel-slide img{width:100%;display:block;cursor:pointer;max-height:760px;object-fit:cover;object-position:top}
+    .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
+    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
+    .carousel-btn:hover{background:rgba(129,140,248,0.3)}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
+    .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
   </style>
 </head>
 <body>
@@ -61,6 +60,7 @@ import '../../styles/global.css';
         <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
         <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
         <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+        <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
       </div>
       <div class="i18n">
         <span class="i18n-btn" id="btn-es">ES</span>
@@ -71,7 +71,6 @@ import '../../styles/global.css';
   </div>
 </nav>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightbox-close">×</span>
   <img id="lightbox-img" src="" alt="" />
@@ -150,27 +149,31 @@ import '../../styles/global.css';
   <div class="proj-section">
     <div class="proj-section-title" data-es="Diagramas" data-en="Diagrams">Diagramas</div>
     <div class="diagram-grid">
-      <div class="diagram-item" onclick="window.open('/proyectos/calidad-triple-a/arquitectura.svg','_blank')" title="Abrir diagrama">
-        <object data="/proyectos/calidad-triple-a/arquitectura.svg" type="image/svg+xml"></object>
-        <span data-es="Arquitectura del sistema · clic para ampliar" data-en="System architecture · click to enlarge">Arquitectura del sistema · clic para ampliar</span>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/calidad-triple-a/arquitectura.svg','_blank')">
+        <div class="diagram-item" style="width:100%;cursor:pointer">
+          <object data="/proyectos/calidad-triple-a/arquitectura.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Arquitectura del sistema · clic para ampliar" data-en="System architecture · click to enlarge">Arquitectura del sistema · clic para ampliar</span>
       </div>
-      <div class="diagram-item" onclick="window.open('/proyectos/calidad-triple-a/flujo-pedido.svg','_blank')" title="Abrir diagrama">
-        <object data="/proyectos/calidad-triple-a/flujo-pedido.svg" type="image/svg+xml"></object>
-        <span data-es="Flujo de pedido · clic para ampliar" data-en="Order flow · click to enlarge">Flujo de pedido · clic para ampliar</span>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/calidad-triple-a/flujo-pedido.svg','_blank')">
+        <div class="diagram-item" style="width:100%;cursor:pointer">
+          <object data="/proyectos/calidad-triple-a/flujo-pedido.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Flujo de pedido · clic para ampliar" data-en="Order flow · click to enlarge">Flujo de pedido · clic para ampliar</span>
       </div>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Flujo de compra" data-en="Purchase flow">Flujo de compra</div>
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Flujo de compra" data-en="Purchase flow">Flujo de compra</div>
+    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container" id="gif-container">
       <img id="gif-img" src="/proyectos/calidad-triple-a/demo-still.png" data-gif="/proyectos/calidad-triple-a/demo.gif" data-still="/proyectos/calidad-triple-a/demo-still.png" alt="Flujo de compra" />
       <div class="gif-overlay" id="gif-overlay">
         <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
       </div>
     </div>
-    <div class="gif-label" data-es="Pulsa para reproducir · Pulsa de nuevo para pausar" data-en="Click to play · Click again to pause">Pulsa para reproducir · Pulsa de nuevo para pausar</div>
-    <div class="pdf-note" style="margin-top:12px">
+    <div class="pdf-note" style="margin-top:16px">
       <b data-es="Tras confirmar el pedido" data-en="After order confirmation">Tras confirmar el pedido</b><br>
       <span data-es="El sistema genera automáticamente un PDF con el resumen del pedido, un PDF de datos de envío (150×100mm) y un código QR, que se envían adjuntos al email del vendedor vía Resend." data-en="The system automatically generates a PDF order summary, a shipping data PDF (150×100mm) and a QR code, all sent as attachments to the seller's email via Resend.">El sistema genera automáticamente un PDF con el resumen del pedido, un PDF de datos de envío (150×100mm) y un código QR, que se envían adjuntos al email del vendedor vía Resend.</span>
     </div>
@@ -178,9 +181,9 @@ import '../../styles/global.css';
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
-    <div style="font-size:11px;color:var(--t4);margin-bottom:10px" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
     <div class="carousel">
-      <button class="carousel-btn carousel-prev" id="carousel-prev"><i class="ti ti-chevron-left"></i></button>
+      <button class="carousel-btn" id="carousel-prev"><i class="ti ti-chevron-left"></i></button>
       <div class="carousel-track" id="carousel-track">
         <div class="carousel-slide active">
           <img src="/proyectos/calidad-triple-a/catalogo.png" alt="Catálogo" onclick="window.open(this.src,'_blank')" />
@@ -199,7 +202,7 @@ import '../../styles/global.css';
           <span data-es="Checkout con envío gratis aplicado" data-en="Checkout with free shipping">Checkout con envío gratis aplicado</span>
         </div>
       </div>
-      <button class="carousel-btn carousel-next" id="carousel-next"><i class="ti ti-chevron-right"></i></button>
+      <button class="carousel-btn" id="carousel-next"><i class="ti ti-chevron-right"></i></button>
     </div>
     <div class="carousel-dots" id="carousel-dots">
       <span class="dot active" onclick="goToSlide(0)"></span>
@@ -211,7 +214,12 @@ import '../../styles/global.css';
 
 </div>
 
-<footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer>
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
+</footer>
 
 <script>
   // CAROUSEL
@@ -230,29 +238,16 @@ import '../../styles/global.css';
 
   // LIGHTBOX
   const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  function openLightbox(src) {
-    lbImg.src = src;
-    lb.classList.add('open');
-  }
   lb.addEventListener('click', () => lb.classList.remove('open'));
   document.getElementById('lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
 
-  // GIF PLAY/PAUSE
+  // GIF
   let gifPlaying = false;
   document.getElementById('gif-container').addEventListener('click', function() {
     const img = document.getElementById('gif-img');
     const overlay = document.getElementById('gif-overlay');
-    if (!gifPlaying) {
-      const gifSrc = img.getAttribute('data-gif');
-      img.src = gifSrc + '?t=' + Date.now();
-      overlay.classList.add('hidden');
-      gifPlaying = true;
-    } else {
-      img.src = img.getAttribute('data-still');
-      overlay.classList.remove('hidden');
-      gifPlaying = false;
-    }
+    if (!gifPlaying) { img.src = img.getAttribute('data-gif') + '?t=' + Date.now(); overlay.classList.add('hidden'); gifPlaying = true; }
+    else { img.src = img.getAttribute('data-still'); overlay.classList.remove('hidden'); gifPlaying = false; }
   });
 
   // I18N
