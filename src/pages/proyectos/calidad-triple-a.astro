@@ -14,28 +14,24 @@ import '../../styles/global.css';
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <style>
-    /* LIGHTBOX */
     .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
     .lightbox.open{display:flex}
     .lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;object-fit:contain;margin:auto}
     .lightbox-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;z-index:1001}
-    /* DIAGRAMAS */
     .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
     .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
     .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
     .diagram-label{font-size:11px;color:var(--t4);text-align:center}
-    /* GIF */
     .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
     .gif-container img{width:100%;display:block;border-radius:8px}
     .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
     .gif-overlay.hidden{opacity:0;pointer-events:none}
     .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
-    .gif-play-btn i{font-size:28px;color:#fff;margin-left:4px}
-    .gif-label{font-size:11px;color:var(--t4);margin-top:8px;text-align:center}
+    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
     .pdf-note{background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.15);border-radius:8px;padding:14px 18px;font-size:12px;color:var(--t3);line-height:1.7;margin-top:10px}
     .pdf-note b{color:var(--t2)}
-    /* CAROUSEL */
     .carousel{position:relative;display:flex;align-items:center;gap:10px}
     .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
     .carousel-slide{display:none;flex-direction:column}
@@ -166,13 +162,14 @@ import '../../styles/global.css';
 
   <div class="proj-section">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Flujo de compra" data-en="Purchase flow">Flujo de compra</div>
-    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container" id="gif-container">
       <img id="gif-img" src="/proyectos/calidad-triple-a/demo-still.png" data-gif="/proyectos/calidad-triple-a/demo.gif" data-still="/proyectos/calidad-triple-a/demo-still.png" alt="Flujo de compra" />
       <div class="gif-overlay" id="gif-overlay">
-        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
     </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Flujo completo de compra: catálogo, ficha de producto, carrito y checkout con cálculo de envío automático." data-en="Full purchase flow: catalogue, product page, cart and checkout with automatic shipping calculation.">Flujo completo de compra: catálogo, ficha de producto, carrito y checkout con cálculo de envío automático.</p>
     <div class="pdf-note" style="margin-top:16px">
       <b data-es="Tras confirmar el pedido" data-en="After order confirmation">Tras confirmar el pedido</b><br>
       <span data-es="El sistema genera automáticamente un PDF con el resumen del pedido, un PDF de datos de envío (150×100mm) y un código QR, que se envían adjuntos al email del vendedor vía Resend." data-en="The system automatically generates a PDF order summary, a shipping data PDF (150×100mm) and a QR code, all sent as attachments to the seller's email via Resend.">El sistema genera automáticamente un PDF con el resumen del pedido, un PDF de datos de envío (150×100mm) y un código QR, que se envían adjuntos al email del vendedor vía Resend.</span>
@@ -222,7 +219,6 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  // CAROUSEL
   let currentSlide = 0;
   const slides = document.querySelectorAll('.carousel-slide');
   const dots = document.querySelectorAll('.dot');
@@ -236,12 +232,10 @@ import '../../styles/global.css';
   document.getElementById('carousel-prev').addEventListener('click', () => goToSlide(currentSlide - 1));
   document.getElementById('carousel-next').addEventListener('click', () => goToSlide(currentSlide + 1));
 
-  // LIGHTBOX
   const lb = document.getElementById('lightbox');
   lb.addEventListener('click', () => lb.classList.remove('open'));
   document.getElementById('lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
 
-  // GIF
   let gifPlaying = false;
   document.getElementById('gif-container').addEventListener('click', function() {
     const img = document.getElementById('gif-img');
@@ -250,7 +244,6 @@ import '../../styles/global.css';
     else { img.src = img.getAttribute('data-still'); overlay.classList.remove('hidden'); gifPlaying = false; }
   });
 
-  // I18N
   const ES='es',EN='en';
   let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');

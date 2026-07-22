@@ -11,6 +11,39 @@ import '../../styles/global.css';
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    .section-divider{border-top:1px solid rgba(255,255,255,0.07);margin:80px 0}
+    .proj-section{margin-bottom:72px}
+    .proj-section-title{margin-bottom:24px}
+    /* DIAGRAMAS */
+    .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
+    .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
+    .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .diagram-label{font-size:11px;color:var(--t4);text-align:center}
+    /* GIF */
+    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
+    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
+    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
+    .gif-overlay.hidden{opacity:0;pointer-events:none}
+    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
+    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
+    /* CAROUSEL */
+    .carousel{position:relative;display:flex;align-items:center;gap:10px}
+    .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .carousel-slide{display:none;flex-direction:column}
+    .carousel-slide.active{display:flex}
+    .carousel-slide img{width:100%;display:block;cursor:pointer;max-height:760px;object-fit:cover;object-position:top}
+    #pdf-track .carousel-slide img{max-height:462px;object-fit:contain;object-position:center;background:var(--bg2)}
+    .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
+    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
+    .carousel-btn:hover{background:rgba(129,140,248,0.3)}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
+    .dot.active{background:var(--ac)}
+    .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
+  </style>
 </head>
 <body>
 <nav><div class="nav-inner">
@@ -21,6 +54,7 @@ import '../../styles/global.css';
       <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
       <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
       <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
     </div>
     <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
@@ -32,8 +66,6 @@ import '../../styles/global.css';
   <div class="proj-subtitle" data-es="Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza la compatibilidad con tu CV y genera un CV adaptado en PDF profesional para cada candidatura." data-en="Job search tool that aggregates listings from multiple sources, analyses compatibility with your CV and generates a tailored CV as a professional PDF for each application.">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza la compatibilidad con tu CV y genera un CV adaptado en PDF profesional para cada candidatura.</div>
   <div class="proj-links">
     <a href="https://github.com/ArocaDev/cvmatch-ai" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
-    <a href="https://cvmatch.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
   </div>
 </div>
 
@@ -54,18 +86,6 @@ import '../../styles/global.css';
       <p data-es="Cada oferta se puede analizar con <b>Groq AI</b>, que extrae automáticamente el stack requerido, la modalidad, los años de experiencia y el rango salarial. Si subes tu CV, genera un <b>porcentaje de compatibilidad</b>, las palabras clave que faltan y sugerencias de mejora concretas." data-en="Each listing can be analysed with <b>Groq AI</b>, which automatically extracts the required stack, work mode, years of experience and salary range. Upload your CV and it generates a <b>compatibility score</b>, missing keywords and specific improvement suggestions.">Cada oferta se puede analizar con <b>Groq AI</b>, que extrae automáticamente el stack requerido, la modalidad, los años de experiencia y el rango salarial. Si subes tu CV, genera un <b>porcentaje de compatibilidad</b>, las palabras clave que faltan y sugerencias de mejora concretas.</p>
       <p data-es="El generador de CV reescribe tu perfil completo en formato JSON estructurado, adaptando el lenguaje y el orden de secciones a cada oferta. Ese JSON se convierte en un <b>PDF profesional con WeasyPrint</b>, en cinco plantillas distintas." data-en="The CV generator rewrites your complete profile in structured JSON format, adapting the language and section order to each listing. That JSON is converted into a <b>professional PDF with WeasyPrint</b>, in five different templates.">El generador de CV reescribe tu perfil completo en formato JSON estructurado, adaptando el lenguaje y el orden de secciones a cada oferta. Ese JSON se convierte en un <b>PDF profesional con WeasyPrint</b>, en cinco plantillas distintas.</p>
       <p data-es="Las tareas pesadas se procesan de forma asíncrona con <b>Celery + Redis</b> para no bloquear la interfaz." data-en="Heavy tasks are processed asynchronously with <b>Celery + Redis</b> so the interface is never blocked.">Las tareas pesadas se procesan de forma asíncrona con <b>Celery + Redis</b> para no bloquear la interfaz.</p>
-    </div>
-  </div>
-
-  <div class="proj-section">
-    <div class="proj-section-title" data-es="Plantillas PDF" data-en="PDF templates">Plantillas PDF</div>
-    <div class="proj-text" style="margin-bottom:14px"><p data-es="Cinco plantillas con identidades visuales distintas, cada una pensada para un contexto diferente:" data-en="Five templates with distinct visual identities, each designed for a different context:">Cinco plantillas con identidades visuales distintas, cada una pensada para un contexto diferente:</p></div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="about-item"><div class="about-item-text"><b>ATS Classic</b><span data-es="Blanco y negro, sin decoración. Diseñada para pasar filtros ATS sin perder información por el camino." data-en="Black and white, no decoration. Designed to pass ATS filters without losing information along the way.">Blanco y negro, sin decoración. Diseñada para pasar filtros ATS sin perder información por el camino.</span></div></div>
-      <div class="about-item"><div class="about-item-text"><b>Executive</b><span data-es="Azul marino con detalles dorados y foto circular. Para perfiles senior o consultoras." data-en="Navy blue with gold details and circular photo. For senior profiles or consulting roles.">Azul marino con detalles dorados y foto circular. Para perfiles senior o consultoras.</span></div></div>
-      <div class="about-item"><div class="about-item-text"><b>Sidebar Tech</b><span data-es="Sidebar oscuro con acento azul eléctrico. La más adecuada para perfiles de desarrollo y tecnología." data-en="Dark sidebar with electric blue accent. Best suited for development and tech profiles.">Sidebar oscuro con acento azul eléctrico. La más adecuada para perfiles de desarrollo y tecnología.</span></div></div>
-      <div class="about-item"><div class="about-item-text"><b>Minimal Editorial</b><span data-es="Tipografía serif, mucho espacio, sin ornamento. Para perfiles senior o de arquitectura." data-en="Serif typography, lots of space, no ornament. For senior or architecture profiles.">Tipografía serif, mucho espacio, sin ornamento. Para perfiles senior o de arquitectura.</span></div></div>
-      <div class="about-item"><div class="about-item-text"><b>One Page</b><span data-es="Verde oscuro, dos columnas compactas. Todo lo relevante en una sola página." data-en="Dark green, two compact columns. Everything relevant on a single page.">Verde oscuro, dos columnas compactas. Todo lo relevante en una sola página.</span></div></div>
     </div>
   </div>
 
@@ -104,21 +124,251 @@ import '../../styles/global.css';
   </div>
 
   <div class="proj-section">
+    <div class="proj-section-title" data-es="Diagramas" data-en="Diagrams">Diagramas</div>
+    <div class="diagram-grid">
+      <div class="diagram-wrap" onclick="window.open('/proyectos/cvmatch-ai/cvmatch_arquitectura.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/cvmatch-ai/cvmatch_arquitectura.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Arquitectura · clic para ampliar" data-en="Architecture · click to enlarge">Arquitectura · clic para ampliar</span>
+      </div>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/cvmatch-ai/cvmatch_flujo_usuario.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/cvmatch-ai/cvmatch_flujo_usuario.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Flujo de usuario · clic para ampliar" data-en="User flow · click to enlarge">Flujo de usuario · clic para ampliar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Buscador de ofertas" data-en="Job search">Buscador de ofertas</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-buscador">
+      <img id="gif-buscador-img" src="/proyectos/cvmatch-ai/buscador-still.png" data-gif="/proyectos/cvmatch-ai/buscador.gif" data-still="/proyectos/cvmatch-ai/buscador-still.png" alt="Buscador de ofertas" />
+      <div class="gif-overlay" id="gif-buscador-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Búsqueda por palabras clave, ubicación y fuente. Filtra por modalidad, experiencia y salario mínimo antes de lanzar la consulta." data-en="Search by keywords, location and source. Filter by work mode, experience and minimum salary before running the query.">Búsqueda por palabras clave, ubicación y fuente. Filtra por modalidad, experiencia y salario mínimo antes de lanzar la consulta.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Buscador con IA" data-en="AI-powered search">Buscador con IA</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-buscador-ia">
+      <img id="gif-buscador-ia-img" src="/proyectos/cvmatch-ai/buscador-ia-still.png" data-gif="/proyectos/cvmatch-ai/buscador-ia.gif" data-still="/proyectos/cvmatch-ai/buscador-ia-still.png" alt="Buscador con IA" />
+      <div class="gif-overlay" id="gif-buscador-ia-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Cada oferta incluye un resumen generado por IA con el stack requerido, modalidad, experiencia y salario, sin necesidad de abrir el enlace original." data-en="Each listing includes an AI-generated summary with the required stack, work mode, experience and salary, without opening the original link.">Cada oferta incluye un resumen generado por IA con el stack requerido, modalidad, experiencia y salario, sin necesidad de abrir el enlace original.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Análisis de compatibilidad" data-en="Compatibility analysis">Análisis de compatibilidad</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-compatibilidad">
+      <img id="gif-compatibilidad-img" src="/proyectos/cvmatch-ai/compatibilidad-still.png" data-gif="/proyectos/cvmatch-ai/compatibilidad.gif" data-still="/proyectos/cvmatch-ai/compatibilidad-still.png" alt="Análisis de compatibilidad" />
+      <div class="gif-overlay" id="gif-compatibilidad-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="La IA cruza la oferta con tu CV y devuelve un porcentaje de compatibilidad, las palabras clave que faltan y cambios concretos para mejorar tus opciones de pasar el filtro ATS." data-en="The AI cross-references the listing with your CV and returns a compatibility score, missing keywords and concrete changes to improve your chances of passing the ATS filter.">La IA cruza la oferta con tu CV y devuelve un porcentaje de compatibilidad, las palabras clave que faltan y cambios concretos para mejorar tus opciones de pasar el filtro ATS.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Generar CV adaptado" data-en="Generate tailored CV">Generar CV adaptado</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-generar-cv">
+      <img id="gif-generar-cv-img" src="/proyectos/cvmatch-ai/generar-cv-still.png" data-gif="/proyectos/cvmatch-ai/generar-cv.gif" data-still="/proyectos/cvmatch-ai/generar-cv-still.png" alt="Generar CV adaptado" />
+      <div class="gif-overlay" id="gif-generar-cv-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="La IA reescribe tu CV completo adaptando el lenguaje y el orden de secciones a la oferta. Elige plantilla, añade foto si quieres y descarga el PDF en segundos." data-en="The AI rewrites your full CV adapting the language and section order to the listing. Choose a template, add a photo if you want and download the PDF in seconds.">La IA reescribe tu CV completo adaptando el lenguaje y el orden de secciones a la oferta. Elige plantilla, añade foto si quieres y descarga el PDF en segundos.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Crear CV desde cero" data-en="Create CV from scratch">Crear CV desde cero</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-crear-cv">
+      <img id="gif-crear-cv-img" src="/proyectos/cvmatch-ai/crear-cv-still.png" data-gif="/proyectos/cvmatch-ai/crear-cv.gif" data-still="/proyectos/cvmatch-ai/crear-cv-still.png" alt="Crear CV desde cero" />
+      <div class="gif-overlay" id="gif-crear-cv-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Pega tu CV en texto o usa uno de los guardados en tu perfil. La IA lo reestructura, lo mejora y genera una vista previa en tiempo real antes de exportar." data-en="Paste your CV as text or use one saved in your profile. The AI restructures and improves it, generating a live preview before export.">Pega tu CV en texto o usa uno de los guardados en tu perfil. La IA lo reestructura, lo mejora y genera una vista previa en tiempo real antes de exportar.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" data-es="Plantillas PDF" data-en="PDF templates">Plantillas PDF</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel" style="max-width:572px;margin:0 auto">
+      <button class="carousel-btn" id="pdf-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track" id="pdf-track">
+        <div class="carousel-slide active">
+          <img src="/proyectos/cvmatch-ai/cv-classic.png" alt="Plantilla Classic" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Classic — blanco y negro, optimizada para ATS" data-en="Classic — black and white, ATS-optimised">Classic — blanco y negro, optimizada para ATS</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/cv-executive.png" alt="Plantilla Executive" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Executive — azul marino con detalles dorados" data-en="Executive — navy blue with gold details">Executive — azul marino con detalles dorados</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/cv-modern.png" alt="Plantilla Modern" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Modern — sidebar oscuro con acento azul eléctrico" data-en="Modern — dark sidebar with electric blue accent">Modern — sidebar oscuro con acento azul eléctrico</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/cv-editorial.png" alt="Plantilla Editorial" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Editorial — tipografía serif, minimalista" data-en="Editorial — serif typography, minimalist">Editorial — tipografía serif, minimalista</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/cv-onepage.png" alt="Plantilla One Page" onclick="window.open(this.src,'_blank')" />
+          <span data-es="One Page — dos columnas compactas, todo en una página" data-en="One Page — two compact columns, everything on one page">One Page — dos columnas compactas, todo en una página</span>
+        </div>
+      </div>
+      <button class="carousel-btn" id="pdf-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="pdf-dots">
+      <span class="dot active" onclick="goToPdfSlide(0)"></span>
+      <span class="dot" onclick="goToPdfSlide(1)"></span>
+      <span class="dot" onclick="goToPdfSlide(2)"></span>
+      <span class="dot" onclick="goToPdfSlide(3)"></span>
+      <span class="dot" onclick="goToPdfSlide(4)"></span>
+    </div>
+  </div>
+
+  <div class="proj-section">
     <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Lista de ofertas" data-en="Job listings">Lista de ofertas</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Análisis de compatibilidad" data-en="Compatibility analysis">Análisis de compatibilidad</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Generador de CV" data-en="CV generator">Generador de CV</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Plantillas PDF" data-en="PDF templates">Plantillas PDF</span></div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel">
+      <button class="carousel-btn" id="sc-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track" id="sc-track">
+        <div class="carousel-slide active">
+          <img src="/proyectos/cvmatch-ai/login.png" alt="Login" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Login" data-en="Login">Login</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/registro.png" alt="Registro" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Registro" data-en="Register">Registro</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/main.png" alt="Pantalla principal" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Pantalla principal" data-en="Main screen">Pantalla principal</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/buscador.png" alt="Buscador" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Buscador de ofertas" data-en="Job search">Buscador de ofertas</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/ofertas.png" alt="Lista de ofertas" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Lista de ofertas" data-en="Job listings">Lista de ofertas</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/ofertas-analizar.png" alt="Selección de CV para análisis" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Selección de CV para análisis" data-en="CV selection for analysis">Selección de CV para análisis</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/ofertas-analisis.png" alt="Resultado del análisis" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Resultado del análisis IA" data-en="AI analysis result">Resultado del análisis IA</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/ofertas-ia.png" alt="Detalle de oferta" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Detalle de oferta con resumen IA" data-en="Listing detail with AI summary">Detalle de oferta con resumen IA</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/perfil.png" alt="Perfil" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Perfil — CVs guardados y token Groq" data-en="Profile — saved CVs and Groq token">Perfil — CVs guardados y token Groq</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/generar-cv.png" alt="Generar CV adaptado" onclick="window.open(this.src,'_blank')" />
+          <span data-es="CV adaptado a la oferta" data-en="CV tailored to the listing">CV adaptado a la oferta</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/cvmatch-ai/crear-cv.png" alt="Crear CV" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Crear CV — modo IA y modo externo" data-en="Create CV — AI mode and external mode">Crear CV — modo IA y modo externo</span>
+        </div>
+      </div>
+      <button class="carousel-btn" id="sc-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="sc-dots">
+      <span class="dot active" onclick="goToScSlide(0)"></span>
+      <span class="dot" onclick="goToScSlide(1)"></span>
+      <span class="dot" onclick="goToScSlide(2)"></span>
+      <span class="dot" onclick="goToScSlide(3)"></span>
+      <span class="dot" onclick="goToScSlide(4)"></span>
+      <span class="dot" onclick="goToScSlide(5)"></span>
+      <span class="dot" onclick="goToScSlide(6)"></span>
+      <span class="dot" onclick="goToScSlide(7)"></span>
+      <span class="dot" onclick="goToScSlide(8)"></span>
+      <span class="dot" onclick="goToScSlide(9)"></span>
+      <span class="dot" onclick="goToScSlide(10)"></span>
     </div>
   </div>
 
 </div>
-<footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
+</footer>
+
 <script>
-  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  // GIFs
+  function makeGif(containerId, imgId, overlayId) {
+    document.getElementById(containerId).addEventListener('click', function() {
+      const img = document.getElementById(imgId);
+      const overlay = document.getElementById(overlayId);
+      if (overlay.classList.contains('hidden')) {
+        img.src = img.getAttribute('data-still');
+        overlay.classList.remove('hidden');
+      } else {
+        img.src = img.getAttribute('data-gif') + '?t=' + Date.now();
+        overlay.classList.add('hidden');
+      }
+    });
+  }
+  makeGif('gif-buscador','gif-buscador-img','gif-buscador-overlay');
+  makeGif('gif-buscador-ia','gif-buscador-ia-img','gif-buscador-ia-overlay');
+  makeGif('gif-compatibilidad','gif-compatibilidad-img','gif-compatibilidad-overlay');
+  makeGif('gif-generar-cv','gif-generar-cv-img','gif-generar-cv-overlay');
+  makeGif('gif-crear-cv','gif-crear-cv-img','gif-crear-cv-overlay');
+
+  // CAROUSEL PDF
+  let pdfSlide = 0;
+  const pdfSlides = document.querySelectorAll('#pdf-track .carousel-slide');
+  const pdfDots = document.querySelectorAll('#pdf-dots .dot');
+  function goToPdfSlide(n) {
+    pdfSlides[pdfSlide].classList.remove('active'); pdfDots[pdfSlide].classList.remove('active');
+    pdfSlide = (n + pdfSlides.length) % pdfSlides.length;
+    pdfSlides[pdfSlide].classList.add('active'); pdfDots[pdfSlide].classList.add('active');
+  }
+  document.getElementById('pdf-prev').addEventListener('click', () => goToPdfSlide(pdfSlide - 1));
+  document.getElementById('pdf-next').addEventListener('click', () => goToPdfSlide(pdfSlide + 1));
+
+  // CAROUSEL CAPTURAS
+  let scSlide = 0;
+  const scSlides = document.querySelectorAll('#sc-track .carousel-slide');
+  const scDots = document.querySelectorAll('#sc-dots .dot');
+  function goToScSlide(n) {
+    scSlides[scSlide].classList.remove('active'); scDots[scSlide].classList.remove('active');
+    scSlide = (n + scSlides.length) % scSlides.length;
+    scSlides[scSlide].classList.add('active'); scDots[scSlide].classList.add('active');
+  }
+  document.getElementById('sc-prev').addEventListener('click', () => goToScSlide(scSlide - 1));
+  document.getElementById('sc-next').addEventListener('click', () => goToScSlide(scSlide + 1));
+
+  // I18N
+  const ES='es',EN='en';
+  let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
   function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+  btnEs.addEventListener('click',()=>applyLang(ES));
+  btnEn.addEventListener('click',()=>applyLang(EN));
+  applyLang(current);
 </script>
-</body></html>
+</body>
+</html>

@@ -27,7 +27,7 @@ import '../../styles/global.css';
     .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
     .gif-overlay.hidden{opacity:0;pointer-events:none}
     .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
-    .gif-play-btn i{font-size:28px;color:#fff;margin-left:4px}
+    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
     .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
     .carousel{position:relative;display:flex;align-items:center;gap:10px}
     .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
@@ -177,35 +177,38 @@ import '../../styles/global.css';
 
   <div class="proj-section">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Grabación y tarea" data-en="Recording and task">Grabación y tarea</div>
-    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container mobile-gif" id="gif-audio">
       <img id="gif-audio-img" src="/proyectos/voice2task/audio.jpeg" data-gif="/proyectos/voice2task/demo-audio.gif" data-still="/proyectos/voice2task/audio.jpeg" alt="Demo grabación" />
       <div class="gif-overlay" id="gif-audio-overlay">
-        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
     </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Pulsa el micrófono, habla y suelta. El audio viaja al backend, Whisper lo transcribe y la IA extrae título, descripción, fecha límite y prioridad. La tarea aparece lista para revisar antes de guardar." data-en="Tap the mic, speak and release. The audio goes to the backend, Whisper transcribes it and the AI extracts title, description, deadline and priority. The task appears ready to review before saving.">Pulsa el micrófono, habla y suelta. El audio viaja al backend, Whisper lo transcribe y la IA extrae título, descripción, fecha límite y prioridad. La tarea aparece lista para revisar antes de guardar.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Ajustes e integraciones" data-en="Settings and integrations">Ajustes e integraciones</div>
-    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container mobile-gif" id="gif-settings">
       <img id="gif-settings-img" src="/proyectos/voice2task/integraciones.png" data-gif="/proyectos/voice2task/demo-settings.gif" data-still="/proyectos/voice2task/integraciones.png" alt="Demo ajustes" />
       <div class="gif-overlay" id="gif-settings-overlay">
-        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
     </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Conecta Trello y Notion en tres pasos desde los ajustes. Una vez configuradas, cada nueva tarea puede enviarse a uno o ambos servicios a la vez, además de guardarse en la app." data-en="Connect Trello and Notion in three steps from settings. Once configured, each new task can be sent to one or both services at once, in addition to being saved in the app.">Conecta Trello y Notion en tres pasos desde los ajustes. Una vez configuradas, cada nueva tarea puede enviarse a uno o ambos servicios a la vez, además de guardarse en la app.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Calendario" data-en="Calendar">Calendario</div>
-    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container mobile-gif" id="gif-cal">
       <img id="gif-cal-img" src="/proyectos/voice2task/calendario.png" data-gif="/proyectos/voice2task/demo-calendario.gif" data-still="/proyectos/voice2task/calendario.png" alt="Demo calendario" />
       <div class="gif-overlay" id="gif-cal-overlay">
-        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
     </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Vista mensual con marcadores en los días que tienen tareas. Pulsa un día para ver las tareas de esa fecha filtradas directamente desde el calendario." data-en="Monthly view with markers on days that have tasks. Tap a day to see that date's tasks filtered directly from the calendar.">Vista mensual con marcadores en los días que tienen tareas. Pulsa un día para ver las tareas de esa fecha filtradas directamente desde el calendario.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">

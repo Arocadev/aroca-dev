@@ -14,30 +14,25 @@ import '../../styles/global.css';
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <style>
-    /* LIGHTBOX */
     .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;cursor:zoom-out}
     .lightbox.open{display:flex}
     .lightbox img{max-width:92vw;max-height:90vh;border-radius:8px;object-fit:contain;margin:auto}
     .lightbox-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;z-index:1001}
-    /* LAYOUT */
     .section-divider{border-top:1px solid rgba(255,255,255,0.07);margin:80px 0}
     .proj-section{margin-bottom:72px}
     .proj-section-title{margin-bottom:24px}
-    /* DIAGRAMAS */
     .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
     .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
     .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
     .diagram-label{font-size:11px;color:var(--t4);text-align:center}
-    /* GIF WEB */
     .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
     .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
     .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
     .gif-overlay.hidden{opacity:0;pointer-events:none}
     .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
-    .gif-play-btn i{font-size:28px;color:#fff;margin-left:4px}
-    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;margin-top:8px;text-align:center}
-    /* CAROUSEL WEB */
+    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
     .carousel{position:relative;display:flex;align-items:center;gap:10px}
     .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
     .carousel-slide{display:none;flex-direction:column}
@@ -50,7 +45,6 @@ import '../../styles/global.css';
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:24px;margin-top:8px;text-align:center}
-    /* MÓVIL — GIF y carousel app */
     .gif-container.mobile-gif{width:300px;margin:0 auto}
     .gif-container.mobile-gif img{width:100%;max-height:500px;object-fit:contain;object-position:top;display:block;border-radius:8px}
     .mobile-carousel{justify-content:center}
@@ -98,7 +92,6 @@ import '../../styles/global.css';
 
   <div style="font-size:11px;color:var(--t4);margin-bottom:24px;display:flex;align-items:center;gap:6px"><i class="ti ti-lock" style="font-size:12px"></i><span data-es="Los repositorios de la web y la app son privados porque el código pertenece al cliente. Si quieres verlos, puedes contactarme directamente." data-en="Both repositories are private as the code belongs to the client. If you'd like to see them, feel free to contact me directly.">Los repositorios de la web y la app son privados porque el código pertenece al cliente. Si quieres verlos, puedes contactarme directamente.</span></div>
 
-  <!-- WEB -->
   <div class="proj-section">
     <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
@@ -155,13 +148,14 @@ import '../../styles/global.css';
 
   <div class="proj-section">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Flujo de presupuesto" data-en="Quote flow — Web">Flujo de presupuesto</div>
-    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container" id="gif-web">
       <img id="gif-web-img" src="/proyectos/vulldecor/demo-web-still.png" data-gif="/proyectos/vulldecor/demo-web.gif" data-still="/proyectos/vulldecor/demo-web-still.png" alt="Flujo web" />
       <div class="gif-overlay" id="gif-web-overlay">
-        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
     </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="El usuario selecciona el tipo de servicio e inmueble con botones, rellena sus datos y envía el presupuesto directamente por WhatsApp con un mensaje preformateado, o por email vía FormSubmit." data-en="The user selects the service type and property with buttons, fills in their details and sends the quote directly via WhatsApp with a pre-formatted message, or by email via FormSubmit.">El usuario selecciona el tipo de servicio e inmueble con botones, rellena sus datos y envía el presupuesto directamente por WhatsApp con un mensaje preformateado, o por email vía FormSubmit.</p>
   </div>
 
   <div class="proj-section">
@@ -218,7 +212,6 @@ import '../../styles/global.css';
 
   <div class="section-divider"></div>
 
-  <!-- APP -->
   <div class="proj-section" style="margin-top:56px">
     <div class="proj-section-title" data-es="También para este cliente: Vulldecor Gestiones" data-en="Also for this client: Vulldecor Gestiones">También para este cliente: Vulldecor Gestiones</div>
     <div class="proj-text">
@@ -268,13 +261,14 @@ import '../../styles/global.css';
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Demo de la app" data-en="Demo — Android app">Demo de la app</div>
-    <div class="gif-label" style="margin-bottom:20px" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
     <div class="gif-container mobile-gif" id="gif-app">
       <img id="gif-app-img" src="/proyectos/vulldecor/demo-app-still.png" data-gif="/proyectos/vulldecor/demo-app.gif" data-still="/proyectos/vulldecor/demo-app-still.png" alt="Demo app" />
       <div class="gif-overlay" id="gif-app-overlay">
-        <div class="gif-play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
       </div>
     </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Gestión completa de obras desde el móvil: crea una obra, añade tareas, registra pagos y cobros. Todo funciona sin conexión a internet gracias al almacenamiento local con Hive." data-en="Full project management from the phone: create a project, add tasks, log payments and invoices. Everything works offline thanks to local storage with Hive.">Gestión completa de obras desde el móvil: crea una obra, añade tareas, registra pagos y cobros. Todo funciona sin conexión a internet gracias al almacenamiento local con Hive.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
@@ -332,13 +326,10 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  // LIGHTBOX
   const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
   lb.addEventListener('click', () => lb.classList.remove('open'));
   document.getElementById('lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
 
-  // GIF WEB
   let gifWebPlaying = false;
   document.getElementById('gif-web').addEventListener('click', function() {
     const img = document.getElementById('gif-web-img');
@@ -347,7 +338,6 @@ import '../../styles/global.css';
     else { img.src = img.getAttribute('data-still'); overlay.classList.remove('hidden'); gifWebPlaying = false; }
   });
 
-  // GIF APP
   let gifAppPlaying = false;
   document.getElementById('gif-app').addEventListener('click', function() {
     const img = document.getElementById('gif-app-img');
@@ -356,7 +346,6 @@ import '../../styles/global.css';
     else { img.src = img.getAttribute('data-still'); overlay.classList.remove('hidden'); gifAppPlaying = false; }
   });
 
-  // CAROUSEL WEB
   let webSlide = 0;
   const webSlides = document.querySelectorAll('#web-prev')[0].closest('.proj-section').querySelectorAll('.carousel-slide');
   const webDots = document.querySelectorAll('#web-dots .dot');
@@ -368,7 +357,6 @@ import '../../styles/global.css';
   document.getElementById('web-prev').addEventListener('click', () => goToWebSlide(webSlide - 1));
   document.getElementById('web-next').addEventListener('click', () => goToWebSlide(webSlide + 1));
 
-  // CAROUSEL APP
   let appSlide = 0;
   const appSlides = document.querySelectorAll('#app-prev')[0].closest('.proj-section').querySelectorAll('.carousel-slide');
   const appDots = document.querySelectorAll('#app-dots .dot');
@@ -380,7 +368,6 @@ import '../../styles/global.css';
   document.getElementById('app-prev').addEventListener('click', () => goToAppSlide(appSlide - 1));
   document.getElementById('app-next').addEventListener('click', () => goToAppSlide(appSlide + 1));
 
-  // I18N
   const ES='es',EN='en';
   let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');

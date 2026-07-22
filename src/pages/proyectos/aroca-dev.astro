@@ -11,8 +11,14 @@ import '../../styles/global.css';
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
+    .diagram-item object{width:100%;display:block;pointer-events:none;border-radius:4px}
+    .diagram-label{font-size:11px;color:var(--t4);text-align:center;margin-top:8px}
+  </style>
 </head>
-<body><nav><div class="nav-inner">
+<body>
+<nav><div class="nav-inner">
   <a href="/" class="logo">aroca<span>.dev</span></a>
   <div class="nav-r">
     <div class="nav-links">
@@ -20,10 +26,12 @@ import '../../styles/global.css';
       <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
       <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
       <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
     </div>
     <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
 </div></nav>
+
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto personal · En producción" data-en="Personal project · Live">Proyecto personal · En producción</div>
   <div class="proj-title">aroca.dev</div>
@@ -32,6 +40,7 @@ import '../../styles/global.css';
     <a href="https://github.com/ArocaDev/aroca-dev" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
   </div>
 </div>
+
 <div class="proj-body">
 
   <div class="proj-section">
@@ -85,15 +94,29 @@ import '../../styles/global.css';
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="Diagrama de arquitectura" data-en="Architecture diagram">Diagrama de arquitectura</div>
-    <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px;cursor:pointer" onclick="window.open('/proyectos/aroca-dev/arquitectura.svg','_blank')">
-      <object data="/proyectos/aroca-dev/arquitectura.svg" type="image/svg+xml" style="width:100%;display:block;pointer-events:none"></object>
-      <span style="display:block;font-size:11px;color:#888;padding:6px 2px 0" data-es="Clic para ampliar" data-en="Click to enlarge">Clic para ampliar</span>
+    <div class="diagram-item" onclick="window.open('/proyectos/aroca-dev/arquitectura.svg','_blank')">
+      <object data="/proyectos/aroca-dev/arquitectura.svg" type="image/svg+xml"></object>
     </div>
+    <div class="diagram-label" data-es="Arquitectura · clic para ampliar" data-en="Architecture · click to enlarge">Arquitectura · clic para ampliar</div>
   </div>
 
-</div><footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer><script>
-  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+</div>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
+</footer>
+
+<script>
+  const ES='es',EN='en';
+  let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
   function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
-</script></body></html>
+  btnEs.addEventListener('click',()=>applyLang(ES));
+  btnEn.addEventListener('click',()=>applyLang(EN));
+  applyLang(current);
+</script>
+</body>
+</html>
