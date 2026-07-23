@@ -11,6 +11,35 @@ import '../../styles/global.css';
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    .section-divider{border-top:1px solid rgba(255,255,255,0.07);margin:80px 0}
+    .proj-section{margin-bottom:72px}
+    .proj-section-title{margin-bottom:24px}
+    .diagram-grid{display:flex;flex-direction:column;gap:24px}
+    .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
+    .diagram-item object{width:100%;height:420px;display:block;pointer-events:none;border-radius:4px}
+    .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .diagram-label{font-size:11px;color:var(--t4);text-align:center}
+    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
+    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
+    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
+    .gif-overlay.hidden{opacity:0;pointer-events:none}
+    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
+    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
+    .carousel{position:relative;display:flex;align-items:center;gap:10px}
+    .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .carousel-slide{display:none;flex-direction:column}
+    .carousel-slide.active{display:flex}
+    .carousel-slide img{width:100%;display:block;cursor:pointer;max-height:760px;object-fit:cover;object-position:top}
+    .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
+    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
+    .carousel-btn:hover{background:rgba(129,140,248,0.3)}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
+    .dot.active{background:var(--ac)}
+    .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
+  </style>
 </head>
 <body>
 <nav><div class="nav-inner">
@@ -21,20 +50,19 @@ import '../../styles/global.css';
       <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
       <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
       <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
     </div>
     <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
 </div></nav>
 
 <div class="proj-hero">
-  <div class="proj-category" data-es="Proyecto personal · Backend + Frontend" data-en="Personal project · Backend + Frontend">Proyecto personal · Backend + Frontend</div>
+  <div class="proj-category" data-es="Proyecto personal · Full Stack" data-en="Personal project · Full Stack">Proyecto personal · Full Stack</div>
   <div class="proj-title">Krausen</div>
-  <div class="proj-subtitle" data-es="Plataforma comunitaria para compartir y versionar recetas de cerveza artesanal. Forks de recetas con árbol de versiones, seguimiento de fermentación, ranking, notificaciones y multiidioma ES / EN / DE." data-en="Community platform for sharing and versioning craft beer recipes. Recipe forks with version tree, fermentation tracking, ranking, notifications and multilanguage ES / EN / DE.">Plataforma comunitaria para compartir y versionar recetas de cerveza artesanal. Forks de recetas con árbol de versiones, seguimiento de fermentación, ranking, notificaciones y multiidioma ES / EN / DE.</div>
+  <div class="proj-subtitle" data-es="Plataforma de recetas de cerveza artesanal con sistema de forks — cualquier receta puede ser versionada por cualquier usuario, generando un árbol de versiones colaborativo." data-en="Craft beer recipe platform with a fork system — any recipe can be versioned by any user, generating a collaborative version tree.">Plataforma de recetas de cerveza artesanal con sistema de forks — cualquier receta puede ser versionada por cualquier usuario, generando un árbol de versiones colaborativo.</div>
   <div class="proj-links">
     <a href="https://github.com/ArocaDev/krausen-backend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Backend</a>
     <a href="https://github.com/ArocaDev/krausen-frontend" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>Frontend</a>
-    <a href="https://krausen.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
   </div>
 </div>
 
@@ -43,54 +71,52 @@ import '../../styles/global.css';
   <div class="proj-section">
     <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p data-es="Los cerveceros caseros no tienen una herramienta pensada para gestionar recetas de forma seria. Anotar ingredientes en una hoja de cálculo funciona, pero no permite versionar cambios, hacer forks de recetas de otros, ni llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo." data-en="Home brewers don't have a tool designed for serious recipe management. Noting ingredients in a spreadsheet works, but it doesn't allow versioning changes, forking others' recipes, or keeping a precise record of fermentation temperatures over time.">Los cerveceros caseros no tienen una herramienta pensada para gestionar recetas de forma seria. Anotar ingredientes en una hoja de cálculo funciona, pero no permite versionar cambios, hacer forks de recetas de otros, ni llevar un registro preciso de las temperaturas de fermentación a lo largo del tiempo.</p>
-      <p data-es="Tampoco hay comunidad: no puedes descubrir recetas de otros, comentarlas, mejorarlas o construir sobre ellas. Krausen nació de las ganas de construir algo con <b>versioning real</b> para un dominio donde no existía." data-en="There's no community either: you can't discover others' recipes, comment on them, improve them or build on them. Krausen was born from the desire to build something with <b>real versioning</b> for a domain where it didn't exist.">Tampoco hay comunidad: no puedes descubrir recetas de otros, comentarlas, mejorarlas o construir sobre ellas. Krausen nació de las ganas de construir algo con <b>versioning real</b> para un dominio donde no existía.</p>
+      <p data-es="Las plataformas de recetas de cerveza artesanal existentes tratan cada receta como un documento estático. Si quieres adaptar una receta ajena — cambiar un ingrediente, ajustar el amargor, probar otro lúpulo — tienes que copiarla manualmente y perdes la relación con el original." data-en="Existing craft beer recipe platforms treat each recipe as a static document. If you want to adapt someone else's recipe — change an ingredient, adjust bitterness, try a different hop — you have to copy it manually and lose the connection to the original.">Las plataformas de recetas de cerveza artesanal existentes tratan cada receta como un documento estático. Si quieres adaptar una receta ajena — cambiar un ingrediente, ajustar el amargor, probar otro lúpulo — tienes que copiarla manualmente y pierdes la relación con el original.</p>
+      <p data-es="Faltaba una plataforma donde la comunidad pudiera iterar sobre las recetas de forma colaborativa, manteniendo el rastro de quién adaptó qué y a partir de qué versión." data-en="There was no platform where the community could iterate on recipes collaboratively, keeping track of who adapted what and from which version.">Faltaba una plataforma donde la comunidad pudiera iterar sobre las recetas de forma colaborativa, manteniendo el rastro de quién adaptó qué y a partir de qué versión.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p data-es="Plataforma fullstack con <b>backend en FastAPI + PostgreSQL</b> y <b>frontend en Next.js 15 con TypeScript y Tailwind CSS 4</b>. Las recetas tienen versioning completo: puedes hacer fork de cualquier receta pública y el árbol de versiones se genera con una <b>CTE recursiva en PostgreSQL</b>, igual que un árbol de commits en Git." data-en="Fullstack platform with <b>FastAPI + PostgreSQL backend</b> and <b>Next.js 15 frontend with TypeScript and Tailwind CSS 4</b>. Recipes have full versioning: you can fork any public recipe and the version tree is generated with a <b>recursive CTE in PostgreSQL</b>, just like a Git commit tree.">Plataforma fullstack con <b>backend en FastAPI + PostgreSQL</b> y <b>frontend en Next.js 15 con TypeScript y Tailwind CSS 4</b>. Las recetas tienen versioning completo: puedes hacer fork de cualquier receta pública y el árbol de versiones se genera con una <b>CTE recursiva en PostgreSQL</b>, igual que un árbol de commits en Git.</p>
-      <p data-es="El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en una gráfica de líneas con <b>Recharts</b>. La edición de una receta está bloqueada si ya tiene forks derivados — para no romper la trazabilidad." data-en="The fermentation module allows recording temperature readings throughout the process and visualising them in a line chart with <b>Recharts</b>. Editing a recipe is locked if it already has derived forks — to preserve traceability.">El módulo de fermentación permite registrar lecturas de temperatura a lo largo del proceso y visualizarlas en una gráfica de líneas con <b>Recharts</b>. La edición de una receta está bloqueada si ya tiene forks derivados — para no romper la trazabilidad.</p>
-      <p data-es="Incluye sistema de <b>me gustas</b> con bloqueo de autovaloración y notificación automática al autor, <b>comentarios</b> por receta, <b>ranking</b> mensual/anual/global por me gustas, <b>notificaciones</b> con badge en navbar y <b>perfiles públicos</b> de usuario con avatares Dicebear generados por username." data-en="Includes a <b>likes</b> system with self-rating lock and automatic author notification, per-recipe <b>comments</b>, monthly/annual/global <b>ranking</b> by likes, <b>notifications</b> with navbar badge and <b>public user profiles</b> with Dicebear avatars generated by username.">Incluye sistema de <b>me gustas</b> con bloqueo de autovaloración y notificación automática al autor, <b>comentarios</b> por receta, <b>ranking</b> mensual/anual/global por me gustas, <b>notificaciones</b> con badge en navbar y <b>perfiles públicos</b> de usuario con avatares Dicebear generados por username.</p>
-      <p data-es="El frontend tiene skeleton loading animado, toasts de error centralizados, protección de rutas privadas y soporte completo en español, inglés y alemán con <b>next-intl</b> y cookie persistente." data-en="The frontend has animated skeleton loading, centralised error toasts, private route protection and full support in Spanish, English and German with <b>next-intl</b> and a persistent cookie.">El frontend tiene skeleton loading animado, toasts de error centralizados, protección de rutas privadas y soporte completo en español, inglés y alemán con <b>next-intl</b> y cookie persistente.</p>
-    </div>
-  </div>
-
-  <div class="proj-section">
-    <div class="proj-section-title" data-es="Detalles técnicos destacados" data-en="Technical highlights">Detalles técnicos destacados</div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="about-item"><i class="ti ti-git-branch"></i><div class="about-item-text"><b data-es="CTE recursiva para el árbol de forks" data-en="Recursive CTE for the fork tree">CTE recursiva para el árbol de forks</b><span data-es="El árbol de versiones de una receta se construye con una Common Table Expression recursiva en PostgreSQL, evitando múltiples queries y resolviendo el problema N+1 de raíz." data-en="The version tree of a recipe is built with a recursive Common Table Expression in PostgreSQL, avoiding multiple queries and solving the N+1 problem at its root.">El árbol de versiones de una receta se construye con una Common Table Expression recursiva en PostgreSQL, evitando múltiples queries y resolviendo el problema N+1 de raíz.</span></div></div>
-      <div class="about-item"><i class="ti ti-shield"></i><div class="about-item-text"><b data-es="Edición controlada" data-en="Controlled editing">Edición controlada</b><span data-es="Una receta solo es editable si no tiene forks derivados. Si alguien ha hecho fork de tu receta, no puedes modificar el original — la trazabilidad del árbol queda garantizada." data-en="A recipe is only editable if it has no derived forks. If someone has forked your recipe, you can't modify the original — the tree's traceability is preserved.">Una receta solo es editable si no tiene forks derivados. Si alguien ha hecho fork de tu receta, no puedes modificar el original — la trazabilidad del árbol queda garantizada.</span></div></div>
-      <div class="about-item"><i class="ti ti-seedling"></i><div class="about-item-text"><b data-es="47 ingredientes precargados" data-en="47 preloaded ingredients">47 ingredientes precargados</b><span data-es="El catálogo inicial incluye 12 maltas, 12 lúpulos, 7 levaduras y 16 adjuntos cargados con un seed script al arrancar." data-en="The initial catalogue includes 12 malts, 12 hops, 7 yeasts and 16 adjuncts loaded via a seed script on startup.">El catálogo inicial incluye 12 maltas, 12 lúpulos, 7 levaduras y 16 adjuntos cargados con un seed script al arrancar.</span></div></div>
-      <div class="about-item"><i class="ti ti-mail"></i><div class="about-item-text"><b data-es="Recuperación de contraseña por email" data-en="Email-based password recovery">Recuperación de contraseña por email</b><span data-es="Flujo completo con tokens de reset con expiración, emails transaccionales vía Resend y página de restablecimiento de contraseña." data-en="Full flow with expiring reset tokens, transactional emails via Resend and a password reset page.">Flujo completo con tokens de reset con expiración, emails transaccionales vía Resend y página de restablecimiento de contraseña.</span></div></div>
+      <p data-es="Plataforma full stack con <b>FastAPI + PostgreSQL</b> en el backend y <b>Next.js 15</b> en el frontend. El núcleo es el sistema de forks: cualquier receta puede ser versionada por cualquier usuario. El árbol de versiones resultante se construye con una <b>CTE recursiva en PostgreSQL</b> y se visualiza con <b>SVG generado en el cliente</b>." data-en="Full stack platform with <b>FastAPI + PostgreSQL</b> on the backend and <b>Next.js 15</b> on the frontend. The core is the fork system: any recipe can be versioned by any user. The resulting version tree is built with a <b>recursive CTE in PostgreSQL</b> and visualised with <b>client-side generated SVG</b>.">Plataforma full stack con <b>FastAPI + PostgreSQL</b> en el backend y <b>Next.js 15</b> en el frontend. El núcleo es el sistema de forks: cualquier receta puede ser versionada por cualquier usuario. El árbol de versiones resultante se construye con una <b>CTE recursiva en PostgreSQL</b> y se visualiza con <b>SVG generado en el cliente</b>.</p>
+      <p data-es="Cada receta incluye un módulo de fermentación: el usuario configura duración e intervalos, y va registrando temperaturas que se muestran en una <b>gráfica Recharts</b>. El ranking se calcula en tiempo real por me gustas, filtrable por mes, año o global." data-en="Each recipe includes a fermentation module: the user configures duration and intervals, and logs temperatures that appear on a <b>Recharts chart</b>. The ranking is calculated in real time by likes, filterable by month, year or global.">Cada receta incluye un módulo de fermentación: el usuario configura duración e intervalos, y va registrando temperaturas que se muestran en una <b>gráfica Recharts</b>. El ranking se calcula en tiempo real por me gustas, filtrable por mes, año o global.</p>
+      <p data-es="La interfaz está completamente traducida en <b>ES/EN/DE</b> con next-intl y la API responde los errores en el idioma del cliente según el header <code>Accept-Language</code>." data-en="The interface is fully translated into <b>ES/EN/DE</b> with next-intl and the API returns errors in the client's language based on the <code>Accept-Language</code> header.">La interfaz está completamente traducida en <b>ES/EN/DE</b> con next-intl y la API responde los errores en el idioma del cliente según el header <code>Accept-Language</code>.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card"><div class="sidebar-label">Backend</div><div class="sidebar-stack"><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Python 3.14</span><span class="about-tech-tag">PostgreSQL 16</span><span class="about-tech-tag">SQLAlchemy 2.0</span><span class="about-tech-tag">Alembic</span><span class="about-tech-tag">Pydantic v2</span><span class="about-tech-tag">Resend</span><span class="about-tech-tag">Docker</span></div></div>
-      <div class="sidebar-card"><div class="sidebar-label">Frontend</div><div class="sidebar-stack"><span class="about-tech-tag">Next.js 15</span><span class="about-tech-tag">TypeScript</span><span class="about-tech-tag">Tailwind CSS 4</span><span class="about-tech-tag">next-intl</span><span class="about-tech-tag">Recharts</span><span class="about-tech-tag">Axios</span></div></div>
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Idiomas" data-en="Languages">Idiomas</span><span class="sidebar-row-val">ES · EN · DE</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En desarrollo" data-en="In development">En desarrollo</span></div>
-      </div></div>
-      <div class="sidebar-card"><div class="sidebar-label">Demo</div><div class="sidebar-detail">
-        <div class="sidebar-row"><span class="sidebar-row-label">Email</span><span class="sidebar-row-val">admin@krausen.beer</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Contraseña" data-en="Password">Contraseña</span><span class="sidebar-row-val">admin1234</span></div>
-      </div></div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Backend</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Python 3.11</span><span class="about-tech-tag">PostgreSQL 16</span><span class="about-tech-tag">SQLAlchemy 2</span><span class="about-tech-tag">Alembic</span><span class="about-tech-tag">JWT</span><span class="about-tech-tag">Resend</span><span class="about-tech-tag">Docker</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label">Frontend</div>
+        <div class="sidebar-stack">
+          <span class="about-tech-tag">Next.js 15</span><span class="about-tech-tag">TypeScript</span><span class="about-tech-tag">Tailwind CSS</span><span class="about-tech-tag">Recharts</span><span class="about-tech-tag">next-intl</span><span class="about-tech-tag">Axios</span>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Idiomas" data-en="Languages">Idiomas</span><span class="sidebar-row-val">ES / EN / DE</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En desarrollo" data-en="In development">En desarrollo</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p data-es="Krausen fue el proyecto donde más profundicé en diseño de base de datos: modelar relaciones recursivas, garantizar integridad con constraints y optimizar queries complejas con CTEs." data-en="Krausen was the project where I went deepest into database design: modelling recursive relationships, ensuring integrity with constraints and optimising complex queries with CTEs.">Krausen fue el proyecto donde más profundicé en diseño de base de datos: modelar relaciones recursivas, garantizar integridad con constraints y optimizar queries complejas con CTEs.</p>
-      <p data-es="En el frontend, fue mi primera experiencia seria con TypeScript en un proyecto de tamaño real. Aprendí a valorar el tipado estricto cuando el proyecto crece — los errores que aparecen en compilación son errores que no aparecen en producción." data-en="On the frontend, it was my first serious experience with TypeScript in a real-sized project. I learned to value strict typing as the project grows — errors that appear at compile time are errors that don't appear in production.">En el frontend, fue mi primera experiencia seria con TypeScript en un proyecto de tamaño real. Aprendí a valorar el tipado estricto cuando el proyecto crece — los errores que aparecen en compilación son errores que no aparecen en producción.</p>
+      <p data-es="El árbol de versiones fue el reto técnico más interesante del proyecto. Implementar una CTE recursiva en PostgreSQL para construir el árbol completo en una sola consulta, independientemente de la profundidad, y luego visualizarlo con SVG generado dinámicamente en el cliente fue un proceso que me obligó a pensar en estructuras de datos de una forma diferente." data-en="The version tree was the most interesting technical challenge of the project. Implementing a recursive CTE in PostgreSQL to build the full tree in a single query, regardless of depth, and then visualising it with dynamically generated client-side SVG was a process that forced me to think about data structures in a different way.">El árbol de versiones fue el reto técnico más interesante del proyecto. Implementar una CTE recursiva en PostgreSQL para construir el árbol completo en una sola consulta, independientemente de la profundidad, y luego visualizarlo con SVG generado dinámicamente en el cliente fue un proceso que me obligó a pensar en estructuras de datos de una forma diferente.</p>
+      <p data-es="También fue el primer proyecto donde implementé i18n de forma seria en los dos lados — frontend con next-intl y backend respondiendo errores en el idioma del cliente." data-en="It was also the first project where I implemented i18n seriously on both sides — frontend with next-intl and backend returning errors in the client's language.">También fue el primer proyecto donde implementé i18n de forma seria en los dos lados — frontend con next-intl y backend respondiendo errores en el idioma del cliente.</p>
     </div>
   </div>
 
@@ -98,30 +124,221 @@ import '../../styles/global.css';
     <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
     <div class="proj-text">
       <ul class="proj-list">
-        <li data-es="Movería los tokens JWT a cookies httpOnly desde el principio para eliminar el flash de autenticación en el frontend." data-en="I'd move JWT tokens to httpOnly cookies from the start to eliminate the auth flash on the frontend.">Movería los tokens JWT a cookies httpOnly desde el principio para eliminar el flash de autenticación en el frontend.</li>
-        <li data-es="Añadiría tests en el backend — en un proyecto con lógica de forks y rankings es donde más falta hacen." data-en="I'd add tests on the backend — in a project with fork logic and rankings, that's where they're needed most.">Añadiría tests en el backend — en un proyecto con lógica de forks y rankings es donde más falta hacen.</li>
-        <li data-es="Usaría React Query en el frontend para gestión de caché y estados de carga en lugar de manejar todo con useEffect." data-en="I'd use React Query on the frontend for cache management and loading states instead of handling everything with useEffect.">Usaría React Query en el frontend para gestión de caché y estados de carga en lugar de manejar todo con useEffect.</li>
-        <li data-es="Definiría el contrato de API con OpenAPI antes de empezar a construir el frontend, no en paralelo." data-en="I'd define the API contract with OpenAPI before starting to build the frontend, not in parallel.">Definiría el contrato de API con OpenAPI antes de empezar a construir el frontend, no en paralelo.</li>
+        <li data-es="Añadiría tests unitarios al backend desde el principio, especialmente para la lógica de la CTE recursiva del árbol." data-en="I'd add unit tests to the backend from the start, especially for the recursive CTE logic of the tree.">Añadiría tests unitarios al backend desde el principio, especialmente para la lógica de la CTE recursiva del árbol.</li>
+        <li data-es="Usaría un estado global más estructurado en el frontend (Zustand o React Query) en lugar de gestión de estado local por componente." data-en="I'd use a more structured global state on the frontend (Zustand or React Query) instead of per-component local state management.">Usaría un estado global más estructurado en el frontend (Zustand o React Query) en lugar de gestión de estado local por componente.</li>
+        <li data-es="Definiría el contrato de API con OpenAPI antes de desarrollar los dos lados en paralelo." data-en="I'd define the API contract with OpenAPI before developing both sides in parallel.">Definiría el contrato de API con OpenAPI antes de desarrollar los dos lados en paralelo.</li>
       </ul>
     </div>
   </div>
 
   <div class="proj-section">
+    <div class="proj-section-title" data-es="Diagramas" data-en="Diagrams">Diagramas</div>
+    <div class="diagram-grid">
+      <div class="diagram-wrap" onclick="window.open('/proyectos/krausen/krausen_arquitectura.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/krausen/krausen_arquitectura.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Arquitectura · clic para ampliar" data-en="Architecture · click to enlarge">Arquitectura · clic para ampliar</span>
+      </div>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/krausen/krausen_jwt.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/krausen/krausen_jwt.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Flujo JWT · clic para ampliar" data-en="JWT flow · click to enlarge">Flujo JWT · clic para ampliar</span>
+      </div>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/krausen/krausen_fork.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/krausen/krausen_fork.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Sistema de forks · clic para ampliar" data-en="Fork system · click to enlarge">Sistema de forks · clic para ampliar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Explorar y filtrar recetas" data-en="Explore and filter recipes">Explorar y filtrar recetas</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-buscador">
+      <img id="gif-buscador-img" src="/proyectos/krausen/buscador.png" data-gif="/proyectos/krausen/buscador.gif" data-still="/proyectos/krausen/buscador.png" alt="Explorar recetas" />
+      <div class="gif-overlay" id="gif-buscador-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Desde la landing puedes buscar recetas por nombre o aplicar filtros avanzados: ingrediente, autor, estilo, rango de alcohol e IBU. Los resultados se actualizan en tiempo real." data-en="From the landing you can search recipes by name or apply advanced filters: ingredient, author, style, alcohol range and IBU. Results update in real time.">Desde la landing puedes buscar recetas por nombre o aplicar filtros avanzados: ingrediente, autor, estilo, rango de alcohol e IBU. Los resultados se actualizan en tiempo real.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Ranking, notificaciones e idiomas" data-en="Ranking, notifications and languages">Ranking, notificaciones e idiomas</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-ranking">
+      <img id="gif-ranking-img" src="/proyectos/krausen/ranking.png" data-gif="/proyectos/krausen/ranking.gif" data-still="/proyectos/krausen/ranking.png" alt="Ranking" />
+      <div class="gif-overlay" id="gif-ranking-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="El ranking muestra las recetas más valoradas filtrable por mes, año y global. Las notificaciones registran me gustas y forks en tiempo real. La interfaz está disponible en español, inglés y alemán." data-en="The ranking shows the most liked recipes, filterable by month, year and global. Notifications log likes and forks in real time. The interface is available in Spanish, English and German.">El ranking muestra las recetas más valoradas filtrable por mes, año y global. Las notificaciones registran me gustas y forks en tiempo real. La interfaz está disponible en español, inglés y alemán.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Crear una receta" data-en="Create a recipe">Crear una receta</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-nueva">
+      <img id="gif-nueva-img" src="/proyectos/krausen/nueva-receta.png" data-gif="/proyectos/krausen/nueva-receta.gif" data-still="/proyectos/krausen/nueva-receta.png" alt="Crear receta" />
+      <div class="gif-overlay" id="gif-nueva-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Formulario completo con nombre, descripción, imagen, estilo, litros, alcohol, IBU, ingredientes con unidades, pasos de elaboración y configuración del módulo de fermentación." data-en="Full form with name, description, image, style, litres, alcohol, IBU, ingredients with units, elaboration steps and fermentation module configuration.">Formulario completo con nombre, descripción, imagen, estilo, litros, alcohol, IBU, ingredientes con unidades, pasos de elaboración y configuración del módulo de fermentación.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Detalle de receta y fermentación" data-en="Recipe detail and fermentation">Detalle de receta y fermentación</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-detalle">
+      <img id="gif-detalle-img" src="/proyectos/krausen/detalle.png" data-gif="/proyectos/krausen/detalle.gif" data-still="/proyectos/krausen/detalle.png" alt="Detalle y fermentación" />
+      <div class="gif-overlay" id="gif-detalle-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Cada receta muestra ingredientes, pasos de elaboración, gráfica de temperaturas de fermentación y comentarios. Puedes dar me gusta, comentar o hacer tu propia versión desde la misma pantalla." data-en="Each recipe shows ingredients, elaboration steps, fermentation temperature chart and comments. You can like, comment or make your own version from the same screen.">Cada receta muestra ingredientes, pasos de elaboración, gráfica de temperaturas de fermentación y comentarios. Puedes dar me gusta, comentar o hacer tu propia versión desde la misma pantalla.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Fork y árbol de versiones" data-en="Fork and version tree">Fork y árbol de versiones</div>
+    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
+    <div class="gif-container" id="gif-fork">
+      <img id="gif-fork-img" src="/proyectos/krausen/fork.png" data-gif="/proyectos/krausen/fork.gif" data-still="/proyectos/krausen/fork.png" alt="Fork y árbol" />
+      <div class="gif-overlay" id="gif-fork-overlay">
+        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
+      </div>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Cualquier receta puede ser versionada. El árbol de versiones muestra el original y todos sus forks anidados, construido con una CTE recursiva en PostgreSQL y renderizado con SVG. Incluye controles de zoom para árboles grandes." data-en="Any recipe can be versioned. The version tree shows the original and all its nested forks, built with a recursive CTE in PostgreSQL and rendered with SVG. Includes zoom controls for large trees.">Cualquier receta puede ser versionada. El árbol de versiones muestra el original y todos sus forks anidados, construido con una CTE recursiva en PostgreSQL y renderizado con SVG. Incluye controles de zoom para árboles grandes.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" data-es="Capturas" data-en="Screenshots">Capturas</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Explorar recetas" data-en="Browse recipes">Explorar recetas</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Detalle de receta" data-en="Recipe detail">Detalle de receta</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Árbol de versiones" data-en="Version tree">Árbol de versiones</span></div>
-      <div class="screenshot"><i class="ti ti-photo"></i><span data-es="Gráfica de fermentación" data-en="Fermentation chart">Gráfica de fermentación</span></div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel">
+      <button class="carousel-btn" id="sc-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track" id="sc-track">
+        <div class="carousel-slide active">
+          <img src="/proyectos/krausen/landing.png" alt="Landing" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Landing" data-en="Landing">Landing</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/login.png" alt="Login" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Login" data-en="Login">Login</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/registro.png" alt="Registro" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Registro" data-en="Register">Registro</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/buscador.png" alt="Explorar recetas" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Explorar recetas con filtros" data-en="Explore recipes with filters">Explorar recetas con filtros</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/detalle.png" alt="Detalle de receta" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Detalle de receta" data-en="Recipe detail">Detalle de receta</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/fermentación.png" alt="Fermentación" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Gráfica de fermentación" data-en="Fermentation chart">Gráfica de fermentación</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/fork.png" alt="Árbol de versiones" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Árbol de versiones" data-en="Version tree">Árbol de versiones</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/ranking.png" alt="Ranking" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Ranking mensual" data-en="Monthly ranking">Ranking mensual</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/notificaciones.png" alt="Notificaciones" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Notificaciones" data-en="Notifications">Notificaciones</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/nueva-receta.png" alt="Nueva receta" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Crear receta" data-en="Create recipe">Crear receta</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/mis-recetas.png" alt="Mis recetas" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Mis recetas" data-en="My recipes">Mis recetas</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/perfil.png" alt="Perfil" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Mi perfil" data-en="My profile">Mi perfil</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="/proyectos/krausen/perfil-otro.png" alt="Perfil público" onclick="window.open(this.src,'_blank')" />
+          <span data-es="Perfil público de otro usuario" data-en="Another user's public profile">Perfil público de otro usuario</span>
+        </div>
+      </div>
+      <button class="carousel-btn" id="sc-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="sc-dots">
+      <span class="dot active" onclick="goToScSlide(0)"></span>
+      <span class="dot" onclick="goToScSlide(1)"></span>
+      <span class="dot" onclick="goToScSlide(2)"></span>
+      <span class="dot" onclick="goToScSlide(3)"></span>
+      <span class="dot" onclick="goToScSlide(4)"></span>
+      <span class="dot" onclick="goToScSlide(5)"></span>
+      <span class="dot" onclick="goToScSlide(6)"></span>
+      <span class="dot" onclick="goToScSlide(7)"></span>
+      <span class="dot" onclick="goToScSlide(8)"></span>
+      <span class="dot" onclick="goToScSlide(9)"></span>
+      <span class="dot" onclick="goToScSlide(10)"></span>
+      <span class="dot" onclick="goToScSlide(11)"></span>
+      <span class="dot" onclick="goToScSlide(12)"></span>
     </div>
   </div>
 
 </div>
-<footer><span class="fc">© 2026 Alejandro Rodríguez Calabuig</span></footer>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
+</footer>
+
 <script>
-  const ES='es',EN='en';let current=localStorage.getItem('lang')||ES;
+  function makeGif(containerId, imgId, overlayId) {
+    document.getElementById(containerId).addEventListener('click', function() {
+      const img = document.getElementById(imgId);
+      const overlay = document.getElementById(overlayId);
+      if (overlay.classList.contains('hidden')) {
+        img.src = img.getAttribute('data-still');
+        overlay.classList.remove('hidden');
+      } else {
+        img.src = img.getAttribute('data-gif') + '?t=' + Date.now();
+        overlay.classList.add('hidden');
+      }
+    });
+  }
+  makeGif('gif-buscador','gif-buscador-img','gif-buscador-overlay');
+  makeGif('gif-ranking','gif-ranking-img','gif-ranking-overlay');
+  makeGif('gif-nueva','gif-nueva-img','gif-nueva-overlay');
+  makeGif('gif-detalle','gif-detalle-img','gif-detalle-overlay');
+  makeGif('gif-fork','gif-fork-img','gif-fork-overlay');
+
+  let scSlide = 0;
+  const scSlides = document.querySelectorAll('#sc-track .carousel-slide');
+  const scDots = document.querySelectorAll('#sc-dots .dot');
+  function goToScSlide(n) {
+    scSlides[scSlide].classList.remove('active'); scDots[scSlide].classList.remove('active');
+    scSlide = (n + scSlides.length) % scSlides.length;
+    scSlides[scSlide].classList.add('active'); scDots[scSlide].classList.add('active');
+  }
+  document.getElementById('sc-prev').addEventListener('click', () => goToScSlide(scSlide - 1));
+  document.getElementById('sc-next').addEventListener('click', () => goToScSlide(scSlide + 1));
+
+  const ES='es',EN='en';
+  let current=localStorage.getItem('lang')||ES;
   const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
   function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));applyLang(current);
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
+  applyLang(current);
 </script>
-</body></html>
+</body>
+</html>
