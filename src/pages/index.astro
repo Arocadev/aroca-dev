@@ -37,9 +37,25 @@ import '../styles/global.css';
         <span class="i18n-sep">|</span>
         <span class="i18n-btn" id="btn-en">EN</span>
       </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile" role="navigation">
+  <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
+  <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="#que-viene-ahora" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</a>
+  <div class="nav-mobile-i18n">
+    <span class="i18n-btn" id="btn-es-m">ES</span>
+    <span class="i18n-sep">|</span>
+    <span class="i18n-btn" id="btn-en-m">EN</span>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-inner hero-centered">
@@ -316,21 +332,48 @@ import '../styles/global.css';
   const ES = 'es';
   const EN = 'en';
   let current = localStorage.getItem('lang') || ES;
-  const btnEs = document.getElementById('btn-es');
-  const btnEn = document.getElementById('btn-en');
+
+  const btnEs  = document.getElementById('btn-es');
+  const btnEn  = document.getElementById('btn-en');
+  const btnEsM = document.getElementById('btn-es-m');
+  const btnEnM = document.getElementById('btn-en-m');
+
   function applyLang(lang) {
     current = lang;
     localStorage.setItem('lang', lang);
-    btnEs.className = lang === ES ? 'i18n-active' : 'i18n-inactive';
-    btnEn.className = lang === EN ? 'i18n-active' : 'i18n-inactive';
+    [btnEs, btnEsM].forEach(b => { if (b) b.className = lang === ES ? 'i18n-active' : 'i18n-inactive'; });
+    [btnEn, btnEnM].forEach(b => { if (b) b.className = lang === EN ? 'i18n-active' : 'i18n-inactive'; });
     document.getElementById('html-root').lang = lang === ES ? 'es' : 'en';
     document.querySelectorAll('[data-es]').forEach(el => {
-      const text = el.getAttribute(`data-${lang}`);
+      const text = el.getAttribute('data-' + lang);
       if (text) el.innerHTML = text;
     });
   }
+
   btnEs.addEventListener('click', () => applyLang(ES));
   btnEn.addEventListener('click', () => applyLang(EN));
+  btnEsM.addEventListener('click', () => applyLang(ES));
+  btnEnM.addEventListener('click', () => applyLang(EN));
+
+  /* Hamburger */
+  const hamburger = document.getElementById('nav-hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+
+  hamburger.addEventListener('click', () => {
+    const open = navMobile.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    hamburger.querySelector('i').className = open ? 'ti ti-x' : 'ti ti-menu-2';
+  });
+
+  /* Cerrar menú al hacer click en un enlace interno */
+  navMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMobile.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.querySelector('i').className = 'ti ti-menu-2';
+    });
+  });
+
   applyLang(current);
 </script>
 
