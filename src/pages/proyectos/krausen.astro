@@ -20,13 +20,6 @@ import '../../styles/global.css';
     .diagram-item object{width:100%;height:420px;display:block;pointer-events:none;border-radius:4px}
     .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
     .diagram-label{font-size:11px;color:var(--t4);text-align:center}
-    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
-    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
-    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
-    .gif-overlay.hidden{opacity:0;pointer-events:none}
-    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
-    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
-    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
     .carousel{position:relative;display:flex;align-items:center;gap:10px}
     .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
     .carousel-slide{display:none;flex-direction:column}
@@ -39,6 +32,8 @@ import '../../styles/global.css';
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
+    .video-container{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .video-container video{width:100%;display:block}
   </style>
 </head>
 <body>
@@ -157,60 +152,50 @@ import '../../styles/global.css';
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Explorar y filtrar recetas" data-en="Explore and filter recipes">Explorar y filtrar recetas</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-buscador">
-      <img id="gif-buscador-img" src="/proyectos/krausen/buscador.png" data-gif="/proyectos/krausen/buscador.gif" data-still="/proyectos/krausen/buscador.png" alt="Explorar recetas" />
-      <div class="gif-overlay" id="gif-buscador-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/krausen/buscador.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Desde la landing puedes buscar recetas por nombre o aplicar filtros avanzados: ingrediente, autor, estilo, rango de alcohol e IBU. Los resultados se actualizan en tiempo real." data-en="From the landing you can search recipes by name or apply advanced filters: ingredient, author, style, alcohol range and IBU. Results update in real time.">Desde la landing puedes buscar recetas por nombre o aplicar filtros avanzados: ingrediente, autor, estilo, rango de alcohol e IBU. Los resultados se actualizan en tiempo real.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Ranking, notificaciones e idiomas" data-en="Ranking, notifications and languages">Ranking, notificaciones e idiomas</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-ranking">
-      <img id="gif-ranking-img" src="/proyectos/krausen/ranking.png" data-gif="/proyectos/krausen/ranking.gif" data-still="/proyectos/krausen/ranking.png" alt="Ranking" />
-      <div class="gif-overlay" id="gif-ranking-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/krausen/ranking.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="El ranking muestra las recetas más valoradas filtrable por mes, año y global. Las notificaciones registran me gustas y forks en tiempo real. La interfaz está disponible en español, inglés y alemán." data-en="The ranking shows the most liked recipes, filterable by month, year and global. Notifications log likes and forks in real time. The interface is available in Spanish, English and German.">El ranking muestra las recetas más valoradas filtrable por mes, año y global. Las notificaciones registran me gustas y forks en tiempo real. La interfaz está disponible en español, inglés y alemán.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Crear una receta" data-en="Create a recipe">Crear una receta</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-nueva">
-      <img id="gif-nueva-img" src="/proyectos/krausen/nueva-receta.png" data-gif="/proyectos/krausen/nueva-receta.gif" data-still="/proyectos/krausen/nueva-receta.png" alt="Crear receta" />
-      <div class="gif-overlay" id="gif-nueva-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/krausen/nueva-receta.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Formulario completo con nombre, descripción, imagen, estilo, litros, alcohol, IBU, ingredientes con unidades, pasos de elaboración y configuración del módulo de fermentación." data-en="Full form with name, description, image, style, litres, alcohol, IBU, ingredients with units, elaboration steps and fermentation module configuration.">Formulario completo con nombre, descripción, imagen, estilo, litros, alcohol, IBU, ingredientes con unidades, pasos de elaboración y configuración del módulo de fermentación.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Detalle de receta y fermentación" data-en="Recipe detail and fermentation">Detalle de receta y fermentación</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-detalle">
-      <img id="gif-detalle-img" src="/proyectos/krausen/detalle.png" data-gif="/proyectos/krausen/detalle.gif" data-still="/proyectos/krausen/detalle.png" alt="Detalle y fermentación" />
-      <div class="gif-overlay" id="gif-detalle-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/krausen/detalle.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Cada receta muestra ingredientes, pasos de elaboración, gráfica de temperaturas de fermentación y comentarios. Puedes dar me gusta, comentar o hacer tu propia versión desde la misma pantalla." data-en="Each recipe shows ingredients, elaboration steps, fermentation temperature chart and comments. You can like, comment or make your own version from the same screen.">Cada receta muestra ingredientes, pasos de elaboración, gráfica de temperaturas de fermentación y comentarios. Puedes dar me gusta, comentar o hacer tu propia versión desde la misma pantalla.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Fork y árbol de versiones" data-en="Fork and version tree">Fork y árbol de versiones</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-fork">
-      <img id="gif-fork-img" src="/proyectos/krausen/fork.png" data-gif="/proyectos/krausen/fork.gif" data-still="/proyectos/krausen/fork.png" alt="Fork y árbol" />
-      <div class="gif-overlay" id="gif-fork-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/krausen/fork.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Cualquier receta puede ser versionada. El árbol de versiones muestra el original y todos sus forks anidados, construido con una CTE recursiva en PostgreSQL y renderizado con SVG. Incluye controles de zoom para árboles grandes." data-en="Any recipe can be versioned. The version tree shows the original and all its nested forks, built with a recursive CTE in PostgreSQL and rendered with SVG. Includes zoom controls for large trees.">Cualquier receta puede ser versionada. El árbol de versiones muestra el original y todos sus forks anidados, construido con una CTE recursiva en PostgreSQL y renderizado con SVG. Incluye controles de zoom para árboles grandes.</p>
   </div>
@@ -303,25 +288,6 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  function makeGif(containerId, imgId, overlayId) {
-    document.getElementById(containerId).addEventListener('click', function() {
-      const img = document.getElementById(imgId);
-      const overlay = document.getElementById(overlayId);
-      if (overlay.classList.contains('hidden')) {
-        img.src = img.getAttribute('data-still');
-        overlay.classList.remove('hidden');
-      } else {
-        img.src = img.getAttribute('data-gif') + '?t=' + Date.now();
-        overlay.classList.add('hidden');
-      }
-    });
-  }
-  makeGif('gif-buscador','gif-buscador-img','gif-buscador-overlay');
-  makeGif('gif-ranking','gif-ranking-img','gif-ranking-overlay');
-  makeGif('gif-nueva','gif-nueva-img','gif-nueva-overlay');
-  makeGif('gif-detalle','gif-detalle-img','gif-detalle-overlay');
-  makeGif('gif-fork','gif-fork-img','gif-fork-overlay');
-
   let scSlide = 0;
   const scSlides = document.querySelectorAll('#sc-track .carousel-slide');
   const scDots = document.querySelectorAll('#sc-dots .dot');

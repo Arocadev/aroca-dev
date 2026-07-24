@@ -27,23 +27,18 @@ import '../../styles/global.css';
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
-    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.07);background:#f8f9fa;cursor:pointer}
-    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
-    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
-    .gif-overlay.hidden{opacity:0;pointer-events:none}
-    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
-    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
-    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
     .mobile-carousel{justify-content:center}
     .carousel-track.mobile-track{flex:unset;width:320px;background:#f8f9fa;border:1px solid rgba(0,0,0,0.07);border-radius:8px;overflow:hidden}
     .carousel-slide.mobile img{width:100%;max-height:520px;object-fit:contain;object-position:top;display:block;cursor:pointer}
-    .gif-container.mobile-gif{width:320px;margin:0 auto}
-    .gif-container.mobile-gif img{width:100%;max-height:520px;object-fit:contain;object-position:top;display:block;border-radius:8px}
     .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(0,0,0,0.07);background:#fff;padding:8px}
     .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
     .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
     .diagram-label{font-size:11px;color:var(--t4);text-align:center}
+    .video-container{border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.07);background:#f8f9fa}
+    .video-container video{width:100%;display:block}
+    .video-container.mobile-video{width:320px;margin:0 auto}
+    .video-container.mobile-video video{max-height:520px;object-fit:contain}
   </style>
 </head>
 <body>
@@ -105,7 +100,7 @@ import '../../styles/global.css';
         <div class="sidebar-detail">
           <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label" data-es="Plataforma" data-en="Platform">Plataforma</span><span class="sidebar-row-val">Android 6.0+</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2025 – 2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2026</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="Funcional" data-en="Functional">Funcional</span></div>
         </div>
       </div>
@@ -151,48 +146,40 @@ import '../../styles/global.css';
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Crear proyecto" data-en="Create project">Crear proyecto</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container mobile-gif" id="gif-proyecto">
-      <img id="gif-proyecto-img" src="/proyectos/gestpro/lista-proyecto.png" data-gif="/proyectos/gestpro/crear-proyecto.gif" data-still="/proyectos/gestpro/lista-proyecto.png" alt="Crear proyecto" />
-      <div class="gif-overlay" id="gif-proyecto-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/gestpro/crear-proyecto.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Crea un proyecto, añade tareas con fecha límite y registra materiales con IVA. El panel económico se actualiza en tiempo real con presupuesto, cobrado, pendiente y beneficio estimado." data-en="Create a project, add tasks with deadlines and log materials with VAT. The financial panel updates in real time with budget, invoiced, pending and estimated profit.">Crea un proyecto, añade tareas con fecha límite y registra materiales con IVA. El panel económico se actualiza en tiempo real con presupuesto, cobrado, pendiente y beneficio estimado.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Finanzas" data-en="Finances">Finanzas</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container mobile-gif" id="gif-finanza">
-      <img id="gif-finanza-img" src="/proyectos/gestpro/lista-pago.png" data-gif="/proyectos/gestpro/crear-finanza.gif" data-still="/proyectos/gestpro/lista-pago.png" alt="Finanzas" />
-      <div class="gif-overlay" id="gif-finanza-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/gestpro/crear-finanza.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Registra pagos y cobros por proyecto con importes, fechas y notas. El resumen financiero calcula automáticamente el balance y el beneficio estimado." data-en="Log payments and invoices per project with amounts, dates and notes. The financial summary automatically calculates the balance and estimated profit.">Registra pagos y cobros por proyecto con importes, fechas y notas. El resumen financiero calcula automáticamente el balance y el beneficio estimado.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Calendario" data-en="Calendar">Calendario</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container mobile-gif" id="gif-calendario">
-      <img id="gif-calendario-img" src="/proyectos/gestpro/calendario.png" data-gif="/proyectos/gestpro/calendario.gif" data-still="/proyectos/gestpro/calendario.png" alt="Calendario" />
-      <div class="gif-overlay" id="gif-calendario-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/gestpro/calendario.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Vista mensual con marcadores en los días que tienen tareas asignadas. Pulsa un día para ver las tareas pendientes de esa fecha." data-en="Monthly view with markers on days that have assigned tasks. Tap a day to see the tasks due on that date.">Vista mensual con marcadores en los días que tienen tareas asignadas. Pulsa un día para ver las tareas pendientes de esa fecha.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Estadísticas" data-en="Statistics">Estadísticas</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container mobile-gif" id="gif-resumen">
-      <img id="gif-resumen-img" src="/proyectos/gestpro/resumen.png" data-gif="/proyectos/gestpro/resumen.gif" data-still="/proyectos/gestpro/resumen.png" alt="Estadísticas" />
-      <div class="gif-overlay" id="gif-resumen-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/gestpro/resumen.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Dashboard con cinco gráficas interactivas: distribución financiera, comparativa económica, estado de proyectos, top proyectos por presupuesto y progreso de tareas. Cada gráfica tiene un botón ⓘ que explica qué muestra." data-en="Dashboard with five interactive charts: financial distribution, economic comparison, project status, top projects by budget and task progress. Each chart has an ⓘ button explaining what it shows.">Dashboard con cinco gráficas interactivas: distribución financiera, comparativa económica, estado de proyectos, top proyectos por presupuesto y progreso de tareas. Cada gráfica tiene un botón ⓘ que explica qué muestra.</p>
   </div>
@@ -255,24 +242,6 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  function makeGif(containerId, imgId, overlayId) {
-    document.getElementById(containerId).addEventListener('click', function() {
-      const img = document.getElementById(imgId);
-      const overlay = document.getElementById(overlayId);
-      if (overlay.classList.contains('hidden')) {
-        img.src = img.getAttribute('data-still');
-        overlay.classList.remove('hidden');
-      } else {
-        img.src = img.getAttribute('data-gif') + '?t=' + Date.now();
-        overlay.classList.add('hidden');
-      }
-    });
-  }
-  makeGif('gif-proyecto','gif-proyecto-img','gif-proyecto-overlay');
-  makeGif('gif-finanza','gif-finanza-img','gif-finanza-overlay');
-  makeGif('gif-calendario','gif-calendario-img','gif-calendario-overlay');
-  makeGif('gif-resumen','gif-resumen-img','gif-resumen-overlay');
-
   let gpSlide = 0;
   const gpSlides = document.querySelectorAll('#gp-track .carousel-slide');
   const gpDots = document.querySelectorAll('#gp-dots .dot');

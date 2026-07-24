@@ -15,21 +15,11 @@ import '../../styles/global.css';
     .section-divider{border-top:1px solid rgba(255,255,255,0.07);margin:80px 0}
     .proj-section{margin-bottom:72px}
     .proj-section-title{margin-bottom:24px}
-    /* DIAGRAMAS */
     .diagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
     .diagram-item object{width:100%;height:300px;display:block;pointer-events:none;border-radius:4px}
     .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
     .diagram-label{font-size:11px;color:var(--t4);text-align:center}
-    /* GIF */
-    .gif-container{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2);cursor:pointer}
-    .gif-container img{width:100%;display:block;border-radius:8px;max-height:760px;object-fit:cover;object-position:top}
-    .gif-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border-radius:8px;transition:opacity 0.2s}
-    .gif-overlay.hidden{opacity:0;pointer-events:none}
-    .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(129,140,248,0.9);display:flex;align-items:center;justify-content:center}
-    .gif-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:4px}
-    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
-    /* CAROUSEL */
     .carousel{position:relative;display:flex;align-items:center;gap:10px}
     .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
     .carousel-slide{display:none;flex-direction:column}
@@ -43,6 +33,8 @@ import '../../styles/global.css';
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
+    .video-container{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .video-container video{width:100%;display:block}
   </style>
 </head>
 <body>
@@ -143,60 +135,50 @@ import '../../styles/global.css';
 
   <div class="proj-section">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Buscador de ofertas" data-en="Job search">Buscador de ofertas</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-buscador">
-      <img id="gif-buscador-img" src="/proyectos/cvmatch-ai/buscador-still.png" data-gif="/proyectos/cvmatch-ai/buscador.gif" data-still="/proyectos/cvmatch-ai/buscador-still.png" alt="Buscador de ofertas" />
-      <div class="gif-overlay" id="gif-buscador-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/cvmatch-ai/buscador.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Búsqueda por palabras clave, ubicación y fuente. Filtra por modalidad, experiencia y salario mínimo antes de lanzar la consulta." data-en="Search by keywords, location and source. Filter by work mode, experience and minimum salary before running the query.">Búsqueda por palabras clave, ubicación y fuente. Filtra por modalidad, experiencia y salario mínimo antes de lanzar la consulta.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Buscador con IA" data-en="AI-powered search">Buscador con IA</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-buscador-ia">
-      <img id="gif-buscador-ia-img" src="/proyectos/cvmatch-ai/buscador-ia-still.png" data-gif="/proyectos/cvmatch-ai/buscador-ia.gif" data-still="/proyectos/cvmatch-ai/buscador-ia-still.png" alt="Buscador con IA" />
-      <div class="gif-overlay" id="gif-buscador-ia-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/cvmatch-ai/buscador-ia.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Cada oferta incluye un resumen generado por IA con el stack requerido, modalidad, experiencia y salario, sin necesidad de abrir el enlace original." data-en="Each listing includes an AI-generated summary with the required stack, work mode, experience and salary, without opening the original link.">Cada oferta incluye un resumen generado por IA con el stack requerido, modalidad, experiencia y salario, sin necesidad de abrir el enlace original.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Análisis de compatibilidad" data-en="Compatibility analysis">Análisis de compatibilidad</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-compatibilidad">
-      <img id="gif-compatibilidad-img" src="/proyectos/cvmatch-ai/compatibilidad-still.png" data-gif="/proyectos/cvmatch-ai/compatibilidad.gif" data-still="/proyectos/cvmatch-ai/compatibilidad-still.png" alt="Análisis de compatibilidad" />
-      <div class="gif-overlay" id="gif-compatibilidad-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/cvmatch-ai/compatibilidad.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="La IA cruza la oferta con tu CV y devuelve un porcentaje de compatibilidad, las palabras clave que faltan y cambios concretos para mejorar tus opciones de pasar el filtro ATS." data-en="The AI cross-references the listing with your CV and returns a compatibility score, missing keywords and concrete changes to improve your chances of passing the ATS filter.">La IA cruza la oferta con tu CV y devuelve un porcentaje de compatibilidad, las palabras clave que faltan y cambios concretos para mejorar tus opciones de pasar el filtro ATS.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Generar CV adaptado" data-en="Generate tailored CV">Generar CV adaptado</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-generar-cv">
-      <img id="gif-generar-cv-img" src="/proyectos/cvmatch-ai/generar-cv-still.png" data-gif="/proyectos/cvmatch-ai/generar-cv.gif" data-still="/proyectos/cvmatch-ai/generar-cv-still.png" alt="Generar CV adaptado" />
-      <div class="gif-overlay" id="gif-generar-cv-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/cvmatch-ai/generar-cv.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="La IA reescribe tu CV completo adaptando el lenguaje y el orden de secciones a la oferta. Elige plantilla, añade foto si quieres y descarga el PDF en segundos." data-en="The AI rewrites your full CV adapting the language and section order to the listing. Choose a template, add a photo if you want and download the PDF in seconds.">La IA reescribe tu CV completo adaptando el lenguaje y el orden de secciones a la oferta. Elige plantilla, añade foto si quieres y descarga el PDF en segundos.</p>
   </div>
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Crear CV desde cero" data-en="Create CV from scratch">Crear CV desde cero</div>
-    <div class="gif-label" data-es="Pulsa para reproducir. Pulsa de nuevo para pausar." data-en="Click to play. Click again to pause.">Pulsa para reproducir. Pulsa de nuevo para pausar.</div>
-    <div class="gif-container" id="gif-crear-cv">
-      <img id="gif-crear-cv-img" src="/proyectos/cvmatch-ai/crear-cv-still.png" data-gif="/proyectos/cvmatch-ai/crear-cv.gif" data-still="/proyectos/cvmatch-ai/crear-cv-still.png" alt="Crear CV desde cero" />
-      <div class="gif-overlay" id="gif-crear-cv-overlay">
-        <div class="gif-play-btn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg></div>
-      </div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/cvmatch-ai/crear-cv.mp4" type="video/mp4" />
+      </video>
     </div>
     <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Pega tu CV en texto o usa uno de los guardados en tu perfil. La IA lo reestructura, lo mejora y genera una vista previa en tiempo real antes de exportar." data-en="Paste your CV as text or use one saved in your profile. The AI restructures and improves it, generating a live preview before export.">Pega tu CV en texto o usa uno de los guardados en tu perfil. La IA lo reestructura, lo mejora y genera una vista previa en tiempo real antes de exportar.</p>
   </div>
@@ -317,26 +299,6 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  // GIFs
-  function makeGif(containerId, imgId, overlayId) {
-    document.getElementById(containerId).addEventListener('click', function() {
-      const img = document.getElementById(imgId);
-      const overlay = document.getElementById(overlayId);
-      if (overlay.classList.contains('hidden')) {
-        img.src = img.getAttribute('data-still');
-        overlay.classList.remove('hidden');
-      } else {
-        img.src = img.getAttribute('data-gif') + '?t=' + Date.now();
-        overlay.classList.add('hidden');
-      }
-    });
-  }
-  makeGif('gif-buscador','gif-buscador-img','gif-buscador-overlay');
-  makeGif('gif-buscador-ia','gif-buscador-ia-img','gif-buscador-ia-overlay');
-  makeGif('gif-compatibilidad','gif-compatibilidad-img','gif-compatibilidad-overlay');
-  makeGif('gif-generar-cv','gif-generar-cv-img','gif-generar-cv-overlay');
-  makeGif('gif-crear-cv','gif-crear-cv-img','gif-crear-cv-overlay');
-
   // CAROUSEL PDF
   let pdfSlide = 0;
   const pdfSlides = document.querySelectorAll('#pdf-track .carousel-slide');

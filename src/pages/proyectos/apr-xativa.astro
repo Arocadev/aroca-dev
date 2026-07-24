@@ -4,118 +4,83 @@ import '../../styles/global.css';
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>APR Xàtiva · ArocaDev</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    .section-divider{border-top:1px solid rgba(255,255,255,0.07);margin:80px 0}
+    .proj-section{margin-bottom:72px}
+    .proj-section-title{margin-bottom:24px}
+    .diagram-grid{display:flex;flex-direction:column;gap:24px}
+    .diagram-item{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.07);background:#fff;padding:8px}
+    .diagram-item object{width:100%;height:420px;display:block;pointer-events:none;border-radius:4px}
+    .diagram-wrap{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .diagram-label{font-size:11px;color:var(--t4);text-align:center}
+    .gif-label{font-size:11px;color:var(--t4);margin-bottom:20px;text-align:center}
+    .carousel{position:relative;display:flex;align-items:center;gap:10px}
+    .carousel-track{flex:1;overflow:hidden;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .carousel-slide{display:none;flex-direction:column}
+    .carousel-slide.active{display:flex}
+    .carousel-slide img{width:100%;display:block;cursor:pointer;max-height:760px;object-fit:cover;object-position:top}
+    .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
+    .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
+    .carousel-btn:hover{background:rgba(129,140,248,0.3)}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
+    .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
+    .dot.active{background:var(--ac)}
+    .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
+    .mobile-carousel{justify-content:center}
+    .carousel-track.mobile-track{flex:unset;width:300px;background:var(--bg2);border:1px solid rgba(255,255,255,0.07);border-radius:8px;overflow:hidden}
+    .carousel-slide.mobile img{width:100%;max-height:520px;object-fit:contain;object-position:top;display:block;cursor:pointer}
+    .slide-note{font-size:11px;color:var(--t4);padding:6px 14px 10px;text-align:center;display:block;font-style:italic}
+    .video-container{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
+    .video-container video{width:100%;display:block}
+    .video-container.mobile-video{width:300px;margin:0 auto}
+    .video-container.mobile-video video{max-height:520px;object-fit:contain}
+  </style>
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">aroca<span>.dev</span></a>
-    <div class="nav-r">
-      <div class="nav-links">
-        <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
-        <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
-        <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
-        <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
-      </div>
-      <div class="i18n">
-        <span class="i18n-btn" id="btn-es">ES</span>
-        <span class="i18n-sep">|</span>
-        <span class="i18n-btn" id="btn-en">EN</span>
-      </div>
+<nav><div class="nav-inner">
+  <a href="/" class="logo">aroca<span>.dev</span></a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
     </div>
+    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</nav>
+</div></nav>
 
 <div class="proj-hero">
-  <div class="proj-category" data-es="Proyecto académico · TFG · Backend + Web + Android" data-en="Academic project · Final Degree Project · Backend + Web + Android">Proyecto académico · TFG · Backend + Web + Android</div>
+  <div class="proj-category" data-es="Proyecto académico · TFG · Nota 10/10" data-en="Academic project · Final degree project · Grade 10/10">Proyecto académico · TFG · Nota 10/10</div>
   <div class="proj-title">APR Xàtiva</div>
-  <div class="proj-subtitle" data-es="Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Cedido al Ayuntamiento de Xàtiva como base técnica para la futura implantación municipal." data-en="Vehicle access control system for Xàtiva's historic quarter. Grade 10/10. Handed over to Xàtiva City Council as the technical foundation for the future municipal rollout.">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Cedido al Ayuntamiento de Xàtiva como base técnica para la futura implantación municipal.</div>
+  <div class="proj-subtitle" data-es="Sistema de control de acceso vehicular para el núcleo antiguo de Xàtiva. Panel web de administración, app Android para agentes y landing page informativa. Adoptado por el Ajuntament de Xàtiva como propuesta técnica oficial." data-en="Vehicular access control system for the historic centre of Xàtiva. Web admin panel, Android app for agents and informational landing page. Adopted by the Ajuntament de Xàtiva as the official technical proposal.">Sistema de control de acceso vehicular para el núcleo antiguo de Xàtiva. Panel web de administración, app Android para agentes y landing page informativa. Adoptado por el Ajuntament de Xàtiva como propuesta técnica oficial.</div>
   <div class="proj-links">
-    <a href="https://github.com/ArocaDev?tab=repositories&q=apr-xativa" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
-    <a href="https://apr.aroca.dev" target="_blank" class="proj-link proj-link-web"><i class="ti ti-external-link"></i>Demo</a>
-    <a href="https://www.youtube.com/watch?v=PENDIENTE" target="_blank" class="proj-link proj-link-secondary"><i class="ti ti-brand-youtube"></i><span data-es="Ver demo" data-en="Watch demo">Ver demo</span></a>
+    <a href="https://github.com/ArocaDev?tab=repositories&q=apr" target="_blank" class="proj-link"><i class="ti ti-brand-github"></i>GitHub</a>
   </div>
 </div>
 
 <div class="proj-body">
 
-  <div style="background:rgba(129,140,248,0.06);border:1px solid rgba(129,140,248,0.2);border-radius:8px;padding:16px 20px;margin-bottom:48px">
-    <div class="proj-text">
-      <p data-es="El proyecto fue presentado ante el Ayuntamiento de Xàtiva y <b>seleccionado como base técnica para la futura implantación real del sistema APR</b> en el núcleo antiguo de la ciudad. TFG del CFGS DAM · Nota 10/10." data-en="The project was presented to Xàtiva City Council and <b>selected as the technical foundation for the real future rollout of the APR system</b> in the city's historic quarter. Final Degree Project · Grade 10/10.">El proyecto fue presentado ante el Ayuntamiento de Xàtiva y <b>seleccionado como base técnica para la futura implantación real del sistema APR</b> en el nucli antic de la ciudad. TFG del CFGS DAM · Nota 10/10.</p>
-    </div>
-  </div>
-
   <div class="proj-section">
     <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p data-es="El casco histórico de Xàtiva tiene acceso restringido a vehículos no autorizados, pero el control se gestionaba de forma completamente manual: sin registro digital, sin trazabilidad y sin herramientas para los agentes en campo." data-en="Xàtiva's historic quarter has restricted vehicle access, but control was entirely manual: no digital records, no traceability and no tools for field officers.">El casco histórico de Xàtiva tiene acceso restringido a vehículos no autorizados, pero el control se gestionaba de forma completamente manual: sin registro digital, sin trazabilidad y sin herramientas para los agentes en campo.</p>
-      <p data-es="Los agentes no podían consultar en tiempo real si un vehículo estaba autorizado. La administración no podía auditar accesos ni generar informes. Cualquier cambio en las autorizaciones requería coordinación manual entre departamentos." data-en="Officers couldn't check in real time whether a vehicle was authorised. The administration couldn't audit access or generate reports. Any change to authorisations required manual coordination between departments.">Los agentes no podían consultar en tiempo real si un vehículo estaba autorizado. La administración no podía auditar accesos ni generar informes. Cualquier cambio en las autorizaciones requería coordinación manual entre departamentos.</p>
-      <p data-es="El ayuntamiento necesitaba digitalizar todo el flujo: <b>desde la solicitud de autorización hasta el registro del acceso</b>, con gestión centralizada y trazabilidad completa." data-en="The council needed to digitalise the entire flow: <b>from authorisation requests to access logging</b>, with centralised management and full traceability.">El ayuntamiento necesitaba digitalizar todo el flujo: <b>desde la solicitud de autorización hasta el registro del acceso</b>, con gestión centralizada y trazabilidad completa.</p>
+      <p data-es="El núcleo antiguo de Xàtiva tiene un problema de tráfico: vehículos no autorizados circulan por zonas residenciales restringidas, afectando a la calidad de vida de los vecinos y al patrimonio histórico. El Ajuntament necesitaba un sistema moderno para gestionar y controlar el acceso." data-en="The historic centre of Xàtiva has a traffic problem: unauthorised vehicles circulate in restricted residential areas, affecting residents' quality of life and the historic heritage. The local council needed a modern system to manage and control access.">El núcleo antiguo de Xàtiva tiene un problema de tráfico: vehículos no autorizados circulan por zonas residenciales restringidas, afectando a la calidad de vida de los vecinos y al patrimonio histórico. El Ajuntament necesitaba un sistema moderno para gestionar y controlar el acceso.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p data-es="Sistema completo con tres capas independientes. El <b>backend en Java 21 + Spring Boot</b> expone una API REST con autenticación JWT stateless (HMAC-SHA384, tokens de 15 minutos), refresh tokens persistentes con revocación en logout, rate limiting con Bucket4j y auditoría asíncrona de todas las acciones con <code>@Async</code>." data-en="A complete system with three independent layers. The <b>Java 21 + Spring Boot backend</b> exposes a REST API with stateless JWT authentication (HMAC-SHA384, 15-minute tokens), persistent refresh tokens with logout revocation, rate limiting with Bucket4j and asynchronous audit logging of all actions via <code>@Async</code>.">Sistema completo con tres capas independientes. El <b>backend en Java 21 + Spring Boot</b> expone una API REST con autenticación JWT stateless (HMAC-SHA384, tokens de 15 minutos), refresh tokens persistentes con revocación en logout, rate limiting con Bucket4j y auditoría asíncrona de todas las acciones con <code>@Async</code>.</p>
-      <p data-es="El <b>panel web en React 19 + Vite + Tailwind CSS</b> permite a los gestores municipales administrar usuarios, aprobar solicitudes, consultar vehículos, derechos y el log de auditoría paginado. Incluye un <b>simulador de cámaras APR</b> — una terminal estilo consola con logs en tiempo real que simula el paso de vehículos por los puntos de control. La landing pública tiene un mapa interactivo con las zonas APR usando Leaflet y OpenStreetMap." data-en="The <b>React 19 + Vite + Tailwind CSS web panel</b> lets municipal managers handle users, approve requests, check vehicles and rights, and view the paginated audit log. It includes an <b>APR camera simulator</b> — a console-style terminal with real-time logs simulating vehicles passing through checkpoints. The public landing has an interactive map of APR zones using Leaflet and OpenStreetMap.">El <b>panel web en React 19 + Vite + Tailwind CSS</b> permite a los gestores municipales administrar usuarios, aprobar solicitudes, consultar vehículos, derechos y el log de auditoría paginado. Incluye un <b>simulador de cámaras APR</b> — una terminal estilo consola con logs en tiempo real que simula el paso de vehículos por los puntos de control. La landing pública tiene un mapa interactivo con las zonas APR usando Leaflet y OpenStreetMap.</p>
-      <p data-es="La <b>app Android en Kotlin + Jetpack Compose</b> está diseñada para los residentes: gestión de vehículos, solicitud de autorización con subida de documentación, derechos de acceso permanentes y puntuales para invitados, y polling automático del estado de solicitud cada 10 segundos. Incluye refresh token automático sin re-login y soporte trilingüe Valencià / Castellano / English." data-en="The <b>Kotlin + Jetpack Compose Android app</b> is designed for residents: vehicle management, authorisation requests with document upload, permanent and one-off access rights for guests, and automatic polling of request status every 10 seconds. Includes automatic token refresh without re-login and trilingual support: Valencian / Spanish / English.">La <b>app Android en Kotlin + Jetpack Compose</b> está diseñada para los residentes: gestión de vehículos, solicitud de autorización con subida de documentación, derechos de acceso permanentes y puntuales para invitados, y polling automático del estado de solicitud cada 10 segundos. Incluye refresh token automático sin re-login y soporte trilingüe Valencià / Castellano / English.</p>
-    </div>
-  </div>
-
-  <div class="proj-section">
-    <div class="proj-section-title" data-es="Detalles técnicos destacados" data-en="Technical highlights">Detalles técnicos destacados</div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div class="about-item">
-        <i class="ti ti-shield-lock" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b data-es="Refresh token con revocación" data-en="Refresh token with revocation">Refresh token con revocación</b>
-          <span data-es="JWT de 15 minutos + refresh token de 30 días persistente en base de datos. Al hacer logout, el refresh token se revoca en el servidor. El panel web gestiona colas de peticiones paralelas durante la renovación automática para no perder llamadas." data-en="15-minute JWT + 30-day refresh token persisted in the database. On logout, the refresh token is revoked server-side. The web panel queues parallel requests during automatic renewal so no calls are lost.">JWT de 15 minutos + refresh token de 30 días persistente en base de datos. Al hacer logout, el refresh token se revoca en el servidor. El panel web gestiona colas de peticiones paralelas durante la renovación automática para no perder llamadas.</span>
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-speedboat" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b data-es="Rate limiting con Bucket4j" data-en="Rate limiting with Bucket4j">Rate limiting con Bucket4j</b>
-          <span data-es="10 intentos por minuto en todos los endpoints de autenticación. Protección contra fuerza bruta sin depender de infraestructura externa." data-en="10 attempts per minute on all authentication endpoints. Brute-force protection without relying on external infrastructure.">10 intentos por minuto en todos los endpoints de autenticación. Protección contra fuerza bruta sin depender de infraestructura externa.</span>
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-clipboard-list" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b data-es="Auditoría asíncrona con @Async" data-en="Asynchronous audit logging with @Async">Auditoría asíncrona con @Async</b>
-          <span data-es="Todas las acciones relevantes se registran de forma asíncrona para no añadir latencia a las respuestas. Log paginado y filtrable desde el panel web." data-en="All relevant actions are logged asynchronously so response latency is unaffected. Paginated, filterable log available from the web panel.">Todas las acciones relevantes se registran de forma asíncrona para no añadir latencia a las respuestas. Log paginado y filtrable desde el panel web.</span>
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-camera" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b data-es="Simulador de cámaras APR" data-en="APR camera simulator">Simulador de cámaras APR</b>
-          <span data-es="Endpoint que simula el paso de vehículos por los puntos de control: 60% de probabilidad de matrícula con derecho activo, 40% aleatoria sin acceso. Visualizado en el panel como una terminal con logs en tiempo real." data-en="Endpoint that simulates vehicles passing through checkpoints: 60% chance of a plate with an active right, 40% random without access. Displayed in the panel as a terminal with real-time logs.">Endpoint que simula el paso de vehículos por los puntos de control: 60% de probabilidad de matrícula con derecho activo, 40% aleatoria sin acceso. Visualizado en el panel como una terminal con logs en tiempo real.</span>
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-calendar-event" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b data-es="Tareas programadas" data-en="Scheduled tasks">Tareas programadas</b>
-          <span data-es="Desactivación automática nocturna de derechos expirados y eliminación de usuarios sin documentación tras 14 días, sin intervención manual." data-en="Automatic nightly deactivation of expired rights and deletion of users without documentation after 14 days, no manual intervention needed.">Desactivación automática nocturna de derechos expirados y eliminación de usuarios sin documentación tras 14 días, sin intervención manual.</span>
-        </div>
-      </div>
-      <div class="about-item">
-        <i class="ti ti-map-pin" aria-hidden="true"></i>
-        <div class="about-item-text">
-          <b data-es="Mapa interactivo con Leaflet" data-en="Interactive map with Leaflet">Mapa interactivo con Leaflet</b>
-          <span data-es="La landing pública muestra las zonas APR del nucli antic marcadas en colores sobre OpenStreetMap, sin depender de la API de Google Maps." data-en="The public landing shows the APR zones of the historic quarter marked in colour on OpenStreetMap, with no dependency on the Google Maps API.">La landing pública muestra las zonas APR del nucli antic marcadas en colores sobre OpenStreetMap, sin depender de la API de Google Maps.</span>
-        </div>
-      </div>
+      <p data-es="Sistema completo de tres componentes: un <b>backend Spring Boot</b> con JWT, rate limiting y auditoría asíncrona; un <b>panel web React</b> para que los administradores gestionen vehículos, usuarios, solicitudes y derechos de acceso; y una <b>app Android en Kotlin/Jetpack Compose</b> para que los agentes consulten matrículas en tiempo real desde el móvil." data-en="Complete three-component system: a <b>Spring Boot backend</b> with JWT, rate limiting and async auditing; a <b>React web panel</b> for administrators to manage vehicles, users, requests and access rights; and a <b>Kotlin/Jetpack Compose Android app</b> for agents to query licence plates in real time from their phone.">Sistema completo de tres componentes: un <b>backend Spring Boot</b> con JWT, rate limiting y auditoría asíncrona; un <b>panel web React</b> para que los administradores gestionen vehículos, usuarios, solicitudes y derechos de acceso; y una <b>app Android en Kotlin/Jetpack Compose</b> para que los agentes consulten matrículas en tiempo real desde el móvil.</p>
+      <p data-es="El sistema contempla dos tipos de acceso: <b>permanente</b> (residentes y autorizados) y <b>puntual</b> (invitados con límite mensual). El simulador de acceso permite probar el sistema con una probabilidad 60/40 sin necesidad de cámaras reales." data-en="The system handles two access types: <b>permanent</b> (residents and authorised users) and <b>guest</b> (visitors with a monthly limit). The access simulator lets you test the system with a 60/40 probability without real cameras.">El sistema contempla dos tipos de acceso: <b>permanente</b> (residentes y autorizados) y <b>puntual</b> (invitados con límite mensual). El simulador de acceso permite probar el sistema con una probabilidad 60/40 sin necesidad de cámaras reales.</p>
     </div>
   </div>
 
@@ -125,29 +90,28 @@ import '../../styles/global.css';
       <div class="sidebar-card">
         <div class="sidebar-label">Backend</div>
         <div class="sidebar-stack">
-          <span class="about-tech-tag">Java 21</span><span class="about-tech-tag">Spring Boot 4</span><span class="about-tech-tag">Spring Security 7</span><span class="about-tech-tag">MySQL 8</span><span class="about-tech-tag">JPA + Hibernate</span><span class="about-tech-tag">Bucket4j</span><span class="about-tech-tag">JWT</span><span class="about-tech-tag">Docker</span>
+          <span class="about-tech-tag">Spring Boot 4.0.5</span><span class="about-tech-tag">Java 21</span><span class="about-tech-tag">MySQL 8</span><span class="about-tech-tag">JWT</span><span class="about-tech-tag">Bucket4j</span><span class="about-tech-tag">Docker</span>
         </div>
       </div>
       <div class="sidebar-card">
-        <div class="sidebar-label">Web</div>
+        <div class="sidebar-label" data-es="Panel web" data-en="Web panel">Panel web</div>
         <div class="sidebar-stack">
-          <span class="about-tech-tag">React 19</span><span class="about-tech-tag">Vite</span><span class="about-tech-tag">Tailwind CSS 4</span><span class="about-tech-tag">Leaflet</span><span class="about-tech-tag">Axios</span><span class="about-tech-tag">React Router v6</span>
+          <span class="about-tech-tag">React 19</span><span class="about-tech-tag">Vite</span><span class="about-tech-tag">React Router</span><span class="about-tech-tag">Axios</span><span class="about-tech-tag">CSS modules</span>
         </div>
       </div>
       <div class="sidebar-card">
         <div class="sidebar-label">Android</div>
         <div class="sidebar-stack">
-          <span class="about-tech-tag">Kotlin 2.0</span><span class="about-tech-tag">Jetpack Compose</span><span class="about-tech-tag">MVVM + StateFlow</span><span class="about-tech-tag">Retrofit</span><span class="about-tech-tag">DataStore</span>
+          <span class="about-tech-tag">Kotlin 2.0</span><span class="about-tech-tag">Jetpack Compose</span><span class="about-tech-tag">MVVM</span><span class="about-tech-tag">Retrofit</span>
         </div>
       </div>
       <div class="sidebar-card">
         <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
         <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="TFG · Nota 10/10" data-en="Final Degree Project · Grade 10/10">TFG · Nota 10/10</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Académico (TFG)" data-en="Academic (Final project)">Académico (TFG)</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Nota" data-en="Grade">Nota</span><span class="sidebar-row-val">10 / 10</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2026</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">32 unitarios</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Idiomas" data-en="Languages">Idiomas</span><span class="sidebar-row-val">ES · VA · EN</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="Cedido al ayuntamiento" data-en="Handed over to the council">Cedido al ayuntamiento</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Tests</span><span class="sidebar-row-val">32</span></div>
         </div>
       </div>
     </div>
@@ -156,9 +120,8 @@ import '../../styles/global.css';
   <div class="proj-section">
     <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p data-es="APR Xàtiva fue el primer proyecto donde tuve que pensar en seguridad de verdad: no solo autenticación básica, sino rate limiting, revocación de tokens, auditoría de acciones y validación de formatos de matrícula y DNI. Aprendí que la seguridad no es una capa que se añade al final — hay que diseñarla desde el principio." data-en="APR Xàtiva was the first project where I had to think seriously about security: not just basic authentication, but rate limiting, token revocation, action auditing and validation of licence plate and ID formats. I learned that security isn't a layer you add at the end — it has to be designed in from the start.">APR Xàtiva fue el primer proyecto donde tuve que pensar en seguridad de verdad: no solo autenticación básica, sino rate limiting, revocación de tokens, auditoría de acciones y validación de formatos de matrícula y DNI. Aprendí que la seguridad no es una capa que se añade al final — hay que diseñarla desde el principio.</p>
-      <p data-es="También fue el proyecto más grande que he coordinado solo: tres repositorios, tres tecnologías distintas y un contrato de API que tenían que entender todos. Aprendí a valorar la documentación de endpoints y a definir los DTOs antes de empezar a implementar." data-en="It was also the largest project I've coordinated alone: three repositories, three different technologies and an API contract that all parts had to agree on. I learned to value endpoint documentation and to define DTOs before starting to implement.">También fue el proyecto más grande que he coordinado solo: tres repositorios, tres tecnologías distintas y un contrato de API que tenían que entender todos. Aprendí a valorar la documentación de endpoints y a definir los DTOs antes de empezar a implementar.</p>
-      <p data-es="El simulador de cámaras fue una decisión que surgió durante el desarrollo para poder demostrar el sistema sin infraestructura real. Me enseñó que a veces la forma de presentar un proyecto es tan importante como el proyecto en sí." data-en="The camera simulator was a decision that came up during development to be able to demo the system without real infrastructure. It taught me that sometimes how you present a project matters as much as the project itself.">El simulador de cámaras fue una decisión que surgió durante el desarrollo para poder demostrar el sistema sin infraestructura real. Me enseñó que a veces la forma de presentar un proyecto es tan importante como el proyecto en sí.</p>
+      <p data-es="APR Xàtiva fue el proyecto más complejo que había abordado hasta ese momento — tres componentes independientes que tienen que funcionar juntos, con un cliente real (el Ajuntament) y una fecha de entrega fija." data-en="APR Xàtiva was the most complex project I had tackled up to that point — three independent components that have to work together, with a real client (the local council) and a fixed deadline.">APR Xàtiva fue el proyecto más complejo que había abordado hasta ese momento — tres componentes independientes que tienen que funcionar juntos, con un cliente real (el Ajuntament) y una fecha de entrega fija.</p>
+      <p data-es="Implementar el sistema de refresh tokens con Spring Boot y gestionar los 401 paralelos en el frontend con una cola de espera fue uno de los retos más interesantes del proyecto." data-en="Implementing the refresh token system with Spring Boot and handling parallel 401s on the frontend with a waiting queue was one of the most interesting challenges of the project.">Implementar el sistema de refresh tokens con Spring Boot y gestionar los 401 paralelos en el frontend con una cola de espera fue uno de los retos más interesantes del proyecto.</p>
     </div>
   </div>
 
@@ -166,60 +129,281 @@ import '../../styles/global.css';
     <div class="proj-section-title" data-es="¿Qué haría diferente hoy?" data-en="What I'd do differently today">¿Qué haría diferente hoy?</div>
     <div class="proj-text">
       <ul class="proj-list">
-        <li data-es="Usaría PostgreSQL en lugar de MySQL — mejor soporte para JSON, CTEs y funcionalidades avanzadas que MySQL no tiene o implementa peor." data-en="I'd use PostgreSQL instead of MySQL — better support for JSON, CTEs and advanced features that MySQL lacks or handles poorly.">Usaría PostgreSQL en lugar de MySQL — mejor soporte para JSON, CTEs y funcionalidades avanzadas que MySQL no tiene o implementa peor.</li>
-        <li data-es="Añadiría WebSockets para las notificaciones de cambio de estado en la app Android, en lugar del polling cada 10 segundos." data-en="I'd add WebSockets for status change notifications in the Android app instead of polling every 10 seconds.">Añadiría WebSockets para las notificaciones de cambio de estado en la app Android, en lugar del polling cada 10 segundos.</li>
-        <li data-es="Separaría la landing pública del panel de administración en dos proyectos distintos — tienen audiencias, ciclos de despliegue y requisitos de seguridad completamente diferentes." data-en="I'd separate the public landing from the admin panel into two distinct projects — they have completely different audiences, deployment cycles and security requirements.">Separaría la landing pública del panel de administración en dos proyectos distintos — tienen audiencias, ciclos de despliegue y requisitos de seguridad completamente diferentes.</li>
-        <li data-es="Implementaría CI/CD con GitHub Actions desde el principio para automatizar los tests y el despliegue." data-en="I'd implement CI/CD with GitHub Actions from the start to automate tests and deployment.">Implementaría CI/CD con GitHub Actions desde el principio para automatizar los tests y el despliegue.</li>
+        <li data-es="Añadiría tests de integración además de los unitarios, especialmente para el flujo de autenticación completo." data-en="I'd add integration tests in addition to unit tests, especially for the full authentication flow.">Añadiría tests de integración además de los unitarios, especialmente para el flujo de autenticación completo.</li>
+        <li data-es="Usaría TypeScript en el panel React desde el principio en lugar de JavaScript." data-en="I'd use TypeScript in the React panel from the start instead of JavaScript.">Usaría TypeScript en el panel React desde el principio en lugar de JavaScript.</li>
+        <li data-es="Separaría la landing page del panel de administración en dos proyectos distintos." data-en="I'd separate the landing page from the admin panel into two separate projects.">Separaría la landing page del panel de administración en dos proyectos distintos.</li>
       </ul>
     </div>
   </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Capturas — Panel web" data-en="Screenshots — Web panel">Capturas — Panel web</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Dashboard</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span data-es="Gestión de solicitudes" data-en="Request management">Gestión de solicitudes</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span data-es="Simulador de cámaras" data-en="Camera simulator">Simulador de cámaras</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span data-es="Log de auditoría" data-en="Audit log">Log de auditoría</span></div>
+    <div class="proj-section-title" data-es="Diagramas" data-en="Diagrams">Diagramas</div>
+    <div class="diagram-grid">
+      <div class="diagram-wrap" onclick="window.open('/proyectos/apr-xativa/diagrama_arquitectura.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/apr-xativa/diagrama_arquitectura.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Arquitectura del sistema · clic para ampliar" data-en="System architecture · click to enlarge">Arquitectura del sistema · clic para ampliar</span>
+      </div>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/apr-xativa/flux_autenticacion_jwt.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/apr-xativa/flux_autenticacion_jwt.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Flujo de autenticación JWT · clic para ampliar" data-en="JWT authentication flow · click to enlarge">Flujo de autenticación JWT · clic para ampliar</span>
+      </div>
+      <div class="diagram-wrap" onclick="window.open('/proyectos/apr-xativa/flux_solicitud_acceso.svg','_blank')" style="cursor:pointer">
+        <div class="diagram-item" style="width:100%">
+          <object data="/proyectos/apr-xativa/flux_solicitud_acceso.svg" type="image/svg+xml"></object>
+        </div>
+        <span class="diagram-label" data-es="Flujo de solicitud de acceso · clic para ampliar" data-en="Access request flow · click to enlarge">Flujo de solicitud de acceso · clic para ampliar</span>
+      </div>
     </div>
   </div>
 
-  <div style="border-top:1px solid rgba(255,255,255,0.07);margin:48px 0"></div>
+  <div class="section-divider"></div>
+
+  <!-- LANDING WEB -->
+  <div class="proj-section">
+    <div class="proj-section-title" data-es="Landing page informativa" data-en="Informational landing page">Landing page informativa</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/web-landing.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Página informativa pública con descripción del sistema, zonas APR con mapa interactivo Leaflet, guía de funcionamiento en 4 pasos, sección de descarga y preguntas frecuentes. Disponible en valenciano, castellano e inglés." data-en="Public informational page with system description, APR zones with interactive Leaflet map, 4-step guide, download section and FAQ. Available in Valencian, Spanish and English.">Página informativa pública con descripción del sistema, zonas APR con mapa interactivo Leaflet, guía de funcionamiento en 4 pasos, sección de descarga y preguntas frecuentes. Disponible en valenciano, castellano e inglés.</p>
+  </div>
 
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Capturas — App Android" data-en="Screenshots — Android app">Capturas — App Android</div>
-    <div class="screenshots">
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span>Login</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span data-es="Mis vehículos" data-en="My vehicles">Mis vehículos</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span data-es="Solicitud de autorización" data-en="Authorisation request">Solicitud de autorización</span></div>
-      <div class="screenshot"><i class="ti ti-photo" aria-hidden="true"></i><span data-es="Derechos de acceso" data-en="Access rights">Derechos de acceso</span></div>
+    <div class="proj-section-title" data-es="Capturas de la landing" data-en="Landing screenshots">Capturas de la landing</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel">
+      <button class="carousel-btn" id="web-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track" id="web-track">
+        <div class="carousel-slide active"><img src="/proyectos/apr-xativa/web-hero.png" alt="Hero" onclick="window.open(this.src,'_blank')" /><span data-es="Hero — título y descarga" data-en="Hero — title and download">Hero — título y descarga</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/web-que-es.png" alt="Qué es el APR" onclick="window.open(this.src,'_blank')" /><span data-es="¿Qué es el APR?" data-en="What is APR?">¿Qué es el APR?</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/web-mapa.png" alt="Zonas y mapa" onclick="window.open(this.src,'_blank')" /><span data-es="Zonas APR con mapa Leaflet" data-en="APR zones with Leaflet map">Zonas APR con mapa Leaflet</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/web-como-funciona.png" alt="Cómo funciona" onclick="window.open(this.src,'_blank')" /><span data-es="¿Cómo funciona? — 4 pasos" data-en="How it works — 4 steps">¿Cómo funciona? — 4 pasos</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/web-descarga.png" alt="Descarga" onclick="window.open(this.src,'_blank')" /><span data-es="Sección descarga de la app" data-en="App download section">Sección descarga de la app</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/web-faq.png" alt="FAQ" onclick="window.open(this.src,'_blank')" /><span data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</span></div>
+      </div>
+      <button class="carousel-btn" id="web-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="web-dots">
+      <span class="dot active" onclick="goToWebSlide(0)"></span>
+      <span class="dot" onclick="goToWebSlide(1)"></span>
+      <span class="dot" onclick="goToWebSlide(2)"></span>
+      <span class="dot" onclick="goToWebSlide(3)"></span>
+      <span class="dot" onclick="goToWebSlide(4)"></span>
+      <span class="dot" onclick="goToWebSlide(5)"></span>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- PANEL ADMIN -->
+  <div class="proj-section">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: gestión de usuarios" data-en="Admin panel: user management">Panel de administración: gestión de usuarios</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/admin-usuarios.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Gestión de usuarios con roles ADMIN y AGENTE. Búsqueda en tiempo real, skeleton loading y paginación client-side." data-en="User management with ADMIN and AGENT roles. Real-time search, skeleton loading and client-side pagination.">Gestión de usuarios con roles ADMIN y AGENTE. Búsqueda en tiempo real, skeleton loading y paginación client-side.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: gestión de vehículos" data-en="Admin panel: vehicle management">Panel de administración: gestión de vehículos</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/admin-vehiculos.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="CRUD completo de vehículos autorizados. Registro de matrícula, tipo de vehículo y propietario. Búsqueda en tiempo real y paginación." data-en="Full CRUD for authorised vehicles. Licence plate, vehicle type and owner registration. Real-time search and pagination.">CRUD completo de vehículos autorizados. Registro de matrícula, tipo de vehículo y propietario. Búsqueda en tiempo real y paginación.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: derechos de acceso" data-en="Admin panel: access rights">Panel de administración: derechos de acceso</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/admin-derechos.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Asignación de derechos de acceso permanentes y puntuales. Los accesos puntuales tienen un límite de 5 invitaciones mensuales por usuario." data-en="Assignment of permanent and guest access rights. Guest access is limited to 5 monthly invitations per user.">Asignación de derechos de acceso permanentes y puntuales. Los accesos puntuales tienen un límite de 5 invitaciones mensuales por usuario.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: solicitudes de acceso" data-en="Admin panel: access requests">Panel de administración: solicitudes de acceso</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/admin-solicitudes.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Revisión y aprobación de solicitudes enviadas desde la app Android. El administrador consulta la documentación adjunta y aprueba o rechaza cada solicitud." data-en="Review and approval of requests submitted from the Android app. The administrator checks the attached documentation and approves or rejects each request.">Revisión y aprobación de solicitudes enviadas desde la app Android. El administrador consulta la documentación adjunta y aprueba o rechaza cada solicitud.</p>
+    <p class="proj-text" style="margin-top:8px;font-size:12px;color:var(--t4)" data-es="El documento adjunto es un justificante de que el usuario reside, trabaja o tiene relación con el núcleo antiguo. En la demo se usa un archivo de prueba; al descargarlo desde el panel, el nombre del archivo incluye el DNI del usuario que lo envió." data-en="The attached document is proof that the user lives, works or has a connection to the núcleo antiguo. In the demo a test file is used; when downloaded from the panel, the filename includes the DNI of the user who submitted it.">El documento adjunto es un justificante de que el usuario reside, trabaja o tiene relación con el núcleo antiguo. En la demo se usa un archivo de prueba; al descargarlo desde el panel, el nombre del archivo incluye el DNI del usuario que lo envió.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: simulador de acceso" data-en="Admin panel: access simulator">Panel de administración: simulador de acceso</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/admin-simulador.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Simulador de paso vehicular con probabilidad 60/40 para testing sin cámaras reales. Muestra en tiempo real si el acceso sería permitido o denegado." data-en="Vehicle passage simulator with 60/40 probability for testing without real cameras. Shows in real time whether access would be granted or denied.">Simulador de paso vehicular con probabilidad 60/40 para testing sin cámaras reales. Muestra en tiempo real si el acceso sería permitido o denegado.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: auditoría" data-en="Admin panel: audit log">Panel de administración: auditoría</div>
+    <div class="video-container">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/admin-auditoria.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Log de todas las operaciones del sistema con paginación server-side y filtros por DNI y tipo de evento. El registro es asíncrono — no impacta en el rendimiento de las operaciones." data-en="Log of all system operations with server-side pagination and filters by DNI and event type. Logging is asynchronous — no performance impact on operations.">Log de todas las operaciones del sistema con paginación server-side y filtros por DNI y tipo de evento. El registro es asíncrono — no impacta en el rendimiento de las operaciones.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" data-es="Capturas del panel de administración" data-en="Admin panel screenshots">Capturas del panel de administración</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel">
+      <button class="carousel-btn" id="admin-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track" id="admin-track">
+        <div class="carousel-slide active"><img src="/proyectos/apr-xativa/admin-dashboard.png" alt="Dashboard" onclick="window.open(this.src,'_blank')" /><span data-es="Dashboard con estadísticas" data-en="Dashboard with stats">Dashboard con estadísticas</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-solicitudes.png" alt="Solicitudes" onclick="window.open(this.src,'_blank')" /><span data-es="Solicitudes de acceso" data-en="Access requests">Solicitudes de acceso</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-solicitud-nueva.png" alt="Detalle solicitud" onclick="window.open(this.src,'_blank')" /><span data-es="Detalle de solicitud" data-en="Request detail">Detalle de solicitud</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-usuarios.png" alt="Usuarios" onclick="window.open(this.src,'_blank')" /><span data-es="Gestión de usuarios" data-en="User management">Gestión de usuarios</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-crear-usuario.png" alt="Crear usuario" onclick="window.open(this.src,'_blank')" /><span data-es="Crear usuario" data-en="Create user">Crear usuario</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-vehiculos.png" alt="Vehículos" onclick="window.open(this.src,'_blank')" /><span data-es="Gestión de vehículos" data-en="Vehicle management">Gestión de vehículos</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-derechos.png" alt="Derechos" onclick="window.open(this.src,'_blank')" /><span data-es="Derechos de acceso" data-en="Access rights">Derechos de acceso</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-simulador.png" alt="Simulador" onclick="window.open(this.src,'_blank')" /><span data-es="Simulador de acceso" data-en="Access simulator">Simulador de acceso</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-auditoria.png" alt="Auditoría" onclick="window.open(this.src,'_blank')" /><span data-es="Log de auditoría" data-en="Audit log">Log de auditoría</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-notificaciones.png" alt="Notificaciones" onclick="window.open(this.src,'_blank')" /><span data-es="Notificaciones" data-en="Notifications">Notificaciones</span></div>
+        <div class="carousel-slide"><img src="/proyectos/apr-xativa/admin-perfil.png" alt="Perfil" onclick="window.open(this.src,'_blank')" /><span data-es="Perfil de usuario" data-en="User profile">Perfil de usuario</span><span class="slide-note" data-es="El cambio de contraseña del administrador está desactivado en la demo para proteger el acceso al panel — si quieres explorar la aplicación, puedes hacerlo sin riesgo de que nadie bloquee el acceso a otros." data-en="The administrator's password change is disabled in the demo to protect panel access — you can explore the application freely without risk of anyone locking others out.">El cambio de contraseña del administrador está desactivado en la demo para proteger el acceso al panel — si quieres explorar la aplicación, puedes hacerlo sin riesgo de que nadie bloquee el acceso a otros.</span></div>
+      </div>
+      <button class="carousel-btn" id="admin-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="admin-dots">
+      <span class="dot active" onclick="goToAdminSlide(0)"></span>
+      <span class="dot" onclick="goToAdminSlide(1)"></span>
+      <span class="dot" onclick="goToAdminSlide(2)"></span>
+      <span class="dot" onclick="goToAdminSlide(3)"></span>
+      <span class="dot" onclick="goToAdminSlide(4)"></span>
+      <span class="dot" onclick="goToAdminSlide(5)"></span>
+      <span class="dot" onclick="goToAdminSlide(6)"></span>
+      <span class="dot" onclick="goToAdminSlide(7)"></span>
+      <span class="dot" onclick="goToAdminSlide(8)"></span>
+      <span class="dot" onclick="goToAdminSlide(9)"></span>
+      <span class="dot" onclick="goToAdminSlide(10)"></span>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- APP ANDROID -->
+  <div class="proj-section">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="App Android: aprobación de solicitud" data-en="Android app: request approval">App Android: aprobación de solicitud</div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/app-doc-acept.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="La app refleja en tiempo real el estado de la solicitud. Una vez el administrador la aprueba desde el panel web, el usuario ve el cambio de estado sin necesidad de recargar." data-en="The app reflects the request status in real time. Once the administrator approves it from the web panel, the user sees the status change without needing to reload.">La app refleja en tiempo real el estado de la solicitud. Una vez el administrador la aprueba desde el panel web, el usuario ve el cambio de estado sin necesidad de recargar.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="App Android: guía de uso" data-en="Android app: usage guide">App Android: guía de uso</div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/app-guia.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Guía de onboarding para nuevos usuarios que explica el flujo completo: registro, solicitud de acceso y uso de la app." data-en="Onboarding guide for new users explaining the full flow: registration, access request and app usage.">Guía de onboarding para nuevos usuarios que explica el flujo completo: registro, solicitud de acceso y uso de la app.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="App Android: gestión de vehículos" data-en="Android app: vehicle management">App Android: gestión de vehículos</div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/app-vehiculo.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="El usuario gestiona sus vehículos autorizados desde la app. Puede añadir matrículas y asignarles derechos de acceso a las zonas APR." data-en="The user manages their authorised vehicles from the app. They can add licence plates and assign access rights to APR zones.">El usuario gestiona sus vehículos autorizados desde la app. Puede añadir matrículas y asignarles derechos de acceso a las zonas APR.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="App Android: derechos de acceso" data-en="Android app: access rights">App Android: derechos de acceso</div>
+    <div class="video-container mobile-video">
+      <video playsinline muted controls>
+        <source src="/proyectos/apr-xativa/app-derecho.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p class="proj-text" style="margin-top:14px;font-size:13px" data-es="Solicitud de accesos puntuales para invitados y consulta de derechos permanentes. El acceso puntual tiene un límite de 5 invitaciones mensuales." data-en="Request for guest access and consultation of permanent rights. Guest access is limited to 5 monthly invitations.">Solicitud de accesos puntuales para invitados y consulta de derechos permanentes. El acceso puntual tiene un límite de 5 invitaciones mensuales.</p>
+  </div>
+
+  <div class="proj-section" style="margin-top:48px">
+    <div class="proj-section-title" data-es="Capturas de la app Android" data-en="Android app screenshots">Capturas de la app Android</div>
+    <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
+    <div class="carousel mobile-carousel">
+      <button class="carousel-btn" id="app-prev"><i class="ti ti-chevron-left"></i></button>
+      <div class="carousel-track mobile-track" id="app-track">
+        <div class="carousel-slide mobile active"><img src="/proyectos/apr-xativa/app-login.png" alt="Login" onclick="window.open(this.src,'_blank')" /><span data-es="Login" data-en="Login">Login</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-registro.png" alt="Registro" onclick="window.open(this.src,'_blank')" /><span data-es="Registro" data-en="Register">Registro</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-no-doc.png" alt="Sin documentación" onclick="window.open(this.src,'_blank')" /><span data-es="Sin documentación enviada" data-en="No documentation submitted">Sin documentación enviada</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-si-doc.png" alt="Con documentación" onclick="window.open(this.src,'_blank')" /><span data-es="Documentación enviada — pendiente de aprobación" data-en="Documentation submitted — pending approval">Documentación enviada — pendiente de aprobación</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-guia.png" alt="Guía" onclick="window.open(this.src,'_blank')" /><span data-es="Guía de uso" data-en="Usage guide">Guía de uso</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-vehiculos.png" alt="Vehículos" onclick="window.open(this.src,'_blank')" /><span data-es="Mis vehículos" data-en="My vehicles">Mis vehículos</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-derechos.png" alt="Derechos" onclick="window.open(this.src,'_blank')" /><span data-es="Derechos de acceso" data-en="Access rights">Derechos de acceso</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-perfil.png" alt="Perfil" onclick="window.open(this.src,'_blank')" /><span data-es="Perfil de usuario" data-en="User profile">Perfil de usuario</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-opciones.png" alt="Opciones" onclick="window.open(this.src,'_blank')" /><span data-es="Opciones y configuración" data-en="Options and settings">Opciones y configuración</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/apr-xativa/app-modo-oscuro.png" alt="Modo oscuro" onclick="window.open(this.src,'_blank')" /><span data-es="Modo oscuro" data-en="Dark mode">Modo oscuro</span></div>
+      </div>
+      <button class="carousel-btn" id="app-next"><i class="ti ti-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="app-dots">
+      <span class="dot active" onclick="goToAppSlide(0)"></span>
+      <span class="dot" onclick="goToAppSlide(1)"></span>
+      <span class="dot" onclick="goToAppSlide(2)"></span>
+      <span class="dot" onclick="goToAppSlide(3)"></span>
+      <span class="dot" onclick="goToAppSlide(4)"></span>
+      <span class="dot" onclick="goToAppSlide(5)"></span>
+      <span class="dot" onclick="goToAppSlide(6)"></span>
+      <span class="dot" onclick="goToAppSlide(7)"></span>
+      <span class="dot" onclick="goToAppSlide(8)"></span>
+      <span class="dot" onclick="goToAppSlide(9)"></span>
     </div>
   </div>
 
 </div>
 
 <footer>
-  <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <span class="fc">© 2026 Alejandro Rodríguez Calabuig</span>
+    <span class="fc" style="font-size:11px;color:var(--t4)" data-es="Construido con Astro · Deploy en Vercel" data-en="Built with Astro · Deployed on Vercel">Construido con Astro · Deploy en Vercel</span>
+  </div>
 </footer>
 
 <script>
-  const ES = 'es'; const EN = 'en';
-  let current = localStorage.getItem('lang') || ES;
-  const btnEs = document.getElementById('btn-es');
-  const btnEn = document.getElementById('btn-en');
-  function applyLang(lang) {
-    current = lang;
-    localStorage.setItem('lang', lang);
-    btnEs.className = lang === ES ? 'i18n-active' : 'i18n-inactive';
-    btnEn.className = lang === EN ? 'i18n-active' : 'i18n-inactive';
-    document.getElementById('html-root').lang = lang === ES ? 'es' : 'en';
-    document.querySelectorAll('[data-es]').forEach(el => {
-      const text = el.getAttribute(`data-${lang}`);
-      if (text) el.innerHTML = text;
-    });
+  function makeCarousel(prevId, nextId, trackId, dotsId, slideFn) {
+    let current = 0;
+    const slides = document.querySelectorAll(`#${trackId} .carousel-slide`);
+    const dots = document.querySelectorAll(`#${dotsId} .dot`);
+    window[slideFn] = function(n) {
+      slides[current].classList.remove('active'); dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active'); dots[current].classList.add('active');
+    };
+    document.getElementById(prevId).addEventListener('click', () => window[slideFn](current - 1));
+    document.getElementById(nextId).addEventListener('click', () => window[slideFn](current + 1));
   }
-  btnEs.addEventListener('click', () => applyLang(ES));
-  btnEn.addEventListener('click', () => applyLang(EN));
+  makeCarousel('web-prev','web-next','web-track','web-dots','goToWebSlide');
+  makeCarousel('admin-prev','admin-next','admin-track','admin-dots','goToAdminSlide');
+  makeCarousel('app-prev','app-next','app-track','app-dots','goToAppSlide');
+
+  const ES='es',EN='en';
+  let current=localStorage.getItem('lang')||ES;
+  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
+  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
+  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
   applyLang(current);
 </script>
 </body>

@@ -13,6 +13,11 @@ import '../styles/global.css';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    .feat-tag-gold { color: #f59e0b; }
+    .feat-tag-silver { color: #94a3b8; }
+    .feat-tag-bronze { color: #b45309; }
+  </style>
 </head>
 <body>
 
@@ -40,7 +45,7 @@ import '../styles/global.css';
   <div class="hero-inner hero-centered">
     <div class="hero-avail" style="margin-top:8px">
       <span class="avail-dot"></span>
-      <span data-es="Disponible para oportunidades Backend Junior y Cloud" data-en="Available for Backend Junior opportunities">Disponible para oportunidades Backend Junior</span>
+      <span data-es="Disponible para oportunidades Backend Junior y Cloud" data-en="Available for Backend Junior and Cloud opportunities">Disponible para oportunidades Backend Junior y Cloud</span>
     </div>
     <h1 class="h1">Backend<br><em>Developer</em></h1>
     <div class="hero-stack-tags">
@@ -100,7 +105,7 @@ import '../styles/global.css';
           <div class="tech-block-title">Backend</div>
           <div class="tech-subrow">
             <span class="tech-sublabel" data-es="Frameworks" data-en="Frameworks">Frameworks</span>
-            <div class="tech-tags"><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">FastAPI</span><span class="about-tech-tag">Django</span></div>
+            <div class="tech-tags"><span class="about-tech-tag">Spring Boot</span><span class="about-tech-tag">FastAPI</span></div>
           </div>
           <div class="tech-subrow">
             <span class="tech-sublabel" data-es="Lenguajes" data-en="Languages">Lenguajes</span>
@@ -119,6 +124,10 @@ import '../styles/global.css';
       <div class="tech-col">
         <div class="tech-block">
           <div class="tech-block-title" data-es="También he trabajado con" data-en="Also worked with">También he trabajado con</div>
+          <div class="tech-subrow">
+            <span class="tech-sublabel">Backend</span>
+            <div class="tech-tags"><span class="about-tech-tag">Django</span></div>
+          </div>
           <div class="tech-subrow">
             <span class="tech-sublabel">Frontend</span>
             <div class="tech-tags"><span class="about-tech-tag">React</span><span class="about-tech-tag">Next.js</span><span class="about-tech-tag">Astro</span></div>
@@ -149,9 +158,10 @@ import '../styles/global.css';
   <div class="sec-inner">
     <div class="sec-h"><div class="sec-h-bar"></div><span class="sec-h-text" data-es="Proyectos" data-en="Projects">Proyectos</span><div class="sec-h-line"></div></div>
     <div class="grid">
-      <a href="/proyectos/apr-xativa" class="card card-feat">
-        <span class="feat-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-        <div class="preview"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+
+      <!-- ★ GOLD — APR Xàtiva -->
+      <a href="/proyectos/apr-xativa" class="card">
+        <span class="feat-tag feat-tag-gold"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
         <div>
           <div class="ct">APR Xàtiva</div>
           <div class="cd" data-es="Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Propuesta seleccionada como base técnica para la futura implantación municipal." data-en="Vehicle access control system for Xàtiva's historic quarter. Grade 10/10. Selected as the technical foundation for the future municipal rollout.">Sistema de control de acceso vehicular para el casco histórico de Xàtiva. Nota 10/10. Propuesta seleccionada como base técnica para la futura implantación municipal.</div>
@@ -159,9 +169,10 @@ import '../styles/global.css';
         </div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-      <a href="/proyectos/voice2task" class="card card-feat">
-        <span class="feat-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-        <div class="preview"><i class="ti ti-microphone" aria-hidden="true"></i></div>
+
+      <!-- ★ SILVER — Voice2Task -->
+      <a href="/proyectos/voice2task" class="card">
+        <span class="feat-tag feat-tag-silver"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
         <div>
           <div class="ct">Voice2Task</div>
           <div class="cd" data-es="App Android que convierte notas de voz en tareas estructuradas con IA. Integraciones con Trello y Notion. Backend FastAPI + app Kotlin + landing web." data-en="Android app that converts voice notes into structured tasks using AI. Integrations with Trello and Notion. FastAPI backend + Kotlin app + web landing.">App Android que convierte notas de voz en tareas estructuradas con IA. Integraciones con Trello y Notion. Backend FastAPI + app Kotlin + landing web.</div>
@@ -169,42 +180,53 @@ import '../styles/global.css';
         </div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
+      <!-- ★ BRONZE — CVMatch AI -->
       <a href="/proyectos/cvmatch-ai" class="card">
-        <div class="ct">CVMatch AI</div>
-        <div class="cd" data-es="Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional." data-en="Job search tool that aggregates listings from multiple sources, analyses compatibility with your CV and generates a tailored CV as a professional PDF.">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional.</div>
-        <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">Celery</span><span class="tag t-tech">Groq</span></div>
+        <span class="feat-tag feat-tag-bronze"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <div>
+          <div class="ct">CVMatch AI</div>
+          <div class="cd" data-es="Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional." data-en="Job search tool that aggregates listings from multiple sources, analyses compatibility with your CV and generates a tailored CV as a professional PDF.">Herramienta de búsqueda de empleo que agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional.</div>
+          <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Django</span><span class="tag t-tech">Celery</span><span class="tag t-tech">Groq</span></div>
+        </div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
       <a href="/proyectos/krausen" class="card">
         <div class="ct">Krausen</div>
         <div class="cd" data-es="Plataforma de recetas de cerveza artesanal con forks, árbol de versiones por CTE recursiva, fermentación y multiidioma ES/EN/DE." data-en="Craft beer recipe platform with forks, recursive CTE version tree, fermentation tracking and multilanguage ES/EN/DE.">Plataforma de recetas de cerveza artesanal con forks, árbol de versiones por CTE recursiva, fermentación y multiidioma ES/EN/DE.</div>
         <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">FastAPI</span><span class="tag t-tech">Next.js</span><span class="tag t-tech">PostgreSQL</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
       <a href="/proyectos/gestpro" class="card">
         <div class="ct">GestPro</div>
         <div class="cd" data-es="App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales, finanzas, calendario y PDF por proyecto. Offline first." data-en="Android app for freelancers and small businesses. Project management, tasks, materials, finances, calendar and PDF per project. Offline first.">App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales, finanzas, calendario y PDF por proyecto. Offline first.</div>
         <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Flutter</span><span class="tag t-tech">Dart</span><span class="tag t-tech">Hive</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
-      <a href="/proyectos/calidad-triple-a" class="card">
-        <div class="ct">Calidad Triple A</div>
-        <div class="cd" data-es="E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos." data-en="Live e-commerce for a real client. CMS-driven catalogue, checkout, automatic emails with PDF and QR attachments.">E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos.</div>
-        <div class="tags"><span class="tag t-fr" data-es="Freelance" data-en="Freelance">Freelance</span><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span></div>
-        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
-      </a>
-      <a href="/proyectos/vulldecor" class="card">
-        <div class="ct">Vulldecor</div>
-        <div class="cd" data-es="Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil." data-en="Corporate website and Android app for a renovation company. Two products for the same client: online presence and internal management from mobile.">Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
-        <div class="tags"><span class="tag t-fr" data-es="Freelance" data-en="Freelance">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Flutter</span></div>
-        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
-      </a>
+
       <a href="/proyectos/aroca-dev" class="card">
         <div class="ct">aroca.dev</div>
         <div class="cd" data-es="El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro." data-en="The portfolio you're looking at. Designed and built from scratch with Astro and plain CSS.">El portfolio que estás viendo. Diseñado e implementado desde cero con Astro y CSS puro.</div>
         <div class="tags"><span class="tag t-pe" data-es="Personal" data-en="Personal">Personal</span><span class="tag t-tech">Astro</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Vercel</span></div>
         <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
       </a>
+
+      <a href="/proyectos/calidad-triple-a" class="card">
+        <div class="ct">Calidad Triple A</div>
+        <div class="cd" data-es="E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos." data-en="Live e-commerce for a real client. CMS-driven catalogue, checkout, automatic emails with PDF and QR attachments.">E-commerce en producción para cliente real. Catálogo con CMS, checkout, emails automáticos con PDF y QR adjuntos.</div>
+        <div class="tags"><span class="tag t-fr" data-es="Freelance" data-en="Freelance">Freelance</span><span class="tag t-tech">Next.js 15</span><span class="tag t-tech">Sanity</span><span class="tag t-tech">Vercel</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+
+      <a href="/proyectos/vulldecor" class="card">
+        <div class="ct">Vulldecor</div>
+        <div class="cd" data-es="Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil." data-en="Corporate website and Android app for a renovation company. Two products for the same client: online presence and internal management from mobile.">Web corporativa y app Android para empresa de reformas. Dos productos para el mismo cliente: presencia online y gestión interna desde el móvil.</div>
+        <div class="tags"><span class="tag t-fr" data-es="Freelance" data-en="Freelance">Freelance</span><span class="tag t-tech">HTML</span><span class="tag t-tech">CSS</span><span class="tag t-tech">Flutter</span></div>
+        <i class="ti ti-arrow-right card-arrow" aria-hidden="true"></i>
+      </a>
+
     </div>
   </div>
 </section>
@@ -266,8 +288,9 @@ import '../styles/global.css';
     <p class="about-p" style="max-width:760px" data-es="Hasta ahora mi trabajo se ha centrado en desarrollar aplicaciones completas: backend, web y móvil. El siguiente paso es construir la infraestructura necesaria para desplegar, operar y monitorizar mis aplicaciones, diseñando y gestionando mi propia plataforma." data-en="So far my work has focused on building complete backend, web and mobile applications. The next step is to build the infrastructure required to deploy, operate and monitor them by designing and managing my own platform.">Hasta ahora mi trabajo se ha centrado en desarrollar aplicaciones completas: backend, web y móvil. El siguiente paso es construir la infraestructura necesaria para desplegar, operar y monitorizar mis aplicaciones, diseñando y gestionando mi propia plataforma.</p>
     <div style="margin-top:40px">
       <div style="font-size:11px;color:var(--ac);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px" data-es="Próximo proyecto" data-en="Next project">Próximo proyecto</div>
-      <div style="font-size:1.05rem;font-weight:600;color:var(--t2);margin-bottom:14px;font-family:'Space Grotesk',sans-serif">Sentinel</div>
-      <p class="about-p" style="max-width:760px" data-es="Sentinel será una plataforma diseñada para alojar todas las aplicaciones de este portfolio. En lugar de desplegar cada proyecto en servicios de terceros, construiré una infraestructura propia capaz de gestionar su ciclo de vida completo: despliegue automatizado, reverse proxy, HTTPS, CI/CD, gestión de secretos, observabilidad, logs, métricas y alertas. Con evolución hacia Kubernetes e Infrastructure as Code." data-en="Sentinel will be a platform designed to host all the applications in this portfolio. Instead of deploying each project on third-party services, I'll build my own infrastructure capable of managing their complete lifecycle: automated deployment, reverse proxy, HTTPS, CI/CD, secrets management, observability, logs, metrics and alerts. Evolving toward Kubernetes and Infrastructure as Code.">Sentinel será una plataforma diseñada para alojar todas las aplicaciones de este portfolio. En lugar de desplegar cada proyecto en servicios de terceros, construiré una infraestructura propia capaz de gestionar su ciclo de vida completo: despliegue automatizado, reverse proxy, HTTPS, CI/CD, gestión de secretos, observabilidad, logs, métricas y alertas. Con evolución hacia Kubernetes e Infrastructure as Code.</p>
+      <div style="font-size:1.05rem;font-weight:600;color:var(--t2);margin-bottom:14px;font-family:'Space Grotesk',sans-serif">Bastion</div>
+      <p class="about-p" style="max-width:760px" data-es="Bastion será la plataforma donde viven todas las aplicaciones de este portfolio. En lugar de depender de terceros, construiré mi propia infraestructura: despliegue automatizado, reverse proxy, HTTPS, CI/CD y gestión de secretos." data-en="Bastion will be the platform where all the applications in this portfolio live. Instead of depending on third-party services, I'll build my own infrastructure: automated deployment, reverse proxy, HTTPS, CI/CD and secrets management.">Bastion será la plataforma donde viven todas las aplicaciones de este portfolio. En lugar de depender de terceros, construiré mi propia infraestructura: despliegue automatizado, reverse proxy, HTTPS, CI/CD y gestión de secretos.</p>
+      <p class="about-p" style="max-width:760px;margin-top:12px" data-es="Sobre esa base, <b>Sentinel</b> añade la capa de observabilidad: métricas, logs, dashboards y alertas para operar todo desde un único punto de control. El objetivo es demostrar el ciclo completo: no solo construir aplicaciones, sino desplegarlas, monitorizarlas y operarlas." data-en="On top of that, <b>Sentinel</b> adds the observability layer: metrics, logs, dashboards and alerts to operate everything from a single control point. The goal is to demonstrate the full cycle: not just building applications, but deploying, monitoring and operating them.">Sobre esa base, <b>Sentinel</b> añade la capa de observabilidad: métricas, logs, dashboards y alertas para operar todo desde un único punto de control. El objetivo es demostrar el ciclo completo: no solo construir aplicaciones, sino desplegarlas, monitorizarlas y operarlas.</p>
       <div class="etags" style="margin-top:16px">
         <span class="tag t-tech">Docker</span>
         <span class="tag t-tech">Traefik</span>
