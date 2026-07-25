@@ -6,7 +6,15 @@ import '../../styles/global.css';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vulldecor · ArocaDev</title>
+  <title>Vulldecor · Web corporativa y app Android freelance | ArocaDev</title>
+  <meta name="description" content="Web corporativa y app Android para empresa local de reformas. Dos productos para el mismo cliente: presencia online con SEO local y gestión interna desde el móvil. HTML, CSS, Flutter, Hive." />
+  <meta property="og:title" content="Vulldecor · ArocaDev" />
+  <meta property="og:description" content="Web corporativa y app Android para empresa local de reformas. Presencia online y gestión interna desde el móvil." />
+  <meta property="og:url" content="https://aroca.dev/proyectos/vulldecor" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://aroca.dev/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://aroca.dev/proyectos/vulldecor" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +42,7 @@ import '../../styles/global.css';
     .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
     .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
     .carousel-btn:hover{background:rgba(129,140,248,0.3)}
-    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:24px;margin-top:8px;text-align:center}
@@ -45,11 +53,24 @@ import '../../styles/global.css';
     .video-container video{width:100%;display:block}
     .video-container.mobile-video{width:300px;margin:0 auto}
     .video-container.mobile-video video{max-height:500px;object-fit:contain}
+
+    @media (max-width: 768px) {
+      .diagram-grid{grid-template-columns:1fr}
+      .diagram-item object{height:240px}
+      .carousel-track.mobile-track{width:100%}
+      .video-container.mobile-video{width:100%}
+      .carousel-btn{width:30px;height:30px;font-size:15px}
+      .section-divider{margin:48px 0}
+      .proj-section{margin-bottom:48px}
+    }
+    @media (max-width: 480px) {
+      .diagram-item object{height:180px}
+    }
   </style>
 </head>
 <body>
 
-<nav>
+<nav id="main-nav">
   <div class="nav-inner">
     <a href="/" class="logo">aroca<span>.dev</span></a>
     <div class="nav-r">
@@ -60,14 +81,26 @@ import '../../styles/global.css';
         <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
         <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
       </div>
-      <div class="i18n">
-        <span class="i18n-btn" id="btn-es">ES</span>
+      <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
+      <div class="i18n-mobile">
+        <span class="i18n-btn" id="btn-es-m">ES</span>
         <span class="i18n-sep">|</span>
-        <span class="i18n-btn" id="btn-en">EN</span>
+        <span class="i18n-btn" id="btn-en-m">EN</span>
       </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile" role="navigation">
+  <a href="/#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  <a href="/#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="/#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
+  <a href="/#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="/#que-viene-ahora" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</a>
+</div>
 
 <div class="lightbox" id="lightbox">
   <span class="lightbox-close" id="lightbox-close">×</span>
@@ -156,23 +189,11 @@ import '../../styles/global.css';
     <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
     <div class="carousel">
       <button class="carousel-btn" id="web-prev"><i class="ti ti-chevron-left"></i></button>
-      <div class="carousel-track">
-        <div class="carousel-slide active">
-          <img src="/proyectos/vulldecor/web-hero.png" alt="Hero" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Hero — página principal" data-en="Hero — main page">Hero — página principal</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/vulldecor/web-servicios.png" alt="Servicios" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Servicios" data-en="Services">Servicios</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/vulldecor/web-formulario.png" alt="Formulario" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Formulario de presupuesto" data-en="Quote form">Formulario de presupuesto</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/vulldecor/web-movil.png" alt="Móvil" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Vista móvil — diseño responsive" data-en="Mobile view — responsive design">Vista móvil — diseño responsive</span>
-        </div>
+      <div class="carousel-track" id="web-track">
+        <div class="carousel-slide active"><img src="/proyectos/vulldecor/web-hero.png" alt="Hero" onclick="window.open(this.src,'_blank')" /><span data-es="Hero — página principal" data-en="Hero — main page">Hero — página principal</span></div>
+        <div class="carousel-slide"><img src="/proyectos/vulldecor/web-servicios.png" alt="Servicios" onclick="window.open(this.src,'_blank')" /><span data-es="Servicios" data-en="Services">Servicios</span></div>
+        <div class="carousel-slide"><img src="/proyectos/vulldecor/web-formulario.png" alt="Formulario" onclick="window.open(this.src,'_blank')" /><span data-es="Formulario de presupuesto" data-en="Quote form">Formulario de presupuesto</span></div>
+        <div class="carousel-slide"><img src="/proyectos/vulldecor/web-movil.png" alt="Móvil" onclick="window.open(this.src,'_blank')" /><span data-es="Vista móvil — diseño responsive" data-en="Mobile view — responsive design">Vista móvil — diseño responsive</span></div>
       </div>
       <button class="carousel-btn" id="web-next"><i class="ti ti-chevron-right"></i></button>
     </div>
@@ -264,35 +285,16 @@ import '../../styles/global.css';
 
   <div class="proj-section" style="margin-top:48px">
     <div class="proj-section-title" data-es="Capturas de la app" data-en="Screenshots — Android app">Capturas de la app</div>
-    <div style="margin-top:24px">
     <div class="carousel-hint" data-es="Usa las flechas para navegar. Haz clic en la imagen para verla completa." data-en="Use the arrows to browse. Click the image to view full size.">Usa las flechas para navegar. Haz clic en la imagen para verla completa.</div>
     <div class="carousel mobile-carousel">
       <button class="carousel-btn" id="app-prev"><i class="ti ti-chevron-left"></i></button>
       <div class="carousel-track mobile-track" id="app-track">
-        <div class="carousel-slide mobile active">
-          <img src="/proyectos/vulldecor/app-obras.png" alt="Lista de obras" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Lista de obras" data-en="Projects list">Lista de obras</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/vulldecor/app-detalle-obra.png" alt="Detalle obra" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Detalle de obra con tareas" data-en="Project detail with tasks">Detalle de obra con tareas</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/vulldecor/app-pagos.png" alt="Pagos" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Lista de pagos" data-en="Payments list">Lista de pagos</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/vulldecor/app-detalle-pago.png" alt="Detalle pago" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Detalle de pagos" data-en="Payment detail">Detalle de pagos</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/vulldecor/app-calendario.png" alt="Calendario" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Calendario mensual" data-en="Monthly calendar">Calendario mensual</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/vulldecor/app-calendario-mensual.png" alt="Calendario mensual" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Vista mensual con tareas" data-en="Monthly view with tasks">Vista mensual con tareas</span>
-        </div>
+        <div class="carousel-slide mobile active"><img src="/proyectos/vulldecor/app-obras.png" alt="Lista de obras" onclick="window.open(this.src,'_blank')" /><span data-es="Lista de obras" data-en="Projects list">Lista de obras</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/vulldecor/app-detalle-obra.png" alt="Detalle obra" onclick="window.open(this.src,'_blank')" /><span data-es="Detalle de obra con tareas" data-en="Project detail with tasks">Detalle de obra con tareas</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/vulldecor/app-pagos.png" alt="Pagos" onclick="window.open(this.src,'_blank')" /><span data-es="Lista de pagos" data-en="Payments list">Lista de pagos</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/vulldecor/app-detalle-pago.png" alt="Detalle pago" onclick="window.open(this.src,'_blank')" /><span data-es="Detalle de pagos" data-en="Payment detail">Detalle de pagos</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/vulldecor/app-calendario.png" alt="Calendario" onclick="window.open(this.src,'_blank')" /><span data-es="Calendario mensual" data-en="Monthly calendar">Calendario mensual</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/vulldecor/app-calendario-mensual.png" alt="Calendario mensual" onclick="window.open(this.src,'_blank')" /><span data-es="Vista mensual con tareas" data-en="Monthly view with tasks">Vista mensual con tareas</span></div>
       </div>
       <button class="carousel-btn" id="app-next"><i class="ti ti-chevron-right"></i></button>
     </div>
@@ -303,7 +305,6 @@ import '../../styles/global.css';
       <span class="dot" onclick="goToAppSlide(3)"></span>
       <span class="dot" onclick="goToAppSlide(4)"></span>
       <span class="dot" onclick="goToAppSlide(5)"></span>
-    </div>
     </div>
   </div>
 
@@ -322,7 +323,7 @@ import '../../styles/global.css';
   document.getElementById('lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); lb.classList.remove('open'); });
 
   let webSlide = 0;
-  const webSlides = document.querySelectorAll('#web-prev')[0].closest('.proj-section').querySelectorAll('.carousel-slide');
+  const webSlides = document.querySelectorAll('#web-track .carousel-slide');
   const webDots = document.querySelectorAll('#web-dots .dot');
   function goToWebSlide(n) {
     webSlides[webSlide].classList.remove('active'); webDots[webSlide].classList.remove('active');
@@ -343,11 +344,33 @@ import '../../styles/global.css';
   document.getElementById('app-prev').addEventListener('click', () => goToAppSlide(appSlide - 1));
   document.getElementById('app-next').addEventListener('click', () => goToAppSlide(appSlide + 1));
 
-  const ES='es',EN='en';
-  let current=localStorage.getItem('lang')||ES;
-  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
-  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
+  const ES='es', EN='en';
+  let current = localStorage.getItem('lang') || ES;
+  const btnEs  = document.getElementById('btn-es');
+  const btnEn  = document.getElementById('btn-en');
+  const btnEsM = document.getElementById('btn-es-m');
+  const btnEnM = document.getElementById('btn-en-m');
+  function applyLang(lang) {
+    current = lang; localStorage.setItem('lang', lang);
+    [btnEs, btnEsM].forEach(b => { if(b) b.className = lang===ES ? 'i18n-active' : 'i18n-inactive'; });
+    [btnEn, btnEnM].forEach(b => { if(b) b.className = lang===EN ? 'i18n-active' : 'i18n-inactive'; });
+    document.getElementById('html-root').lang = lang===ES ? 'es' : 'en';
+    document.querySelectorAll('[data-es]').forEach(el => { const t = el.getAttribute('data-'+lang); if(t) el.innerHTML = t; });
+  }
+  btnEs.addEventListener('click', () => applyLang(ES));
+  btnEn.addEventListener('click', () => applyLang(EN));
+  btnEsM.addEventListener('click', () => applyLang(ES));
+  btnEnM.addEventListener('click', () => applyLang(EN));
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  const mainNav   = document.getElementById('main-nav');
+  function openMenu() { navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px'; navMobile.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); hamburger.querySelector('i').className='ti ti-x'; }
+  function closeMenu() { navMobile.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); hamburger.querySelector('i').className='ti ti-menu-2'; }
+  hamburger.addEventListener('click', () => navMobile.classList.contains('open') ? closeMenu() : openMenu());
+  window.addEventListener('scroll', () => { if(navMobile.classList.contains('open')) navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px'; }, { passive: true });
+  navMobile.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
   applyLang(current);
 </script>
 </body>

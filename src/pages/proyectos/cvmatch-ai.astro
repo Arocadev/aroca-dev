@@ -4,11 +4,21 @@ import '../../styles/global.css';
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CVMatch AI · ArocaDev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVMatch AI · Búsqueda de empleo con IA | ArocaDev</title>
+  <meta name="description" content="Herramienta de búsqueda de empleo que agrega ofertas de Adzuna, Jooble y Arbeitnow, analiza compatibilidad con tu CV y genera un CV adaptado en PDF profesional. Django 6, PostgreSQL, Celery, Groq AI." />
+  <meta property="og:title" content="CVMatch AI · ArocaDev" />
+  <meta property="og:description" content="Herramienta de búsqueda de empleo con IA. Agrega ofertas de múltiples fuentes, analiza compatibilidad con tu CV y genera PDFs profesionales." />
+  <meta property="og:url" content="https://aroca.dev/proyectos/cvmatch-ai" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://aroca.dev/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://aroca.dev/proyectos/cvmatch-ai" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <style>
@@ -29,28 +39,58 @@ import '../../styles/global.css';
     .carousel-slide span{font-size:11px;color:var(--t4);padding:10px 14px;text-align:center;display:block}
     .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
     .carousel-btn:hover{background:rgba(129,140,248,0.3)}
-    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
     .video-container{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);background:var(--bg2)}
     .video-container video{width:100%;display:block}
+
+    @media (max-width: 768px) {
+      .diagram-grid{grid-template-columns:1fr}
+      .diagram-item object{height:240px}
+      .carousel-btn{width:30px;height:30px;font-size:15px}
+      .section-divider{margin:48px 0}
+      .proj-section{margin-bottom:48px}
+    }
+    @media (max-width: 480px) {
+      .diagram-item object{height:180px}
+    }
   </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/" class="logo">aroca<span>.dev</span></a>
-  <div class="nav-r">
-    <div class="nav-links">
-      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
-      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
-      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
-      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
-      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+        <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+        <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+        <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+        <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+      </div>
+      <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
+      <div class="i18n-mobile">
+        <span class="i18n-btn" id="btn-es-m">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-btn" id="btn-en-m">EN</span>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
     </div>
-    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</div></nav>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="navigation">
+  <a href="/#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  <a href="/#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="/#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
+  <a href="/#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="/#que-viene-ahora" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</a>
+</div>
 
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto personal · En desarrollo" data-en="Personal project · In development">Proyecto personal · En desarrollo</div>
@@ -189,26 +229,11 @@ import '../../styles/global.css';
     <div class="carousel" style="max-width:572px;margin:0 auto">
       <button class="carousel-btn" id="pdf-prev"><i class="ti ti-chevron-left"></i></button>
       <div class="carousel-track" id="pdf-track">
-        <div class="carousel-slide active">
-          <img src="/proyectos/cvmatch-ai/cv-classic.png" alt="Plantilla Classic" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Classic — blanco y negro, optimizada para ATS" data-en="Classic — black and white, ATS-optimised">Classic — blanco y negro, optimizada para ATS</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/cv-executive.png" alt="Plantilla Executive" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Executive — azul marino con detalles dorados" data-en="Executive — navy blue with gold details">Executive — azul marino con detalles dorados</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/cv-modern.png" alt="Plantilla Modern" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Modern — sidebar oscuro con acento azul eléctrico" data-en="Modern — dark sidebar with electric blue accent">Modern — sidebar oscuro con acento azul eléctrico</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/cv-editorial.png" alt="Plantilla Editorial" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Editorial — tipografía serif, minimalista" data-en="Editorial — serif typography, minimalist">Editorial — tipografía serif, minimalista</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/cv-onepage.png" alt="Plantilla One Page" onclick="window.open(this.src,'_blank')" />
-          <span data-es="One Page — dos columnas compactas, todo en una página" data-en="One Page — two compact columns, everything on one page">One Page — dos columnas compactas, todo en una página</span>
-        </div>
+        <div class="carousel-slide active"><img src="/proyectos/cvmatch-ai/cv-classic.png" alt="Plantilla Classic" onclick="window.open(this.src,'_blank')" /><span data-es="Classic — blanco y negro, optimizada para ATS" data-en="Classic — black and white, ATS-optimised">Classic — blanco y negro, optimizada para ATS</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/cv-executive.png" alt="Plantilla Executive" onclick="window.open(this.src,'_blank')" /><span data-es="Executive — azul marino con detalles dorados" data-en="Executive — navy blue with gold details">Executive — azul marino con detalles dorados</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/cv-modern.png" alt="Plantilla Modern" onclick="window.open(this.src,'_blank')" /><span data-es="Modern — sidebar oscuro con acento azul eléctrico" data-en="Modern — dark sidebar with electric blue accent">Modern — sidebar oscuro con acento azul eléctrico</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/cv-editorial.png" alt="Plantilla Editorial" onclick="window.open(this.src,'_blank')" /><span data-es="Editorial — tipografía serif, minimalista" data-en="Editorial — serif typography, minimalist">Editorial — tipografía serif, minimalista</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/cv-onepage.png" alt="Plantilla One Page" onclick="window.open(this.src,'_blank')" /><span data-es="One Page — dos columnas compactas, todo en una página" data-en="One Page — two compact columns, everything on one page">One Page — dos columnas compactas, todo en una página</span></div>
       </div>
       <button class="carousel-btn" id="pdf-next"><i class="ti ti-chevron-right"></i></button>
     </div>
@@ -227,50 +252,17 @@ import '../../styles/global.css';
     <div class="carousel">
       <button class="carousel-btn" id="sc-prev"><i class="ti ti-chevron-left"></i></button>
       <div class="carousel-track" id="sc-track">
-        <div class="carousel-slide active">
-          <img src="/proyectos/cvmatch-ai/login.png" alt="Login" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Login" data-en="Login">Login</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/registro.png" alt="Registro" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Registro" data-en="Register">Registro</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/main.png" alt="Pantalla principal" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Pantalla principal" data-en="Main screen">Pantalla principal</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/buscador.png" alt="Buscador" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Buscador de ofertas" data-en="Job search">Buscador de ofertas</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/ofertas.png" alt="Lista de ofertas" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Lista de ofertas" data-en="Job listings">Lista de ofertas</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/ofertas-analizar.png" alt="Selección de CV para análisis" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Selección de CV para análisis" data-en="CV selection for analysis">Selección de CV para análisis</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/ofertas-analisis.png" alt="Resultado del análisis" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Resultado del análisis IA" data-en="AI analysis result">Resultado del análisis IA</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/ofertas-ia.png" alt="Detalle de oferta" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Detalle de oferta con resumen IA" data-en="Listing detail with AI summary">Detalle de oferta con resumen IA</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/perfil.png" alt="Perfil" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Perfil — CVs guardados y token Groq" data-en="Profile — saved CVs and Groq token">Perfil — CVs guardados y token Groq</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/generar-cv.png" alt="Generar CV adaptado" onclick="window.open(this.src,'_blank')" />
-          <span data-es="CV adaptado a la oferta" data-en="CV tailored to the listing">CV adaptado a la oferta</span>
-        </div>
-        <div class="carousel-slide">
-          <img src="/proyectos/cvmatch-ai/crear-cv.png" alt="Crear CV" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Crear CV — modo IA y modo externo" data-en="Create CV — AI mode and external mode">Crear CV — modo IA y modo externo</span>
-        </div>
+        <div class="carousel-slide active"><img src="/proyectos/cvmatch-ai/login.png" alt="Login" onclick="window.open(this.src,'_blank')" /><span data-es="Login" data-en="Login">Login</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/registro.png" alt="Registro" onclick="window.open(this.src,'_blank')" /><span data-es="Registro" data-en="Register">Registro</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/main.png" alt="Pantalla principal" onclick="window.open(this.src,'_blank')" /><span data-es="Pantalla principal" data-en="Main screen">Pantalla principal</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/buscador.png" alt="Buscador" onclick="window.open(this.src,'_blank')" /><span data-es="Buscador de ofertas" data-en="Job search">Buscador de ofertas</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/ofertas.png" alt="Lista de ofertas" onclick="window.open(this.src,'_blank')" /><span data-es="Lista de ofertas" data-en="Job listings">Lista de ofertas</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/ofertas-analizar.png" alt="Selección de CV para análisis" onclick="window.open(this.src,'_blank')" /><span data-es="Selección de CV para análisis" data-en="CV selection for analysis">Selección de CV para análisis</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/ofertas-analisis.png" alt="Resultado del análisis" onclick="window.open(this.src,'_blank')" /><span data-es="Resultado del análisis IA" data-en="AI analysis result">Resultado del análisis IA</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/ofertas-ia.png" alt="Detalle de oferta" onclick="window.open(this.src,'_blank')" /><span data-es="Detalle de oferta con resumen IA" data-en="Listing detail with AI summary">Detalle de oferta con resumen IA</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/perfil.png" alt="Perfil" onclick="window.open(this.src,'_blank')" /><span data-es="Perfil — CVs guardados y token Groq" data-en="Profile — saved CVs and Groq token">Perfil — CVs guardados y token Groq</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/generar-cv.png" alt="Generar CV adaptado" onclick="window.open(this.src,'_blank')" /><span data-es="CV adaptado a la oferta" data-en="CV tailored to the listing">CV adaptado a la oferta</span></div>
+        <div class="carousel-slide"><img src="/proyectos/cvmatch-ai/crear-cv.png" alt="Crear CV" onclick="window.open(this.src,'_blank')" /><span data-es="Crear CV — modo IA y modo externo" data-en="Create CV — AI mode and external mode">Crear CV — modo IA y modo externo</span></div>
       </div>
       <button class="carousel-btn" id="sc-next"><i class="ti ti-chevron-right"></i></button>
     </div>
@@ -299,7 +291,6 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  // CAROUSEL PDF
   let pdfSlide = 0;
   const pdfSlides = document.querySelectorAll('#pdf-track .carousel-slide');
   const pdfDots = document.querySelectorAll('#pdf-dots .dot');
@@ -311,7 +302,6 @@ import '../../styles/global.css';
   document.getElementById('pdf-prev').addEventListener('click', () => goToPdfSlide(pdfSlide - 1));
   document.getElementById('pdf-next').addEventListener('click', () => goToPdfSlide(pdfSlide + 1));
 
-  // CAROUSEL CAPTURAS
   let scSlide = 0;
   const scSlides = document.querySelectorAll('#sc-track .carousel-slide');
   const scDots = document.querySelectorAll('#sc-dots .dot');
@@ -323,13 +313,34 @@ import '../../styles/global.css';
   document.getElementById('sc-prev').addEventListener('click', () => goToScSlide(scSlide - 1));
   document.getElementById('sc-next').addEventListener('click', () => goToScSlide(scSlide + 1));
 
-  // I18N
-  const ES='es',EN='en';
-  let current=localStorage.getItem('lang')||ES;
-  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
-  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));
-  btnEn.addEventListener('click',()=>applyLang(EN));
+  const ES='es', EN='en';
+  let current = localStorage.getItem('lang') || ES;
+  const btnEs  = document.getElementById('btn-es');
+  const btnEn  = document.getElementById('btn-en');
+  const btnEsM = document.getElementById('btn-es-m');
+  const btnEnM = document.getElementById('btn-en-m');
+
+  function applyLang(lang) {
+    current = lang; localStorage.setItem('lang', lang);
+    [btnEs, btnEsM].forEach(b => { if(b) b.className = lang===ES ? 'i18n-active' : 'i18n-inactive'; });
+    [btnEn, btnEnM].forEach(b => { if(b) b.className = lang===EN ? 'i18n-active' : 'i18n-inactive'; });
+    document.getElementById('html-root').lang = lang===ES ? 'es' : 'en';
+    document.querySelectorAll('[data-es]').forEach(el => { const t = el.getAttribute('data-'+lang); if(t) el.innerHTML = t; });
+  }
+  btnEs.addEventListener('click', () => applyLang(ES));
+  btnEn.addEventListener('click', () => applyLang(EN));
+  btnEsM.addEventListener('click', () => applyLang(ES));
+  btnEnM.addEventListener('click', () => applyLang(EN));
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  const mainNav   = document.getElementById('main-nav');
+  function openMenu() { navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px'; navMobile.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); hamburger.querySelector('i').className='ti ti-x'; }
+  function closeMenu() { navMobile.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); hamburger.querySelector('i').className='ti ti-menu-2'; }
+  hamburger.addEventListener('click', () => navMobile.classList.contains('open') ? closeMenu() : openMenu());
+  window.addEventListener('scroll', () => { if(navMobile.classList.contains('open')) navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px'; }, { passive: true });
+  navMobile.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
   applyLang(current);
 </script>
 </body>

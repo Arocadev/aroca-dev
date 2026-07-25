@@ -4,11 +4,21 @@ import '../../styles/global.css';
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GestPro · ArocaDev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GestPro · Gestión de proyectos Android | ArocaDev</title>
+  <meta name="description" content="App Android para autónomos y pequeñas empresas. Gestiona proyectos, tareas, materiales, pagos, cobros y finanzas — offline first. Flutter, Dart y Hive." />
+  <meta property="og:title" content="GestPro · ArocaDev" />
+  <meta property="og:description" content="App Android para autónomos y pequeñas empresas. Gestión de proyectos, tareas, materiales y finanzas offline first." />
+  <meta property="og:url" content="https://aroca.dev/proyectos/gestpro" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://aroca.dev/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://aroca.dev/proyectos/gestpro" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <style>
@@ -23,7 +33,7 @@ import '../../styles/global.css';
     .carousel-slide span{font-size:11px;color:#888;padding:10px 14px;text-align:center;display:block}
     .carousel-btn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.4);color:var(--ac);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s}
     .carousel-btn:hover{background:rgba(129,140,248,0.3)}
-    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+    .carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
     .dot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,0.15);cursor:pointer;transition:background 0.2s}
     .dot.active{background:var(--ac)}
     .carousel-hint{font-size:11px;color:var(--t4);margin-bottom:16px;text-align:center}
@@ -39,23 +49,53 @@ import '../../styles/global.css';
     .video-container video{width:100%;display:block}
     .video-container.mobile-video{width:320px;margin:0 auto}
     .video-container.mobile-video video{max-height:520px;object-fit:contain}
+
+    @media (max-width: 768px) {
+      .diagram-grid{grid-template-columns:1fr}
+      .diagram-item object{height:240px}
+      .carousel-track.mobile-track{width:100%}
+      .video-container.mobile-video{width:100%}
+      .carousel-btn{width:30px;height:30px;font-size:15px}
+      .proj-section{margin-bottom:48px}
+    }
+    @media (max-width: 480px) {
+      .diagram-item object{height:180px}
+    }
   </style>
 </head>
 <body>
 
-<nav><div class="nav-inner">
-  <a href="/" class="logo">aroca<span>.dev</span></a>
-  <div class="nav-r">
-    <div class="nav-links">
-      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
-      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
-      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
-      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
-      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+        <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+        <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+        <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+        <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+      </div>
+      <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
+      <div class="i18n-mobile">
+        <span class="i18n-btn" id="btn-es-m">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-btn" id="btn-en-m">EN</span>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
     </div>
-    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</div></nav>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="navigation">
+  <a href="/#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  <a href="/#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="/#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
+  <a href="/#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="/#que-viene-ahora" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</a>
+</div>
 
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto personal · Android" data-en="Personal project · Android">Proyecto personal · Android</div>
@@ -190,34 +230,13 @@ import '../../styles/global.css';
     <div class="carousel mobile-carousel">
       <button class="carousel-btn" id="gp-prev"><i class="ti ti-chevron-left"></i></button>
       <div class="carousel-track mobile-track" id="gp-track">
-        <div class="carousel-slide mobile active">
-          <img src="/proyectos/gestpro/lista-proyecto.png" alt="Lista de proyectos" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Lista de proyectos" data-en="Projects list">Lista de proyectos</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/gestpro/detalles-proyecto.png" alt="Detalle de proyecto" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Detalle de proyecto" data-en="Project detail">Detalle de proyecto</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/gestpro/lista-pago.png" alt="Pagos" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Pagos" data-en="Payments">Pagos</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/gestpro/lista-cobro.png" alt="Cobros" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Cobros" data-en="Invoices">Cobros</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/gestpro/resumen.png" alt="Resumen" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Panel de resumen" data-en="Summary panel">Panel de resumen</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/gestpro/grafica.png" alt="Gráficas" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Distribución financiera" data-en="Financial distribution">Distribución financiera</span>
-        </div>
-        <div class="carousel-slide mobile">
-          <img src="/proyectos/gestpro/calendario.png" alt="Calendario" onclick="window.open(this.src,'_blank')" />
-          <span data-es="Calendario mensual" data-en="Monthly calendar">Calendario mensual</span>
-        </div>
+        <div class="carousel-slide mobile active"><img src="/proyectos/gestpro/lista-proyecto.png" alt="Lista de proyectos" onclick="window.open(this.src,'_blank')" /><span data-es="Lista de proyectos" data-en="Projects list">Lista de proyectos</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/gestpro/detalles-proyecto.png" alt="Detalle de proyecto" onclick="window.open(this.src,'_blank')" /><span data-es="Detalle de proyecto" data-en="Project detail">Detalle de proyecto</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/gestpro/lista-pago.png" alt="Pagos" onclick="window.open(this.src,'_blank')" /><span data-es="Pagos" data-en="Payments">Pagos</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/gestpro/lista-cobro.png" alt="Cobros" onclick="window.open(this.src,'_blank')" /><span data-es="Cobros" data-en="Invoices">Cobros</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/gestpro/resumen.png" alt="Resumen" onclick="window.open(this.src,'_blank')" /><span data-es="Panel de resumen" data-en="Summary panel">Panel de resumen</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/gestpro/grafica.png" alt="Gráficas" onclick="window.open(this.src,'_blank')" /><span data-es="Distribución financiera" data-en="Financial distribution">Distribución financiera</span></div>
+        <div class="carousel-slide mobile"><img src="/proyectos/gestpro/calendario.png" alt="Calendario" onclick="window.open(this.src,'_blank')" /><span data-es="Calendario mensual" data-en="Monthly calendar">Calendario mensual</span></div>
       </div>
       <button class="carousel-btn" id="gp-next"><i class="ti ti-chevron-right"></i></button>
     </div>
@@ -253,11 +272,33 @@ import '../../styles/global.css';
   document.getElementById('gp-prev').addEventListener('click', () => goToGpSlide(gpSlide - 1));
   document.getElementById('gp-next').addEventListener('click', () => goToGpSlide(gpSlide + 1));
 
-  const ES='es',EN='en';
-  let current=localStorage.getItem('lang')||ES;
-  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
-  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
+  const ES='es', EN='en';
+  let current = localStorage.getItem('lang') || ES;
+  const btnEs  = document.getElementById('btn-es');
+  const btnEn  = document.getElementById('btn-en');
+  const btnEsM = document.getElementById('btn-es-m');
+  const btnEnM = document.getElementById('btn-en-m');
+  function applyLang(lang) {
+    current = lang; localStorage.setItem('lang', lang);
+    [btnEs, btnEsM].forEach(b => { if(b) b.className = lang===ES ? 'i18n-active' : 'i18n-inactive'; });
+    [btnEn, btnEnM].forEach(b => { if(b) b.className = lang===EN ? 'i18n-active' : 'i18n-inactive'; });
+    document.getElementById('html-root').lang = lang===ES ? 'es' : 'en';
+    document.querySelectorAll('[data-es]').forEach(el => { const t = el.getAttribute('data-'+lang); if(t) el.innerHTML = t; });
+  }
+  btnEs.addEventListener('click', () => applyLang(ES));
+  btnEn.addEventListener('click', () => applyLang(EN));
+  btnEsM.addEventListener('click', () => applyLang(ES));
+  btnEnM.addEventListener('click', () => applyLang(EN));
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  const mainNav   = document.getElementById('main-nav');
+  function openMenu() { navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px'; navMobile.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); hamburger.querySelector('i').className='ti ti-x'; }
+  function closeMenu() { navMobile.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); hamburger.querySelector('i').className='ti ti-menu-2'; }
+  hamburger.addEventListener('click', () => navMobile.classList.contains('open') ? closeMenu() : openMenu());
+  window.addEventListener('scroll', () => { if(navMobile.classList.contains('open')) navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px'; }, { passive: true });
+  navMobile.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
   applyLang(current);
 </script>
 </body>
