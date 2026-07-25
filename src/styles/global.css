@@ -256,9 +256,10 @@ footer{border-top:1px solid var(--bd);padding:18px 24px;text-align:center}
   .proj-title{font-size:clamp(28px,8vw,42px);letter-spacing:-1px}
   .proj-body{padding:36px 16px}
   .proj-section-title{font-size:9px;letter-spacing:0.8px}
-  .proj-section-title::before{width:10px}
+  .proj-section-title::before{width:7px;height:1px}
   .proj-category{font-size:8px;letter-spacing:0.8px}
-  .proj-category::before{width:12px}
+  .proj-category::before{width:9px;height:1px}
+  .hero-avail{align-items:flex-start;font-size:11px}
   .proj-subtitle{font-size:13px}
 
   /* FOOTER */
@@ -276,5 +277,6 @@ footer{border-top:1px solid var(--bd);padding:18px 24px;text-align:center}
   .proj-title{font-size:clamp(26px,8vw,36px);letter-spacing:-0.5px}
   .btn-social,.btn-cv-outline{padding:0 16px;height:42px;font-size:13px}
   .ch{font-size:22px}
+  .avail-dot{margin-top:3px;flex-shrink:0}
 
 }
