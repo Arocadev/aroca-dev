@@ -255,10 +255,10 @@ footer{border-top:1px solid var(--bd);padding:18px 24px;text-align:center}
   .proj-hero{padding:36px 16px}
   .proj-title{font-size:clamp(28px,8vw,42px);letter-spacing:-1px}
   .proj-body{padding:36px 16px}
-  .proj-section-title{font-size:10px;letter-spacing:1px}
-  .proj-section-title::before{width:12px}
-  .proj-category{font-size:9px;letter-spacing:1px}
-  .proj-category::before{width:16px}
+  .proj-section-title{font-size:9px;letter-spacing:0.8px}
+  .proj-section-title::before{width:10px}
+  .proj-category{font-size:8px;letter-spacing:0.8px}
+  .proj-category::before{width:12px}
   .proj-subtitle{font-size:13px}
 
   /* FOOTER */
