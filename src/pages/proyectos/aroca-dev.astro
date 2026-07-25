@@ -4,11 +4,21 @@ import '../../styles/global.css';
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aroca.dev · ArocaDev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aroca.dev · Portfolio de Alejandro Rodríguez | ArocaDev</title>
+  <meta name="description" content="Portfolio personal de Alejandro Rodríguez Calabuig. Diseñado e implementado desde cero con Astro y CSS puro. Decisiones técnicas, sistema de color y arquitectura del sitio." />
+  <meta property="og:title" content="aroca.dev · ArocaDev" />
+  <meta property="og:description" content="Portfolio personal diseñado e implementado desde cero con Astro y CSS puro." />
+  <meta property="og:url" content="https://aroca.dev/proyectos/aroca-dev" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://aroca.dev/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://aroca.dev/proyectos/aroca-dev" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <style>
@@ -18,19 +28,38 @@ import '../../styles/global.css';
   </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/" class="logo">aroca<span>.dev</span></a>
-  <div class="nav-r">
-    <div class="nav-links">
-      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
-      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
-      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
-      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
-      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+        <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+        <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+        <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+        <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+      </div>
+      <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
+      <div class="i18n-mobile">
+        <span class="i18n-btn" id="btn-es-m">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-btn" id="btn-en-m">EN</span>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
     </div>
-    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</div></nav>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="navigation">
+  <a href="/#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  <a href="/#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="/#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
+  <a href="/#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="/#que-viene-ahora" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</a>
+</div>
 
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto personal · En producción" data-en="Personal project · Live">Proyecto personal · En producción</div>
@@ -63,13 +92,19 @@ import '../../styles/global.css';
   <div class="proj-section">
     <div class="proj-section-title" data-es="Stack y detalles" data-en="Stack and details">Stack y detalles</div>
     <div class="meta-grid">
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div><div class="sidebar-stack"><span class="about-tech-tag">Astro</span><span class="about-tech-tag">CSS</span><span class="about-tech-tag">Tabler Icons</span><span class="about-tech-tag">Vercel</span></div></div>
-      <div class="sidebar-card"><div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div><div class="sidebar-detail">
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2026</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
-        <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">aroca.dev</span></div>
-      </div></div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Stack técnico" data-en="Tech stack">Stack técnico</div>
+        <div class="sidebar-stack"><span class="about-tech-tag">Astro</span><span class="about-tech-tag">CSS</span><span class="about-tech-tag">Tabler Icons</span><span class="about-tech-tag">Vercel</span></div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
+        <div class="sidebar-detail">
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Personal" data-en="Personal">Personal</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val">2026</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">aroca.dev</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -110,12 +145,50 @@ import '../../styles/global.css';
 </footer>
 
 <script>
-  const ES='es',EN='en';
-  let current=localStorage.getItem('lang')||ES;
-  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
-  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));
-  btnEn.addEventListener('click',()=>applyLang(EN));
+  const ES='es', EN='en';
+  let current = localStorage.getItem('lang') || ES;
+  const btnEs  = document.getElementById('btn-es');
+  const btnEn  = document.getElementById('btn-en');
+  const btnEsM = document.getElementById('btn-es-m');
+  const btnEnM = document.getElementById('btn-en-m');
+
+  function applyLang(lang) {
+    current = lang;
+    localStorage.setItem('lang', lang);
+    [btnEs, btnEsM].forEach(b => { if(b) b.className = lang===ES ? 'i18n-active' : 'i18n-inactive'; });
+    [btnEn, btnEnM].forEach(b => { if(b) b.className = lang===EN ? 'i18n-active' : 'i18n-inactive'; });
+    document.getElementById('html-root').lang = lang===ES ? 'es' : 'en';
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const t = el.getAttribute('data-' + lang);
+      if(t) el.innerHTML = t;
+    });
+  }
+  btnEs.addEventListener('click', () => applyLang(ES));
+  btnEn.addEventListener('click', () => applyLang(EN));
+  btnEsM.addEventListener('click', () => applyLang(ES));
+  btnEnM.addEventListener('click', () => applyLang(EN));
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  const mainNav   = document.getElementById('main-nav');
+
+  function openMenu() {
+    navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px';
+    navMobile.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.querySelector('i').className = 'ti ti-x';
+  }
+  function closeMenu() {
+    navMobile.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.querySelector('i').className = 'ti ti-menu-2';
+  }
+  hamburger.addEventListener('click', () => navMobile.classList.contains('open') ? closeMenu() : openMenu());
+  window.addEventListener('scroll', () => {
+    if(navMobile.classList.contains('open')) navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px';
+  }, { passive: true });
+  navMobile.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
   applyLang(current);
 </script>
 </body>

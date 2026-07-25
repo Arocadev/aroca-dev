@@ -4,11 +4,21 @@ import '../../styles/global.css';
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APR Xàtiva · ArocaDev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APR Xàtiva · Control de acceso vehicular | ArocaDev</title>
+  <meta name="description" content="Sistema de control de acceso vehicular para el núcleo antiguo de Xàtiva. TFG con nota 10/10, adoptado por el Ajuntament como propuesta técnica oficial. Spring Boot, React 19, Kotlin." />
+  <meta property="og:title" content="APR Xàtiva · ArocaDev" />
+  <meta property="og:description" content="Sistema de control de acceso vehicular para el núcleo antiguo de Xàtiva. TFG con nota 10/10, adoptado por el Ajuntament como propuesta técnica oficial." />
+  <meta property="og:url" content="https://aroca.dev/proyectos/apr-xativa" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://aroca.dev/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://aroca.dev/proyectos/apr-xativa" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <style>
@@ -41,22 +51,53 @@ import '../../styles/global.css';
     .video-container video{width:100%;display:block}
     .video-container.mobile-video{width:300px;margin:0 auto}
     .video-container.mobile-video video{max-height:520px;object-fit:contain}
+
+    @media (max-width: 768px) {
+      .diagram-item object{height:260px}
+      .section-divider{margin:48px 0}
+      .proj-section{margin-bottom:48px}
+      .carousel-track.mobile-track{width:100%}
+      .video-container.mobile-video{width:100%}
+      .carousel-btn{width:30px;height:30px;font-size:15px}
+    }
+    @media (max-width: 480px) {
+      .diagram-item object{height:200px}
+    }
   </style>
 </head>
 <body>
-<nav><div class="nav-inner">
-  <a href="/" class="logo">aroca<span>.dev</span></a>
-  <div class="nav-r">
-    <div class="nav-links">
-      <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
-      <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
-      <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
-      <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
-      <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">aroca<span>.dev</span></a>
+    <div class="nav-r">
+      <div class="nav-links">
+        <a href="/#sobre-mi" data-es="sobre mí" data-en="about">sobre mí</a>
+        <a href="/#proyectos" data-es="proyectos" data-en="projects">proyectos</a>
+        <a href="/#experiencia" data-es="experiencia" data-en="experience">experiencia</a>
+        <a href="/#contacto" data-es="contacto" data-en="contact">contacto</a>
+        <a href="/#que-viene-ahora" data-es="próximo objetivo" data-en="next goal">próximo objetivo</a>
+      </div>
+      <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
+      <div class="i18n-mobile">
+        <span class="i18n-btn" id="btn-es-m">ES</span>
+        <span class="i18n-sep">|</span>
+        <span class="i18n-btn" id="btn-en-m">EN</span>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
     </div>
-    <div class="i18n"><span class="i18n-btn" id="btn-es">ES</span><span class="i18n-sep">|</span><span class="i18n-btn" id="btn-en">EN</span></div>
   </div>
-</div></nav>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="navigation">
+  <a href="/#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  <a href="/#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a href="/#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a>
+  <a href="/#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="/#que-viene-ahora" data-es="Próximo objetivo" data-en="Next goal">Próximo objetivo</a>
+</div>
 
 <div class="proj-hero">
   <div class="proj-category" data-es="Proyecto académico · TFG · Nota 10/10" data-en="Academic project · Final degree project · Grade 10/10">Proyecto académico · TFG · Nota 10/10</div>
@@ -162,9 +203,8 @@ import '../../styles/global.css';
 
   <div class="section-divider"></div>
 
-  <!-- LANDING WEB -->
   <div class="proj-section">
-    <div class="proj-section-title" data-es="Landing page informativa" data-en="Informational landing page">Landing page informativa</div>
+    <div class="proj-section-title" style="margin-bottom:20px" data-es="Landing page informativa" data-en="Informational landing page">Landing page informativa</div>
     <div class="video-container">
       <video playsinline muted controls>
         <source src="/proyectos/apr-xativa/web-landing.mp4" type="video/mp4" />
@@ -200,7 +240,6 @@ import '../../styles/global.css';
 
   <div class="section-divider"></div>
 
-  <!-- PANEL ADMIN -->
   <div class="proj-section">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="Panel de administración: gestión de usuarios" data-en="Admin panel: user management">Panel de administración: gestión de usuarios</div>
     <div class="video-container">
@@ -299,7 +338,6 @@ import '../../styles/global.css';
 
   <div class="section-divider"></div>
 
-  <!-- APP ANDROID -->
   <div class="proj-section">
     <div class="proj-section-title" style="margin-bottom:20px" data-es="App Android: aprobación de solicitud" data-en="Android app: request approval">App Android: aprobación de solicitud</div>
     <div class="video-container mobile-video">
@@ -399,11 +437,50 @@ import '../../styles/global.css';
   makeCarousel('admin-prev','admin-next','admin-track','admin-dots','goToAdminSlide');
   makeCarousel('app-prev','app-next','app-track','app-dots','goToAppSlide');
 
-  const ES='es',EN='en';
-  let current=localStorage.getItem('lang')||ES;
-  const btnEs=document.getElementById('btn-es'),btnEn=document.getElementById('btn-en');
-  function applyLang(lang){current=lang;localStorage.setItem('lang',lang);btnEs.className=lang===ES?'i18n-active':'i18n-inactive';btnEn.className=lang===EN?'i18n-active':'i18n-inactive';document.getElementById('html-root').lang=lang===ES?'es':'en';document.querySelectorAll('[data-es]').forEach(el=>{const t=el.getAttribute(`data-${lang}`);if(t)el.innerHTML=t;});}
-  btnEs.addEventListener('click',()=>applyLang(ES));btnEn.addEventListener('click',()=>applyLang(EN));
+  const ES='es', EN='en';
+  let current = localStorage.getItem('lang') || ES;
+  const btnEs  = document.getElementById('btn-es');
+  const btnEn  = document.getElementById('btn-en');
+  const btnEsM = document.getElementById('btn-es-m');
+  const btnEnM = document.getElementById('btn-en-m');
+
+  function applyLang(lang) {
+    current = lang;
+    localStorage.setItem('lang', lang);
+    [btnEs, btnEsM].forEach(b => { if(b) b.className = lang===ES ? 'i18n-active' : 'i18n-inactive'; });
+    [btnEn, btnEnM].forEach(b => { if(b) b.className = lang===EN ? 'i18n-active' : 'i18n-inactive'; });
+    document.getElementById('html-root').lang = lang===ES ? 'es' : 'en';
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const t = el.getAttribute('data-' + lang);
+      if(t) el.innerHTML = t;
+    });
+  }
+  btnEs.addEventListener('click', () => applyLang(ES));
+  btnEn.addEventListener('click', () => applyLang(EN));
+  btnEsM.addEventListener('click', () => applyLang(ES));
+  btnEnM.addEventListener('click', () => applyLang(EN));
+
+  const hamburger = document.getElementById('nav-hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  const mainNav   = document.getElementById('main-nav');
+
+  function openMenu() {
+    navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px';
+    navMobile.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.querySelector('i').className = 'ti ti-x';
+  }
+  function closeMenu() {
+    navMobile.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.querySelector('i').className = 'ti ti-menu-2';
+  }
+  hamburger.addEventListener('click', () => navMobile.classList.contains('open') ? closeMenu() : openMenu());
+  window.addEventListener('scroll', () => {
+    if(navMobile.classList.contains('open')) navMobile.style.top = mainNav.getBoundingClientRect().bottom + 'px';
+  }, { passive: true });
+  navMobile.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
+
   applyLang(current);
 </script>
 </body>
