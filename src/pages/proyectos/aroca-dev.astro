@@ -1,5 +1,6 @@
 ---
 import '../../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 ---
 <!DOCTYPE html>
 <html lang="es" id="html-root">
@@ -26,6 +27,7 @@ import '../../styles/global.css';
     .diagram-item object{width:100%;display:block;pointer-events:none;border-radius:4px}
     .diagram-label{font-size:11px;color:var(--t4);text-align:center;margin-top:8px}
   </style>
+  <Analytics />
 </head>
 <body>
 
