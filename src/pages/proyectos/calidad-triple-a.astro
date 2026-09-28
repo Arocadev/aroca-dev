@@ -1,15 +1,16 @@
 ---
 import '../../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 ---
 <!DOCTYPE html>
 <html lang="es" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calidad Triple A · E-commerce freelance | ArocaDev</title>
+  <title>Calidad Triple A · E-commerce | ArocaDev</title>
   <meta name="description" content="E-commerce para tienda de moda urbana y streetwear. Next.js 15, Sanity CMS, Zustand, Resend. Catálogo con CMS headless, checkout con envíos y emails automáticos con PDF y QR." />
   <meta property="og:title" content="Calidad Triple A · ArocaDev" />
-  <meta property="og:description" content="E-commerce freelance en producción. Next.js 15, Sanity CMS, checkout con cálculo de envíos y emails automáticos con PDF y QR." />
+  <meta property="og:description" content="E-commerce en producción. Next.js 15, Sanity CMS, checkout con cálculo de envíos y emails automáticos con PDF y QR." />
   <meta property="og:url" content="https://aroca.dev/proyectos/calidad-triple-a" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://aroca.dev/og.png" />
@@ -57,6 +58,7 @@ import '../../styles/global.css';
       .diagram-item object{height:180px}
     }
   </style>
+  <Analytics />
 </head>
 <body>
 
@@ -98,7 +100,7 @@ import '../../styles/global.css';
 </div>
 
 <div class="proj-hero">
-  <div class="proj-category" data-es="Proyecto freelance · En producción" data-en="Freelance project · Live">Proyecto freelance · En producción</div>
+  <div class="proj-category" data-es="Proyecto para empresa · En producción" data-en="Project for a business · Live">Proyecto para empresa · En producción</div>
   <div class="proj-title">Calidad Triple A</div>
   <div class="proj-subtitle" data-es="E-commerce para tienda de moda urbana y streetwear. Catálogo con CMS headless, checkout con cálculo de envíos, confirmación por WhatsApp y emails automáticos con PDF y QR. El pago se gestiona manualmente por Bizum y PayPal. Implementación completa: desarrollo, DNS, dominio y despliegue en Vercel." data-en="E-commerce for an urban fashion and streetwear shop. Headless CMS catalogue, checkout with shipping calculation, WhatsApp confirmation and automatic emails with PDF and QR. Payments managed manually via Bizum and PayPal. Full implementation: development, DNS, domain and deployment on Vercel.">E-commerce para tienda de moda urbana y streetwear. Catálogo con CMS headless, checkout con cálculo de envíos, confirmación por WhatsApp y emails automáticos con PDF y QR. El pago se gestiona manualmente por Bizum y PayPal. Implementación completa: desarrollo, DNS, dominio y despliegue en Vercel.</div>
   <div class="proj-links">
@@ -109,20 +111,20 @@ import '../../styles/global.css';
 <div class="proj-body">
 
   <div class="proj-section">
-    <div style="font-size:11px;color:var(--t4);margin-bottom:20px;display:flex;align-items:center;gap:6px"><i class="ti ti-lock" style="font-size:12px;color:var(--t4)"></i><span data-es="Repositorio privado — el código pertenece al cliente. Si quieres verlo, puedes contactarme directamente." data-en="Private repository — the code belongs to the client. If you'd like to see it, feel free to contact me directly.">Repositorio privado — el código pertenece al cliente. Si quieres verlo, puedes contactarme directamente.</span></div>
+    <div style="font-size:11px;color:var(--t4);margin-bottom:20px;display:flex;align-items:center;gap:6px"><i class="ti ti-lock" style="font-size:12px;color:var(--t4)"></i><span data-es="Repositorio privado — el código pertenece a la empresa. Si quieres verlo, puedes contactarme directamente." data-en="Private repository — the code belongs to the company. If you'd like to see it, feel free to contact me directly.">Repositorio privado — el código pertenece a la empresa. Si quieres verlo, puedes contactarme directamente.</span></div>
     <div class="proj-section-title" data-es="El problema" data-en="The problem">El problema</div>
     <div class="proj-text">
-      <p data-es="El cliente necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con pago por Bizum o PayPal gestionado manualmente, y cada pedido requería generar documentación personalizada para el envío." data-en="The client needed an online store to sell urban and streetwear fashion, but standard solutions like Shopify or WooCommerce didn't fit: the business model works with Bizum or PayPal payments managed manually, and each order required generating custom shipping documentation.">El cliente necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con pago por Bizum o PayPal gestionado manualmente, y cada pedido requería generar documentación personalizada para el envío.</p>
-      <p data-es="El cliente tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día." data-en="The client needed to manage the catalogue completely autonomously — add products, change prices, upload images — without touching code or depending on a developer for day-to-day tasks.">El cliente tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día.</p>
+      <p data-es="La empresa necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con pago por Bizum o PayPal gestionado manualmente, y cada pedido requería generar documentación personalizada para el envío." data-en="The business needed an online store to sell urban and streetwear fashion, but standard solutions like Shopify or WooCommerce didn't fit: the business model works with Bizum or PayPal payments managed manually, and each order required generating custom shipping documentation.">La empresa necesitaba una tienda online para vender moda urbana y streetwear, pero las soluciones estándar como Shopify o WooCommerce no encajaban: el modelo de negocio funciona con pago por Bizum o PayPal gestionado manualmente, y cada pedido requería generar documentación personalizada para el envío.</p>
+      <p data-es="La empresa tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día." data-en="The business needed to manage the catalogue completely autonomously — add products, change prices, upload images — without touching code or depending on a developer for day-to-day tasks.">La empresa tenía que poder gestionar el catálogo de forma completamente autónoma — añadir productos, cambiar precios, subir imágenes — sin tocar código ni depender de un desarrollador para el día a día.</p>
     </div>
   </div>
 
   <div class="proj-section">
     <div class="proj-section-title" data-es="La solución" data-en="The solution">La solución</div>
     <div class="proj-text">
-      <p data-es="E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. El cliente gestiona el catálogo desde Sanity Studio sin tocar código." data-en="Full e-commerce with <b>JAMstack</b> architecture: <b>Next.js 15</b> with App Router on the frontend and <b>Sanity CMS</b> as a headless content backend. The client manages the catalogue from Sanity Studio without touching code.">E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. El cliente gestiona el catálogo desde Sanity Studio sin tocar código.</p>
+      <p data-es="E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. La empresa gestiona el catálogo desde Sanity Studio sin tocar código." data-en="Full e-commerce with <b>JAMstack</b> architecture: <b>Next.js 15</b> with App Router on the frontend and <b>Sanity CMS</b> as a headless content backend. The business manages the catalogue from Sanity Studio without touching code.">E-commerce completo con arquitectura <b>JAMstack</b>: <b>Next.js 15</b> con App Router en el frontend y <b>Sanity CMS</b> como backend de contenido headless. La empresa gestiona el catálogo desde Sanity Studio sin tocar código.</p>
       <p data-es="El catálogo tiene tres categorías con filtros avanzados por subcategoría, marca, talla, género y precio. El carrito persiste con <b>Zustand</b> y el checkout calcula automáticamente los gastos de envío por país, con envío gratis en España a partir de 60€." data-en="The catalogue has three categories with advanced filters by subcategory, brand, size, gender and price. The cart persists with <b>Zustand</b> and checkout automatically calculates shipping costs by country, with free shipping in Spain from €60.">El catálogo tiene tres categorías con filtros avanzados por subcategoría, marca, talla, género y precio. El carrito persiste con <b>Zustand</b> y el checkout calcula automáticamente los gastos de envío por país, con envío gratis en España a partir de 60€.</p>
-      <p data-es="El diseño visual — logotipo, paleta e identidad de marca — fue definido por el cliente. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto." data-en="The visual design — logo, palette and brand identity — was defined by the client. My work was the complete technical implementation and project architecture.">El diseño visual — logotipo, paleta e identidad de marca — fue definido por el cliente. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto.</p>
+      <p data-es="El diseño visual — logotipo, paleta e identidad de marca — fue definido por la empresa. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto." data-en="The visual design — logo, palette and brand identity — was defined by the business. My work was the complete technical implementation and project architecture.">El diseño visual — logotipo, paleta e identidad de marca — fue definido por la empresa. Mi trabajo fue la implementación técnica completa y la arquitectura del proyecto.</p>
     </div>
   </div>
 
@@ -138,11 +140,11 @@ import '../../styles/global.css';
       <div class="sidebar-card">
         <div class="sidebar-label" data-es="Detalles" data-en="Details">Detalles</div>
         <div class="sidebar-detail">
-          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val">Freelance</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label" data-es="Tipo" data-en="Type">Tipo</span><span class="sidebar-row-val" data-es="Proyecto independiente" data-en="Independent project">Proyecto independiente</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label" data-es="Año" data-en="Year">Año</span><span class="sidebar-row-val" data-es="2025 – hoy" data-en="2025 – present">2025 – hoy</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label" data-es="Estado" data-en="Status">Estado</span><span class="sidebar-row-val" data-es="En producción" data-en="Live">En producción</span></div>
           <div class="sidebar-row"><span class="sidebar-row-label">Web</span><span class="sidebar-row-val">calidad3a.com</span></div>
-          <div class="sidebar-row"><span class="sidebar-row-label"><i class="ti ti-lock" style="font-size:11px"></i></span><span class="sidebar-row-val" style="color:var(--t4);font-size:11px" data-es="Repo privado — código del cliente" data-en="Private repo — client code">Repo privado — código del cliente</span></div>
+          <div class="sidebar-row"><span class="sidebar-row-label"><i class="ti ti-lock" style="font-size:11px"></i></span><span class="sidebar-row-val" style="color:var(--t4);font-size:11px" data-es="Repo privado — código de la empresa" data-en="Private repo — business code">Repo privado — código de la empresa</span></div>
         </div>
       </div>
     </div>
@@ -151,7 +153,7 @@ import '../../styles/global.css';
   <div class="proj-section">
     <div class="proj-section-title" data-es="Lo que aprendí" data-en="What I learned">Lo que aprendí</div>
     <div class="proj-text">
-      <p data-es="Este fue el proyecto donde más trabajé la comunicación con un cliente real: traducir necesidades de negocio a decisiones técnicas y gestionar entregas y ajustes en producción." data-en="This was the project where I worked most on communication with a real client: translating business needs into technical decisions and managing deliveries and adjustments in production.">Este fue el proyecto donde más trabajé la comunicación con un cliente real: traducir necesidades de negocio a decisiones técnicas y gestionar entregas y ajustes en producción.</p>
+      <p data-es="Este fue el proyecto donde más trabajé la comunicación con un negocio: traducir necesidades de negocio a decisiones técnicas y gestionar entregas y ajustes en producción." data-en="This was the project where I worked most on communication with a business: translating business needs into technical decisions and managing deliveries and adjustments in production.">Este fue el proyecto donde más trabajé la comunicación con un negocio: traducir necesidades de negocio a decisiones técnicas y gestionar entregas y ajustes en producción.</p>
       <p data-es="También aprendí a configurar todo el stack de emails transaccionales desde cero — DNS, SPF, DKIM, verificación de dominio — para que los emails lleguen a bandeja de entrada." data-en="I also learned to configure the full transactional email stack from scratch — DNS, SPF, DKIM, domain verification — so emails actually reach the inbox.">También aprendí a configurar todo el stack de emails transaccionales desde cero — DNS, SPF, DKIM, verificación de dominio — para que los emails lleguen a bandeja de entrada.</p>
     </div>
   </div>
@@ -161,7 +163,7 @@ import '../../styles/global.css';
     <div class="proj-text">
       <ul class="proj-list">
         <li data-es="Añadiría una pasarela de pago real (Stripe) desde el principio en lugar del flujo manual con Bizum/PayPal." data-en="I'd add a real payment gateway (Stripe) from the start instead of the manual Bizum/PayPal flow.">Añadiría una pasarela de pago real (Stripe) desde el principio en lugar del flujo manual con Bizum/PayPal.</li>
-        <li data-es="Implementaría un panel de gestión de pedidos para el cliente en lugar de depender del email como único registro." data-en="I'd implement an order management panel for the client instead of relying on email as the only record.">Implementaría un panel de gestión de pedidos para el cliente en lugar de depender del email como único registro.</li>
+        <li data-es="Implementaría un panel de gestión de pedidos para la empresa en lugar de depender del email como único registro." data-en="I'd implement an order management panel for the business instead of relying on email as the only record.">Implementaría un panel de gestión de pedidos para la empresa en lugar de depender del email como único registro.</li>
         <li data-es="Añadiría tests de integración para el flujo de checkout y generación de documentos, que son las partes más críticas del negocio." data-en="I'd add integration tests for the checkout flow and document generation, which are the most business-critical parts.">Añadiría tests de integración para el flujo de checkout y generación de documentos, que son las partes más críticas del negocio.</li>
       </ul>
     </div>
